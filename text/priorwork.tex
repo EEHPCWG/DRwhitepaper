@@ -18,7 +18,6 @@ virtualized environments by linking online workload characterization to
 dynamic VM scheduling decisions to achieve better performance, energy
 efficiency and power balance in the system.
 
-
 \subsection{Power Capping}
 
 \textbf{Power capping }techniques set a value below the actual peak power
@@ -32,7 +31,6 @@ forced to reduce consumption when the data center is approaching \textbf{the
 power cap value}. Power consumption can be reduced simply by
 \textbf{de-scheduling tasks }or by using any available component-level power
 management \textbf{knobs}, such as DVFS [Fan07].
-.
 
 \subsection{Job Scheduling}
 The problem of scheduling jobs has been extensively studied. In general,
@@ -63,9 +61,8 @@ results show a \textbf{23{\%}} reduction in electricity cost of HPC systems.
 
 A grid computing infrastructure with large amount of computations normally
 contains parallel machines (supercomputers cluster) as main computational
-resources 
-\cite{foster_anatomy_2001} [Fos01]
-. Incoming jobs to Grid's local resources are scheduled by
+resources.  \cite{foster_anatomy_2001} [Fos01]
+Incoming jobs to Grid's local resources are scheduled by
 local scheduling system. Local scheduling system for parallel machines
 typically use batch queued space-sharing and its variants as scheduling
 policies. Most current local schedulers use backfilling strategies with FCFS
