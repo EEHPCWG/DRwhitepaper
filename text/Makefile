@@ -1,6 +1,6 @@
 # Makefile but currently more like a batch file
 # Issue a make clean and then a make
-*
+#
 
 TARGETS: whitepaper.pdf
 
