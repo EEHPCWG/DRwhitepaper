@@ -3,5 +3,4 @@ DRwhitepaper
 
 The demand response paper 
 
-This is another new line.
-
+This is a new line.
