@@ -1,58 +1,213 @@
-%negotiation/interaction 
-The biggest opportunity in the integration of the electrical grid and supercomputer centers is to start a 
-process of negotiation/interaction between utility providers and HPC centers; the survey data indicates 
-that this is being asked for by providers, at least in some small way already.
+The responses to the questionnaire presented in
+Section~\ref{sec:questionaire} represent a variety of desires and
+experience regarding interactions between supercomputing centers and
+energy service providers.  For example, the responses from the two centers
+with the largest power draws, Lawrence Livermore National Laboratory
+(LLNL) and Oak Ridge National Laboratory (ORNL), diverge in several
+areas.  This divergence is perhaps primarily due to characteristics of
+their respective energy service providers.  In contrast, San Diego
+Supercomputer Center (SDSC) stands out as a leader in integrating
+with their energy service provider on a site-wide level.  To that end, the
+responses from SDSC may exemplify some of the opportunities available
+to other supercomputing centers that are willing to pursue this degree
+of integration.
 
-SDSC stands out as a leader in integrating with their utility provider.  They have implemented a site-wide integration.  
-A probably opportunity for other supercomputer centers would be to pursue a similar site-wide integration. 
+% The following paragraph is what we want to claim, but is actually
+% factually incorrect.  A supercomputing center understands its
+% cost to operate per unit time (e.g., cost to run per hour).  This
+% cost includes things like the cost of personnel, cost of renting
+% the physical space for the datacenter, cost of electricity, etc.
+% It turns out that the cost of electricity is a small percent of
+% the overall cost of running the center.  In the end, I think there
+% is very little chance of getting supercomputing centers to
+% willingly negotiate with energy service providers because the cost of
+% the lost opportunity is too high since the remaining costs are
+% unchanged.
+The responses to the questionaire also suggest that some energy service
+providers are requesting that their supercomputing center customers
+develop capabilities for informing the provider of expected periods of
+exceptional power consumption and for responding to requests from the
+provider to consume less power for specified periods of time.  Upon
+initial consideration, this idea might seem to run counter to the
+primary mission objective of most supercomputing centers of delivering
+as many uninterrupted computational cycles as possible to their users.
+In some extreme cases, supercomputing centers may not have a choice
+in the matter as the size and energy requirements of supercomputers
+increase; indeed, some energy service providers may \textit{require} large
+centers to develop a demand-response capability.  However, a direct
+business case may exist to encourage supercomputing centers to develop
+this negotiation capability on their own.  For example, if energy service
+providers were to offer electricity at a significantly reduced rate
+on the condition that the supercomputing center customer develop
+demand-response capabilities, the long-term cost savings to the
+center could make undertaking such a project worthwhile.
 
-The two largest power draw sites (LLNL and ORNL) seem to have divergent experiences.  
-Not clear why, but probably has more to do with their providers than their sites.  
-LLNL’s experience may be seen with other sites – LANL seems to be moving in that direction.  
-This may portend a ‘required’ opportunity for some sites.
+Perhaps one of the most straightforward ways that supercomputing
+centers can begin the process of developing a demand-response
+capability is by enhancing existing system software used for managing
+computing resources within the center.  Indeed, the questionaire
+responses from Section~\ref{sec:questionaire} as well as the literature
+review presented in Section~\ref{sec:priorwork} both strongly support the
+idea that the greatest opportunities for supercomputing centers to
+develop integration capabilities are related to system software.
+Specifically, and presented in approximate order of decreasing
+interest and expected impact to the questionaire respondents, system
+software in this context consists of coarse-grained power management
+in the form of power capping, job scheduling, load migration,
+rescheduling backups, and fine-grained power management.  Of these,
+job scheduling may be a practical starting point simply because of the
+unique role that the job scheduler and resource manager play within a
+datacenter.
 
-There isn’t a clear business case on the part of the supercomputing center for pursuing integration.
-This probably needs to be further understood and developed.
+% I (koenig) would be able to self-cite out of my own publications
+% concepts such as ``priority'' and ``urgency'' described in the
+% following paragraph.  If desired, we would need to add these
+% papers into the bibliography and/or related works section.
+On one hand, the job scheduler has knowledge of and control over the
+upcoming workflow within the supercomputing center simply by examining
+and manipulating the job queue.  For example, jobs may be submitted
+with various metadata that enable the job scheduler to understand
+characteristics of each job such as \textit{priority}, the relative
+importance of a job compared to other jobs, and \textit{urgency}, the
+rate at which the value of a job decreases as time elapses.  These
+characteristics are not only important to a job scheduler for ensuring
+efficient utilization of a supercomputing center's resources under
+traditional circumstances, but they are also a vital piece of
+successfully implementing a demand-response capability for at least
+two reasons.  First, they provide a set of metrics by which the
+supercomputing center can estimate the cost in terms of the ``lost
+opportunity'' of responding to an energy service provider's request to
+run with attenuated resources.  Second, they allow the supercomputing
+center to prioritize jobs in the queued workflow in order to understand
+how to best utilize computational resources.  This capability is
+important under normal circumstances, but becomes even more essential
+in a demand-response scenario.
 
+On the other hand, the job scheduler has knowledge of and control over
+the computational resources within the supercomputing center, giving
+the job scheduler several mechanisms for implementing a
+demand-response capability.  Most of these mechanisms could be
+considered fine-grained power control mechanisms because they mostly
+tune low-level settings on the nodes and processors within the
+supercomputing center.  For example, the job scheduler knows which
+nodes within a supercomputer are occupied with running jobs or are
+expected to become occupied in the near future.  To that end, the job
+scheduler can use its control over the resource management process to
+place idle nodes into a sleep state in which they draw significantly
+reduced power.  This strategy is especially effective in
+supercomputing environments containing at least some resources that
+are used at irregular intervals, allowing opportunities to utilize
+sleep states effectively during periods when the resources are idle.
+In environments where all computing resources are heavily utilized
+most of the time, more sophisticated strategies that require the job
+scheduler to rely on knowledge about each batch job may be necessary.
+Such knowledge might come from the type of metadata described in the
+previous paragraph or from a database that is maintained based on
+previous runs of jobs submitted by each user.  For example, if the job
+scheduler knows that a given job contains mostly I/O operations, or
+consists of discrete phases where I/O occurs, the job scheduler might
+choose to adjust the Performance State (P-state) for each processor
+running the job in a way that reduces the job's overall power
+consumption.  The P-state mechanism is a way of scalably adjusting a
+CPU's frequency and voltage operating points which in turn causes the
+processor to consume less power directly and to produce less thermal
+load indirectly.  In cases where a processor is executing a
+processing-intense task, gating the processor's P-state often has a
+noticable impact on the overall task performance; however, in cases
+where a processor is executing a mostly I/O-bound task, gating the
+processor's P-state typically does not make a noticable impact on the
+overall task performance due to the fact that the processor spends a
+great deal of time blocked waiting for I/O operations to complete.
 
-%system software
-According to the survey data and literature review, the greatest opportunities for HPC centers to develop 
-integration capabilities
-are related
-to system software. System software in these areas in the order of their interest and impact 
-consist of coarse grained power management (power capping), job scheduling, load migration,
-rescheduling back-ups and 
-fine grained power management.
+Even more interesting scenarios are possible in cases where the job
+scheduler combines its knowledge of the upcoming queued workflow with
+its knowledge and control over the computational resources within
+the supercomputing center.  These scenarios are most appropriate when
+the supercomputing scenario contains a pervasively heterogeneous mix
+of computational resources.  For example, many contemporary datacenters
+contain several different types of compute nodes with various types of
+processors and accelerator cards.  In some circumstances, the job
+scheduler may be able to choose which resource to use for running a
+given job among several candidate resources.  The trade-off here is
+not only in terms of the time necessary to complete the job (i.e.,
+different resources could potentially complete the job in very different
+amounts of time) but also in terms of the energy consumed in completing
+the job (i.e., different resources could potentially consume very
+different amounts of energy in completing the job).  By maintaining a
+database of job-to-resource mappings that record the time and energy
+taken for each job, the scheduler can, over time, improve its ability
+to decide which jobs have the highest affinity to each type of resource.
+Using this knowledge to optimize a supercomputing center's workflow in
+terms of job throughput or energy consumption is admittedly complex,
+but the potential rewards are likely to be compelling both to the
+day-to-day operation of the center and to demand-response capabilities.
 
-Sites are developing experience with energy efficiency that can transfer to power management for utility integration.  
+% It may be possible to self-cite some of my upcoming publications
+% that discuss how to do power capping in a scheduler.
+Several of the ideas described in the preceeding paragraphs assume
+that the supercomputing center environment has some amount of
+instrumentation and metering that allows for the collection of power
+telemetry data.  Not only is this telemetry necessary for the job
+scheduler to be able to make decisions about the workflow and
+resources it is to schedule, the telemetry is also important to the
+datacenter facility manager in order to understand how the power
+supplied by the energy service provider is distributed to resources
+within the center.  In light of the fact that many system integrators
+such as Cray and IBM are now delivering supercomputing systems that
+include telemetry capabilities, the assumption that this information
+is available seems acceptable.  According to the responses to the
+questionnaire presented in the previous Section, datacenter facility
+managers perceive this accounting data as distinct from the per-user
+or per-job accounting data described above and indicate that this
+data should be retained for electricity provisioning planning purposes.
+At a very high level, this detailed knowledge of where electricity is
+being used in a supercomputing center is an important piece in
+capabilities such as power capping, where the overall consumption of
+power is maintained at or below some maximum threshhold level.  Power
+capping may be accomplished either manually by the facility manager
+or automatically by the job scheduler, but both approaches require
+detailed knowledge that come from monitoring and accounting.
 
-Job scheduling is seen as having the greatest interest and impact- because from a practical perspective, coarse grained power management is dependent upon job scheduling.
+Opportunities may also exist for supercomputing centers to cooperate
+with each other in scenarios in which computational loads are migrated
+from one site to another where energy costs are less expensive.  This
+scenario is challenging for both technical reasons and business reasons.
+Technical challenges include issues such as user authentication and
+autorization (i.e., a user may be authorized to use resources at one
+site but not at another site) and data movement (i.e., it may be
+infeasible to migrate large datasets from one site to another site).
+Business challenges include the notion that a supercomputing center
+currently has little incentive to migrate jobs to another ``competing''
+center.  Indeed, the questionnaire results reflect low interest in
+load migration strategies.  It seems likely that in order to be a
+feasible scenario, the structure of payment and rewards to a
+supercomputing center to cooperate with other centers would need to
+be structured differently than they are currently.
 
+In a very broad sense, demand-response techniques such as job scheduling,
+power capping, and load migration can be considered to be coarse-grained
+approaches because they involve considering ``big picture'' views of the
+workload and computational resources in a supercomputing center.  According
+to the questionnaire results presented in the previous Section, facilities
+managers view these approaches as the most likely candidates for creating
+effective demand-response capabilities.
 
-If integration starts happening between utility providers and HPC centers, 
-the system software (i.e., job scheduler) is a key component in order to ensure that this happens
-as efficiently as possible in order to keep high utilization / business utility going at the
-HPC center.  (Consider here things such as fluctuations in HPC use; 
-e.g., things like large-scale acceptance / Top500 style runs). 
-Load migration requires cooperation between HPC centers (and also may require overcoming difficult
-challenges like migrating large 
-datasets, ensuring security requirements are met and porting tuned code). 
-By using \textit{advance reservation capabilities} of schedulers (within local resource managers) of HPC centers, we facilitate \textit{the execution of load migration strategy} between HPC centers (e.g., in terms of automation); as a result we increase the interest level and to some extent the impact level of load migration strategies.
-
-%infrastructure software
-In addition to system software, infrastructure software such as grid computing may have a place in opportunities. In the US, supercomputer centers are connected via grid computing infrastructures such as TeraGrid, Open Science Grid. Grid computing's protocols, interfaces, and standards can facilitate the execution of DR strategies, as a result grid computing may increase the interest level and/or the impact level of DR strategies.
-
-If there is some kind of automated ``negotiation'' process that takes place between utility providers and HPC centers, it's likely that the utility providers will need to improve their capabilities to be able to participate in this process (e.g., probably need to solve some kind of weighted optimization problem in near real time in order to know where the most important places are to ensure uninterrupted service); there is an opportunity to the utility provider in this, however, in that these advancements in their technology for monitoring and adjusting their infrastructure might be leveraged toward other ends that are not related to HPC centers specifically.
-
-
-%grid methods like dynamic pricing
-The survey data indicates that grid programs are being negotiated between utility providers and HPC centers more than that of grid methods. Due to the lack of a clear business case there is low interest in shedding and shifting load during peak demands. Nonetheless, according to the survey data in HPC landscape load shifting is more attractive than shedding load. In addition, there are high interests and opportunities in the use of renewables at the site level, according to the survey data and literature review. According to literature review, there are great opportunities in terms of reducing electricity costs in exploiting dynamic pricing as a grid integration program.
-
-In contrary, there is lack of knowledge on the use and integration aspects of congestion, regulation, and frequency response methods. 
-
-%accouting
-There are needs and opportunities for the supercomputer sites in having accounting system. According to the survey data, there are information request on electricity usage by electricity providers from the supercomputer sites for getting detailed forecasting and real time data. Accounting data can be used to forecast and model future energy usage of an HPC center. So this can be communicated and be integrated with electricity grid. Accounting data can be classified in terms of HPC center components, cooling, systems, lighting, etc. If/how electricity grid providers can use energy and usage accounting data to plan electricity provisioning of an HPC center? %user-specific accounting data versus workload-specific accounting data.
-
-%electricity-price markets
-%interoperability
-The HPC/electrical grid integration at the communication and message level need to be standardized and be interoperable. Interfaces, communication infrastructure, data, information exchange, and agreement should be based on standards.
+Finally, this Section has focused heavily on the opportunities available
+to supercomputing centers that come from developing demand-response
+capabilities.  This notion is primarily due to the fact that the
+questionnaire presented in Section~\ref{sec:questionaire} was
+distributed to high-performance computing centers in the United
+States, not to energy service providers.  That said, opportunities do
+exist for energy service providers that develop demand-response
+capabilities.  At one level, the negotiation process itself requires
+integration in terms of the communication and messaging protocols that
+are necessary.  To that end, opportunities exist for adapting and extending
+existing standards currently used within the industry, thus creating new
+use cases and capabilities for energy service providers.  At a higher
+level, energy service providers will most likely need to improve their
+ability to determine in near real time the important places within the
+electrical grid where demands exceed supply.  Determining this is likely
+to be a complex optimization problem.  While this Section focuses on
+solving these problems to the end of developing a demand-response
+strategy in conjunction with supercomputing centers, these capabilities
+are likely applicable to a broad range of customers.
