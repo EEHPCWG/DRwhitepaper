@@ -60,31 +60,31 @@ to electricity consumption.
 based on intra-hour changing supply conditions on daily basis.
 \end{itemize}
 
-As the electric grid evolves to a more dynamic and distributed system, its integration with and responses from 
-HPC centers can be used to support supply-side programs.
+To support the reliable functioning of today's electric grid and as it evolves to support more distributed genertation, its integration with and responses from 
+HPC centers can be used to support better grid management.
 
 \subsection{Supercomputer Center Response Strategies}
 
-One dimension of the model to response to participate in supply-side programs is a list of demand-side 
+One dimension of the model to support better grid management in supply-side programs are demand-side 
 management strategies 
 that a supercomputer site might use to manage power in response to a request from their electric service provider. 
 
-Although these strategies can be used for managing power in response to a
-request from an electric service provider, many of them could also be used
-for improving energy efficiency. It is the former that is of primary
-interest to this investigation. Two examples may help to clarify this
-distinction. Load migration is an example of a strategy that is well suited
+Although these strategies can be used to temporarily modify loads in response to a
+request from an electric service provider, some of strategies them could also be used
+at all times to improve energy efficiency. It is the former that is of primary
+interest to this investigation - what HPC systems can do in response to a grid request that they cannot do all the time? 
+Two examples may help to clarify this
+distinction. Temporary load migration is an example of a strategy that is well suited
 to responding to an electric service provider request, but is not likely to
-improve energy efficiency. Fine grained power management, on the other hand,
-is more likely to be used for improving energy efficiency than for
-responding to electric service provider requests.
+improve energy efficiency (lowering aggregate energy use). Fine grained power management at all times, on the other hand,
+is more likely to be used for improving energy efficiency, unless the strategy is specifically used in response to a service provider's request.
 
 Below is a list of strategies:
 
 \begin{itemize}
 \item Fine grained power management refers to the ability to control HPC system power 
 and energy with tools that are high resolution control and can target specific 
-low level sub-systems. A typical example is voltage and frequency scaling of the CPU.
+low level sub-systems. A typical example is voltage and frequency scaling of the Central Processing Unit (CPU).
 
 \item Coarse grained power management also refers to the ability to control HPC 
 system power and energy, but contrasts with fine grained power management in 
@@ -92,7 +92,8 @@ that the resolution is low and it is generally done at a more aggregated level.
 A typical example is power capping.
 
 \item Load migration refers to temporarily shifting computing loads from 
-an HPC system in one site to a system in another location.
+an HPC system in one site to a system in another location that has stable power supply. 
+This strategy can also be used in response to change in electricity prices.
 
 \item Job scheduling refers to the ability to control HPC system power 
 by understanding the power profile of applications and queuing the 
@@ -108,3 +109,5 @@ applies when there is redundancy.
 \item Thermal management is widening temperature set-point ranges and 
 humidity levels for short periods.
 \end{itemize}
+
+It should be noted that these strategies are intended to temorarily reduce HPC service levels witout impacting the facility operations or the equipment.
