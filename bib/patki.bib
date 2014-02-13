@@ -632,3 +632,4409 @@ Principles and Practice of Parallel Programming},
  year = {2005},
  month = {August}
 }
+
+
+@INPROCEEDINGS{ FengIPDPS2005,
+	AUTHOR = {X. Feng and R. Ge and K. Cameron},
+	TITLE = {Power and Energy Profiling of Scientific Applications
+                  on Distributed Systems},
+	BOOKTITLE = {International Parallel and Distributed Processing
+                  Symposium},
+	month = Apr,
+	YEAR= 2005,
+	comment= {}}
+
+@conference{ACPIspec,
+	author		= {         {Hewlett-Packard Corporation} 
+				and {Intel Corporation} 
+				and {Microsoft Corporation}
+				and {Phoenix Technologies Ltd.}
+				and {Toshiba Corporation}
+	},
+	title		= {Advanced Configuration and Power Interface Specification },
+	_howpublished	= { },
+	month		= {June},
+	year		= {2009},
+	note		= {Revision 4.0 }
+}
+
+Entry for an article in conference proceedings.
+@conference{BarnesICS2008,
+	author		= { Brad Barnes and Barry Rountree and David K. Lowenthal and Jaxk Reeves and Bronis de Supinski and and Martin Schulz},
+	title		= { A Regression-Based Approach to Scalability Prediction },
+	booktitle	= { International Conference on Supercomputing ({ICS}) },
+	year		= { 2008 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@conference{BhattacharjeeISCA2009, _={ predict critical threads },
+	author		= { Abhishek Bhattacharjee 
+				and Margaret Martonosi },
+	title		= { Thread criticality predictors for dynamic 
+				performance power and resource management in 
+				chip multiprocessors },
+	booktitle	= { Proceedings of the 36th annual international 
+				symposium on computer architecture ({ISCA}09)},
+	year		= { 2009 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	pages		= { 290-301 },
+	address		= { Austin, {TX}, {USA} },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+With the shift towards chip multiprocessors (CMPs), ex-
+ploiting and managing parallelism has become a central prob-
+lem in computer systems. Many issues of parallelism man-
+agement boil down to discerning which running threads or
+processes are critical, or slowest, versus which are non-critical.
+If one can accurately predict critical threads in a parallel
+program, then one can respond in a variety of ways. Possibil-
+ities include running the critical thread at a faster clock rate,
+performing load balancing techniques to o
+ad work onto
+currently non-critical threads, or giving the critical thread
+more on-chip resources to execute faster.
+This paper proposes and evaluates simple but ective
+thread criticality predictors for parallel applications. We
+show that accurate predictors can be built using counters
+that are typically already available on-chip. Our predictor,
+based on memory hierarchy statistics, identies thread crit-
+icality with an average accuracy of 93% across a range of
+architectures.
+We also demonstrate two applications of our predictor.
+First, we show how Intel's Threading Building Blocks (TBB)
+parallel runtime system can benet from task stealing tech-
+niques that use our criticality predictor to reduce load im-
+balance. Using criticality prediction to guide TBB's task-
+stealing decisions improves performance by 13-32% for TBB-
+based PARSEC benchmarks running on a 32-core CMP. As
+a second application, criticality prediction guides dynamic
+energy optimizations in barrier-based applications. By run-
+ning the predicted critical thread at the full clock rate and
+frequency-scaling non-critical threads, this approach achieves
+average energy savings of 15% while negligibly degrading
+performance for SPLASH-2 and PARSEC benchmarks.
+
+@BOOK{BoxLib,			_={ BoxLib benchmark },
+	key		= { BoxLib },
+	author		= { {Lawrence Berkeley National Laboratory Center for Computational Sciences and Engineering} },
+	title		= { {BoxLib} },
+	PUBLISHER	= { \url{https://ccse.lbl.gov/Software/index.html}},
+	year		= { 2010 },
+}
+
+@conference{BrooksISCA2000,		_={ wattch },
+	author		= { David Brooks
+				and Vivek Tiwari
+				and Margaret Martonosi},
+	title		= { Wattch:  A Framework for Architectural-Level Power
+				Analysis and Optimizations},
+	booktitle	= { Proceedings of the 27th International Symposium
+				on Computer Architecture ({ISCA})},
+	year		= { 2000 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+(Abstract not copyable.)
+
+Entry for a part (chapter, section, certain pages) of a book.
+@inbook{CameronAIC2007,
+	author		= {K.W. Cameron and R. Ge and X. Feng },
+	title		= {Designing Computational Clusters for Performance and Power },
+	booktitle	= {Advances in Computers },
+	publisher	= {Elsevier Science {BV} },
+	year		= {2007},
+	editor		= {},
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_type		= { },
+	chapter		= {69},
+	pages		= {89-153},
+	_address	= { },
+	_edition	= { },
+	_month		= { },
+	_note		= { }
+}
+
+@article{CameronIEEEC2005,		_={ powerpack framework },
+	author		= { K. W. Cameron 
+				and R. Ge 
+				and X. Feng},
+	title		= { High-Performance, Power-Aware Distributed 
+				Computing for Scientific Applications},
+	journal		= { {IEEE} Computer },
+	year		= { 2005 },
+	volume		= { 38 },
+	number		= { 11 },
+	_pages		= { },
+	_month		= { },
+	_note		= { }
+}
+
+
+The PowerPack framework enables distributed systems to profile, analyze,
+and conserve energy in scientific applications using dynamic voltage
+scaling. For one common benchmark, the framework achieves more than
+30 percent energy savings with minimal performance impact.
+
+@INPROCEEDINGS{ ChapmanDMCC1991,
+        AUTHOR = {Chapman, B. M. and Herbeck, H. and Zima, H. P.},
+        TITLE = {Automatic Support for Data Distribution},
+        BOOKTITLE = {Proceedings of the Sixth Distributed Memory
+                Computing Conference},
+        editor = {},
+        organization = {},
+        publisher = {},
+        address = {Portland, Oregon},
+        pages = {},
+        month = may,
+        YEAR= 1991}
+Entry for an article in conference proceedings.
+@conference{CharlesISWC2009,
+	author		= {James Charles and Preet Jassi and Ananth Narayan S and Abbas Sadat and Alexandra Fedorova  },
+	title		= {Evaluation of the Intel Core i7 Turbo Boost feature },
+	booktitle	= {Proceedings of the {IEEE} International Symposium on Workload Characterization  },
+	year		= {2009},
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+@conference{ContrerasISLPED2005,	_={ estimate power using performance counters },
+	author		= { Gilberto Contreras 
+				and Margaret Martonosi},
+	title		= { Power Prediction for Intel XScale Processors Using 
+				Performance Monitoring Unit Events},
+	booktitle	= { International Symposium on Low Power Electronics 
+				and Design},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+This paper demonstrates a first-order, linear power esti-
+mation model that uses performance counters to estimate
+run-time CPU and memory power consumption of the Intel
+PXA255 processor. Our model uses a set of power weights
+that map hardware performance counter values to processor
+and memory power consumption. Power weights are de-
+rived ne once per processor voltage and frequency con-
+guration using parameter estimation techniques. They can
+be applied in a dynamic voltage/frequency scaling environ-
+ment by setting six descriptive parameters. We have tested
+our model using a wide selection of benchmarks including
+SPEC2000, Java CDC and Java CLDC programming envi-
+ronments. The accuracy is quite good; average estimated
+power consumption is within 4\% of the measured average
+CPU power consumption. We believe such power estima-
+tion schemes can serve as a foundation for intelligent, power-
+aware embedded systems that dynamically adapt to the de-
+vice's power consumption.
+
+@conference{ContrerasLCTES2004,		_={ power simulator for xscale processor },
+	author		= { Gilberto Contreras 
+				and Margaret Martonosi 
+				and Jinzhan Peng 
+				and Roy Ju 
+				and and Guei-Yuan Lueh},
+	title		= { XTREM: A Power Simulator for the Intel XScale Core },
+	booktitle	= { Conference on Languages, Compilers, and Tools for 
+				Embedded Systems },
+	year		= { 2004 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Managing power concerns in microprocessors has become a
+pressing research problem across the domains of computer
+architecture, CAD, and compilers. As a result, several pa-
+rameterized cycle-level power simulators have been intro-
+duced. While these simulators can be quite useful for mi-
+croarchitectural studies, their generality limits how accurate
+they can be for any one chip family. Furthermore, their
+hardware focus means that they do not explicitly enable
+studying the interaction of different software layers, such
+as Java applications and their underlying Runtime system
+software.
+This paper describes and evaluates XTREM, a power sim-
+ulation tool tailored for the Intel XScale microarchitecture.
+In building XTREM, our goals were to develop a microar-
+chitecture simulator that, while still oㄦing size parame-
+terizations for cache, TLB, etc., more accurately re
+ected
+a realistic processor pipeline. We present a detailed set of
+validations based on multimeter power measurements and
+hardware performance counter sampling. Based on these
+validations across a wide range of stressmarks, Java bench-
+marks, and non-Java benchmarks, XTREM has an average
+performance error of only 6.5% and an even smaller average
+power error: 4%. The paper goes on to present a selection of
+application studies enabled by the simulator. For example,
+presenting power behavior vs. time for selected embedded
+C and Java CLDC benchmarks, we can make power dis-
+tinctions between the two programming domains as well as
+distinguishing Java application (JITted code) power from
+Java Runtime system power. We also study how the Intel
+XScale core's power consumption varies for diㄦent data
+activity factors, creating power swings as large as 50mW
+for a 200Mhz core. We are planning to release XTREM for
+wider use, and feel that it offers a useful step forward for
+compiler and embedded software designers
+@conference{ContrerasTECS2007,		_={ power simulator for the xscale processor },
+	author		= { Gilberto Contreras 
+				and Margaret Martonosi
+				and Jinzhang Peng 
+				and Guie-Yuan Lueh 
+				and Roy Ju},
+	title		= { The XTREM Power and Performance Simulator for the 
+				Intel XScale Core: Design and Experiences},
+	booktitle	= { {ACM} Transactions on Embedded Computing Systems 
+				({TECS}2007)},
+	year		= { 2007 },
+	_editor		= { },
+	volume		= { 6 },
+	number		= { 1 },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+
+Managing power concerns in microprocessors has become a pressing research
+problem across the domains of computer architecture, CAD, and compilers. As a
+result, several parameterized cycle- level power simulators have been
+introduced. While these simulators can be quite useful for microarchitectural
+studies, their generality limits how accurate they can be for any one chip fam-
+ily. Furthermore, their hardware focus means that they do not explicitly enable
+studying the interaction of different software layers, such as Java
+applications and their underlying runtime system software. This paper describes
+and evaluates XTREM, a power simulation tool tailored for the Intel XScale
+microarchitecture. In building XTREM, our goals were to develop a microar-
+chitecture simulator that, while still offering size parameterizations for
+cache and other structures, more accurately reflected a realistic processor
+pipeline. We present a detailed set of validations based on multimeter power
+measurements and hardware performance counter sampling. XTREM exhibits an
+average performance error of only 6.5% and an even smaller average power error:
+4%.  The paper goes on to present an application study enabled by the
+simulator. Namely, we use XTREM to produce an energy consumption breakdown for
+Java CDC and CLDC applications.  Our simulator measurements indicate that a
+large percentage of the total energy consumption (up to 35%) is devoted to the
+virtual machine’s support functions.
+@BOOK{ cpufreq,
+        KEY  = "cpufreq",
+        _TITLE = "Linux kernel CPUfreq subsystem.",
+        PUBLISHER = "http://www.kernel.org/pub/linux/utils/kernel/cpufreq/cpufreq.html",
+	YEAR = 2007
+}
+@conference{key,			_={ cpufreq },
+	author		= { Dave Jones },
+	title		= { Linux kernel {CPUfreq} subsystem },
+	howpublished	= { \url{http://www.kernel.org/pub/linux/utils/kernel/cpufreq/cpufreq.html}},
+	_month		= { },
+	_year		= { },
+	_note		= { }
+}
+
+@conference{Curtis-MauryICS2006,	_={ runtime, performance counters, changing concurrency, openmp },
+	author		= { Matthew Curtis-Maury 
+				and James Dzierwa 
+				and Christos D. Antonopoulos 
+				and Dimitrios S. Nikolopoulos },
+	title		= { Online Power-Performance Adaptation of Multithreaded 
+				Programs using Hardware Event-Based Prediction},
+	booktitle	= { International Conference on Supercomputing},
+	year		= { 2006 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { Queensland, Australia},
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+
+With high-end systems featuring multicore/multithreaded processors and
+high component density, power-aware high-performance multithreading
+libraries become a critical element of the system software
+stack. Online power and performance adaptation of multithreaded code
+from within user-level runtime libraries is a relatively new and
+unexplored area of research. We present a user-level library framework
+for nearly optimal online adaptation of multithreaded codes for
+low-power, high-performance execution. Our framework operates by
+regulating concurrency and changing the processors/threads
+configuration as the program executes. It is innovative in that it
+uses fast, runtime performance prediction derived from hardware
+event-driven profiling, to select thread granularities that achieve
+nearly optimal energy-efficiency points. The use of predictors
+substantially reduces the runtime cost of granularity control and
+program adaptation. Our framework achieves performance and $ED^{2}$
+(energy-delay-squared) levels which are: i) comparable to or better
+than those of oracle-derived offline predictors; ii) significantly
+better than those of online predictors using exhaustive or localized
+linear search. The complete prediction and adaptation framework is
+implemented on a real multi-SMT system with Intel Hyperthreaded
+processors and embeds adaptation capabilities in OpenMP programs. 
+@conference{Curtis-MauryPACT2008,	_={ dvfs and dct, performance prediction, performance counters, runtime },
+	author		= { Matthew Curtis-Maury
+				and Ankur Shah 
+				and Filip Blagojevic 
+				and Dimitrios S. Nikolopoulos 
+				and Bronis R. de Supinski 
+				and Martin Schulz}, 
+	title		= { Prediction Models for Multi-dimensional 
+				Power-Performance Optimization on Many Cores },
+	booktitle	= { International Conference on Parallel Architectures 
+				and Compilation Techniques ({PACT}08)},
+	year		= { 2008 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= { Toronto, Canada },
+	month		= { October },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+Power has become a primary concern for HPC systems. Dynamic voltage and 
+frequency scaling (DVFS) and dynamic concurrency throttling (DCT) are two 
+software tools (or {\it knobs}) for reducing the dynamic power consumption 
+of HPC systems. To date, few works have considered the synergistic integration 
+of DVFS and DCT in performance-constrained systems, and, to the best of our 
+knowledge, no prior research has developed application-aware simultaneous 
+DVFS and DCT controllers in real systems and parallel programming frameworks. 
+We present a multi-dimensional, online performance predictor, which we deploy 
+to address the problem of simultaneous runtime optimization of DVFS and DCT 
+on multi-core systems. We present results from an implementation of the 
+predictor in a runtime library linked to the Intel OpenMP environment and 
+running on an actual dual-processor quad-core system. We show that our 
+predictor derives near-optimal settings of the power-aware program adaptation 
+knobs that we consider. Our overall framework achieves significant reductions 
+in energy (19\% mean) and $ED^2$ (40\% mean), through {\it simultaneous} power 
+savings (6\% mean) and performance improvements (14\% mean). We also find that 
+our framework outperforms earlier solutions that adapt only DVFS {\it or} DCT, 
+as well as one that sequentially applies DCT {\it then} DVFS. Further, our 
+results indicate that prediction-based schemes for runtime adaptation compare 
+favorably and typically improve upon heuristic search-based approaches in both 
+performance and energy savings.
+
+@article{Curtis-Maury:TPDS2008,		_={ phase aware performance prediction, runtime, concurrency },
+	author		= { Matthew Curtis-Maury
+				and Filip Blagojevic
+				and Christos D. Antonopoluos
+				and Dimitrios S. Nikolopoulos},
+	title		= { Prediction-Based Power-Performance Adaptation 
+				of Multithreaded Scientific Codes},
+	journal		= { {IEEE} Transactions on Parallel and Distributed Systems },
+	year		= { 2008 },
+	volume		= { 19 },
+	number		= { 10 },
+	pages		= { 1396-1410 },
+	_month		= { },
+	_note		= { }
+}
+
+Computing has recently reached an inflection point with the introduction 
+of multi-core processors. On-chip thread-level parallelism is doubling 
+approximately every other year. Concurrency lends itself naturally to 
+allowing a program to trade performance for power savings by regulating 
+the number of active cores, however in several domains users are unwilling 
+to sacrifice performance to save power. We present a prediction model for 
+identifying energy-efficient operating points of concurrency in well-tuned 
+multithreaded scientific applications, and a runtime system which uses 
+live program analysis to optimize applications dynamically. We describe a 
+dynamic, phase-aware performance prediction model that combines multivariate 
+regression techniques with runtime analysis of data collected from hardware 
+event counters to locate optimal operating points of concurrency. Using our 
+model, we develop a prediction-driven, phase-aware runtime optimization 
+scheme that throttles concurrency so that power consumption can be reduced 
+and performance can be set at the knee of the scalability curve of each 
+program phase. The use of prediction reduces the overhead of searching the 
+optimization space while achieving near-optimal performance and power savings. 
+A thorough evaluation of our approach shows a reduction in power consumption 
+of 10.8% simultaneous with an improvement in performance of 17.9%, resulting 
+in energy savings of 26.7%.
+@conference{DhimanISLPED2007,		_={ dvfs multitasking pxa27x processor, runtime },
+	author		= { Gaurav Dhiman 
+				and Tajana Simunic Rosing },
+	title		= { Dynamic voltage frequency scaling for multi-tasking
+				systrems using online learning},
+	booktitle	= { Proceedings of the 2007 international symposium on 
+				Low power electronics and design},
+	year		= { 2007 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= { Portland, {OR}, {USA}},
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+This paper presents an extremely lightweight dynamic voltage and frequency
+scaling technique targeted towards modern multi-tasking systems. The technique
+utilizes processors runtime statistics and an online learning algorithm to
+estimate the best suited voltage and frequency setting at any given point in
+time. We implemented the proposed technique in Linux 2.6.9 running on an Intel
+PXA27x platform and performed experiments in both single and multi-task
+environments. Our measurements show that we can achieve the maximum energy
+savings of 49% and reduce the implementation overhead by a factor of 2 when
+compared to state of the art techniques.
+
+
+
+@conference{DuesterwaldPACT2003,	_={ predicting performance, cross-metric prediction },
+	author		= { E. Duesterwald
+				and C. Cascaval 
+				and S. Dwarkadas  },
+	title		= { Characterizing and predicting program 
+				behavior and its variability. },
+	booktitle	= { {ACM/IEEE} International Conference on Parallel 
+				Architectures and Compilation Techniques ({PACT})},
+	year		= { 2003 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+To reach the next level of performance and energy efficiency,
+optimizations are increasingly applied in a dynamic
+and adaptive manner. Current adaptive systems are typically
+reactive and optimize hardware or software in response
+to detecting a shift in program behavior. We argue
+that program behavior variability requires adaptive systems
+to be predictive rather than reactive. In order to be effective,
+systems need to adapt according to future rather than
+most recent past behavior.
+In this paper we explore the potential of incorporating
+prediction into adaptive systems. We study the time-varying
+behavior of programs using metrics derived from hardware
+counters on two different micro-architectures. Our evaluation
+shows that programs do indeed exhibit significant behavior
+variation even at a granularity of millions of instructions.
+In addition, while the actual behavior across metrics
+may be different, periodicity in the behavior is shared
+across metrics. We exploit these characteristics in the design
+of on-line statistical and table-based predictors. We
+introduce a new class of predictors, cross-metric predictors,
+that use one metric to predict another, thus making possible
+an efficient coupling of multiple predictors. We evaluate
+these predictors on the SPECcpu2000 benchmark suite and
+show that table-based predictors outperform statistical predictors
+by as much as 69% on benchmarks with high variability.
+@InProceedings{ElnozahyPACS2002,
+  author = {E. Elnozahy and M. Kistler and R. Rajamony},
+  title = "Energy-efficient server clusters",
+  booktitle =    {Workshop on Power-Aware Computing Systems},
+  year =         2002,
+  month =        feb
+}
+@conference{EyermanASPLOS2006,		_={ CPI, interval analysis },
+	author		= { Stijn Eyerman 
+				and Lieven Eeckhout 
+				and Tejas Karkhanis 
+				and James E. Smith },
+	title		= { A Performance Counter Architecture for 
+				Computing Accurate CPI Components},
+	booktitle	= { Twelfth International Conference on Architectural 
+				Support for Programming Languages and Operating 
+				Systems},
+	year		= { 2006 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	pages		= { 175-184 },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+A common way of representing processor performance is to use
+Cycles per Instruction (CPI) `stacks' which break performance into
+a baseline CPI plus a number of individual miss event CPI components.
+CPI stacks can be very helpful in gaining insight into the behavior
+of an application on a given microprocessor; consequently,
+they are widely used by software application developers and computer
+architects. However, computing CPI stacks on superscalar
+out-of-order processors is challenging because of various overlaps
+among execution and miss events (cache misses, TLB misses, and
+branch mispredictions).
+This paper shows that meaningful and accurate CPI stacks can
+be computed for superscalar out-of-order processors. Using interval
+analysis, a novel method for analyzing out-of-order processor performance,
+we gain understanding into the performance impact of
+the various miss events. Based on this understanding, we propose a
+novel way of architecting hardware performance counters for building
+accurate CPI stacks. The additional hardware for implementing
+these counters is limited and comparable to existing hardware performance
+counter architectures while being signicantly more accurate
+than previous approaches.
+@conference{EyermanHiPEAC2008,		_={ interval analysis },
+	author		= { Stijn Eyerman 
+				and Lieven Eeckhout 
+				and James E. Smith },
+	title		= { Studying Compiler Optimizations on Superscalar 
+				Processors through Interval Analysis},
+	booktitle	= { International Conference on High Performance 
+		`		Embedded Architectures and Compilers},
+	year		= { 2008 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { G\"oteborg, Sweden },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Understanding the performance impact of compiler optimizations on superscalar
+processors is complicated because compiler optimizations interact with the
+microarchitecture in complex ways. This paper analyzes this interaction using
+interval analysis, an analytical processor model that allows for breaking total
+execution time into cycle components. By studying the impact of compiler
+optimizations on the various cycle components, one can gain insight into how
+compiler optimizations affect out-of-order processor performance. The analysis
+provided in this paper reveals various interesting insights and suggestions for
+future work on compiler optimizations for out-of-order processors.  In
+addition, we contrast the effect compiler optimizations have on out-of-order
+versus in-order processors.
+
+@article{EyermanTOPPICKS2007,		_={ performance counters, interval analysis },
+	author		= { Stijn Eyerman 
+				and Lieven Eeckhout 
+				and Tejas Karkhanis 
+				and and James E. Smith},
+	title		= { A Top-Down Approach to Architecting CPI 
+				Component Performance Counters},
+	journal		= { {IEEE} Micro },
+	year		= { 2007 },
+	volume		= { 27 },
+	number		= {  1 },
+	_pages		= { },
+	_month		= { },
+	note		= { Special Issue on Top Picks from 2006 
+				Microarchitecture Conferences}
+}
+
+SOFTWARE DEVELOPERS CAN GAIN INSIGHT INTO SOFTWARE-HARDWARE INTERACTIONS
+BY DECOMPOSING PROCESSOR PERFORMANCE INTO INDIVIDUAL CYCLES-PER-INSTRUCTION
+COMPONENTS THAT DIFFERENTIATE CYCLES CONSUMED IN ACTIVE COMPUTATION FROM
+THOSE SPENT HANDLING VARIOUS MISS EVENTS. CONSTRUCTING ACCURATE CPI
+COMPONENTS FOR OUT-OF-ORDER SUPERSCALAR PROCESSORS IS COMPLICATED,
+HOWEVER, BECAUSE COMPUTATION AND MISS EVENT HANDLING OVERLAP. THE AUTHORS’
+COUNTER ARCHITECTURE, USING AN ANALYTICAL SUPERSCALAR PERFORMANCE MODEL,
+HANDLES OVERLAP EFFECTS MORE ACCURATELY THAN EXISTING METHODS.
+Entry for an article in conference proceedings.
+@conference{FanISLPED2001,
+	author		= {X. Fan and C. S. Ellis and A. R Lebeck },
+	title		= { Memory Controller Policies for {DRAM} Power Management},
+	booktitle	= { International Symposium on Low Power Electronics and Design},
+	year		= { 2001 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Entry for an article in conference proceedings.
+@conference{FanPACS2002,
+	author		= {X. Fan and C. S. Ellis and A. R. Lebeck },
+	title		= {Modeling of {DRAM} power control policies using deterministic and stochastic petri nets },
+	booktitle	= {Workshop on Power Aware Computing Systems},
+	year		= {2002},
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Entry for an article in conference proceedings.
+@conference{FanPACS2003,
+	author		= {Xiaobo Fan and Carla S. Ellis and Alvin R. Lebeck },
+	title		= {The synergy between power-aware memory systems and processor voltage scaling },
+	booktitle	= {Workshop on Power Aware Computing Systems},
+	year		= {2003},
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@article{FengIEEEC2007,			_={ green500 },
+	author		= { Wu-Chun Feng 
+				and Kirk W. Cameron},
+	title		= { The {Green500} List: Encouraging Sustainable 
+				Supercomputing},
+	journal		= { {IEEE} Computer },
+	year		= { 2007 },
+	volume		= { 40 },
+	number		= { 12 },
+	pages		= { 50-55 },
+	_month		= { },
+	_note		= { }
+}
+The performance-at-any-cost design mentality ignores supercomputers' excessive
+power consumption and need for heat dissipation and will ultimately limit their
+performance. Without fundamental change in the design of supercomputing
+systems, the performance advances common over the past two decades won't
+continue. The HPC community needs a Green500 List to rank supercomputers on
+speed and power requirements and to supplement the TOP500 List. Vendors and
+system architects worldwide take substantial pride and invest tremendous effort
+toward making the biannual TOP500 List. We anticipate that the Green500 List
+effort will do the same and encourage the HPC community and operators of
+Internet data centers to design more power-efficient supercomputers and
+large-scale data centers.
+@BOOK{Flash,			_={ FLASH3 benchmark },
+	key		= { Flash },
+	author		= { {ASC / Alliance Center for Astrophysical Thermonuclear Flashes } },
+	title		= { {FLASH3} },
+	PUBLISHER	= { \url{http://flash.uchicago.edu/website/codesupport/}},
+	year		= { 2009 },
+}
+
+Entry for an article in conference proceedings.
+@conference{FlautnerISCA2002,
+	author		= {Kriszti\'{a}n Flautner and Nam Sung Kim and Steve Martin and David Blaauw and Trevor Mudge },
+	title		= {Drowsy Caches:  Simple Techniques for Reducing Leakage Power },
+	booktitle	= {{ISCA} },
+	year		= {2002 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@article{FlautnerWN2002,		_={ kernel dvfs },
+	author		= { Kriszti\'an Flautner
+				and Steve Reinhardt
+				and Trevor Mudge},
+	title		= { Automatic Performance Setting for Dynamic
+				Voltage Scaling},
+	journal		= { Wireless Networks },
+	year		= { 2002 },
+	_volume		= { 8 },
+	_number		= { 5 },
+	_pages		= { 507-520 },
+	_month		= { Sep },
+	_note		= { }
+}
+The emphasis on processors that are both low power and high performance has
+resulted in the incorporation of dynamic voltage scaling into processor
+designs. This feature allows one to make fine granularity tradeoffs between
+power use and performance, provided there is a mechanism in the OS to control
+that tradeoff. In this paper, we describe a novel software approach to
+automatically controlling dynamic voltage scaling in order to optimize energy
+use. Our mechanism is implemented in the Linux kernel and requires no
+modification of user programs. Unlike previous automated approaches, our method
+works equally well with irregular and multiprogrammed workloads. Moreover, it
+has the ability to ensure that the quality of interactive performance is within
+user specified parameters. Our experiments show that as a result of our
+algorithm, processor energy savings of as much as 75% can be achieved with only
+a minimal impact on the user experience.
+
+
+@article{FreehPDC2008,			_={ jitter },
+	author		= { Vincent W. Freeh 
+				and Nandini Kappiah
+				and David K. Lowenthal 
+				and Tyler K. Bletsch},
+	title		= { Just-in-time dynamic voltage scaling:  Exploiting
+				inter-node slack to save energy in {MPI}
+				programs.},
+	journal		= { Journal of Parallel and Distributed Computing},
+	year		= { 2008 },
+	volume		= { 68 },
+	number		= {  9 },
+	pages		= { 1175-1185 },
+	_month		= { },
+	_note		= { }
+}
+
+Although users of high-performance computing are most interested in raw
+performance, both energy and power consumption have become critical concerns.
+As a result, improving energy efficiency of nodes on HPC machines has become
+important, and the prevalence of power-scalable clusters, where the frequency
+and voltage can be dynamically modified, has increased.
+
+On power-scalable clusters, one opportunity for saving energy with little or no
+loss of performance exists when the computational load is not perfectly
+balanced. This situation occurs frequently, as keeping the load balanced
+between nodes is one of the long-standing fundamental problems in parallel and
+distributed computing. Indeed, despite the large body of research aimed at
+balancing load both statically and dynamically, this problem is quite difficult
+to solve.
+
+This paper presents a system called Jitter that reduces the frequency and
+voltage on nodes that are assigned less computation and, therefore, have idle
+or slack time. This saves energy on these nodes, and the goal of Jitter is to
+attempt to ensure that they arrive “just in time” so that they avoid increasing
+overall execution time. Specifically, we dynamically determine which nodes have
+enough slack time such that they can execute at a reduced frequency with little
+performance cost—which will greatly reduce the consumed energy on that node. In
+particular, Jitter saves 12.8% energy with 0.4% time increase–which is
+essentially the same as a hand-tuned solution–on the Aztec benchmark.
+
+@conference{FreehPPoPP2005,		_={ early dvs work },
+	author		= { Vincent W. Freeh 
+				and David K. Lowenthal 
+				and Feng Pan 
+				and Nandani Kappiah},
+	title		= { Using Multiple Energy Gears in MPI Programs 
+				on a Power-Scalable Cluster},
+	booktitle	= { Principles and Practices of Parallel Programming 
+				({PPOPP})},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Recently, system architects have built low-power, high-performance
+clusters, such as Green Destiny. The idea behind these clusters is
+to improve the energy efficiency of nodes. However, these clusters
+save power at the expense of performance. Our approach is
+instead to use high-performance cluster nodes that are frequencyand
+voltage-scalable; energy can than be saved by scaling down
+the CPU. Our prior work has examined the costs and benefits of
+executing an entire application at a single reduced frequency.
+This paper presents a framework for executing a single application
+in several frequency-voltage settings. The basic idea is to first
+divide programs into phases and then execute a series of experiments,
+with each phase assigned a prescribed frequency. During
+each experiment, we measure energy consumption and time and
+then use a heuristic to choose the assignment of frequency to phase
+for the next experiment.
+Our results show that significant energy can be saved without an
+undue performance penalty; particularly, our heuristic finds assignments
+of frequency to phase that is superior to any fixed-frequency
+solution. Specifically, this paper shows that more than half of the
+NAS benchmarks exhibit a better energy-time tradeoff using multiple
+gears than using a single gear. For example, IS using multiple
+gears uses 9% less energy and executes in 1% less time than the
+closest single-gear solution. Compared to no frequency scaling,
+multiple gear IS uses 16% less energy while executing only 1%
+longer.
+@article{FreehTPDS2007,			_={ early dvfs work },
+	author		= { Vincent W. Freeh 
+				and Feng Pan 
+				and David K. Lowenthal 
+				and Nandini Kappiah 
+				and Rob Springer 
+				and Barry L. Rountree 
+				and Mark E. Femal},
+	title		= { Analyzing the energy-time tradeoff in 
+				high-performance computing applications},
+	journal		= { {IEEE} Transactions on Parallel and Distributed Systems},
+	year		= { 2007 },
+	volume		= { 18 },
+	number		= {  6 },
+	pages		= { 835-848 },
+	month		= { Jun },
+	_note		= { }
+}
+
+Although users of high-performance computing are most interested in raw
+performance, both energy and power consumption have become critical concerns.
+One approach to lowering energy and power is to use high-performance cluster
+nodes that have several power-performance states, so that the energy-time
+tradeoff can be dynamically adjusted.  This paper analyzes the energy-time
+tradeoff of a wide range of applicationsserial and parallel on a
+power-scalable cluster. We use a cluster of frequency- and voltage-scalable
+AMD-64 nodes, each equipped with a power meter. We study the effects of memory
+and communication bottlenecks via direct measurement of time and energy. We
+also investigate metrics that can, at run time, predict when each type of
+bottleneck occurs.  Our results show that for programs that have a memory or
+communication bottleneck, a powerscalable cluster can save signicant energy
+with only a small time penalty. Furthermore, we nd that for some programs, it
+is possible to both consume less energy and execute in less time by increasing
+the number of nodes while reducing the frequency-voltage setting of each node.
+Entry for an article in conference proceedings.
+@conference{GamblinICS2010,
+	author		= { Todd Gamblin and Bronis R. de Supinski and Martin Schulz and Robert J. Fowler and Daniel A. Reed },
+	title		= { Clustering performance data efficiently at massive scale },
+	booktitle	= { International Confernce on Supercomputing },
+	year		= { 2010 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+
+@article{GaraIJRD2005,			_={ blue gene },
+	author 		= { A. Gara 
+				and M.A. Blumrich 
+				and D. Chen 
+				and G. L.-T. Chiu 
+				and P Coteus 
+				and M. E. Giampapa 
+				and R.A. Haring 
+				and P. Heidelberger 
+				and D. Hoenicke 
+				and G.V. Kopcsay 
+				and T.A. Liebsch 
+				and M. Ohmacht 
+				and B.D. Steinmacher-Burow 
+				and T Takken 
+				and P. Vranas },
+	title		= { Overview of the Blue Gene/L System Architecture },
+	journal		= { IBM Journal of Research and Development },
+	year		= { 2005 },
+	_volume		= { 49 },
+	_number		= { 2-3 },
+	_pages		= { 195-212 },
+	_month		= { },
+	_note		= { }
+}
+
+The Blue Gene®/L computer is a massively parallel supercomputer based on IBM
+system-on-a-chip technology. It is designed to scale to 65,536 dual-processor
+nodes, with a peak performance of 360 teraflops. This paper describes the
+project objectives and provides an overview of the system architecture that
+resulted. We discuss our application-based approach and rationale for a
+low-power, highly integrated design. The key architectural features of Blue
+Gene/L are introduced in this paper: the link chip component and five Blue
+Gene/L networks, the PowerPC® 440 core and floating-point enhancements, the
+on-chip and off-chip distributed memory system, the node- and system-level
+design for high reliability, and the comprehensive approach to fault isolation.
+@conference{GeHPPAC2005,		_={ early dvfs work },
+	author		= { R. Ge
+				and X. Feng 
+				and K.W. Cameron },
+	title		= { Improvement of Power-Performance Efficiency for 
+				High-End Computing},
+	booktitle	= { Proceedings of the 19th IEEE International 
+				Parallel and Distributed Processing Symposium  
+				High-Performance, Power-Aware Computing
+				Workshop},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+
+
+Left unchecked, the fundamental drive to increase
+peak performance using tens of thousands of power
+hungry components will lead to intolerable operating
+costs and failure rates. Recent work has shown
+application characteristics of single-processor, memorybound
+non-interactive codes and distributed, interactive
+web services can be exploited to conserve power and
+energy with minimal performance impact. Our novel
+approach is to exploit parallel performance inefficiencies
+characteristic of non-interactive, distributed scientific
+applications, conserving energy using DVS (dynamic
+voltage scaling) without impacting time-to-solution (TTS)
+significantly, reducing cost and improving reliability. We
+present a software framework to analyze and optimize
+distributed power-performance using DVS implemented
+on a 16-node Centrino-based cluster. Using various DVS
+strategies we achieve application-dependent overall
+system energy savings as large as 25% with as little as
+2% performance impact.
+Entry for an article from a journal or magazine.
+@article{GeTPDS2009,
+	author		= {Rong Ge and Xizhou Feng and Shuaiwen Song and Hung-Ching Chang and Dong Li and Kirk W. Cameron. },
+	title		= {PowerPack:  Energy Profiling and Analysis of High-Performance Systems and Applications. },
+	journal		= {{IEEE} Transactions on Parallel and Distributed Systems},
+	year		= {2009},
+	_volume		= { },
+	_number		= { },
+	_pages		= { },
+	_month		= { },
+	_note		= { }
+}
+
+Entry for an article in conference proceedings.
+@BOOK{green500,
+	key		= {Green500},
+	_author		= { },
+	_title		= {The Green 500},
+	_howpublished	= { },
+	_month		= { },
+	year		= {2010},
+	_note		= { },
+	PUBLISHER	= {http://www.green500.org/}
+}
+
+@conference{GrunwaldOSDI2000,		_={ very early work on dvfs, pocket computers },
+	author		= { Dirk Grunwald 
+				and Charles B. Morrey III 
+				and Philip Levis 
+				and Michael Neufeld 
+				and Keith I. Farkas},
+	title		= { Policies for Dynamic Clock Scheduling },
+	booktitle	= { Operating Systems Design and Implementation 
+				({OSDI})},
+	year		= { 2000 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Pocket computers are beginning to emerge that provide
+sufficient processing capability and memory capacity to
+run traditional desktop applications and operating systems
+on them. The increasing demand placed on these
+systems by software is competing against the continuing
+trend in the design of low-power microprocessors towards
+increasing the amount of computation per unit of
+energy. Consequently, in spite of advances in low-power
+circuit design, the microprocessor is likely to continue
+to account for a significant portion of the overall power
+consumption of pocket computers.
+This paper investigates clock scaling algorithms on the
+Itsy, an experimental pocket computer that runs a complete,
+functional multitasking operating system (a version
+of Linux 2.0.30). We implemented a number of
+clock scaling algorithms that are used to adjust the processor
+speed to reduce the power used by the processor.
+After testing these algorithms, we conclude that currently
+proposed algorithms consistently fail to achieve
+their goal of saving power while not causing user applications
+to change their interactive behavior.
+@conference{HagaPERT2001,		_={ crashing pert },
+	author		= { Wayne A. Haga 
+				and Time O'keefe},
+	title		= { Crashing {PERT} Networks:  A Simulation Approach },
+	booktitle	= { Fourth International Conference of the Academy of 
+				Business and Administrative Science Conference},
+	year		= { 2001 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= { Quebec Citcy, Canada },
+	month		= { Jul },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+
+The Project Evaluation and Review Technique (PERT) has been used as a tool for
+project management for over four decades. To reduce a projects completion time,
+a technique called “crashing” is performed, which involves bringing in
+additional resources for activities along the critical path of the network. The
+traditional method of crashing PERT networks ignores the stochastic nature of
+activity times, reducing the stochastic model to a deterministic model and
+simply using activity time means in calculations. The project is arbitrarily
+crashed to some desired completion date, without consideration for what the
+penalty for late project completion is. Additionally, the method ignores the
+fact that reducing some activity times may reduce the mean project completion
+time more than others, due to bottlenecks. The authors created a computer
+simulation model to determine the order in which activities should be crashed
+as well as the optimal crashing strategy for a PERT network to minimize the
+expected value of the total (crash +overrun) cost, given a specified penalty
+function for late completion of the project. This work was initially explored
+by Haga (1998) as part of his unpublished Doctoral dissertation
+
+Entry for an article in conference proceedings.
+@conference{HollingsworthSHPC1994,	_={dyninst},
+	author		= { Jeffery K. Hollingsworth and Barton P. Miller and John Cargille },
+	title		= { Dynamic Program Instrumentation for Scalable Performance Tools },
+	booktitle	= { Scalable High Performance Computing Conference},
+	year		= { 1994 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	month		= { May },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+                                                             
+                                                             
+      In this paper, we present a new technique called
+dynamic instrumentation that provides efficient, scalable,
+yet detailed data collection for large-scale parallel appli-
+cations. Our approach is unique because it defers insert-
+ing any instrumentation until the application is in execu-
+tion. We can insert or change instrumentation at any time
+during execution by modifying the application’s binary
+image. Only the instrumentation required for the
+currently selected analysis or visualization is inserted. As
+a result, our technique collects several orders of magni-
+tude less data than traditional data collection
+approaches. We have implemented a prototype of our
+dynamic instrumentation on the CM-5, and present results
+for several real applications. In addition, we include
+recommendations to operating system designers, compiler
+writers, and computer architects about the features neces-
+sary to permit efficient monitoring of large-scale parallel
+systems.
+                                                             
+@techreport{ hpf,
+    author = "{High Performance Fortran Forum}",
+    title = "{High Performance Fortran} Language Specification, version 1.0",
+    number = "CRPC-TR92225",
+    address = "Houston, Tex.",
+    year = "1993",
+    institution = "Rice University",
+    url = "citeseer.ist.psu.edu/fortran92high.html" }
+@conference{HsuHPPAC2005,		_={ quest for the metric },
+	author		= { Chung-Hsing Hsu 
+				and Wu-Chun Feng 
+				and Jeremy S. Archuleta},
+	title		= { Towards Efficient Supercomputing:  A Quest for the 
+				Right Metric},
+	booktitle	= { {IEEE} Workshop on High-Performance Power-Aware
+				Computing ({HPPAC})},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Over the past decade, we have been building less and
+less efficient supercomputers, resulting in the construction
+of substantially larger machine rooms and even new buildings.
+In addition, because of the thermal power envelope
+of these supercomputers, a small fortune must be spent to
+cool them. These infrastructure costs coupled with the additional
+costs of administering and maintaining such (unreliable)
+supercomputers dramatically increases their total
+cost of ownership. As a result, there has been substantial interest
+in recent years to produce more reliable and more efficient
+supercomputers that are easy to maintain and use.
+But how does one quantify efficient supercomputing? That
+is, what metric should be used to evaluate how efficiently a
+supercomputer delivers answers?
+We argue that existing efficiency metrics such as the
+performance-power ratio are insufficient and motivate the
+need for a new type of efficiency metric, one that incorporates
+notions of reliability, availability, productivity, and total
+cost of ownership (TCO), for instance. In doing so, however,
+this paper raises more questions than it answers with
+respect to efficiency. And in the end, we still return to the
+performance-power ratio as an efficiency metric with respect
+to power and use it to evaluate a menagerie of processor
+platforms in order to provide a set of reference data
+points for the high-performance computing community.
+@conference{HsuPLDI2003,		_={ compiler dvfs },
+	author		= { C. Hsu and U. Kremer },
+	title		= { The Design, Implementation and Evaluation of a Compiler
+				Algorithm for {CPU} Energy Reduction },
+	booktitle	= { {ACM SIGPLAN} Conference on Programming Language 
+				Design and Implementation ({PLDI})},
+	year		= { 2003 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+This paper presents the design and implementation of a com-
+piler algorithm that effectively optimizes programs for en-
+ergy usage using dynamic voltage scaling (DVS). The al-
+gorithm identifies program regions where the CPU can be
+slowed down with negligible performance loss. It is im-
+plemented as a source-to-source level transformation using
+the SUIF2 compiler infrastructure. Physical measurements
+on a high-performance laptop show that total system (i.e.,
+laptop) energy savings of up to 28% can be achieved with
+performance degradation of less than 5% for the SPECfp95
+benchmarks. On average, the system energy and energy-
+delay product are reduced by 11% and 9%, respectively, with
+a performance slowdown of 2%. It was also discovered that
+the energy usage of the programs using our DVS algorithm
+is within 6% from the theoretical lower bound. To the best
+of our knowledge, this is one of the first work that evaluates
+DVS algorithms by physical measurements.
+@book{Intel,				_={ intel performance counter documentation },
+	author		= {{Intel} },
+	_editor		= { },
+	title		= { System Programming Guide },
+	publisher	= { Intel },
+	year		= { 2009 },
+	volume		= { 3B-2 },
+	_number		= { 2 },
+	series		= { Intel 64 and IA-32 Architectures Software 
+				Developer's Manual},
+	_address	= { },
+	_edition	= { },
+	_month		= { },
+	_note		= { }
+}
+
+Entry for a book with a definite publisher.
+@book{IntelOptimization,
+	author		= {Intel},
+	_editor		= { },
+	title		= {Intel 64 and IA-32 Architectures Optimization Reference Guide },
+	publisher	= {Intel Corporation},
+	year		= {2007},
+	_volume		= { },
+	number		= {248966-016},
+	_series		= { },
+	_address	= { },
+	_edition	= { },
+	month		= {Nov},
+	_note		= { }
+}
+
+@conference{IsciMICRO-39,		_={ predicting power with performance counters },
+	author		= { Canturk Isci 
+				and Gilberto Contreras 
+				and Margaret Martonosi },
+	title		= { Live, Runtime Phase Monitoring and Prediction on 
+				Real Systems with Application to Dynamic Power 
+				Management},
+	booktitle	= { 39th ACM/IEE International Symposium on 
+				Microarchitecture ({MICRO}-39)},
+	year		= { 2006 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Computer architecture has experienced a major paradigm
+shift from focusing only on raw performance to considering
+power-performance efficiency as the defining factor of the
+emerging systems. Along with this shift has come increased
+interest in workload characterization. This interest fuels two
+closely related areas of research. First, various studies explore
+the properties of workload variations and develop methods to
+identify and track different execution behavior, commonly referred
+to as “phase analysis”. Second, a large complementary
+set of research studies dynamic, on-the-fly system management
+techniques that can adaptively respond to these differences
+in application behavior. Both of these lines of work
+have produced very interesting and widely useful results. Thus
+far, however, there exists only a weak link between these conceptually
+related areas, especially for real-system studies.
+Our work aims to strengthen this link by demonstrating a
+real-system implementation of a runtime phase predictor that
+works cooperatively with on-the-fly dynamic management. We
+describe a fully-functional deployed system that performs accurate
+phase predictions on running applications. The key insight
+of our approach is to draw from prior branch predictor
+designs to create a phase history table that guides predictions.
+To demonstrate the value of our approach, we implement a
+prototype system that uses it to guide dynamic voltage and frequency
+scaling. Our runtime phase prediction methodology
+achieves above 90% prediction accuracies for many of the
+experimented benchmarks. For highly variable applications,
+our approach can reduce mispredictions by more than 6X over
+commonly-used statistical approaches. Dynamic frequency
+and voltage scaling, when guided by our runtime phase predictor,
+achieves energy-delay product improvements as high
+as 34% for benchmarks with non-negligible variability, on average
+7% better than previous methods and 18% better than a
+baseline unmanaged system.
+
+
+@conference{IshiharaISLPED1998,		_={ ideal frequency },
+	author		= { Tohru Ishihara and Hiroto Yasuura},
+	title		= { Voltage Scheduling Problem for dynamically variable voltage processors },
+	booktitle	= {International Symposium on 
+				Low power Electronics and Design},
+	year		= { 1998 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	pages		= { 197-202 },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+This paper presents a model of dynamically variable voltage processor and basic
+theorems for power-delay optimization. A static voltage scheduling problem is
+also proposed and formulated as an integer linear programming (ILP) problem. In
+the problem, we assume that a core processor can vary its supply voltage
+dynamically, but can use only a single voltage level at a time. For a given
+application program and a dynamically variable voltage processor, a voltage
+scheduling which minimizes energy consumption under an execution time
+constraint can be found.
+
+@book{KaxirasBook2008,			_={ big book of dvfs },
+	author		= { Stefanos Kaxiras
+				and Margaret Martonosi },
+	editor		= { Mark D. Hill },
+	title		= { Computer Architecture Techniques for Power-Efficiency },
+	publisher	= { Morgan and Claypool },
+	year		= { 2008 },
+	_volume		= { },
+	_number		= { 4 },
+	series		= { Synthesis Lectures on Computer Architecture },
+	_address	= { },
+	_edition	= { },
+	_month		= { },
+	_note		= { }
+}
+
+In the last few years, power dissipation has become an important design
+constraint, on par with performance, in the design of new computer systems.
+Whereas in the past, the primary job of the computer architect was to translate
+improvements in operating frequency and transistor count into performance, now
+power efficiency must be taken into account at every step of the design
+process.  While for some time, architects have been successful in delivering
+40% to 50% annual improvement in processor performance, costs that were
+previously brushed aside eventually caught up. The most critical of these costs
+is the inexorable increase in power dissipation and power density in
+processors. Power dissipation issues have catalyzed new topic areas in computer
+architecture, resulting in a substantial body of work on more power-efficient
+architectures.  Power dissipation coupled with diminishing performance gains,
+was also the main cause for the switch from single-core to multi-core
+architectures and a slowdown in frequency increase.  This book aims to document
+some of the most important architectural techniques that were invented,
+proposed, and applied to reduce both dynamic power and static power dissipation
+in processors and memory hierarchies. A significant number of techniques have
+been proposed for a wide range of situations and this book synthesizes those
+techniques by focusing on their common characteristics.
+Entry for an article in conference proceedings.
+@conference{KimISLPED2003,
+	author		= { E. J. Kim and K. H. Yum and G. M. Link and N. Vijaykrishnan and M. Kandemir and M. J. Irwin and M. Yousif and C. R. Das},
+	title		= {Energy Optimization Techniques in Cluster Interconnects },
+	booktitle	= {International Symposium on 
+				Low power Electronics and Design},
+	year		= {2003 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@conference{LawitzkyOSPERTA2008,		_={ realtime dvfs },
+	author		= { Martin P. Lawitzky 
+				and David C. Snowdon 
+				and Stefan M. Petters },
+	title		= { Integrating Real-Tme and Power Management 
+				in a Real System },
+	booktitle	= { Proceedings of the 4th Workshop on Operating System 
+				Platforms for Embedded Real-Time Applications},
+	year		= { 2008 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= { Prague, Czech Republic },
+	_month		= { July },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Deploying dynamic voltage and frequency scaling
+(DVFS) techniques in a real-time context has generated
+some interest in recent years. However, most of this
+work is based on highly simplifying assumptions regarding
+the cost and benefit of frequency scaling. We
+have integrated a measurement-based DVFS technique
+with an EDF based scheduling framework. This enables
+the use of the dynamic slack caused by the variability
+of execution time, to reduce energy consumption and
+thus extend battery life or reduce thermal load. We have
+tested the approach using hardware instrumentation on
+a real system. This paper describes not only the theoretical
+basis for the work, but also our experiences with
+DVFS when confronted with physical reality.
+Entry for an article in conference proceedings.
+@conference{LebeckASPLOS2000,
+	author		= {A. R. Lebeck and X. Fan and H. Zeng and C. S. Ellis },
+	title		= { Power aware page allocation },
+	booktitle	= { 9th International Conference on Architectural Support for Programming Languages and Operaing System},
+	year		= { 2000 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Entry for an article from a journal or magazine.
+@article{LeverichCAL2009,
+	author		= {Jacob Leverich and Matteo Monchiero and Vanish Talwar and Parthasarathy Ranganathan and Christos Kozyrakis },
+	title		= {Power Management of Datacenter Workloads Using Per-Core Power Gating },
+	journal		= {{IEEE} Computer Architecture Letters },
+	year		= {2009 },
+	volume		= {8 },
+	number		= {2 },
+	pages		= { 48-51},
+	_month		= { },
+	_note		= { }
+}
+
+
+
+
+@conference{LorchSIGMETRICS2001,	_={ early dvfs work runtime },
+	author		= { Jacob R. Lorch and Alan Jay Smith },
+	title		= { Improving dynamic voltage scaling algorithms with 
+				{PACE}},
+	booktitle	= { Proceedings of the 2001 ACM SIGMETRICS international 
+				conference on Measurement and modeling of 
+				computer systems ({SIGMETRICS}) },
+	year		= { 2001 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+This paper addresses algorithms for dynamically varying (scaling) CPU speed and
+voltage in order to save energy. Such scaling is useful and effective when it
+is immaterial when a task completes, as long as it meets some deadline. We show
+how to modify any scaling algorithm to keep performance the same but minimize
+expected energy consumption. We refer to our approach as PACE (Processor
+Acceleration to Conserve Energy) since the resulting schedule increases speed
+as the task progresses. Since PACE depends on the probability distribution of
+the task's work requirement, we present methods for estimating this
+distribution and evaluate these methods on a variety of real workloads. We also
+show how to approximate the optimal schedule with one that changes speed a
+limited number of times. Using PACE causes very little additional overhead, and
+yields substantial reductions in CPU energy consumption. Simulations using real
+workloads show it reduces the CPU energy consumption of previously published
+algorithms by up to 49.5%, with an average of 20.6%, without any effect on
+performance.
+
+@BOOK{MakhorinGLPK,		_={ glpk },
+	author		= { Andrew Makhorin},
+	title		= { The {GNU} Linear Programming Kit ({GLPK})},
+	PUBLISHER	= { \url{http://www.gnu.org/software/glpk/glpk.html} },
+	_month		= { },
+	year		= { 2005 },
+	_note		= { }
+}
+
+Entry for an article in conference proceedings.
+@conference{MidorikawaCAHPC2004,
+	author		= { Edson T. Midorikawa and Helio M. de Oliveira and Jean M. Laine },
+	title		= { {PEMPIs}:  A new methodology for modeling and predition of {MPI} programs},
+	booktitle	= { Proceedings of the 16th Symposium on Computer Architecture and High-Performance Computing ({SBAC-PAD})},
+	year		= { 2004 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@conference{MochockiICCAD2002,		x={ realtime, runtime, dvfs },
+	author		= { Bren Mochocki
+				and Xiaobo Sharon Hu
+				and Gang Quan},
+	title		= { A realistic variable voltage scheduling model for 
+				real-time applications},
+	booktitle	= { Proceedings of the 2002 {IEEE/ACM} International 
+				Conference on Computer-Aided Design},
+	year		= { 2002 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+ Voltage scheduling is indispensable for exploiting the benefit of variable
+ voltage processors. Though extensive research has been done in this area,
+ current processor limitations such as transition overhead and voltage level
+ discretization are often considered insignificant and are typically ignored.
+ We show that for hard, real-time applications, disregarding such details can
+ lead to sub-optimal or even invalid results. We propose two algorithms that
+ guarantee valid solutions. The first is a greedy yet simple approach, while
+ the second is more complex but significantly reduces energy consumption under
+ certain conditions. Through experimental results on both real and randomly
+ generated systems, we show the effectiveness of both algorithms, and explore
+ what conditions make it beneficial to use the complex algorithm over the basic
+ one.
+
+@conference{MochockiRTAS2005,		x={ realtime, runtime, dvfs },
+	author		= { Bren Mochocki
+				and Xiaobo Sharon Hu
+				and Gang Quan },
+	title		= { Practical On-line {DVS} Scheduling for Fixed-Priority
+				Real-Time Systems},
+	booktitle	= { 11th {IEEE} Real Time and Embedded Technology and 
+				Applications Symposium},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+We present an on-line Dynamic Voltage Scaling (DVS) algorithm for preemptive
+fixed-priority real-time systems called low power Limited Demand Analysis with
+Transition overhead (lpLDAT). It is the first algorithm in its class to
+explicitly account for transition overhead, and can reduce the energy
+consumption by as much as 40% when compared to previous methods.
+
+(no pdf avail)
+@inproceedings{MoncusiRTSS2003,
+ author = {M. Angels Moncus\'{i} and Alex Arenas and Jesus Labarta},
+ title = {Energy Aware {EDF} Scheduling in Distributed Hard Real Time Systems},
+ booktitle = {Real-Time Systems Symposium},
+ year = {2003},
+ month = {December}
+
+}
+@conference{NobleSOSP1997,		_={ mobility ? },
+	author		= { Brian D. Noble
+				and M. Satyanarayanan
+				and Dushyanth Narayanan
+				and James Eric Tilton
+				and Jason Flinn
+				and Kevin R. Walker},
+	title		= { Agile application-aware adaptation for mobility },
+	booktitle	= { Proceedings of the 16th {ACM} Symposium on
+				Operating Systems and Principles ({SOSP}) },
+	year		= { 1997 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+No abstract available.
+
+Entry for an article from a journal or magazine.
+@article{NoethJPDC2009,
+	author		= { Michael Noeth and Prasun Ratn and Frank Mueller and Martin Schulz and Bronis R. de Supinski },
+	title		= { ScalaTrace: Scalable compression and replay of communication traces for high-performance computing},
+	journal		= { Journal of Parallel and Distributed Computing},
+	year		= { 2009 },
+	volume		= { 69 },
+	number		= {  8 },
+	pages		= { 696-710 },
+	_month		= { },
+	_note		= { }
+}
+
+
+Entry for an article in conference proceedings.
+@misc{OpenMP,
+	author		= {{OpenMP Architecture Review Board} },
+	title		= {{OpenMP} Application Program Interface },
+	_howpublished	= { },
+	month		= {May },
+	year		= {2008 },
+	note		= {Version 3.0 }
+}
+
+@BOOK{OpenMPI,			_={ openmpi },
+	key		= { OpenMPI },
+	_author		= { },
+	_title		= { {OpenMPI} },
+	PUBLISHER	= { \url{http://www.open-mpi.org/}},
+	_month		= { },
+	year		= {2009},
+	_note		= { }
+}
+
+@BOOK{PAPI,			_={ papi },
+	key		= {PAPI},
+	_author		= { },
+	title		= { Performance Application Programming Interface },
+	PUBLISHER	= { \url{http://icl.cs.utk.edu/papi/}},
+	_month		= { },
+	year		= { 2009 },
+	_note		= { }
+}
+
+@inproceedings{paradis,
+        Author = {Vasily Bulatov and Wei Cai and Masato Hiratani and Gregg Hommes and Tim Pierce and Meijie Tang and Moono Rhee and Kim Yates and Tom Arsenlis},
+        booktitle = { Supercomputing  },
+        year = { 2004 },
+        month = Nov,
+        Title = {Scalable line dynamics in {ParaDiS}},
+}
+@conference{perfctr,			_={ perfctr },
+	author		= { M Pettersson },
+	title		= { The Linux Performance Counter Patch },
+	howpublished	= { \url{ http://user.it.uu.se/ mikpe/linux/perfctr/2.6/ANNOUNCE-2.6.38 } },
+	_month		= { },
+	_year		= { },
+	_note		= { }
+}
+
+
+Entry for an article from a journal or magazine.
+@article{PerlSIGOPS1993,
+	author		= { Sharon E. Perl and William E. Weihl},
+	title		= { Performance assertion checking},
+	journal		= { {ACM} {SIGOPS} Operating Systems Review },
+	year		= { 1993 },
+	volume		= { 27 },
+	number		= { 5 },
+	pages		= { 134-145},
+	_month		= { },
+	_note		= { }
+}
+
+
+@BOOK{Render2000,
+        AUTHOR = {Barry Render and Ralph M. Stair Jr.},
+        EDITION = {Seventh},
+        pages = {589--591},
+        publisher = {Prentice--Hall},
+        title = {Quantitative Analysis for Management},
+        year = 2000
+}
+@ARTICLE{ RosingJPDC1991,
+        AUTHOR = {Matthew Rosing and Robert Schnabel and Robert Weaver},
+        TITLE = {The {D}ino Parallel Programming Language},
+        JOURNAL = {Journal of Parallel and Distributed Computing},
+        volume = 13,
+        number = 1,
+        pages = {30-42},
+        month = Sep,
+        YEAR= 1991,
+        comment= {}}
+@conference{RosnerISCA2002,		_={ iterative optimization, dvfs },
+	author		= { Roni Rosner 
+				and Yoav Almog 
+				and Micha Moffie 
+				and Naftali Schwartz 
+				and Avi Mendelson },
+	title		= { Power Awareness through Selective 
+				Dynamically Optimized Traces},
+	booktitle	= { Proceedings of the 31st annual international 
+				symposium on Computer architecture ({ISCA}04)},
+	year		= { 2004 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= { M\"uchen, Germany },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+
+We present the PARROT concept that seeks to achievehigher performance with 
+reduced energy consumptionthrough gradual optimization of frequently executed 
+codetraces. The PARROT microarchitectural framework integratestrace caching, 
+dynamic optimizations and pipelinedecoupling. We employ a selective approach 
+for applyingcomplex mechanisms only upon the most frequently usedtraces to 
+maximize the performance gain at any givenpower constraint, thus attaining 
+finer control of tradeoffsbetween performance and power awareness.We show that 
+the PARROT based microarchitecture canimprove the performance of aggressively 
+designed processorsby providing the means to improve the utilizationof their 
+more elaborate resources. At the same time, rigorousselection of traces prior 
+to storage and optimizationprovides the key to attenuating increases in the 
+power budget.For resource-constrained designs, PARROT based architectures
+deliver better performance (up to an average16% increase in IPC) at a 
+comparable energy level,whereas the conventional path to a similar performance 
+improvement consumes an average 70% more energy.Meanwhile, for those designs 
+which can tolerate a higherpower budget, PARROT gracefully scales up to use 
+additional execution resources in a uniformly efficient manner.In particular, 
+a PARROT-style doubly-wide machinedelivers an average 45% IPC improvement 
+while actuallyimproving the cubic-MIPS-per-WATT power awarenessmetric by over 
+50%.
+
+@conference{SankaranJoPCS2006, _={ S3D benchmark },
+	author		= { R. Sankaran and E. R. Hawkes and J. H. Chen and T. Lu and C. K. Law},
+	title		= { Direct numerical simulations of turbulent lean premixed combustion},
+	booktitle	= { Journal of Physics Conference Series},
+	year		= { 2006 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@conference{SaputraLCTES2002,		_={ compiler dvfs },
+	author		= { H. Saputra and 
+				M. Kandemir
+				and N. Vijaykrishnan
+				and M.J. Irwin 
+				and J.S. Hu
+				and C.-H. Hsu
+				and U. Kremer },
+	title		= { Energy-conscious compilation based on voltage 
+				scaling },
+	booktitle	= { Joint Conference on Languages, 
+				Compilers and Tools for Embedded Systems}, 
+	year		= { 2002 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+No abstract avail.
+Entry for an article in conference proceedings.
+@conference{SchulzParCFD2009,
+	author		= { M. Schulz and A.W. Cook and W.H. Cabot and B.R. de Supinski and W.D. Krauss},
+	title		= { On the Performance of the Miranda CFD code on Multicore Architectures },
+	booktitle	= { Parallel Computational Fluid Dynamics },
+	year		= { 2009 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Entry for an article from a journal or magazine.
+@article{SchulzSP2008,
+	author		= {Martin Schulz and Jim Galarowicz and Don Maghrak and William Hachfeld and David Montoya and Scott Cranford },
+	title		= {Open SpeedShop: An open source infrastructure for parallel performance analysis},
+	journal		= {Scientific Programming },
+	year		= {2008 },
+	volume		= {16 },
+	number		= {2-3 },
+	pages		= {105-121 },
+}
+
+
+@BOOK{Sequoia,			_={ sequoia parallel benchmarks },
+	key		= { Sequoia },
+	author		= { {Lawrence Livermore National Laboratory} },
+	title		= { {ASC Sequoia Benchmark Codes} },
+	PUBLISHER	= { \url{https://asc.llnl.gov/sequoia/benchmarks/}},
+	year		= { 2010 },
+}
+
+@conference{SharmaRTSS2003,		_={ dvfs webservers datacenters },
+	author		= { Vivek Sharma 
+				and Arun Thomas
+				and Tarek Abdelzaher
+				and Kevin Skadron
+				and Zhijian Lu},
+	title		= { Power-aware {QoS} Management in Web Servers },
+	booktitle	= { Proceedings of the 24th IEEE International 
+				Real-Time Systems Symposium},
+	year		= { 2003 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Power management in data centers has become an increasinglyimportant concern.
+Large server installations aredesigned to handle peak load, which may be
+significantlylarger than in off-peak conditions. The increasing cost ofenergy
+consumption and cooling incurred in farms of high-performanceweb servers make
+low-power operation duringoff-peak hours desirable. This paper investigates
+adaptivealgorithms for dynamic voltage scaling in QoS-enabled webservers to
+minimize energy consumption subject to servicedelay constraints. We implement
+these algorithms inside theLinux kernel. The instrumented kernel supports
+multipleclient classes with per-class deadlines. Energy consumptionis minimized
+by using a feedback loop that regulatesfrequency and voltage levels to keep the
+synthetic utilization1 around the aperiodic schedulability bound derived inan
+earlier publication. Enforcing the bound ensures thatdeadlines are met. Our
+evaluation of an Apache server runningon the modified Linux kernel shows that
+non-trivial off-peakenergy savings are possible without sacrificing timeliness.
+@article{SinghSIGARCH1992,		_={ splash benchmarks },
+	author		= { Jaswinder Pal Singh 
+				and Wolf-Dietrich Weber
+				and Anoop Gupta},
+	title		= { {SPLASH}:  Standford parallel applications for 
+				shared memory },
+	journal		= { {ACM SIGARCH} Computer Architecture News },
+	year		= { 1992 },
+	volume		= { 20 },
+	number		= {  1 },
+	_pages		= { },
+	_month		= { },
+	_note		= { }
+}
+
+
+We present the Stanford Parallel Applications for Shared-Memory (SPLASH), a set
+of parallel applications for use in the design and evaluation of shared-memory
+multiprocessing systems. Our goal is to provide a suite of realistic
+applications that will serve as a well-documented and consistent basis for
+evaluation studies. We describe the applications currently in the suite in
+detail, discuss some of their important characteristics, and explore their
+behavior by running them on a real multiprocessor as well as on a simulator of
+an idealized parallel architecture. We expect the current set of applications
+to act as a nucleus for a suite that will grow with time.
+@techreport{SinghSPLASH1991,
+ author = {J. P. Singh and W. Weber and A. Gupta},
+ title = {{SPLASH}:  Stanford Parallel Applications for Shared Memory},
+ institution = {Stanford University},
+ year = {1991}
+}
+@conference{SnowdonEMSOFT2007,		_={ runtime and power prediction },
+	author		= { David C. Snowdon
+				and Stefan M. Petters
+				and Gernot Heiser },
+	title		= { Accurate On-line Prediction of Processor
+				and Memory Energy Usage Under Voltage
+				Scaling },
+	booktitle	= { Proceedings of the 7th {ACM} and {IEEE} 
+				international conference on 
+				Embedded software ({EMSOFT}07)},
+	year		= { 2007 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	pages		= { 84-93 },
+	address		= { Salzburg, Austria },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Minimising energy use is an important factor in the operation
+of many classes of embedded systems — in particular, batterypowered
+devices. Dynamic voltage and frequency scaling (DVFS)
+provides some control over a processor’s performance and energy
+consumption. In order to employ DVFS for managing a system’s
+energy use, it is necessary to predict the effect this scaling has on
+the system’s total energy consumption. Simple (yet widely-used)
+energy models lead to dramatically incorrect results for important
+classes of application programs.
+Predicting the energy used under scaling requires (i) a prediction
+of the dependency of program performance (and hence execution
+time) on the frequencies and (ii) a prediction of the power drawn
+by the execution as a function of the frequencies and voltages.
+As both of these characteristics are workload-specific our approach
+builds a model that, given a workload execution at one frequency
+setpoint, will predict the run-time and power at any other
+frequency setpoint. We assume temporal locality (which is valid for
+the vast majority of applications) so predicting the characteristics
+of one time slice, frame, or other instance of a task, will imply the
+characteristics of subsequent time slices, frames or instances (e.g.
+MPEG video decoding).
+We present a systematic approach to building these models for a
+hardware platform, determining the best performance counters and
+weights. This characterisation, done once for a particular platform,
+produces platform-specific but workload-independent performance
+and power models.
+We implemented the model on a real system and evaluated it
+under a comprehensive benchmark suite against measurements of
+the actual energy consumption. The results show that the model can
+accurately predict the energy use of a wide class of applications and
+is highly responsive to changes in the application behaviour.
+@conference{SnowdonEurosys2009,		_={ koala os dvfs },
+	author		= { David C. Snowdon
+				and  Etienne Le Sueur 
+				and  Stefan M. Petters 
+				and Gernot Heiser
+	},
+	title		= { Koala: A Platform for OS-level Power Management },
+	booktitle	= { Proceedings of the 4th Eurosys Conference },
+	year		= { 2009 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= { Nuremberg, Germany },
+	_month		= { April },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Managing the power consumption of computing platforms
+is a complicated problem thanks to a multitude of hardware
+configuration options and characteristics. Much of
+the academic research is based on unrealistic assumptions,
+and has, therefore, seen little practical uptake. We provide
+an overview of the difficulties facing power management
+schemes when used in real systems.
+We present Koala, a platform which uses a precharacterised
+model at run-time to predict the performance
+and energy consumption of a piece of software. An arbitrary
+policy can then be applied in order to dynamically trade performance
+and energy consumption. We have implemented
+this system in a recent Linux kernel, and evaluated it by running
+a variety of benchmarks on a number of different platforms.
+Under some conditions, we observe energy savings
+of 30% for a 4% performance loss.
+@conference{SnowdonOSPERTA2005,		_={ power consumption of memory },
+	author		= { David C. Snowdon 
+				and Stefan M. Petters 
+				and Gernot Heiser },
+	title		= { Power measurement as the basis for power 
+				management },
+	booktitle	= { Proceedings of the 2005 Workshop on Operating System
+				Platforms for Embedded Real-Time },
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= { Palma, Mallorca, Spain },
+	month		= { July },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+This paper investigates the validity of common approaches
+to power management based on dynamic voltage
+scaling (DVS). Using instrumented hardware and appropriate
+operating-system support, we account separately
+for energy consumed by the processor and the memory system.
+We find that memory often contributes significantly to
+overall power consumption, which leads to a much more
+complex relationship between energy consumption and core
+voltage and frequency than is frequently assumed. As a
+consequence, we find that the voltage and frequency setting
+that minimises energy consumption is dependent on system
+characteristics, and, more importantly, on the applicationspecific
+balance of memory and CPU activity. The optimal
+setting of core voltage and frequency therefore requires either
+a-priori analysis of the application or, where this is not
+feasible, power monitoring at run time.
+@conference{SnowdonOSPERTA2007,		_={ performance prediction for dvfs },
+	author		= { David C. Snowdon
+				and Godfrey van der Linden
+				and Stefan M. Petters 
+				and Gernot Heiser },
+	title		= { Accurate run-time prediction of performance 
+				degradation under frequency scaling },
+	booktitle	= { Proceedings of the 2007 Workshop on Operating 
+				System Platforms for Embedded Real-Time},
+	year		= { 2007 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { Pisa, Italy },
+	month		= { July },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Dynamic voltage and frequency scaling is employed to minimise
+energy consumption in mobile devices. The energy required to
+execute a piece of software is highly depedent on its execution
+time, and devices are typically subject to timeliness or quality-ofservice
+constraints. For both these reasons, the performance at a
+proposed frequency setpoint must be accurately estimated. The
+frequently-made assumption that performance scales linearly with
+core frequency has shown to be incorrect, and better performance
+models are required which take into account the effects, and frequency
+setting, of the memory architecture. This paper presents a
+methodology, based on off-line hardware characterisation and runtime
+workload characterisation, for the generation of an execution
+time model. Its evaluation shows that it provides a highly accurate
+(to within 2% on average) prediction of performance at arbitrary
+frequency settings and that the models can be used to implement
+operating-system level dynamic voltage and frequency scaling
+schemes for embedded systems.
+@conference{SnowdonPARTC2005,		_={ myths and facts, ealy dvfs work },
+	author		= { David C. Snowdon 
+				and Sergio Ruocco 
+				and Gernot Heiser },
+	title		= { Power Management and Dynamic Voltage Scaling: 
+				Myths and Facts },
+	booktitle	= { Proceedings of the 2005 Workshop on Power Aware 
+				Real-time Computing},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= { New Jersey, USA },
+	_month		= { September },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+This paper investigates the validity of common approaches
+to power management based on dynamic voltage
+scaling (DVS). Using instrumented hardware and appropriate
+operating-system support, we account separately
+for energy consumed by the processor and the memory system.
+We find that memory often contributes significantly to
+overall power consumption, which leads to a much more
+complex relationship between energy consumption and core
+voltage and frequency than is frequently assumed. As a
+consequence, we find that the voltage and frequency setting
+that minimises energy consumption is dependent on system
+characteristics, and, more importantly, on the applicationspecific
+balance of memory and CPU activity. The optimal
+setting of core voltage and frequency therefore requires either
+a-priori analysis of the application or, where this is not
+feasible, power monitoring at run time.
+Entry for an article in conference proceedings.
+@conference{SoteriouHPI2003,
+	author		= {V. Soteriou and L. Peh },
+	title		= {Dynamic power management for power optimization of interconnection network using on/off links },
+	booktitle	= {Proceedings of the 11th Sympsium on High Performance Interconnects},
+	year		= {2003},
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@BOOK{SpecMPI,			_={ SpecMPI parallel benchmarks },
+	key		= { SpecMPI },
+	author		= { {Standard Performance Evaluation Corporation} },
+	title		= { {SpecMPI} },
+	PUBLISHER	= { \url{http://www.spec.org/mpi/}},
+	year		= { 2007 },
+}
+
+@InProceedings{ SpringerPPoPP2006,
+        AUTHOR = {Rob Springer and David K. Lowenthal and Barry Rountree and Vincent W. Freeh},
+        TITLE = {Minimizing Execution Time in {MPI} Programs on an Energy-Constrained, Power-Scalable Cluster},
+        BOOKTITLE = {ACM Symposium on Principles and Practice of Parallel Programming},
+        month = Mar,
+        YEAR = 2006
+}
+Entry for an article in conference proceedings.
+@conference{SulistioIJSPE2002,
+	author		= {A. Sulistio and C.S. Yeo and R. Buyya },
+	title		= { Simulation of Parallel and Distributed Systems: A Taxonomy and Survey of Tools},
+	booktitle	= { International Journal of Software: Practice and Experience},
+	year		= { 2002 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@inproceedings{SwaminathanASPDAC2001,
+  Author         = {Swaminathan, Vishnu and Chakrabarty, Krishnendu},
+  Title          = {Investigating the Effect of Voltage-Switching on
+                   Low-Energy Task Scheduling in Hard
+                   Real-Time Systems},
+  BookTitle      = {Asia South Pacific Design Automation
+                   Conference},
+  URL            = {http://www.ee.duke.edu/~krish/pubs.html},
+  LocalURL       = {file:///home/rountree/d/references/master/Swaminathan01.pdf},
+  Key            = {RT Sched},
+  month          = Jan,
+  year           = 2001,
+}
+@inproceedings{SwaminathanRTSS2000,
+  Author         = {Swaminathan, Vishnu and Chakrabarty, Krshnendu},
+  Title          = {Real-Time Task Scheduling for Energy-Aware
+                   Embedded Systems},
+  BookTitle      = {I{EEE} Real-Time Systems Symposium},
+  URL            = {http://www.ee.duke.edu/~krish/pubs.html},
+  LocalURL       = {file:///home/rountree/d/references/bib/Swaminathan00.pdf},
+  Key            = {RT Sched},
+  month          = Nov,
+  year           = 2000
+}
+@conference{TolentinoCF2007,		_={ memory miser },
+	author		= { M. Tolentino
+				and J. Turner 
+				and K. W. Cameron},
+	title		= { {Memory-MISER}: A performance-constrained runtime 
+				system for power-scalable clusters},
+	booktitle	= { Proceedings of ACM Computing Frontiers},
+	year		= { 2007},
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= { Ischia, Italy},
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Main memory in clusters may dominate total system power. The resulting energy
+consumption increases system operating cost and the heat produced reduces
+reliability. Emergent memory technology will provide servers with the ability
+to dynamically turn-on (online) and turn-off (offline) memory devices at
+runtime. This technology, coupled with slack in memory demand, offers the
+potential for significant energy savings in clusters of servers. Enabling
+power-aware memory and conserving energy in clusters are non-trivial. First,
+power-aware memory techniques must be scalable to thousands of devices. Second,
+techniques must not negatively impact the performance of parallel scientific
+applications. Third, techniques must be transparent to the user to be
+practical. We propose a Memory Management Infra-Structure for Energy Reduction
+(Memory MISER). Memory MISER is transparent, performance-neutral, and scalable.
+It consists of a prototype Linux kernel that manages memory at device
+granularity and a userspace daemon that monitors memory demand systemically to
+control devices and implement energy- and performance-constrained policies.
+Experiments on an 8-node cluster show our control daemon reduces memory energy
+up to 56.8% with <1% performance degradation for several classes of parallel
+scientific codes. Our daemon uses a PID controller to conservatively offline
+memory and aggressively online memory at runtime. For multi-user workloads
+where memory demand often spikes dramatically, Memory MISER can save up to
+67.94% of memory energy with <1% performance degradation. Current IBM eServer
+systems support up to 2 terabytes of SDRAM per node and 16 processors. For a
+server-based cluster with 8 90-watt processors and 32 GB of SDRAM per
+processor, Memory MISER can save about 30% total system energy for multi-user
+parallel workloads. 
+@conference{TolentinoHPPAC2007,		_={ memory power consumption },
+	author		= { M. Tolentino 
+				and J. Turner 
+				and K. W. Cameron},
+	title		= { An Implementation of Page Allocation Shaping for 
+				Energy Efficiency},
+	booktitle	= { High-performance, power-aware computing workshop 
+				({HPPAC}2007) },
+	year		= { 2007 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@conference{ValluriICS2005,		_={ saving power by instruction ordering },
+	author		= { Madhavi G. Valluri 
+				and Lizy K. John
+				and Kathryn S. McKinley},
+	title		= { Low-power, low-complexity instruction issue 
+				using compiler assistance},
+	booktitle	= { Proceedings of the 19th annual international 
+				conference on Supercomputing ({ICS}05},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	pages		= { 209-218 },
+	address		= { Cambridge, {MS}, {USA} },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+In an out-of-order issue processor, instructions are dynamically reordered and 
+issued to function units in their data-ready order rather than their original 
+program order to achieve high performance. The logic that facilitates dynamic 
+issue is one of the most power-hungry and time-critical components in a typical 
+out-of-order issue processor.This paper develops a cooperative hardware/software 
+technique to reduce complexity and energy consumption of the issue logic. The 
+proposed scheme is based on the observation that not all instructions in a 
+program require the same amount of dynamic reordering. Instructions that belong 
+to basic blocks for which the compiler can perform near-optimal sche- duling do 
+not need any intra-block instruction reordering but require only inter-block 
+instruction overlap. In contrast, blocks where the compiler is limited by 
+artificial dependences and memory misses require both intra-block and inter-block 
+instruction reordering. The proposed Reorder-Sensitive Issue Scheme utilizes a 
+novel compile-time analyzer to evaluate the quality of schedules generated by 
+the static scheduler and to estimate the dynamic reordering requirement of 
+instructions within each basic block. At the micro-architecture-level, we 
+propose a novel issue queue that exploits the varying dynamic scheduling 
+requirement of basic blocks to lower the power dissipation and complexity of 
+the dynamic issue hardware.An evaluation of the technique on several SPEC 
+integer benchmarks indicates that we can reduce the energy consumption in the 
+issue queue on average by 72% with only 5% performance degradation Additionally, 
+the proposed issue hardware is significantly less complex when compared to a 
+conventional monolithic out-of-order issue queue, providing the potential for 
+high clock speeds.
+@article{ViswanathITJ2000,
+        author =      {Ram Viswanath and Vijay Wakharkar and Abhay Watwe and Vassou Lebonheur},
+        title =       {Thermal performance challenges from silicon to systems},
+        journal =     {Intel Technology Journal},
+        month =       {Q3},
+        year =        2000
+}
+
+@conference{WangISCA2009,		_={ CMP dvfs chip-level },
+	author		= { Yefu Wang 
+				and Kai Ma 
+				and Xiaorui Wang },
+	title		= { Temperature-constrained power control for chip 
+				multiprocessors with online model estimation },
+	booktitle	= { Proceedings of the 36th annual international 
+				symposium on Computer architecture },
+	year		= { 2009 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	pages		= { 314-324 },
+	address		= { Austin, {TX}, {USA} },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+~
+As chip multiprocessors (CMP) become the main trend in processor development, 
+various power and thermal management strategies have recently been proposed 
+to optimize system performance while controlling the power or temperature of 
+a CMP chip to stay below a constraint. The availability of per-core DVFS 
+(dynamic voltage and frequency scaling) also makes it possible to develop 
+advanced management strategies. However, most existing solutions rely on 
+open-loop search or optimization with the assumption that power can be 
+estimated accurately, while others adopt oversimplified feedback control 
+strategies to control power and temperature separately, without any 
+theoretical guarantees. In this paper, we propose a chip-level power control 
+algorithm that is systematically designed based on optimal control theory. 
+Our algorithm can precisely control the power of a CMP chip to the desired set 
+point while maintaining the temperature of each core below a specified 
+threshold. Furthermore, an online model estimator is designed to achieve 
+analytical assurance of control accuracy and system stability, even in the 
+face of significant workload variations or unpredictable chip or core 
+variations. Empirical results on a physical testbed show that our controller 
+outperforms two state-of-the-art control algorithms by having better SPEC 
+benchmark performance and more precise power control. In addition, extensive 
+simulation results demonstrate the efficacy of our algorithm for various CMP 
+configurations.
+
+
+@inproceedings{WeiserOSDI1994,
+ author = {M. Weiser and B. Welch and A. Demers and S. Shenker},
+ title = {Scheduling for Reduced {CPU} Energy},
+ booktitle = {Operating Systems Design and Implementation},
+ year = {1994},
+ month = {November}
+}
+@conference{WuASPLOS2004,		_={ early dvfs work, embedded },
+	author		= { Qiang Wu 
+				and Philo Juang 
+				and Margaret Martonosi 
+				and Douglas W. Clark},
+	title		= { Formal Online Methods for Voltage/Frequency Control 
+				in Multiple Clock Domain Microprocessors},
+	booktitle	= { 11th International Conference on Architectural 
+				Support for Programming Languages and Operating 
+				Systems ({ASPLOS-XI}) },
+	year		= { 2004 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Multiple Clock Domain (MCD) processors are a promising future
+alternative to today’s fully synchronous designs. Dynamic Voltage
+and Frequency Scaling (DVFS) in an MCD processor has the extra
+flexibility to adjust the voltage and frequency in each domain
+independently.
+Most existing DVFS approaches are profile-based offline schemes
+which are mainly suitable for applications whose execution characteristics
+are constrained and repeatable. While some work has
+been published about online DVFS schemes, the prior approaches
+are typically heuristic-based. In this paper, we present an effective
+online DVFS scheme for an MCD processor which takes a formal
+analytic approach, is driven by dynamic workloads, and is suitable
+for all applications.
+In our approach, we model an MCDprocessor as a queue-domain
+network and the online DVFS as a feedback control problem with
+issue queue occupancies as feedback signals. A dynamic stochastic
+queuing model is first proposed and linearized through an accurate
+linearization technique. A controller is then designed and verified
+by stability analysis. Finally we evaluate our DVFS scheme
+through a cycle-accurate simulation with a broad set of applications
+selected from MediaBench and SPEC2000 benchmark suites.
+Compared to the best-known prior approach, which is heuristicbased,
+the proposed online DVFS scheme is substantially more effective
+due to its automatic regulation ability. For example, we have
+achieved a 2-3 fold increase in efficiency in terms of energy-delay
+product improvement. In addition, our control theoretic technique
+is more resilient, requires less tuning effort, and has better scalability
+as compared to prior online DVFS schemes.
+We believe that the techniques and methodology described in
+this paper can be generalized for energy control in processors other
+than MCD, such as tiled stream processors.
+@article{WuIEEE2005,			_={ early dvfs work, embedded },
+	author		= { Qiang Wu 
+				and Philo Juang 
+				and M. Martonosi 
+				and Li-Shiuan Peh 
+				and Douglas W. Clark },
+	title		= { Formal Control Techniques for Power-Performance 
+				Management },
+	journal		= { {IEEE} Micro },
+	year		= { 2005 },
+	volume		= { 25 },
+	number		= {  5 },
+	pages		= { 52-63 },
+	month		= { Sep },
+	_note		= { }
+}
+
+THESE TECHNIQUES DETERMINE WHEN TO SPEED UP A PROCESSOR TO REACH
+PERFORMANCE TARGETS AND WHEN TO SLOW IT DOWN TO SAVE ENERGY.
+THEY USE DYNAMIC VOLTAGE AND FREQUENCY SCALING TO BALANCE SPEED
+AND AVOID WORST CASE FREQUENCY LIMITATIONS FOR BOTH MULTIPLECLOCK-
+DOMAIN AND CHIP MULTIPROCESSORS.
+@conference{WuMICRO-38,			_={ dvfs, compiler, dynamic compilation, embedded },
+	author		= { Qiang Wu 
+				and V. J. Reddi 
+				and Youfeng Wu 
+				and Jin Lee 
+				and Dan Connors 
+				and David Brooks 
+				and Margaret Martonosi 
+				and and Douglas W. Clark},
+	title		= { A Dynamic Compilation Framework for Controlling 
+				Microprocessor Energy and Performance},
+	booktitle	= { 38th International Symposium on Microarchitecture 
+				({MICRO}-38)},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Dynamic voltage and frequency scaling (DVFS) is an effective technique
+for controlling microprocessor energy and performance. Existing
+DVFS techniques are primarily based on hardware, OS timeinterrupts,
+or static-compiler techniques. However, substantially
+greater gains can be realized when control opportunities are also
+explored in a dynamic compilation environment. There are several
+advantages to deploying DVFS and managing energy/performance
+tradeoffs through the use of a dynamic compiler. Most importantly,
+dynamic compiler driven DVFS is fine-grained, code-aware, and
+adaptive to the current microarchitecture environment.
+This paper presents a design framework of the run-time DVFS
+optimizer in a general dynamic compilation system. A prototype of
+the DVFS optimizer is implemented and integrated into an industrialstrength
+dynamic compilation system. The obtained optimization
+system is deployed in a real hardware platform that directly measures
+CPU voltage and current for accurate power and energy readings.
+Experimental results, based on physical measurements for
+over 40 SPEC or Olden benchmarks, show that significant energy
+savings are achieved with little performance degradation. SPEC2K
+FP benchmarks benefit with energy savings of up to 70% (with
+0.5% performance loss). In addition, SPEC2K INT show up to
+44% energy savings (with 5% performance loss), SPEC95 FP save
+up to 64% (with 4.9% performance loss), and Olden save up to 61%
+(with 4.5% performance loss). On average, the technique leads to
+an energy delay product (EDP) improvement that is 3X-5X better
+than static voltage scaling, and is more than 2X (22% vs. 9%) better
+than the reported DVFS results of prior static compiler work.
+While the proposed technique is an effective method for microprocessor
+voltage and frequency control, the design framework and
+methodology described in this paper have broader potential to address
+other energy and power issues such as di/dt and thermal control.
+@conference{WuMICRO2006,		_={ dynamic compilation, embedded, dvfs },
+	author		= { Qiang Wu 
+				and Margaret Martonosi 
+				and Douglas W. Clark 
+				and V. J. Reddi 
+				and Dan Connors 
+				and Youfeng Wu 
+				and Jin Lee 
+				and and David Brooks },
+	title		= { Dynamic-Compiler-Driven Control for Microprocessor 
+				Energy and Performance },
+	booktitle	= { IEEE Micro Special Issue: Top Picks from Computer 
+				Architecture Conferences },
+	year		= { 2006 },
+	_editor		= { },
+	volume		= { 26 },
+	number		= {  1 },
+	_series		= { },
+	_pages		= { 119-129 },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+A GENERAL DYNAMIC-COMPILATION ENVIRONMENT OFFERS POWER AND
+PERFORMANCE CONTROL OPPORTUNITIES FOR MICROPROCESSORS. THE
+AUTHORS PROPOSE A DYNAMIC-COMPILER-DRIVEN RUNTIME VOLTAGE AND
+FREQUENCY OPTIMIZER. A PROTOTYPE OF THEIR DESIGN, IMPLEMENTED AND
+DEPLOYED IN A REAL SYSTEM, ACHIEVES ENERGY SAVINGS OF UP TO 70 PERCENT.
+
+@conference{XieISLPED2005,			_={ bounding, dvfs, embedded },
+	author		= { Fen Xie 
+				and Margaret Martonosi
+				and Sharad Malik },
+	title		= { Bounds on Power Savings Using Runtime Dynamic 
+				Voltage/Frequency Scaling: An Exact Algorithm 
+				and A Linear-time Heuristic Approximation},
+	booktitle	= { International Symposium on Low Power Electronics 
+				and Design (ISLPED2005),},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Dynamic voltage/frequency scaling (DVFS) has been shown to be
+an efficient power/energy reduction technique. Various runtime
+DVFS policies have been proposed to utilize runtime DVFS opportunities.
+However, it is hard to know if runtime DVFS opportunities
+have been fully exploited by a DVFS policy without knowing
+the upper bounds of possible energy savings. We propose an exact
+but exponential algorithm to determine the upper bound of energy
+savings. The algorithm takes into consideration the switching
+costs, discrete voltage/frequency voltage levels and different program
+states. We then show a fast linear time heuristic can provide
+a very close approximate to this bound.
+@conference{XiePLDI2003,		_={ compiler, dvfs },
+	author		= { Fen Xie
+				and Margaret Martonosi
+				and Sharad Malik},
+	title		= { Compile-Time Dynamic Voltage Scaling Settings:
+				Opportunities and Limits},
+	booktitle	= { {ACM SIGPLAN} Conference on Programming Language 
+				Design and Implementation ({PLDI})},
+	year		= { 2003 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+With power-related concerns becoming dominant aspects of hardware
+and software design, significant research effort has been devoted
+towards system power minimization. Among run-time powermanagement
+techniques, dynamic voltage scaling (DVS) has emerged
+as an important approach, with the ability to provide significant
+power savings. DVS exploits the ability to control the power consumption
+by varying a processor’s supply voltage (V) and clock
+frequency (f). DVS controls energy by scheduling different parts
+of the computation to different (V, f) pairs; the goal is to minimize
+energy while meeting performance needs. Although processors like
+the Intel XScale and Transmeta Crusoe allow software DVS control,
+such control has thus far largely been used at the process/task
+level under operating system control. This is mainly because the
+energy and time overhead for switching DVS modes is considered
+too large and difficult to manage within a single program.
+In this paper we explore the opportunities and limits of compiletime
+DVS scheduling. We derive an analytical model for the maximum
+energy savings that can be obtained using DVS given a few
+known program and processor parameters. We use this model to determine
+scenarios where energy consumption benefits from compiletime
+DVS and those where there is no benefit. The model helps
+us extrapolate the benefits of compile-time DVS into the future
+as processor parameters change. We then examine how much of
+these predicted benefits can actually be achieved through optimal
+settings of DVS modes. This is done by extending the existing
+Mixed-integer Linear Program (MILP) formulation for this problem
+by accurately accounting for DVS energy switching overhead,
+by providing finer-grained control on settings and by considering
+multiple data categories in the optimization. Overall, this research
+provides a comprehensive view of compile-time DVS management,
+providing both practical techniques for its immediate deployment
+as well theoretical bounds for use into the future.
+
+Entry for an article in conference proceedings.
+@conference{ZhaiPPoPP2010,
+	author		= { Jidon Zhai and Wenguang Chen and Weimin Zheng},
+	title		= { {PHANTOM}:  Predicting performance of parallel applications on large-scale parallel machines using a single node },
+	booktitle	= { 15th {ACM SIGPLAN} Annual Symposium on Principles and Practice of Parallel Programming ({PPoPP})},
+	year		= { 2010},
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@conference{ZhangDAC2002,		_={ realtime dvfs },
+	author		= { Yumin Zhang 
+				and Xiaobo Sharon Hu
+				and Danny Z. Chen},
+	title		= { Task scheduling voltage selection for energy 
+				minimization},
+	booktitle	= { Proceedings of the 39th annual Design Automation 
+				Conference},
+	year		= { 2002 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+In this paper, we present a two-phase framework that integrates task
+assignment, ordering and voltage selection (VS) together to minimize energy
+consumption of real-time dependent tasks executing on a given number of
+variable voltage processors. Task assignment and ordering in the first phase
+strive to maximize the opportunities that can be exploited for lowering voltage
+levels during the second phase, i.e., voltage selection. In the second phase,
+we formulate the VS problem as an Integer Programming (IP) problem and solve
+the IP efficiently. Experimental results demonstrate that our framework is very
+effective in executing tasks at lower voltage levels under different system
+configurations.
+@article{ZhuTPDS2003,			_={ early dvfs work },
+	author		= { Dakai Zhu 
+				and Rami Melhem
+				and Bruce R. Childers},
+	title		= { Scheduling with Dynamic Voltage/Speed Adjustment
+				Using Slack Reclamation in Multi-Processor
+				Real-Time Systems},
+	journal		= { {IEEE} Transactions on Parallel and Distributed 
+				Systems},
+	year		= { 2003 },
+	_volume		= { },
+	_number		= { },
+	_pages		= { },
+	_month		= { },
+	_note		= { }
+}
+
+
+
+The high power consumption of modern processors becomes a major concern because
+it leads to decreased mission duration (for battery-operated systems),
+increased heat dissipation and decreased reliability.  While many techniques
+have been proposed to reduce power consumption for uniprocessor systems, there
+has been considerably less work on multi-processor systems. In this paper,
+based on the concept of slack sharing among processors, we propose two novel
+power-aware scheduling algorithms for task sets with and without precedence
+constraints executing on multi-processor systems. These scheduling techniques
+reclaim the time unused by a task to reduce the execution speed of future
+tasks, and thus reduce the total energy consumption of the system. We also
+study the effect of discrete voltage/speed levels on the energy savings for
+multi-processor systems and propose a new scheme of slack reservation to
+incorporate voltage/speed adjustment overhead in the scheduling algorithms.
+Simulation and trace based results indicate that our algorithms achieve
+substantial energy savings on systems with variable voltage processors.
+Moreover, processors with a few discrete voltage/speed levels obtain nearly the
+same energy savings as processors with continuous voltage/speed, and the effect
+of voltage/speed adjustment overhead on the energy savings is relatively small.
+
+@ARTICLE{ zima:88,
+        AUTHOR = {H.P. Zima and H.J. Bast and M. Gerndt},
+        TITLE = {{SUPERB}: A tool for semi-automatic
+                {MIMD/SIMD} parallelization},
+        JOURNAL = {Parallel Computing},
+        volume = 6,
+        number = "6",
+        pages = {1-18},
+        month = jan,
+        YEAR= 1988,
+        comment= {}}
+
+Entry for an article in conference proceedings.
+@conference{ArnoldIPDPS2007,
+	author		= { Dorian C. Arnold and Dong H. Ahn and Bronis R. de Supinski and Gregory L. Lee and Barton P. Miller and Martin Schulz},
+	title		= { Stack Trace Analysis for Large Scale Debugging},
+	booktitle	= { IPDPS},
+	year		= { 2007},
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+
+Entry for an article in conference proceedings.
+@conference{BarnesIPDPS2010,
+	author		= { Brad Barnes and Jeonifer Garren and David K. Lowenthal and Jaxk Reeves and Bronis de Supinski and artin Schulz and Barry Rountree},
+	title		= { Using Focused Regression for Accurate Time-Constrained Scaling of Scientific Applications },
+	booktitle	= { 23rd IEEE/ACM International Parallel and Distributed Processing Symposium ({IPDPS})},
+	year		= { 2010},
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@conference{DingIPDPS2008,		_={ realtime, edp, predict ideal number of cpus and dvfs },
+	author		= { Y. Ding
+				and M. Kandemir
+				and P. Raghavan
+				and M.J. Irwin},
+	title		= { A helper thread based {EDP} reduction scheme for 
+				adapting application execution in {CMPs}},
+	booktitle	= { International Parallel and Distributed Processing 
+				Symposium ({IPDPS})},
+	year		= { 2008 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+
+
+@conference{FreehIPDPS2005,		_={ early nas work, dvfs },
+	author		= { Vincent W. Freeh 
+				and David K. Lowenthal 
+				and Feng Pan 
+				and Nandini Kappiah 
+				and Rob Springer. },
+	title		= { Exploring the Energy-Time Tradeoff in MPI Programs 
+				on a Power-Scalable Cluster},
+	booktitle	= { International Parallel and Distributed Processing 
+				Symposium},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Recently, energy has become an important issue in highperformance
+computing. For example, supercomputers that
+have energy in mind, such as BlueGene/L, have been built;
+the idea is to improve the energy efciency of nodes. Our
+approach, which uses off-the-shelf, high-performance cluster
+nodes that are frequency scalable, allows energy saving
+by scaling down the CPU.
+This paper investigates the energy consumption and execution
+time of applications from a standard benchmark suite
+(NAS) on a power-scalable cluster. We study via direct measurement
+and simulation both intra-node and inter-node effects
+of memory and communication bottlenecks, respectively.
+Additionally, we compare energy consumption and
+execution time across different numbers of nodes.
+Our results show that a power-scalable cluster has the
+potential to save energy by scaling the processor down to
+lower energy levels. Furthermore, we found that for some
+programs, it is possible to both consume less energy and
+execute in less time when using a larger number of nodes,
+each at reduced energy. Additionally, we developed and validated
+a model that enables us to predict the energy-time
+tradeoff of larger clusters.
+Entry for an article in conference proceedings.
+@conference{FreitagIPDPS2003,
+	author		= {Felix Freitag and Jordi Caubet and Montse Farrera and Toni Cortes and Jesus Labarta },
+	title		= {Exploring the Predictability of MPI Messages },
+	booktitle	= { International Parallel and Distributed Processing Symposium ({IPDPS})},
+	year		= {2003 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@conference{GeIPDPS2007,		_={ dvfs speedup },
+	author		= { R. Ge
+				and K. W. Cameron},
+	title		= { Power-Aware Speedup },
+	booktitle	= { Proceedings of the 21st {IEEE} International 
+				Parallel and Distributed Processing 
+				Symposium},
+	year		= { 2007 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+Power-aware processors operate in various power
+modes to reduce energy consumption with a corresponding
+decrease in peak processor throughput. Recent work
+has shown power-aware clusters can conserve significant
+energy (>30%) with minimal performance loss (<1%) running
+parallel scientific workloads. Nonetheless, such savings
+are typically achieved using a priori knowledge of
+application performance. Accurate prediction of parallel
+power consumption and performance is an open problem.
+However, such techniques would improve our understanding
+of power-aware cluster tradeoffs and enable identification
+of system configurations optimized for performance
+and power (”sweet spots”). Speedup models are powerful
+analytical tools for evaluating and predicting the performance
+of parallel applications. Unfortunately, existing
+speedup models do not quantify parallel overhead for simplicity.
+Consequently, these models are incapable of accurately
+accounting for performance and power. We propose
+power-aware speedup to model and predict the scaled execution
+time of power-aware clusters. The new model accounts
+for parallel overhead and predicts (within 7%) the
+power-aware performance and energy-delay products for
+various system configurations (i.e. processor counts and
+frequencies) on NAS Parallel benchmark codes.
+@conference{LiuIPDPS2005,		_={ thrifty barrier 2? },
+	author		= { Chun Liu 
+				and Anand Sivasubramaniam 
+				and Mahmut Kandemir
+				and Mary Jane Irwin},
+	title		= { Exploiting Barriers to Optimize Power 
+				Consumption of {CMPs}},
+	booktitle	= { International Parallel and Distributed Processing
+				Symposium ({IPDPS}) },
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Power consumption is an important concern for future
+billion transistor designs. This paper proposes a
+novel technique for optimizing the power consumption
+of chip-multiprocessors (CMPs) using an integrated
+hardware-software mechanism. By using a high level synchronization
+construct, called the barrier, our technique
+tracks the idle times spent by a processor waiting
+for other processors to get to the same point in the program.
+Using this knowledge, the frequency of the processors
+can be modulated to reduce/eliminate these idle
+times, thus providing power savings without compromising
+on performance. Using real applications from
+the SpecOMP suite, and a complete system CMP simulator,
+we demonstrate that this approach can provide
+as much as 40% power savings (and 32% on the average
+across five applications) with little impact on performance.
+@conference{NoethIPDPS2007,		_={ communication trace reply },
+	author		= { Michael Noeth
+				and Frank Mueller
+				and Martin Schulz
+				and Bronis R. de Supinski },
+	title		= { Scalable Compression and Replay of Communication 
+				Traces in Massively Parallel Environments },
+	booktitle	= { International Parallel and Distributed Processing 
+				Symposium ({IPDPS})},
+	year		= { 2007 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Characterizing the communication behavior of largescale
+applications is a difcult and costly task due to
+code/system complexity and their long execution times. An
+alternative to running actual codes is to gather their communication
+traces and then replay them, which facilitates
+application tuning and future procurements. While past
+approaches lacked lossless scalable trace collection, we
+contribute an approach that provides orders of magnitude
+smaller, if not near constant-size, communication traces regardless
+of the number of nodes while preserving structural
+information. We introduce intra- and inter-node compression
+techniques of MPI events and present results of our implementation
+for BlueGene/L. Given this novel capability,
+we discuss its impact on communication tuning and beyond.
+To the best of our knowledge, such a concise representation
+of MPI traces in a scalable manner combined with deterministic
+MPI call replay are without any precedence.
+
+@conference{RadulescuIPDPS2001,		_={ critical path reduction CPR },
+	author		= { Andrei R\u{a}dulescu
+				and Cristina Nicolescu 
+				and Arjan J. C. van Gemund
+				and Pieter P. Jonker
+				 },
+	title		= { {CPR}:  Mixed Task and Data Parallel Scheduling
+				for Distributed Systems},
+	booktitle	= { The 15th International Parallel and Distributed 
+				Processing Symposium. ({IPDPS})},
+	year		= { 2001 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= { },
+	_month		= { },
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+It is well-known that mixing task and data parallelism
+to solve large computational applications often yields better
+speedups compared to either applying pure task parallelism
+or pure data parallelism. Typically, the applications
+are modeled in terms of a dependence graph of coarse-grain
+data-parallel tasks, called a data-parallel task graph. In
+this paper we present a new compile-time heuristic, named
+Critical Path Reduction (CPR), for scheduling data-parallel
+task graphs. Experimental results based on graphs derived
+from real problems as well as synthetic graphs, show
+that CPR achieves higher speedup compared to other wellknown
+existing scheduling algorithms, at the expense of
+some higher cost. These results are also confirmed by performance
+measurements of two real applications (i.e., complex
+matrix multiplication and Strassen matrix multiplication)
+running on a cluster of workstations.
+@phdthesis{RountreeX2010,
+	author	= {Barry Rountree},
+	title	= {Theory and Practice of Dynamic Voltage/Frequency Scaling in the High Performance Computing Environment},
+	school	= {University of Arizona},
+	year	= {2010},
+	note	= {Defended March 4th, undergoing final revisions}
+}
+@article{AbellaTACO2005,		_={ Power, Cache lines },
+	author		= {Jaume Abella and Antonio Gonz\'{a}lez and Xavier Vera and Michael F. P. O'Boyle},
+	title		= {{IATAC}:  A Smart Predictor to Turn off L2 Cache Lines},
+	journal		= {{ACM} Transactions on Architecture and Code Optimizations ({TACO})},
+	year		= {2005},
+	volume		= {2},
+	number		= {1},
+	pages		= {55-77},
+	month		= Mar,
+	_note		= { }
+}
+As technology evolves, power dissipation increases and cooling systems become more complex and
+expensive. There are two main sources of power dissipation in a processor: dynamic power and
+leakage. Dynamic power has been the most signiﬁcant factor, but leakage will become increasingly
+signiﬁcant in future. It is predicted that leakage will shortly be the most signiﬁcant cost as it grows
+at about a 5× rate per generation. Thus, reducing leakage is essential for future processor design.
+Since large caches occupy most of the area, they are one of the leakiest structures in the chip and
+hence, a main source of energy consumption for future processors.
+
+This paper introduces IATAC (inter-access time per access count), a new hardware technique
+to reduce cache leakage for L2 caches. IATAC dynamically adapts the cache size to the program
+requirements turning off cache lines whose content is not likely to be reused. Our evaluation shows
+that this approach outperforms all previous state-of-the-art techniques. IATAC turns off 65% of the
+cache lines across different L2 cache conﬁgurations with a very small performance degradation of
+around 2%.
+
+@conference{AhnICPP2008,
+	author		= {Dong H. Ahn and Dorian C. Arnold and Bronis R. de Supinski and Gregory L. Lee and Barton P. Miller and Martin Schulz },
+	title		= { Overcoming Scalability Challenges for Tool Daemon Launching },
+	booktitle	= {Proceedings of the 37th International Conference on Parallel Processing},
+	year		= { 2008 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Portland, Oregon},
+	month		= Sep,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Many tools that target parallel and distributed environments must co-locate a
+set of daemons with the distributed processes of the target application.
+However, efficient and portable deployment of these daemons on large scale
+systems is an unsolved problem. We overcome this gap with LaunchMON, a
+scalable, robust, portable, secure, and general purpose infrastructure for
+launching tool daemons. Its API allows tool builders to identify all processes
+of a target job, launch daemons on the relevant nodes and control daemon
+interaction. Our results show that LaunchMON scales to very large daemon counts
+and substantially enhances performance over existing ad hoc mechanisms. 
+
+@conference{AhnSC2009,
+	author		= { Dong H. Ahn and Bronis R. de Supinski and Ignacio Laguna and Gregory L. Lee and Ben Liblit and Barton P. Miller and Martin Schulz},
+	title		= { Scalable Temporal Order Analysis for Large Scale Debugging},
+	booktitle	= {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis ({SC})},
+	year		= {2009},
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Portland, Oregon},
+	month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@inproceedings{AlamSC2007, 		_={Jaguar},
+	author		= { S. R. Alam and R. F. Barrett and M. R. Fahey and J. A. Kuehn and J. M.  Larkin and R. Sankaran and P. H. Worley},
+	title		= { Cray {XT4}: An Early Evaluation for PetaScale Scientific Simulation},
+	booktitle	= {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis ({SC}).},
+	year		= { 2007 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pags		= { },
+	_address	= {Reno, Nevada},
+	_month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+The scientific simulation capabilities of next generation high-end computing
+technology will depend on striking a balance among memory, processor, I/O, and
+local and global network performance across the breadth of the scientific
+simulation space. The Cray XT4 combines commodity AMD dual core Opteron
+processor technology with the second generation of Cray's custom communication
+accelerator in a system design whose balance is claimed to be driven by the
+demands of scientific simulation. This paper presents an evaluation of the Cray
+XT4 using micro-benchmarks to develop a controlled understanding of individual
+system components, providing the context for analyzing and comprehending the
+performance of several petascale-ready applications. Results gathered from
+several strategic application domains are compared with observations on the
+previous generation Cray XT3 and other high-end computing systems,
+demonstrating performance improvements across a wide variety of application
+benchmark problems.
+
+@conference{AlonsoEUROPAR2004,
+	author		= {M. Alonso and J. M. Martinez and V. Santoja and P. Lopez },
+	title		= {Reducing Power Consumption in Interconnection Networks by Dynamically Adjusting Link Width },
+	booktitle	= {10th International Euro-Par Conference},
+	year		= {2004 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Klagenfurt, Austria },
+	month		= Aug,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+The huge increase both in size and complexity of high-end multiprocessor
+systems has triggered their power consumption. Air or liquid cooling systems
+are needed, which, in turn, increases power consumption. Another important
+percentage of the consumption is due to the interconnection network.
+In this paper, we propose a mechanism that dynamically reduces the available
+network bandwidth when traffic becomes low. Unlike other approaches that
+completely switch links off when they are not fully utilized, our mechanism is
+based on reducing their bandwidth by narrowing their width. As the topology of
+the network is not modified, the same routing algorithm can be used regardless
+of the power consumption level, which simplifies the router design.
+By using this strategy, the consumption may be strongly reduced. In fact, the
+lower bound of this reduction is a design parameter of the mechanism. The price
+to pay is an increase in the message latency with low network loads.
+
+@conference{AlonsoHPCC2007,
+	author		= {Marina Alonso and Salvador Coll and Vicente Santoja and Juan-Miguel and Pedro L\'{o}pez and Jos\'{e} Duato },
+	title		= {Power-aware fat-tree networks using on/off links },
+	booktitle	= {High Performance Computation Conference},
+	year		= {2007 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Houston, Texas },
+	month		= Sep,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Nowadays, power consumption reduction techniques are being
+increasingly used in computer systems, and high-performance computing
+systems are not an exception. In particular, the power consumed
+by the interconnect circuitry has a non-negligible contribution to the
+total system budget. In this scenario, fat-tree interconnection networks
+are one of the most popular topologies. This topology is particularly
+well-suited for applying power consumption reduction techniques since
+it provides multiple alternative paths for each source/destination pair.
+In this paper, we present a mechanism that dynamically adjusts the
+available network bandwidth by switching links on and off, according to
+the traffic requirements. This mechanism provides significant reduction
+in power consumption while maintaining the original underlying routing
+algorithm, at the expense of slight latency increase for low loads.
+
+
+@conference{AntonyHiPC2006,		_={memory and thread placement in NUMA machines},
+	author		= { Joseph Antony and Pete P. Janes and Alistair P. Rendell },
+	title		= { Exploring Thread and Memory Placement on {NUMA} Architectures: Solaris and Linux, {UltraSPARC}/FirePlane and Opteron/HyperTransport },
+	booktitle	= { 13th International Conference on High Performance Computing ({HiPC})},
+	year		= { 2006 },
+	address		= {Bangalore, India },
+	month		= Dec, 
+	_note		= { },
+}
+
+Modern shared memory multiprocessor systems commonly have non-uniform memory
+access (NUMA) with asymmetric memory bandwidth and latency characteristics.
+Operating systems now provide application programmer interfaces allowing the
+user to perform specific thread and memory placement. To date, however, there
+have been relatively few detailed assessments of the importance of
+memory/thread placement for complex applications.
+This paper outlines a framework for performing memory and thread placement
+experiments on Solaris and Linux. Thread binding and location specific memory
+allocation and its verification is discussed and contrasted.
+Using the framework, the performance characteristics of serial versions of
+lmbench, Stream and various BLAS libraries (ATLAS, GOTO, ACML on Opteron/Linux
+and Sunperf on Opteron, UltraSPARC/Solaris) are measured on two different
+hardware platforms (UltraSPARC/FirePlane and Opteron/HyperTransport). A simple
+model describing performance as a function of memory distribution is proposed
+and assessed for both the Opteron and UltraSPARC.
+
+@inproceedings{BarkerSC2008,
+        author 		= { Kevin J. Barker and Kei Davis and Adolfy Hoisie and Darren J. Kerbyson and Mike Lang and Scott Pakin and Jose C. Sancho },
+        title 		= { Entering the Petaflop Era:  The Architecture and Performance of Roadrunner},
+        booktitle       = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis ({SC})},
+        year            = {2008},
+        _editor         = {},
+        _volume         = {},
+        _number         = {},
+        _series         = {},
+        _pages          = {},
+        address         = {Austin, Texas.},
+        month           = Nov,
+        _organization   = {},
+        _publisher      = {},
+        _note           = {}
+}
+
+@conference{BulatovSC2004,		_={ ParaDiS },
+	author		= { Vasily Bulatov and Wei Cai and Jeff Fier and Masato Hiratani and Gregg Hommes and Tim Pierce and Meijie Tang and Moono Rhee and Kim Yates and Tom Arsenlis },
+	title		= { Scalable Line Dynamics in {ParaDiS}},
+	booktitle	= {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis ({SC})},
+	year		= { 2004 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	_address	= {Pittsburgh, Pennsylvania},
+	_month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+We describe an innovative highly parallel application program, ParaDiS, which
+computes the plastic strength of materials by tracing the evolution of
+dislocation lines over time. We discuss the issues of scaling the code to tens
+of thousands of processors, and present early scaling results of the code run
+on a prototype of the BlueGene/L supercomputer being developed by IBM in
+partnership with the US DOE's ASC program.
+@conference{CameronSC2005,		_={ dvfs via cpuspeed, external, internal.  early work. },
+	author		= { K. W. Cameron and X. Feng and R. Ge },
+	title		= { Performance-constrained Distributed {DVS} Scheduling for Scientific Applications on Power-aware Clusters},
+	booktitle	= { Supercomputing},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Seattle, Washington},
+	month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+Left unchecked, the fundamental drive to increase peak
+performance using tens of thousands of power hungry
+components will lead to intolerable operating costs and failure
+rates. High-performance, power-aware distributed computing
+reduces power and energy consumption of distributed applications
+and systems without sacrificing performance. Generally, we use
+DVS (Dynamic Voltage Scaling) technology now available in
+high-performance microprocessors to reduce power consumption
+during parallel application runs when peak CPU performance is
+not necessary due to load imbalance, communication delays, etc.
+We propose distributed performance-directed DVS scheduling
+strategies for use in scalable power-aware HPC clusters. By
+varying scheduling granularity we can obtain significant energy
+savings without increasing execution time (36% for FT from NAS
+PB). We created a software framework to implement and evaluate
+our various techniques and show performance-directed scheduling
+consistently saves more energy (nearly 25% for several codes)
+than comparable approaches with less impact on execution time
+(<5%). Additionally, we illustrate the use of energy-delay
+products to automatically select distributed DVS schedules that
+meet users’ needs.
+@conference{DelaluzHPCA2001,
+	author		= { V. Delaluz and M. Kandemir and N. Vijaykrishnan and A. Sivasubramiam and M. J. Irwin },
+	Title		= { {DRAM} Energy Management Using Software and Hardware Directed Power Mode Control},
+	booktitle	= { 7th International Symposium on High Performance Computer Architecture},
+	year		= { 2001 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Nuevo Leone, Mexico},
+	month		= Jan,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Abstract: While there have been several studies and proposals for energy
+conservation for CPUs and peripherals, energy optimization techniques for
+selective operating mode control of DRAMs have not been fully explored. It has
+been shown that as much as 90% of overall system energy (excluding I/O) is
+consumed by the DRAM modules, serving as a good candidate for energy
+optimizations. Further, DRAM technology has also matured to provide several low
+energy operating modes (power modes), making it an opportunistic moment to
+conduct studies exploring the potential benefits of mode control techniques.
+This paper conducts an in-depth investigation of software and hardware
+techniques to avail of the DRAM mode control capabilities at a module
+granularity for energy savings.
+@conference{ElnozahyPACS2003,		_={ dvfs server farms },
+	author		= { E. N. Elnozahy and Michael Kistler and Ramakrishnan Rajamony },
+	title		= { Energy-Efficient Server Clusters },
+	booktitle	= { 2nd International Workshop on Power-Aware Computer Systems ({PACS}) },
+	year		= { 2003 },
+	address		= { Cambridge, Massachusettes},
+	month		= Feb,
+	_note		= { }
+}
+
+This paper evaluates five policies for cluster-wide power management in server
+farms. The policies employ various combinations of dynamic voltage scaling and
+node vary-on/vary-off (VOVO) to reduce the aggregate power consumption of a
+server cluster during periods of reduced workload. We evaluate the policies
+using a validated simulator that calculates the energy usage and response times
+of a Web server cluster serving traces culled from real-life Web server
+workloads.  Our results show that a relatively simple policy of independent
+dynamic voltage scaling on each server node can achieve savings ranging up to
+29% and is competitive with more complex schemes for some workloads. A policy
+that brings nodes online and takes them offline depending on the workload
+intensity also produces significant savings up to 42%. The largest savings are
+obtained by using a coordinated voltage scaling policy in conjunction with
+VOVO. This policy provides up to 18% more savings than just using VOVO in
+isolation. All five policies maintain server response times within acceptable
+norms.
+
+@conference{GamblinSC2008,
+	author		= { Todd Gamblin and Bronis R. de Supinski and Martin Schulz and Robert J. Fowler and Daniel A. Reed },
+	title		= { Scalable Load-Balance Measurement for {SPMD} Codes},
+	booktitle	= { Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis ({SC})},
+	year		= { 2008 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Austin, Texas},
+	month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Good load balance is crucial on very large parallel systems, but the most
+sophisticated algorithms introduce dynamic imbalances through adaptation in
+domain decomposition or use of adaptive solvers. To observe and diagnose
+imbalance, developers need system-wide, temporally-ordered measurements from
+full-scale runs. This potentially requires data collection from multiple code
+regions on all processors over the entire execution. Doing this instrumentation
+naively can, in combination with the application itself, exceed available I/O
+bandwidth and storage capacity, and can induce severe behavioral perturbations.
+
+We present and evaluate a novel technique for scalable, low-error load balance
+measurement. This uses a parallel wavelet transform and other parallel encoding
+methods. We show that our technique collects and reconstructs system-wide
+measurements with low error. Compression time scales sublinearly with system
+size and data volume is several orders of magnitude smaller than the raw data.
+The overhead is low enough for online use in a production environment.
+
+
+@conference{GeICPP2007,			_={ miser },
+	author		= { R. Ge and X. Feng and W. Feng and K. W. Cameron},
+	title		= { {CPU Miser}: A performance-Directed, Run-Time System for Power-aware Clusters},
+	booktitle	= {International Conference on Parallel Processing},
+	year		= { 2007 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= { Xi'An, China},
+	_month		= Sep,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+Performance and power are critical design constraints
+in today’s high-end computing systems. Reducing power
+consumption without impacting system performance is a
+challenge for the HPC community. We present a runtime
+system (CPU MISER) and an integrated performance
+model for performance-directed, power-aware cluster computing.
+CPU MISER supports system-wide, applicationindependent,
+fine-grain, dynamic voltage and frequency
+scaling (DVFS) based power management for a generic
+power-aware cluster. Experimental results show that CPU
+MISER can achieve as much as 20% energy savings for the
+NAS parallel benchmarks. In addition to energy savings,
+CPU MISER is able to constrain performance loss for most
+applications within user-specified limits. These constraints
+are achieved through accurate performance modeling and
+prediction, coupled with advanced control techniques.
+@conference{GeSC2005,
+	author		= {R. Ge and X. Feng and K. W. Cameron.},
+	title		= {Performance-Constrainted Distributed {DVS} Scheduling for Scientific Applications on Power-aware Clusters},
+	booktitle	= {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis ({SC})},
+	year		= {2005},
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Seattle, Washington },
+	month		= Nov, 
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Left unchecked, the fundamental drive to increase peak performance using tens
+of thousands of power hungry components will lead to intolerable operating
+costs and failure rates. High-performance, power-aware distributed computing
+reduces power and energy consumption of distributed applications and systems
+without sacrificing performance. Generally, we use DVS (Dynamic Voltage
+Scaling) technology now available in high-performance microprocessors to reduce
+power consumption during parallel application runs when peak CPU performance is
+not necessary due to load imbalance, communication delays, etc. We propose
+distributed performance-directed DVS scheduling strategies for use in scalable
+power-aware HPC clusters. By varying scheduling granularity we can obtain
+significant energy savings without increasing execution time (36% for FT from
+NAS PB). We created a software framework to implement and evaluate our various
+techniques and show performance-directed scheduling consistently saves more
+energy (nearly 25% for several codes) than comparable approaches with less
+impact on execution time (< 5%). Additionally, we illustrate the use of
+energy-delay products to automatically select distributed DVS schedules that
+meet users' needs.
+@INPROCEEDINGS{ HiranandaniSC1993,
+        AUTHOR 		= {Seema Hiranandani and Ken Kennedy and Chau-Wen Tseng},
+        TITLE 		= {Preliminary Experiences with the {Fortran D} Compiler},
+        BOOKTITLE	= {Supercomputing},
+        MONTH 		= Nov,
+        YEAR		= {1993}
+}
+
+
+@conference{HsuSC2005,			_={ runtime dvfs beta Beta},
+	author		= { Chung-Hsing Hsu and Wu-Chun Feng },
+	title		= { A Power-Aware Run-Time System for High-Performance Computing },
+        BOOKTITLE	= {Supercomputing},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+ For decades, the high-performance computing (HPC) community has focused on
+ performance, where performance is defined as speed. To achieve better
+ performance per compute node, microprocessor vendors have not only doubled the
+ number of transistors (and speed) every 18-24 months, but they have also
+ doubled the power densities. Consequently, keeping a large-scale HPC system
+ functioning properly requires continual cooling in a largemachine room, thus
+ resulting in substantial operational costs. Furthermore, the increase in power
+ densities has led (in part) to a decrease in system reliability, thus leading
+ to lost productivity. To address these problems, we propose a power-aware
+ algorithm that automatically and transparently adapts its voltage and
+ frequency settings to achieve significant power reduction and energy savings
+ with minimal impact on performance. Specifically, we leverage a commodity
+ technology called "dynamic voltage and frequency scaling" to implement our
+ power-aware algorithm in the run-time system of commodity HPC systems.
+
+@conference{IsciHPCA2006,		_={ prediction power with performance counters },
+	author		= { Canturk Isci and Margaret Martonosi},
+	title		= { Phase Characterization for Power: Evaluating Control-Flow-Based and Event-Counter-Based Techniques },
+	booktitle	= { 12th International Symposium on High-Performance Computer Architecture},
+	year		= { 2006 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Austin, Texas },
+	month		= Feb,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Computer systems increasingly rely on dynamic, phasebased
+system management techniques, in which system hardware
+and software parameters may be altered or tuned at runtime
+for different program phases. Prior research has considered
+a range of possible phase analysis techniques, but has
+focused almost exclusively on performance-oriented phases;
+the notion of power-oriented phases has not been explored.
+Moreover, the bulk of phase-analysis studies have focused on
+simulation evaluation. There is need for real-system experiments
+that provide direct comparison of different practical
+techniques (such as control flow sampling, event counters, and
+power measurements) for gauging phase behavior.
+In this paper, we propose and evaluate a live, real-system
+measurement framework for collecting and analyzing power
+phases in running applications. Our experimental framework
+simultaneously collects control flow, performance counter and
+live power measurement information. Using this framework,
+we directly compare between code-oriented techniques (such
+as “basic block vectors”) and performance counter techniques
+for characterizing power phases. Across a collection of both
+SPEC2000 benchmarks as well as mainstream desktop applications,
+our results indicate that both techniques are promising,
+but that performance counters consistently provide better
+representation of power behavior. For many of the experimented
+cases, basic block vectors demonstrate a strong relationship
+between the execution path and power consumption.
+However, there are instances where power behavior cannot be
+captured from control flow, for example due to differences in
+memory hierarchy performance. We demonstrate these with
+examples from real applications. Overall, counter-based techniques
+offer average classification errors of 1.9% for SPEC
+and 7.1% for other benchmarks, while basic block vectors
+achieve 2.9% average errors for SPEC and 11.7% for other
+benchmarks respectively.
+@conference{KappiahSC2005,		_={ jitter },
+	author		= { Nandini Kappiah and Vincent W. Freeh and David K. Lowenthal and Feng Pan},
+	title		= { Exploiting Slack Time in Power-Aware, High-Performance Programs},
+        booktitle ={Supercomputing},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Recently, improving the energy efciency of HPC machines
+has become important. As a result, interest in using powerscalable
+clusters, where frequency and voltage can be dynamically
+modied, has increased. On power-scalable clusters,
+one opportunity for saving energy with little or no loss of performance
+exists when the computational load is not perfectly
+balanced. This situation occurs frequently, as balancing load
+between nodes is one of the long standing problems in parallel
+and distributed computing.
+In this paper we present a system called Jitter, which reduces
+the frequency on nodes that are assigned less computation
+and therefore have slack time. This saves energy on these
+nodes, and the goal of Jitter is to attempt to ensure that they
+arrive just in time so that they avoid increasing overall execution
+time. For example, in Aztec, from the ASCI Purple
+suite, our algorithm uses 8% less energy while increasing execution
+time by only 2.6%.
+
+@conference{LeeACSAC2007,			_={ runtime regression performance counter dvfs },
+	author		= { Sang-Jeong Lee and Hae-Kag Lee and Pen-Chung Yew },
+	title		= { Runtime Performance Projection Model for Dynamic Power Management},
+	booktitle	= { 12th Asia-Pacific Conference on Advances in Computer Systems Architecture ({ACSAC}) },
+	year		= { 2007 },
+	address		= { Seoul, Korea },
+	month		= Aug,
+	_note		= { }
+}
+
+In this paper, a runtime performance projection model for dynamic power 
+management is proposed. The model is built as a first-order linear equation 
+using a linear regression model. It could be used to estimate performance 
+impact from different p-states (voltage-frequency pairs). Workload behavior 
+is monitored dynamically for a program region of 100M instructions using 
+hardware performance monitoring counters (PMCs), and performance for the 
+next region is estimated using the proposed model. For each 100M-instructions 
+interval, the performance of all processor p-states is estimated and the 
+lowest frequency is selected within specified performance constraints. The 
+selected frequency is set with a low-overhead DVFS-based (dynamic voltage-
+frequency scaling) p-state changing mechanism for the next program region. 
+We evaluate the performance degradation and the amount of energy saving of 
+our dynamic power management scheme using the proposed projection model for 
+SPEC CPU2000 benchmark on a Pentium M platform. We measure the execution 
+time and energy consumption for 4 specified constraints – 10%, 20%, 40%, 
+80%, on the maximum allowed performance degradation. The result shows that 
+our dynamic management scheme saves energy consumption by 3%, 18%, 38% and 
+48% with a performance degradation of 3%, 19%, 45% and 79% under 10%, 20%, 
+40% and 80% constraints, respectively.
+@conference{LeeSC2008,
+	author		= { Gregory L. Lee and Dong H. Ahn and Dorian C. Arnold and Bronis R. de Supinski and Matthew Legendre and Barton P. Miller and Martin Schulz and Ben Liblit},
+	title		= { Lessons Learned at {208K}: Towards Debugging Millions of Cores },
+	booktitle	= {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis ({SC})},
+	year		= { 2008 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Austin, Texas},
+	month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@conference{LiHPCA2004,			_={ thrifty barrier },
+	author		= { Jian Li and Jos\'e F. Mart\'inez and Michael C. Huang },
+	title		= { The Thrifty Barrier: Energy-Aware Synchronization in Shared-Memory Multiprocessors},
+	booktitle	= { 10th International Symposium on High Performance Computer Architecture},
+	year		= { 2004 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Madrid, Spain},
+	month		= Feb,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Much research has been devoted to making microprocessors energy-efficient.
+However, little attention has been paid to multiprocessor environments where,
+due to the co-operative nature of the computation, the most energy-efficient
+execution in each processor may not translate into the most energy-efficient
+overall execution.
+
+We present the thrifty barrier, a hardware-software approach to saving energy
+in parallel applications that exhibit barrier synchronization imbalance.
+Threads that arrive early to a thrifty barrier pick among existing low-power
+processor sleep states based on predicted barrier stall time and other factors.
+We leverage the coherence protocol and propose small hardware extensions to
+achieve timely wake-up of these dormant threads, maximizing energy savings
+while minimizing the impact on performance.
+@conference{LiHPCA2006,			_={ runtime optimization CMP },
+	author		= { Jian Li and Jos\'e F. Mart\`inez },
+	title		= { Dynamic Power-Performance Adaptation of Parallel Computation on Chip Multiprocessors},
+	booktitle	= { 12th International Symposium on High-Performance Computer Architecture},
+	year		= { 2006 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Austin, Texas },
+	month		= Feb,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+Previous proposals for power-aware thread-level parallelism
+on chip multiprocessors (CMPs) mostly focus on
+multiprogrammed workloads. Nonetheless, parallel computation
+of a single application is critical in light of the expanding
+performance demands of important future workloads.
+This work addresses the problem of dynamically
+optimizing power consumption of a parallel application
+that executes on a many-core CMP under a given performance
+constraint. The optimization space is twodimensional,
+allowing changes in the number of active
+processors and applying dynamic voltage/frequency scaling.
+We demonstrate that the particular optimum operating
+point depends nontrivially on the power-performance
+characteristics of the CMP, the application’s behavior, and
+the particular performance target. We present simple,
+low-overhead heuristics for dynamic optimization that
+significantly cut down on the search effort along both dimensions
+of the optimization space. In our evaluation of
+several parallel applications with different performance
+targets, these heuristics quickly lock on a configuration
+that yields optimal power savings in virtually all cases.
+@conference{LimSC2006,			_={ ncsu mpi phases dvfs runtime },
+	author		= { Min Yeol Lim and Vincent W. Freeh and David K. Lowenthal},
+	title		= { Adaptive, Transparent Frequency and Voltage Scaling of Communication Phases in {MPI} Programs},
+	BOOKTITLE = {Supercomputing},
+	year		= { 2006 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Tampa, Florida },
+	month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Although users of high-performance computing are
+most interested in raw performance, both energy and
+power consumption have become critical concerns.
+Some microprocessors allow frequency and voltage
+scaling, which enables a system to reduce CPU performance
+and power when the CPU is not on the critical
+path. When properly directed, such dynamic frequency
+and voltage scaling can produce signicant
+energy savings with little performance penalty.
+This paper presents an MPI runtime system that
+dynamically reduces CPU performance during communication
+phases in MPI programs. It dynamically
+identies such phases and, without proling or training,
+selects the CPU frequency in order to minimize
+energy-delay product. All analysis and subsequent
+frequency and voltage scaling is within MPI and so
+is entirely transparent to the application. This means
+that the large number of existing MPI programs, as
+well as new ones being developed, can use our system
+without modication. Results show that the average
+reduction in energy-delay product over the NAS
+benchmark suite is 10%the average energy reduction
+is 12% while the average execution time increase
+is only 2.1%.
+@conference{MohrEUROPAR2003,			_={ kojak performance analysis },
+	author		= { Bernd Mohr and Felix Wolf },
+	title		= { {KOJAK}:  A Tool Set for Automatic Performance Analysis of Parallel Programs },
+	booktitle	= { 9th International {Euro-Par} Conference},
+	year		= { 2003 },
+	address		= {Klagenfurt, Austria},
+	month		= Aug,
+	_note		= { }
+}
+
+Todayrsquos parallel computers with SMP nodes provide both multithreading and
+message passing as their modes of parallel execution. As a consequence,
+performance analysis and optimization becomes more difficult and creates a need
+for advanced performance tools that are custom made for this class of computing
+environments. Current state-of-the-art tools provide valuable
+assistance in analyzing the performance of mpi and Openmp programs by
+visualizing the run-time behavior and calculating statistics over the
+performance data. However, the developer of parallel programs is still
+required to filter out relevant parts from a huge amount of low-level
+information shown in numerous displays and map that information onto
+program abstractions without tool support.  The kojak project (Kit for
+Objective Judgement and Knowledge-based Detection of Performance
+Bottlenecks) is aiming at the development of a generic automatic
+performance analysis environment for parallel programs. Performance
+problems are specified in terms of execution patterns that represent
+situations of inefficient behavior. These patterns are input for an
+analysis process that recognizes and quantifies the inefficient
+behavior in event traces. Mechanisms that hide the complex
+relationships within event pattern specifications allow a simple
+description of complex inefficient behavior on a high level of
+abstraction.  The analysis process transforms the event traces into a
+three-dimensional representation of performance behavior. The first
+dimension is the kind of behavior. The second dimension describes the
+behaviorrsquos source-code location and the execution phase during
+which it occurs. Finally, the third dimension gives information on the
+distribution of performance losses across different processes or
+threads. The hierarchical organization of each dimension enables the
+investigation of performance behavior on varying levels of granularity.
+Each point of the representation is uniformly mapped onto the
+corresponding fraction of execution time, allowing the convenient
+correlation of different behavior using only a single view. In
+addition, the set of predefined performance problems can be extended to
+meet individual (e.g., application-specific) needs.
+
+@article{SankaranarayananTACO2004,	_={Power-Aware Processor Components},
+	author		= {Karthik Sankaranarayanan and Kevin Skadron},
+	title		= {Profile-Based Adaptation for Cache Decay},
+	journal		= {{ACM} Transactions on Architecture and Code Optimizations ({TACO})},
+	year		= {2004},
+	volume		= {13},
+	number		= { 3},
+	pages		= {305-322},
+	month		= Sep,
+	_note		= { }
+}
+“Cache decay” is a set of leakage-reduction mechanisms that put cache lines that have not been
+accessed for a speciﬁc duration into a low-leakage standby mode. This duration is called the de-
+cay interval, and its optimal value varies across applications. This paper describes an adaptation
+technique that analytically ﬁnds the optimal decay interval through proﬁling, and shows that the
+most important variables required for ﬁnding the optimal decay interval can be estimated with
+a reasonable degree of accuracy using proﬁling. This work explicitly trades off the leakage power
+saved in putting both the “live” and “dead” lines into standby mode, against its performance and
+energy costs. It achieves energy savings close to what can be obtained with an omniscient choice of
+per-benchmark optimal decay interval.
+
+Entry for an article in conference proceedings.
+@conference{SchulzSC2007,
+	author		= { Martin Schulz and Bronis R. de Supinski},
+	title		= { {PNMPI} Tools: A Whole Lot Greater Than the Sum of Their Parts },
+	booktitle	= {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis ({SC})},
+	year		= { 2007 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Reno, Nevada },
+	month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@conference{ShangHPCA2003,
+	author		= {L. Shang and L. Peh and N. K. Jha },
+	title		= {Dynamic Voltage Scaling with Links for Power Optimization of Interconnection Networks },
+	booktitle	= {9th International Symposium on High-Performance Computer Architecture},
+	year		= {2003},
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Anaheim, California },
+	month		= Feb,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+@conference{SnavelySC2002,		_={ performance modeling },
+	author		= { Allan Snavely and Laura Carrington and Nicole Wolter and Jesus Labarta and Rosa Badia and Avi Purkayastha},
+	title		= { A Framework for Performance Modeling and Prediction},
+	booktitle	= {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis ({SC})},
+	year		= { 2002 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Baltimore, Maryland },
+	month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+Cycle-accurate simulation is far too slow for modeling the expected performance
+of full parallel applications on large HPC systems. And just running an
+application on a system and observing wallclock time tells you nothing about
+why the application performs as it does (and is anyway impossible on
+yet-to-be-built systems). Here we present a framework for performance modeling
+and prediction that is faster than cycle-accurate simulation, more informative
+than simple benchmarking, and is shown useful for performance investigations in
+several dimensions. 
+
+@article{SongIJHPCA2009,
+	author		= {Shuaiiwen Song and Rong Ge and Xizhou Feng and Kirk W. Cameron. },
+	title		= {Energy Profiling and Analysis of the {HPC} Challenge Benchmarks. },
+	journal		= {International Journal of High Performance Computing Applications ({IJHPCA})},
+	year		= {2009 },
+	volume		= {23 },
+	number		= {3},
+	pages		= {265-276 },
+	_month		= { },
+	_note		= { }
+}
+
+
+Entry for an article in conference proceedings.
+@conference{VetterSC2002b,
+	author		= { J. S. Vetter and P. H. Worley  },
+	title		= { Asserting Performance Expectations },
+	BOOKTITLE = {Supercomputing},
+	year		= { 2002 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+
+
+
+@conference{VetterSC2002,		_={ analysis of 8 scalable scientific apps. },
+	author		= { Jeffrey S. Vetter and Andy Yoo},
+	title		= { An Empirical Performance Evaluation of Scalable Scientific Applications},
+	booktitle	= {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis ({SC})},
+	year		= { 2002 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {Baltimore, Maryland},
+	month		= Nov,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+We investigate the scalability, architectural requirements, and performance
+characteristics of eight scalable scientific applications. Our analysis is
+driven by empirical measurements using statistical and tracing instrumentation
+for both communication and computation. Based on these measurements, we refine
+our analysis into precise explanations of the factors that influence
+performance and scalability for each application; we distill these
+factors into common traits and overall recommendations for both users
+and designers of scalable platforms. Our experiments demonstrate that
+some traits, such as improvements in the scaling and performance of
+MPI's collective operations, will benefit most applications. We also
+find specific characteristics of some applications that limit
+performance. For example, one application's intensive use of a 64-bit,
+floating-point divide instruction, which has high latency and is not
+pipelined on the POWER3, limits the performance of the application's
+primary computation.
+@conference{WuHPCA2005,			_={ early dvfs work, embedded },
+	author		= { Qiang Wu and Philo Juang and Margaret Martonosi and and Douglas W. Clark},
+	title		= { Voltage and Frequency Control With Adaptive Reaction Time in Multiple-Clock-Domain Processors },
+	booktitle	= { 11th International Symposium on High-Performance Computer Architecture},
+	year		= { 2005 },
+	_editor		= { },
+	_volume		= { },
+	_number		= { },
+	_series		= { },
+	_pages		= { },
+	address		= {San Francisco, California },
+	month		= Feb,
+	_organization	= { },
+	_publisher	= { },
+	_note		= { }
+}
+
+Dynamic voltage and frequency scaling (DVFS) is a widely-used
+method for energy-efficient computing. In this paper, we present
+a new intra-task online DVFS scheme for multiple clock domain
+(MCD) processors.
+Most existing online DVFS schemes for MCD processors use a
+fixed time interval between possible voltage /frequency changes.
+The downside to this approach is that the interval boundaries are
+predetermined and independent of workload changes. Thus, they
+can be late in responding to large, severe activity swings. In this
+work, we propose an alternative online DVFS scheme in which the
+reaction time is self-tuned and adaptive to application and workload
+changes. In addition to designing such a scheme, we model
+the proposed DVFS control and use the derived model in a formal
+stability analysis. The obtained analytical insight is then used to
+guide and improve the design in terms of stability margin and control
+effectiveness.
+We evaluate our DVFS scheme through cycle-accurate simulation
+over a wide set of MediaBench and SPEC2000 benchmarks.
+Compared to the best-known prior fixed-interval DVFS schemes
+for MCD processors, the proposed DVFS scheme has a simpler decision
+process, which leads to smaller and cheaper hardware. Our
+scheme has achieved significant energy savings over all studied
+benchmarks (19% energy savings with 3% performance degradation
+on average, which is close to the best results from existing
+fixed-interval DVFS schemes). For a group of applications with
+fast workload variations, our scheme outperforms existing fixedinterval
+DVFS schemes significantly due to its adaptive nature.
+Overall, we feel the proposed adaptive online DVFS scheme
+is an effective and promising alternative to existing fixed-interval
+DVFS schemes. Designers may choose the new scheme for processors
+with limited hardware budget, or if the anticipated workload
+behavior is variable. In addition, the modeling and analysis
+techniques in this work serve as examples of using stability analysis
+in other aspects of high-performance CPU design and control.
+@article{XieTACO2004,			_={ bounding dvfs embedded },
+	author		= { Fen Xie and Margaret Martonosi and Sharad Malik},
+	title		= { Intra-program Dynamic Voltage Scaling: Bounding Opportunities with Analytical Modeling},
+	journal		= {{ACM} Transactions on Architecture and Code Optimizations ({TACO})},
+	year		= { 2004 },
+	volume		= {1},
+	number		= {3},
+	pages		= {323-367},
+	month		= {Sep},
+	_note		= { }
+}
+
+Dynamic voltage scaling (DVS) has become an important dynamic power-management
+technique to save energy.DVS tunes the power-performance tradeoff to the needs
+of the application. The goal is to minimize energy consumption while meeting
+performance needs. Since CPU power consumption is strongly dependent on the
+supply voltage,DVS exploits the ability to control the power consumption by
+varying a processor’s supply voltage and clock frequency. However, because of
+the energy and time overhead associated with switching DVS modes, DVS control
+has been used mainly at the interprogram level.  In this paper, we explore the
+opportunities and limits of intraprogram DVS scheduling. An analytical model is
+derived to predict the maximum energy savings that can be obtained using
+intraprogram DVS given a few known program and processor parameters. This model
+gives insights into scenarios where energy consumption benefits from
+intraprogram DVS and those where there is no benefit. The model helps us
+extrapolate the benefits of intraprogram DVS into the future as processor
+parameters change. We then examine how much of these predicted benefits can
+actually be achieved through compile-time optimal settings of DVS modes. We
+extend an existing mixed-integer linear program formulation for this scheduling
+problem by accurately accounting for DVS energy switching overhead, by
+providing finer-grained control on settings and by considering multiple data
+categories in the optimization. Overall, this research provides a comprehensive
+view of intraprogram compile-time DVS management, providing both practical
+techniques for its immediate deployment as well theoretical bounds for use into
+the future.
+
+
+@INPROCEEDINGS{ song:11,
+	AUTHOR = {S. Song and C.-Y. Su and R. Ge and A. Vishnu and K.W. Cameron},
+	TITLE = {Iso-energy-efficiency: An approach to
+                  power-constrained parallel computation},
+	BOOKTITLE = {25th IEEE International Parallel and
+Distributed Processing Symposium},
+	month = May,
+	YEAR= 2011,
+	comment= {}}
+
+@INPROCEEDINGS{ li:10a,
+	AUTHOR = {Dong Li and Bronis R. de Supinski and Martin Schulz and Kirk W. Cameron and Dimitrios S. Nikolopoulos},
+	TITLE = {Hybrid MPI/OpenMP power-aware computing},
+	BOOKTITLE = {24th IEEE International Parallel and
+Distributed Processing Symposium},
+	month = Apr,
+	YEAR= 2010,
+	comment= {}}
+
+
+@INPROCEEDINGS{ li:10b,
+	AUTHOR = {Dong Li and Dimitrios S. Nikolopoulos and Kirk W. Cameron and Bronis R. de Supinski and Martin Schulz},
+	TITLE = {Power-aware MPI task aggregation prediction for high-end computing systems},
+	BOOKTITLE = {24th IEEE International Parallel and
+Distributed Processing Symposium},
+	month = Apr,
+	YEAR= 2010,
+	comment= {}}
+
+
+@INPROCEEDINGS{ dhodapkar:03,
+        AUTHOR = {A. Dhodapkar and J. Smith},
+        TITLE = {Comparing Phase Detection Techniques},
+        BOOKTITLE = {IEEE International Symposium on Microarchitecture},
+        pages = {217-227},
+        month = Dec,
+        YEAR= 2003,
+        comment= {}}
+
+@INPROCEEDINGS{ ding:00,
+        AUTHOR = {Chen Ding and Ken Kennedy},
+        TITLE = {Memory Bandwidth Bottleneck and its Amelioration By a Compiler},
+        BOOKTITLE = {IEEE International Parallel and Distributed Processing Symposium},
+        month = May,
+        YEAR= 2000,
+        comment= {}}
+
+@ARTICLE{ kennedy:98,
+        AUTHOR = {Ken Kennedy and Ulrich Kremer},
+        TITLE = {Automatic Data Layout for Distributed-Memory Machines},
+        JOURNAL = {ACM Transactions on Programming Languages and Systems},
+        volume = 20,
+        number = 4,
+        pages = {869--916},
+        YEAR= 1998,
+        comment= {}}
+
+@inproceedings{sherwood:02,
+ author = {Timothy Sherwood and Erez Perelman and Greg Hamerly and
+                  Brad Calder},
+ title = {Automatically characterizing large scale program behavior},
+ booktitle = {ACM Conference on Architectural Support for Programming
+                  Languages and Operating Systems},
+ year = {2002},
+ pages = {45--57}}
+
+@INPROCEEDINGS{ batson:76,
+        AUTHOR = {A. Batson and A. Madison},
+        TITLE = {Measurement of Major locality phases in symbolic
+                  reference strings},
+        BOOKTITLE = {ACM SIGMETRICS},
+        pages = {75-84},
+        month = Mar,
+        YEAR= 1976,
+        comment= {}}
+
+@INPROCEEDINGS{ rencuzogullari:01,
+        AUTHOR = {Umit Rencuzogullari and Sandhya Dwarkadas},
+        TITLE = {Dynamic Adaptation to Available Resources for
+                         Parallel Computing in an Autonomous Network of
+                         Workstations},
+        BOOKTITLE = {ACM Symposium on Principles and Practice of
+                  Parallel Programming},
+        editor = {},
+        organization = {},
+        publisher = {},
+        address = {},
+        pages = {72--81},
+        month = Jun,
+        YEAR= 2001,
+        comment= {}}
+
+@INPROCEEDINGS{ huang:03,
+        AUTHOR = {M. Huang and J. Renau and J. Torellas},
+        TITLE = {Positional Adaptation of Processors: Application to Energy Reduction},
+        BOOKTITLE = {ACM International Symposium on Computer Architecture},
+        pages = {157-168},
+        month = Jun,
+        YEAR= 2003,
+        comment= {}}
+
+@Misc{turbo-boost,
+   Author       = "Intel",
+   Title        = "Intel Turbo Boost Technology 2.0",
+   Note         = "{\url{http://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html}}"
+}
+
+@misc{UMT2K,		
+	author		= { {Lawrence Livermore National Laboratory} },
+	title		= { The {UMT} Benchmark Code. },
+	note 		= { \url{http://www.llnl.gov/asci/platforms/purple/rfp/benchmarks/limited/umt/} }
+}
+
+@misc{Purple,
+	author		= { {Lawrence Livermore National Laboratory} },
+        title = {The {ASCI} {P}urple Benchmark Codes},
+        note = {\url{http://www.llnl.gov/asci/purple/benchmarks/limited/code_list.html}}
+}
+
+@inproceedings{petrini:03,
+ author = {Fabrizio Petrini and Darren J. Kerbyson and Scott Pakin},
+ title = {The Case of the Missing Supercomputer Performance: Achieving Optimal Performance on the 8,192 Processors of {ASCI Q}},
+ booktitle = {Supercomputing},
+ year = {2003},
+ }
+
+@INPROCEEDINGS{ hoefler:10,
+	AUTHOR = {T. Hoefler and T. Schneider and A. Lumsdaine},
+	TITLE = {Characterizing the Influence of System Noise on Large-Scale Applications by Simulation},
+	BOOKTITLE = {Supercomputing},
+	month = Nov,
+	YEAR= 2010
+}
+
+@INPROCEEDINGS{ sottile:04,
+	AUTHOR = {M. Sottile and R. Minnich},
+	TITLE = {Analysis of Microbenchmarks for Performance Tuning of Clusters},
+	BOOKTITLE = {International Conference on Cluster Computing},
+	month = Sep,
+	YEAR= 2004
+}
+
+@INPROCEEDINGS{ nataraj:07,
+	AUTHOR = {A. Nataraj and A. Morris and A. D. Malony and M. Sottile and P. Beckman},
+	TITLE = {The Ghost in the Machine: Observing the Effects of Kernel Operation on Parallel Application Performance},
+	BOOKTITLE = {Supercomputing},
+	month = Nov,
+	YEAR= 2007
+}
+@INPROCEEDINGS{ ferreira:08,
+	AUTHOR = {K. B. Ferreira and P. Bridges and R. Brightwell},
+	TITLE = {Characterizing Application Sensitivity to {OS} Interference Using Kernel-Level Noise Injection},
+	BOOKTITLE = {Supercomputing},
+	month = Nov,
+	YEAR= 2008
+}
+@INPROCEEDINGS{ jones:03,
+	AUTHOR = {T. Jones and S. Dawson and R. Neely and W. Tuel and L. Brenner and J. Fier and R. Blackmore and P. Caffrey and B. Maskell and P. Tomlinson and M. Roberts},
+	TITLE = {Improving the Scalability of Parallel Jobs by adding Parallel Awareness to the Operating System},
+	BOOKTITLE = {Supercomputing},
+	month = Nov,
+	YEAR= 2003
+}
+@INPROCEEDINGS{ beckman:07,
+	AUTHOR = {P. Beckman and K. Iskra and K. Yoshii and S. Coghlan
+          and A. Nataraj},
+	TITLE = {Benchmarking the Effects of Operating System Interference on Extreme-Scale Parallel Machines},
+	BOOKTITLE = {International Conference on Cluster Computing},
+	month = Sep,
+	YEAR= 2007
+}
+@INPROCEEDINGS{ beckman:06,
+	AUTHOR = {P. Beckman and K. Iskra and K. Yoshii and S. Coghlan},
+	TITLE = {The Influence of Operating Systems on the Performance of Collective Operations at Extreme Scale},
+	BOOKTITLE = {International Conference on Cluster Computing},
+	month = Sep,
+	YEAR= 2006
+}
+@INPROCEEDINGS{ garg:06,
+	AUTHOR = {R. Garg and P. De},
+	TITLE = {Impact of Noise on Scaling of Collectives: An Empirical Evaluation},
+	BOOKTITLE = {International Conference on High Performance Computing},
+	month = Dec,
+	YEAR= 2006
+}
+
+@INPROCEEDINGS{ tsafrir:05,
+	AUTHOR = {D. Tsafrir and Y. Etsion and D.G. Feitelson and
+          S. Kirkpatrick}, 
+	TITLE = {System Noise, OS Clock Ticks, and Fine-Grained Parallel Applications},
+	BOOKTITLE = {International Conference on Supercomputing},
+	month = Jun,
+	YEAR= 2005
+}
+
+@INPROCEEDINGS{ agarwal:05,
+	AUTHOR = {S. Agarwal and R. Garg and N.K. Vishnoi},
+	TITLE = {The Impact of Noise on the Scaling of Collectives: A Theoretical Approach},
+	BOOKTITLE = {International Conference on High Performance Computing},
+	month = Dec,
+	YEAR= 2005
+}
+
+@INPROCEEDINGS{ de:07,
+	AUTHOR = {P. De and R. Kothari and V. Mann},
+	TITLE = {Identifying Sources of Operating System Jitter
+          through Fine-Grained Kernel Instrumentation},
+	BOOKTITLE = {International Conference on Cluster Computing},
+	month = Sep,
+	YEAR= 2007
+}
+
+@INPROCEEDINGS{ de:08,
+	AUTHOR = {P. De and R. Kothari and V. Mann},
+	TITLE = {A Trace-Driven Emulation Framework to Predict
+          Scalability of Large Clusters in Presence of {OS} Jitter},
+	BOOKTITLE = {International Conference on Cluster Computing},
+	month = Sep,
+	YEAR= 2008
+}
+
+@phdthesis{ sobalvarro:97,
+    author = "Patrick Gregory Sobalvarro",
+    title = "Demand-Based Coscheduling of Parallel Jobs on Multiprogrammed Multiprocessors",
+    school = "MIT",
+    address = "Cambridge, Mass.",
+    year = "1997",
+    url = "citeseer.nj.nec.com/sobalvarro97demandbased.html" }
+
+@article{ dusseau:01,
+    author = "Andrea Carol Arpaci-Dusseau",
+    title = "Implicit coscheduling: {C}oordinated scheduling with implicit information in distributed systems",
+    journal = "ACM Transactions on Computer Systems",
+    volume = "19",
+    number = "3",
+    pages = "283--331",
+    year = "2001",
+    url = "citeseer.nj.nec.com/arpaci-dusseau98implicit.html" }
+
+@Misc{pmpi,
+   Author       = "OpenMPI Project",
+   Title        = "Frequently Asked Questions: Performance analysis tools",
+   Note         = "{\url{http://www.open-mpi.org/faq/?category=perftools#PMPI}}"
+}
+
+@TECHREPORT{ upc:05,
+	AUTHOR = {UPC Consortium},
+	TITLE = {UPC Language Specification},
+	INSTITUTION = {Lawrence Berkeley National Lab},
+	number = "LBNL-59208",
+	YEAR= 2005,
+	comment= {}}
+
+@ARTICLE{ chamberlain:07,
+	AUTHOR = {Bradford L. Chamberlain and David Callahan and Hans P. Zima},
+	TITLE = {Parallel Programmability and the Chapel Language},
+	JOURNAL = {International Journal of High Performance Computing Applications},
+	volume = 21,
+	number = 3,
+	pages = {291--312},
+	month = Aug,
+	YEAR= 2007,
+	comment= {}}
+
+
+
+@Misc{pin,
+   Title        = "Pin: A Dynamic Binary Instrumentation Tool",
+   Note         = "{\url{http://www.pintool.org}}"
+}
+
+@INPROCEEDINGS{ baniasadi:04,
+	AUTHOR = {Amirali Baniasadi and Andreas Moshovos},
+	TITLE = {SEPAS: {A} highly accurate energy-efficient branch predictor},
+	BOOKTITLE = {International Symposium on Low Power Electronics
+                  and Design},
+	month = Aug,
+	YEAR= 2004,
+	comment= {}}
+
+
+@Misc{gating,
+   Author       = "Wikipedia",
+   Title        = "Power Gating",
+   Note         = "{\url{http://en.wikipedia.org/wiki/Power_gating}}"
+}
+
+
+@inproceedings{hu:04,
+ author = {Hu, Zhigang and Buyuktosunoglu, Alper and Srinivasan, Viji and Zyuban, Victor and Jacobson, Hans and Bose, Pradip},
+ title = {Microarchitectural techniques for power gating of execution units},
+ booktitle = {International Symposium on Low Power Electronics and Design},
+ month = Aug,
+ year = {2004}
+} 
+
+@inproceedings{niedermeier:10,
+ author = {Niedermeier, Anja and Svarstad, Kjetil and Bouwens, Frank and Hulzink, Jos and Huisken, Jos},
+ title = {The challenges of implementing fine-grained power gating},
+ booktitle = {Great Lakes Symposium on VLSI},
+ month = May,
+ year = {2010}
+} 
+
+@INPROCEEDINGS{powell:00,
+    author = {Michael Powell and Se-Hyun Yang and Babak Falsafi and Kaushik Roy and T. N. Vijaykumar},
+    title = {Gated-Vdd : A Circuit Technique to Reduce Leakage in Deep-Submicron Cache Memories},
+    booktitle = {International Symposium on Low Power Electronics and Design},
+    month = Jul,
+    year = {2000}
+}
+
+@BOOK{panda:10,
+        AUTHOR = {Preeti Ranjan Panda  and B. V. N. Silpa and Aviral Shrivastava and Krishnaiah Gummidipudi},
+        EDITION = {First},
+        publisher = {Springer},
+        title = {Power-Efficient System Design},
+        year = 2010
+}
+
+
+@Misc{rapl,
+   Title        = "Intel 64 and {IA}-32 Architectures Software
+                  Developer Manuals, {V}olume 3, {C}hapter 14", 
+   Note         = "{\url{http://www.intel.com/content/dam/doc/manual/64-ia-32-architectures-software-developer-manual-325462.pdf}}"
+}
+
+@inproceedings{brooks:00,
+ author = {Brooks, David and Tiwari, Vivek and Martonosi, Margaret},
+ title = {Wattch: {A} framework for architectural-level power analysis and optimizations},
+ booktitle = {International Symposium on Computer Architecture},
+ month = Jun,
+ year = {2000}
+} 
+
+@Misc{simplescalar,
+   Title        = "SimpleScalar Home Page",
+   Note         = "{\url{http://www.simplescalar.com}}"
+}
+
+@inproceedings{pawlowski:10,
+ author = {Pawlowski, Stephen S.},
+ title = {Exascale science: the next frontier in high performance computing},
+ booktitle = {International Conference on Supercomputing},
+ month = Jun,
+ year = {2010}
+} 
+
+@MISC{ gorilla,
+	author = {InsideHPC},
+	title = {Power Consumption is the Exascale Gorilla in the room},
+        Note         = "{\url{http://insidehpc.com/2010/12/10/power-consumption-is-the-exascale-gorilla-in-the-room/}}"
+}
+
+@INPROCEEDINGS{ carter:11,
+	AUTHOR = {John Carter},
+	TITLE = {Challenges and Opportunities in Green Systems and Architectures (keynote talk)}, 
+	BOOKTITLE = {Workshop on Green High Performance Computing},
+	month = Oct,
+	YEAR= 2011,
+	comment= {}}
+
+
+@MISC{ ashby:10,
+	author = {Steve Ashby and Pete Beckman and Jackie Chen and Phil Colella and Bill Collins and Dona Crawford and Jack Dongarra and Doug Kothe and Rusty Lusk and Paul Messina and Tony Mezzacappa and Parviz Moin and Mike Norman and Robert Rosner and Vivek Sarkar and Andrew Siegel and Fred Streitz and Andy White and Margaret Wright},
+	title = {The Opportunities and Challenges of Exascale Computing},
+	YEAR= 2010
+}
+
+
+@InProceedings{ feng:04,
+	AUTHOR = {W. Feng and C. Hsu},
+	TITLE = {Green Destiny and its Evolving Parts},
+	BOOKTITLE = {International Supercomputer Conference},
+	month = Jun,
+	YEAR = 2004
+}
+
+@INPROCEEDINGS{ Hsu:05,
+  AUTHOR =      {C. Hsu and W. Feng and J. S. Archuleta},
+  TITLE =       {Towards Efficient Supercomputing: A Quest for the Right Metric},
+  BOOKTITLE =   {Workshop on High-Performance, Power-Aware Computing},
+  MONTH =       Apr,
+  YEAR =        2005
+}
+
+@INPROCEEDINGS{ cameron:04,
+        AUTHOR = {Kirk W. Cameron and Rong Ge and Xizhou Feng and Drew Varner and Chris Jones},
+        TITLE = {High-Performance, Power-Aware Distributed Computing
+                  Framework (Poster)},
+        BOOKTITLE = {Supercomputing},
+        month = Nov,
+        YEAR= 2004
+}
+
+@INPROCEEDINGS{ cameron:05,
+        AUTHOR = {Kirk W. Cameron and Xizhou Feng and Rong Ge},
+        TITLE = {Performance-constrained, Distributed {DVS} Scheduling for Scientific Applications on Power-aware Clusters},
+        booktitle ={Supercomputing},
+        year =     2005,
+        month =    Nov
+}
