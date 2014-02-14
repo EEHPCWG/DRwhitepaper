@@ -1,7 +1,7 @@
-We used a questionnaire in order to understand the current experiences of
-supercomputer center's interaction with their electricity
+We used a questionnaire to understand the current experiences of a
+supercomputer center's interaction with their energy
 service providers. We restricted the analysis to sites in the United States
-since the results of the survey and practices of demand response is highly
+because the results of the survey and practices of demand response is highly
 correlated and driven by energy policies in the country. 
 \cite{torriti_demand_2010}
 [Tor10].
@@ -12,15 +12,15 @@ Lawrence Livermore National Laboratory,
 Argonne National Laboratory, 
 Los Alamos National Laboratory, LBNL, 
 Wright Patterson Air Force Base,
-National Oceanic Atmospheric Administration, 
+National Oceanic Atmospheric Administration (NOAA), 
 National Center for Supercomputing Applications, 
-San Diego Supercomputing Center, 
+San Diego Supercomputing Center (SDSC), 
 Purdue University and Intel Corporation). Eight sites didn't respond (
 National Center for Atmospheric Research,
 IBM Corporation, 
 National Energy Technology Laboratory, Indiana University, 
 Texas Advanced Computing Center, 
-Sandia Natinal Laboratory, 
+Sandia National Laboratory, 
 National Renewable Energy Laboratory, 
 National Aeronautics and Space Administration). The questionnaire was
 sent to a sample that was not randomly selected. It was sent to those sites
@@ -33,7 +33,7 @@ and, of those, 2 responded (Intel and National Oceanic and Atmospheric Administr
 The total power load as well as the intra-hour fluctuation of these sites
 varied significantly. There were four sites with total power load greater
 than 10MW, two sites with \textasciitilde 5MW total power load and five
-sites with less than 2MW total power load. We chose less than 3MW intra hour
+sites with less than 2MW total power load. We chose less than 3MW intra-hour
 variability as the bottom of the scale because we assumed that the
 electrical service providers would not be affected by 3MW (or less) 
 fluctuations. For those with total power load greater than 10MW, the
@@ -102,7 +102,7 @@ daily \\
 \end{center}
 \end{table}
 
-We asked if the supercomputer centers had talked to their electric service
+We asked if the supercomputer centers had talked to their energy service
 providers about programs and methods used to balance the grid supply and
 demand of electricity. About half of them have had some discussion, but it
 has mostly been limited to demand side and not supply-side programs.
@@ -114,7 +114,7 @@ has mostly been limited to demand side and not supply-side programs.
 \caption{Caption Number 2}
 \begin{tabular}{|p{230pt}|l|}
 \hline
-\textbf{Discussions with Electricity Providers}&
+\textbf{Discussions with Energy Providers}&
 {\%} Answered Yes \\
 \hline
 \textbf{Demand-side programs}&
@@ -147,9 +147,9 @@ Contributing to electrical grid storage&
 \end{table}
 
 More than half of the respondents are not interested in shedding or shifting
-load during peak demand. There is some indication that this low interest is
-primarily due to the lack of a clear business case. For the sites where
-there is interest, shifting is more attractive than shedding load. The San Diego Supercomputing Center (SDSC) is
+load during peak demand. LANL reports that the "technical feasibility" and "business case has yet to be developed."
+For the sites where
+there is interest, shifting is more attractive than shedding load. SDSC is
 an exception to this trend because of a site-wide program. ``University of California San Diego
 generates 30-35MW of power yet still imports 5-10MW. As a large generation
 source the utility providers see the campus as a highly attractive partner
@@ -192,50 +192,128 @@ cycle).''
 Given the low levels of current engagement between the electricity service
 providers and the supercomputer centers, it is not surprising that none of
 the supercomputer centers are currently using any power management
-strategies to respond to grid requests by their electrical service
+strategies to respond to grid requests by their energy service
 providers. SDSC's \textit{supercomputer center} is not an exception, but they did respond that their
 entire ``campus is leveraging parallel electrical distribution to trigger
-diesel generators and other back-up resources to respond to to grid and
+diesel generators and other back-up resources to respond to grid and
 non-grid requests.''
 
 We tried to evaluate if power management strategies will be considered
 relevant and effective for grid integration at some point in the future. Two
-questions were asked; is there interest in using the strategies and what
-impact did they think that the strategies would have. When combining
+questions were asked: is there interest in using the strategies and what
+impact did they think that the strategies would have? When combining
 interest and impact, the results showed that power capping, shutdown, and
-job scheduling were both high interest and impact. Load migration, back-up
-scheduling, fine grained power management and thermal management were medium
-interest and impact. Lighting control and back-up resources were low
-interest and impact.
+job scheduling were both potentially interesting and of high impact. Load migration, back-up
+scheduling, fine-grained power management and thermal management were of medium
+interest and impact. Lighting control and back-up resources were of low
+interest and impact.  
+
+Distinguishing interest from impact sheds further insight; some strategies are 
+considered high impact, but not interesting enough to consider deployment.  Facility
+shutdown is rated as having a high impact, but only
+considered interesting by 36\% of the respondents.  NOAA commented that, 
+"We've had too many instability and equipment failures to utilize this as a strategy."  This divide is even more
+apparent with load migration.  It is rated as having a high impact by 36\% of the
+respondents, but only interesting to 10\% .  
 
 
 \begin{table}[htbp]
-
 \begin{center}
-\caption{Caption Number 3}
-\begin{tabular}{|p{299pt}|}
+\caption{Summary of aspects and quality levels}
+\begin{tabular}{|p{2.5in}|p{0.75in}|p{0.75in}|p{0.75in}|} \hline
+
+\textbf{HPC strategies for responding to} &
+\textbf{\%} &
+\textbf{\%} &
+\textbf{\%} \\
+
+\textbf{Energy Provider requests} &
+\textbf{Interested} &
+\textbf{High} &
+\textbf{Medium} \\
+
+\textbf{(listed from highest to lowest interest + impact)} &
+ &
+\textbf{Impact} & 
+\textbf{Impact} \\
 \hline
-\textbf{HPC strategies for responding to Electricity Provider requests (listed from highest to lowest interest }$+$\textbf{ impact)} \\
+
+Course grained power management &
+64 &
+46 &
+27 \\
+
+Load migration &
+10 &
+36 &
+18 \\
 \hline
-Coarse grained power management \\
+
+Re-scheduling back-ups &
+45 &
+0 &
+10 \\
 \hline
-Facility shutdown \\
+
+Fine-grained power management &
+27 &
+0 &
+36 \\
 \hline
-Job scheduling \\
+
+Temperature control beyond ASHRAE limits &
+27 &
+0 &
+18 \\
 \hline
-Load migration \\
+
+Turn off lighting &
+18 &
+0 &
+0 \\
 \hline
-Re-scheduling back-ups \\
+
+Use back-up resources (e.g., generators) &
+0 &
+10 &
+27 \\
 \hline
-Fine grained power management \\
-\hline
-Temperature control beyond ASHRAE limits \\
-\hline
-Turn off lighting \\
-\hline
-Use back-up resources (e.g., generators) \\
-\hline
+
 \end{tabular}
 \label{tab3}
 \end{center}
+
 \end{table}
+
+
+%\begin{table}[htbp]
+%
+%\begin{center}
+%\caption{Caption Number 3}
+%\begin{tabular}{|p{299pt}|}
+%\hline
+%\textbf{HPC strategies for responding to Energy Provider requests (listed from highest to lowest interest }$+$\textbf{ impact)} \\
+%\hline
+%Coarse grained power management \\
+%\hline
+%Facility shutdown \\
+%\hline
+%Job scheduling \\
+%\hline
+%Load migration \\
+%\hline
+%Re-scheduling back-ups \\
+%\hline
+%Fine grained power management \\
+%\hline
+%Temperature control beyond ASHRAE limits \\
+%\hline
+%Turn off lighting \\
+%\hline
+%Use back-up resources (e.g., generators) \\
+%\hline
+%\end{tabular}
+%\label{tab3}
+%\end{center}
+
+%\end{table}

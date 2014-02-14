@@ -1,66 +1,97 @@
-The prior work described in this paper is that which addresses strategies
+The prior work described in this paper addresses strategies
 that HPC centers can take to manage power. A lot of work has been done on
-energy efficiency, some of which has an element of power management. But,
-there is not a lot work that is specifically focused on power management in
-response to a request from an electrical service provider.
+energy efficiency, some of which has an element of power management; but,
+there is not a lot work that is specifically focused on data center power management (both cooling systems and IT equipment) in
+response to a request from an electrical service provider %\cite{INSERT PAPER} 
+(cite Ghatikar et al., 2012a).
 
-\subsection{Fine Grained Power Management}
-In \cite{varma_control-theoretic_2003} (Varma et al., 2003) system level DVFS techniques demonstrated. They
-monitor CPU utilization at regular intervals and then perform dynamic
-scaling based on their estimate of utilization for the next interval.
+Most of the prior work mentioned in this section is focused on HPC systems. 
+Since SC cooling requirement is a derivative of IT equipment, any strategy that lowers the amount of heat generated could be compensated by lowered cooling.
 
-Authors in\cite{von_laszewski_power-aware_2009} (von Laszewski et al., 2009) present an efficient scheduling
-algorithm to allocate virtual machines in a DVFS-enabled cluster by
-dynamically scaling the supplied voltages.
+%Patki: temporary text.
 
-vGreen \cite{dhiman_vgreen:_2009} (Dhiman et al., 2009) is a system for energy efficient computing in
-virtualized environments by linking online workload characterization to
-dynamic VM scheduling decisions to achieve better performance, energy
-efficiency and power balance in the system.
+\subsection{Power Management}
 
-\subsection{Power Capping}
+DVFS and power capping are two popular ways to manage node power. Prior work in the HPC domain looked at analytical models to understand energy consumption \cite{SpringerPPoPP2006,GeICPP2007,LiHPCA2006} and at trading execution time for lower power/energy \cite{CameronSC2005,HsuSC2005}. Several DVFS algorithms have also been proposed, such as CPUMiser \cite{GeICPP2007} and Jitter \cite{KappiahSC2005}. Varma et al, 2003 \cite{varma_control-theoretic_2003} demonstrated system-level DVFS techniques. They monitored CPU utilization at regular intervals and performed dynamic scaling based on their estimate of utilization for the next interval. Springer et al.~\cite{springer:06} analyzed HPC applications under an energy bound. Rountree et al. used linear programming to find near-optimal energy savings without degrading performance \cite{rountree:07} and implemented a runtime system based on this scheme \cite{rountree:09}. 
 
-\textbf{Power capping }techniques set a value below the actual peak power
-and preventing that number from being exceeded through some type of control
-loop [Fan07]. There are numerous ways to implement this, but they generally
-consist of a \textbf{power monitoring system }such as a power estimation
-method or one based on direct power sensing, and a \textbf{power throttling
-mechanism}. Power throttling generally works best when there is \textbf{a
-set of jobs with loose service level guarantees or low priority }that can be
-forced to reduce consumption when the data center is approaching \textbf{the
-power cap value}. Power consumption can be reduced simply by
-\textbf{de-scheduling tasks }or by using any available component-level power
-management \textbf{knobs}, such as DVFS [Fan07].
+There also has been work in the real-time systems community to solve the DVFS scheduling problem using mixed integer linear programming on a single processor\cite{IshiharaISLPED1998,SaputraLCTES2002,SwaminathanRTSS2000,SwaminathanASPDAC2001}. Other real-time approaches looked at saving energy \cite{MoncusiRTSS2003,MochockiICCAD2002,MochockiRTAS2005,ZhuTPDS2003,ZhangDAC2002}. 
+
+In addition, there has been active research in the domain of virtual machines. Von Laszewski et al. \cite{von_laszewski_power-aware_2009} presented an efficient scheduling algorithm to allocate virtual machines in a DVFS-enabled cluster by
+dynamically scaling the supplied voltages. Dhiman et al. designed vGreen \cite{dhiman_vgreen:_2009}, which is a system for energy efficient computing in
+virtualized environments. They linked linking online workload characteristics to dynamic VM scheduling decisions and achieved better performance, energy
+efficiency and power balance in the system. Curtis-Maury et. al \cite{Curtis1,Curtis2,Curtis3} introduced Dynamic Concurrency Throttling, which is a technique to dynamically optimize for power and performance by varying the number of active threads in parallel codes. 
+
+Chip power measurement and capping techniques were initially introduced with the Running Average Power Limit (RAPL) interface on Intel Sandybridge processors \cite{IntelSDM,David2010}. In the HPC domain, Rountree et al.~\cite{Rountree2012} proposed RAPL as an alternative to DVFS and analyzed application performance under hardware-enforced power bounds. They also established that variation in power directly translates to variation in application performance under a power bound. Patki et al. \cite{Patki1} used power capping techniques to demonstrate how hardware overprovisioning can improve HPC application performance under a global power bound significantly. Overprovisioning was also explored in the data center community \cite{femal:04}.
+
+%\subsection{Fine Grained Power Management}
+%In \cite{varma_control-theoretic_2003} (Varma et al., 2003) demonstrate system-level DVFS techniques. They
+%monitor CPU utilization at regular intervals and then perform dynamic
+%scaling based on their estimate of utilization for the next interval.
+%
+%Authors in\cite{von_laszewski_power-aware_2009} (von Laszewski et al., 2009) present an efficient scheduling
+%algorithm to allocate virtual machines in a DVFS-enabled cluster by
+%dynamically scaling the supplied voltages.
+%
+%vGreen \cite{dhiman_vgreen:_2009} (Dhiman et al., 2009) is a system for energy efficient computing in
+%virtualized environments by linking online workload characterization to
+%dynamic VM scheduling decisions to achieve better performance, energy
+%efficiency and power balance in the system.
+%
+%
+%
+%\subsection{Power Capping}
+%
+%\textbf{Power capping }techniques set a value below the actual peak power
+%and prevent that number from being exceeded through some type of control
+%loop [Fan07]. There are numerous ways to implement this, but they generally
+%consist of a \textbf{power monitoring system }such as a power estimation
+%method or one based on direct power sensing, and a \textbf{power throttling
+%mechanism}. Power throttling generally works best when there is \textbf{a
+%set of jobs with loose service level guarantees or low priority }that can be
+%forced to reduce consumption when the datacenter is approaching \textbf{the
+%power cap value}. Power consumption can be reduced simply by
+%\textbf{de-scheduling tasks }or by using any available component-level power
+%management \textbf{knobs}, such as DVFS [Fan07].
 
 \subsection{Job Scheduling}
 The problem of scheduling jobs has been extensively studied. In general,
 most of the schedulers implement the First Come First Served (FCFS) policy
 as a simple but fair strategy for scheduling jobs. But this policy suffers
-from low system utilization. The most commonly used optimization is backfill
+from low system utilization. The most commonly used optimization is backfilling
 \cite{lifka_anl/ibm_1995} 
 \cite{mualem_utilization_2001}
 \cite{feitelson_parallel_2004}
-[Lif95, Mua95, Fei04]. Backfilling is proposed to improve the system
-utilization. Backfilling by identifying free capacities allows the smaller
-jobs fit those capacities to move forward and run on idle processors.
+[Lif95, Mua95, Fei04], which is proposed to improve system
+utilization. By identifying free capacities backfillin allows smaller
+jobs that fit those capacities to move forward and run on idle processors.
 
-In [Yang ref is not in Zotero] 
-\cite{zhou_reducing_2013}
-[Yang13] and [Zhou13] , \textbf{job scheduling} as a DR strategy and
+In \cite{zhou_reducing_2013} [Zhou13] , \textbf{job scheduling} as a DR strategy and
 \textbf{dynamic pricing} as a grid integration program have been used to
 propose \textbf{a power-aware job scheduling} approach to reduce
-\textbf{electricity costs} \textit{without degrading the system utilization}. 
+\textbf{electricity costs} \textit{without degrading system utilization}. 
 The novelty of the proposed job scheduling
 mechanism is its ability to take \textit{the variation of 
-electricity price }into consideration as a means to make
+the price of electricity }into consideration as a means to make
 better decisions of the timing of scheduling jobs with diverse power
-profiles. Experimentations on an IBM Blue Gene/P and a cluster system as
+profiles. Experiments on an IBM Blue Gene/P and a cluster system as
 well as a case study on Argonne's 48-rack IBM Blue Gene/Q system have
 demonstrated the effectiveness of this scheduling approach. Preliminary
-results show a \textbf{23{\%}} reduction in electricity cost of HPC systems.
+results show a \textbf{23{\%}} reduction in the cost of electricity for HPC systems.
+
+%Patki
+%This reference is not *power capping*, it is power-aware scheduling in data centers. 
+Fan et al. \cite{PowerAwareServer1} discussed power-aware job scheduling in the data center domain. 
+They discussed implementation of power capping with a \textbf{power monitoring system} based on a power estimation
+method or direct power sensing, and a \textbf{power throttling mechanism}. Power throttling generally works best when there is 
+a set of jobs with loose service level guarantees or low priority that can be
+forced to reduce consumption when the datacenter is approaching the power cap value. They suggested that power consumption 
+can be reduced simply by de-scheduling tasks or by using any available component-level power management knobs.
+
+Etinski et al. \cite{Etinski1,Etinski2,Etinski3,Etinski4} explored scheduling under a power budget in supercomputing and analyzed bounded slowdown of jobs. In their series of papers, they introduced three policies. Their first policy is based looks at current system utilization and uses DVFS during job launch time to meet a power bound. Their second policy meets a bounded slowdown condition without exceeding a job-level power budget. Their third policy improves upon the former by analyzing job wait times and adding a reservation condition. 
+
 
 A grid computing infrastructure with large amount of computations normally
-contains parallel machines (supercomputers cluster) as main computational
+contains parallel machines (a supercomputer cluster) as main computational
 resources.  \cite{foster_anatomy_2001} [Fos01]
 Incoming jobs to Grid's local resources are scheduled by
 local scheduling system. Local scheduling system for parallel machines
@@ -68,19 +99,19 @@ typically use batch queued space-sharing and its variants as scheduling
 policies. Most current local schedulers use backfilling strategies with FCFS
 queue-priority order as policy for parallel job scheduling.
 
-There are many use cases in grid computing environment that require QoS
+There are many use cases in a grid computing environment that require QoS
 guarantees in terms of guaranteed response time, including time-critical
 tasks that must meet a deadline, which would be impossible without a start
-time guarantee. Furthermore providing time guarantee enable the job to be
-coordinated with other activities, essential for co-allocation and workflows
+time guarantee. Furthermore, providing a time guarantee enables the job to be
+coordinated with other activities, essential for co-allocation and workflow
 applications. Advance reservation is a guarantee for the availability of a
 certain amount of resources to users and applications at specific times in
 the future 
-\cite{foster_distributed_1999} [Fos99]. Advance reservation feature requires local scheduling
-systems to support a reservation capability beside batch queued policy for
+\cite{foster_distributed_1999} [Fos99]. The advance reservation feature requires local scheduling
+systems to support a reservation capability beside a batch-queued policy for
 local and normal jobs. In load migration, we encounter the need to deliver
 resources at specific times in order to accept jobs from other HPC centers
-to respond to their demand enforced by electricity grid. This requirement
+to respond to their demand enforced by the electricity grid. This requirement
 can be achieved by advance reservations 
 \cite{foster_distributed_1999}
 [Fos99]. Modern resource management
@@ -94,9 +125,14 @@ In order to balance the electrical grid,
 [Chiu12] proposes a low-cost
 \textbf{geographic load migration} to match electricity supply. In addition,
 authors present a real grid balancing problem experienced in the Pacific
-Northwest. They propose a symbiotic relationship between data centers and
+Northwest. They propose a symbiotic relationship between datacenters and
 electrical grid operators by showing that \textbf{mutual cost benefits }can
 be accessible.
+
+ %\cite{Ghatikar} 
+ (Ghatikar et al., 2012b: include citation) looks at two applied cases of distributed data centers.
+ The results show that load migration is possible in both homogenous and heterogenous systems. 
+ Although the migration strategies were through a manual process, the responses could benefit from automation.
 
 \subsection{Thermal Management}
 Thermal and cooling metrics are becoming important metrics in scheduling and
@@ -105,13 +141,12 @@ job-placement-centric. These techniques either aim to place incoming
 computationally intensive jobs in a thermal-aware manner on servers with
 lower temperatures or attempt to reactively migrate/load-balance jobs from
 high temperature servers to servers with lower temperatures.
-\textbf{\textit{T* }} 
 
 \cite{kaushik_t*:_2012}
 [Kau12]
  takes a data-centric thermal- and
 energy-management approach and does proactive, thermal-aware file placement
-which allows cooling energy costs savings without performance trade-offs. T*
+which allows cooling energy costs savings without performance trade-offs. \textbf{\textit{T* }} 
 is cognizant of the uneven thermal-profile of the servers, differences in
 their thermal-reliability-driven load thresholds, and differences in the
 data-semantics, i.e., computation job rates, sizes, and evolution life
