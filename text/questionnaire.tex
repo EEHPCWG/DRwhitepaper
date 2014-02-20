@@ -15,14 +15,7 @@ Wright Patterson Air Force Base,
 National Oceanic Atmospheric Administration (NOAA), 
 National Center for Supercomputing Applications, 
 San Diego Supercomputing Center (SDSC), 
-Purdue University and Intel Corporation). Eight sites didn't respond (
-National Center for Atmospheric Research,
-IBM Corporation, 
-National Energy Technology Laboratory, Indiana University, 
-Texas Advanced Computing Center, 
-Sandia National Laboratory, 
-National Renewable Energy Laboratory, 
-National Aeronautics and Space Administration). The questionnaire was
+Purdue University and Intel Corporation). The questionnaire was
 sent to a sample that was not randomly selected. It was sent to those sites
 where it was relatively easy to identify an individual based on membership
 within the EE HPC WG. The sample is more representative of Top50 sized sites
@@ -31,7 +24,9 @@ responded). Only 4 additional sites were sampled from the Top51-Top100 List
 and, of those, 2 responded (Intel and National Oceanic and Atmospheric Administration).
 
 The total power load as well as the intra-hour fluctuation of these sites
-varied significantly. There were four sites with total power load greater
+varied significantly. Total power load includes all computing systems plus 
+ancillary systems such as power delivery and cooling components.
+There were four sites with total power load greater
 than 10MW, two sites with \textasciitilde 5MW total power load and five
 sites with less than 2MW total power load. We chose less than 3MW intra-hour
 variability as the bottom of the scale because we assumed that the
@@ -40,7 +35,7 @@ fluctuations. For those with total power load greater than 10MW, the
 intra-hour fluctuation varied from less than 3MW to 8MW. One of
 \textasciitilde 5MW sites said that they experienced 4MW variability. The
 rest of the sites were all less than 3MW. Most of the intra-hour variability
-was due to preventative maintenance.
+was due to preventative maintenance, although it is a measure of both computing and ancillary systems.
 
 
 \begin{table}[htbp]
@@ -146,17 +141,13 @@ Contributing to electrical grid storage&
 \end{center}
 \end{table}
 
-More than half of the respondents are not interested in shedding or shifting
+Approximately half of the respondents are not currently interested in shedding
 load during peak demand. LANL reports that the "technical feasibility" and "business case has yet to be developed."
-For the sites where
-there is interest, shifting is more attractive than shedding load. SDSC is
-an exception to this trend because of a site-wide program. ``University of California San Diego
-generates 30-35MW of power yet still imports 5-10MW. As a large generation
-source the utility providers see the campus as a highly attractive partner
-for offloading grid stress. Automatic load shedding is being
-explored/deployed today.''
+There is slightly more interest in shifting than shedding load. SDSC reports that
+ ``Automatic load shedding is being
+explored/deployed today'' for the entire campus, not just the supercomputing center.
 
-Responding to pricing incentive programs is also not considered interesting,
+Responding to pricing incentive programs is also not considered currently interesting to approximately half of the repondents,
 although the reasons for this low interest may be organizational. Several
 open-ended comments revealed that pricing is fixed and/or done by another
 organization at the site level and outside of their immediate control.
@@ -180,9 +171,10 @@ An open-ended question was posed as to whether or not there was information
 either requested of the supercomputer sites by their providers or,
 conversely, requested of the providers by the sites. In both cases, well
 over 75{\%} of the respondents answered no. Lawrence Livermore National Laboratory (LLNL) and LANL were the
-exceptions. LLNL is ``working on obtaining additional data from them and a
-means of sharing data between them and us'' and has been requested to
-provide ``additional detailed forecasting and ultimately real time data.''
+exceptions. LLNL is ``responding to requests for additional data on an hourly, 
+weekly and monthly basis."  They are also working to develop an automated capability to share 
+data with their electricity providers, which would provide automated additional 
+detailed forecasting and ultimately real time data."
 LANL has also been requested to provide ``power projections, hour by hour,
 for at least a day in advance'' and, perhaps as a consequence, would like to
 have more information on ``sensitivity of power distribution grid to rapid
@@ -238,7 +230,7 @@ respondents, but only interesting to 10\% .
 \textbf{Impact} \\
 \hline
 
-Course grained power management &
+Coarse grained power management &
 64 &
 46 &
 27 \\
