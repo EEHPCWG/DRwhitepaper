@@ -1,84 +1,93 @@
-The EE HPC WG Team took as their starting point a model developed by LBNL's 
-Demand Response Research Center \footnote{LBNL
-Data Center Grid Integration Activities: http://drrc.lbl.gov/projects/dc} that
-describes challenges and opportunities in which data centers and energy service providers may
-interact and how this integration can advance new market opportunities. This
-integration model describes programs that are used by the energy service
-providers to encourage particular behaviors by their customers and methods used
-to balance the grid supply and demand of electricity. It also describes
-strategies that data centers might employ for utility programs to manage their
-electricity and power requirements to lower costs and benefit from utility incentives. The EE HPC WG Team adopted
-this model with slight tweaks to reflect the HPC environment (versus the
-general data center).
+The EE HPC WG Team took as their starting point a model developed by 
+Lawrence Berkeley National Laboratory (LBNL's) Demand Response Research Center
+that describes challenges and opportunities in which data centers and electricity 
+service providers may interact and how this integration can advance new market opportunities. \footnote{LBNL
+Data Center Grid Integration Activities: http://drrc.lbl.gov/projects/dc} This integration model 
+describes programs that are used by some of the electricity service providers to encourage particular 
+responses by their customers and methods used to balance the electric grid supply and demand. 
+The findings also describe strategies that data centers might employ for utility programs to modify 
+their electricity and power requirements to lower costs and benefit from utility incentives. The EE HPC WG Team 
+adopted this model with slight tweaks to reflect the supercomputing environment focus (versus the general data center).
 
 %\href{http://drrc.lbl.gov/publications/demand-response-and-open-automated-demand-response-opportunities-data-centers}
 %{http://drrc.lbl.gov/publications}
 
-\subsection{Electricity Supply and Demand Side Management}
+\subsection{Electricity Provider Programs and Methods}
 
-Energy providers support demand-side management for both energy efficiency and to balance the electricity supply (e.g., peak summer afternoons). 
-Demand side management programs are used to manage the electricity consumption on the consumer’s side of the meter.  
-Demand side management can include energy conservation, energy efficiency and peak load management, and responses to 
-changing supply conditions (e.g., demand response). Some of these consumer actions are in response to notifications (day-ahead or day-of) from the energy providers. The focus for this paper is on programs that are targeted at load management to improve electric grid reliability. 
-Management of electricity supply are used to ensure the efficient and reliable generation, transmission and distribution of 
-electricity.  
-These methods by the energy provide are intended to address the changing demand conditions and any supply contingency management. 
+One key goal of the electricity provider is to provide efficient and reliable generation, transmission and 
+distribution of electricity. Methods and programs employed by the electricity providers and their consumers 
+are key to managing and balancing the supply and demand of electricity. While the methods describe how 
+electricity providers manage supply, the programs describe the activities that the electricity providers 
+can offer to their consumers to balance demand with supply.
 
-There are many different ways that the end-users of electricity or consumers can modify or change their electricity use. 
-The following is a key list and 
-brief definitions of key supply-side programs and demand-side management strategies that HPC data centers can utilize. 
-Consumers' strategies are typically in response to support one or many of these supply-side programs.
+Methods are critical to the electricity providers, but are generally not visible to the consumer of the electricity.  
+These methods are the major means by which supply and demand of electricity are managed.
 
+Electricity provider programs encourage customer responses to target both energy efficiency and real-time
+(day-ahead or day-of) management of demand for electricity. An example of an electricity provider program 
+that encourages energy efficiency would be to provide home consumers a financial incentive for replacing 
+single pane with double pane windows.  On the other hand, an example that illustrates programs that help 
+with real-time demand management would be to provide a financial incentive for reducing load during high demand periods 
+(such as hot summer afternoons when air conditioners are heavily utilized). 
 
+The following is a list and brief definitions of key methods and programs.  
 
 \begin{itemize}
-\item SUPPLY SIDE PROGRAMS
-\item System Peak Load: Programs designed for responses during peak hour “events” and focus on reducing peaks on 
-forecasted high-system load days. 
-\item Continuous Grid Reliability: These programs are designed for fastest, shortest duration responses. 
-Response is only required during power system and intra-hour variability “events” that typically cannot be forecasted.
-\item Regulation Management (Up or Down): Programs designed to follow minute-to-minute commands from the grid to 
-balance the aggregate system load and generation. These programs can be expanded to manage the variable and 
-uncertain generation nature of many renewable resources, supplement the methods for grid scale storage, which is 
-used to store electricity on a large scale to meet the system ramping (up or down) requirements. Pumped-storage 
-hydroelectricity is currently one of the largest forms of grid energy storage. Such 
-responses can also be used for frequency response, which are methods used to keep grid frequency constant 
-and in-balance.
-\item Congestion Management: Methods used to resolve congestion that occurs when there is not enough transmission 
-capability to support all requests for transmission services.  Or, methods used to resolve congestion 
-that occurs when the distribution control system is overloaded. Peak response can be expanded for 
-congestion management.
-\item Dynamic Pricing: Day-ahead and day-off pricing programs that are designed to change dynamically in response 
-to system load and generation conditions.  
-\item DEMAND SIDE MANAGEMENT STRATEGIES
-\item Load Shed: Strategies used to reduce the load consumption during system peaks, 
-where the reduced load is not used at a later time.
-\item Load Shift:  Strategies where the load during peak times is moved to, typically, non-peak hours.
-\item Price Response:  Strategies for time varying and real-time pricing programs used to motivate modification 
-to electricity consumption. 
-\item Continuous or Real-time response: Emerging strategies that modify the load consumption (increase or decrease) 
-based on intra-hour changing supply conditions on daily basis.
+\item METHODS
+\item Regulation (Up or Down): Methods used to maintain that portion of electricity generation reserves 
+that are needed to balance generation and demand at all times.  Raising supply is up regulation and lowering 
+supply is down regulation. There are many types of reserves 
+(e.g., operating, ancillary services), distinguished by who manage them and what they are used for.
+\item Transmission Congestion: Methods used to resolve congestion that occurs when there is not enough 
+transmission capability to support all requests for transmission services. Transmission system operators 
+must re-dispatch generation or, 
+in the limit, deny some of these requests to prevent transmission lines from becoming overloaded.
+\item Distribution Congestion:  Methods used to resolve congestion that occurs when the distribution control system 
+is overloaded.  It generally results in deliveries that are held up or delayed.  
+\item Frequency response:  Methods used to keep grid frequency constant and in-balance. 
+Generators are typically used for frequency response, but any appliance that operates to a duty cycle 
+(such as air conditioners and heat pumps) could be used to provide a 
+constant and reliable grid balancing service by timing their duty cycles in response to system load.   
+\item Grid Scale Storage:  Methods used to store electricity on a large scale. 
+Pumped-storage hydroelectricity is the largest-capacity form of grid energy storage. 
+\item Renewables:  Methods used to manage the variable uncertain generation nature of many renewable resources. 
+\item PROGRAMS
+\item Energy Efficiency:  Programs used to reduce overall electricity consumption.
+\item Peak Shedding:  Programs used to reduce load during peak times, 
+where the reduced load is not used at a later time. 
+\item Peak Shifting:  Programs where the load during peak times is moved to, typically, non-peak hours. 
+\item Dynamic Pricing:  Time varying pricing programs used to increase, shed or shift electricity consumption. 
+There are two types of pricing, peak and real-time.  Peak pricing is pre-scheduled; however, the consumer 
+does not know if a certain day will be a peak or a non-peak day until day-ahead or day-of.  
+Real-time pricing is not pre-scheduled; prices can be set day-ahead or day-of.
 \end{itemize}
 
-To support the reliable functioning of today's electric grid and as it evolves to support more distributed genertation, its integration with and responses from 
-HPC centers can be used to support better grid management.
+These methods and programs have historically not been relevant to supercomputing centers; however, 
+the following example illustrates their potential relevance.
+The generation capacity requirements and response timescales vary across the country for electricity 
+providers and operators. For example, the New England independent system operator (ISO-NE) uses a method 
+of regulation and reserves that relies heavily on a day-ahead market program. This provides an opportunity 
+for demand side resources- like supercomputer centers with renewable energy sources- to participate in the 
+market supplying the ISO-NE with electricity.  It also makes the NE-ISO particularly sensitive to major 
+fluctuations in electricity demand, which, as discussed further in the questionnaire section, is an emerging 
+characteristic of the largest supercomputer centers.
 
 \subsection{Supercomputer Center Response Strategies}
 
-One dimension of the model to support better grid management in supply-side programs are demand-side 
-management strategies 
-that a supercomputer site might use to manage power in response to a request from their electric service provider. 
+As described in section 2.1, electricity providers offer programs like peak shifting that may request 
+a change in timing and/or magnitude of demand by supercomputing centers.  
+In response, supercomputing centers may employ one or more of a number of strategies to control their 
+electricity demand.
 
-Although these strategies can be used to temporarily modify loads in response to a
-request from an electric service provider, some of strategies them could also be used
-at all times to improve energy efficiency. It is the former that is of primary
-interest to this investigation - what HPC systems can do in response to a grid request that they cannot do all the time? 
-Two examples may help to clarify this
-distinction. Temporary load migration is an example of a strategy that is well suited
-to responding to an electric service provider request, but is not likely to
-improve energy efficiency (lowering aggregate energy use). Fine grained power management at all times, on the other hand,
-is more likely to be used for improving energy efficiency, unless the strategy is specifically used in response to a service provider's request.
-
+Although these strategies can be used to temporarily modify loads in response to a request from an 
+electric service provider, some of strategies could eventually be used at all times to improve energy 
+efficiency if the HPC sees no operational issues. It is the former that is of primary interest to this 
+investigation - what HPC systems can do in response to a grid request that they cannot do all the time? 
+Two examples may help to clarify this distinction. Temporary load migration is an example of a strategy 
+that is well suited to responding to an electric service provider request, but is not likely to improve 
+energy efficiency (lowering aggregate energy use). Fine grained power management at all times, on 
+the other hand, is more likely to be used for improving energy efficiency, unless the strategy is 
+specifically used in response to a service provider's request. 
 Below is a list of strategies:
 
 \begin{itemize}
@@ -110,4 +119,4 @@ applies when there is redundancy.
 humidity levels for short periods.
 \end{itemize}
 
-It should be noted that these strategies are intended to temporarily reduce HPC service levels without impacting the facility operations or the equipment.
+
