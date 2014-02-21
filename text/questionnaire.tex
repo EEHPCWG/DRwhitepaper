@@ -1,6 +1,5 @@
 We used a questionnaire to understand the current experiences of a
-supercomputer center's interaction with their energy
-service providers. We restricted the analysis to sites in the United States
+supercomputer center's interaction with their electricity providers. We restricted the analysis to sites in the United States
 because the results of the survey and practices of demand response is highly
 correlated and driven by energy policies in the country. 
 \cite{torriti_demand_2010}
@@ -30,12 +29,12 @@ There were four sites with total power load greater
 than 10MW, two sites with \textasciitilde 5MW total power load and five
 sites with less than 2MW total power load. We chose less than 3MW intra-hour
 variability as the bottom of the scale because we assumed that the
-electrical service providers would not be affected by 3MW (or less) 
+electricity providers would not be affected by 3MW (or less) 
 fluctuations. For those with total power load greater than 10MW, the
 intra-hour fluctuation varied from less than 3MW to 8MW. One of
 \textasciitilde 5MW sites said that they experienced 4MW variability. The
 rest of the sites were all less than 3MW. Most of the intra-hour variability
-was due to preventative maintenance, although it is a measure of both computing and ancillary systems.
+was due to preventative maintenance (again, the power variation includes both computing and ancillary systems).
 
 
 \begin{table}[htbp]
@@ -97,10 +96,11 @@ daily \\
 \end{center}
 \end{table}
 
-We asked if the supercomputer centers had talked to their energy service
+We asked if the supercomputer centers had talked to their electricity
 providers about programs and methods used to balance the grid supply and
 demand of electricity. About half of them have had some discussion, but it
-has mostly been limited to demand side and not supply-side programs.
+has mostly been limited to programs (e.g., peak shed, dynamic pricing) 
+and not methods (e.g., regulation, frequency response, congestion).
 
 
 \begin{table}[htbp]
@@ -153,14 +153,14 @@ open-ended comments revealed that pricing is fixed and/or done by another
 organization at the site level and outside of their immediate control.
 
 Eighty percent of the respondents have not had discussions with their
-electricity service providers about congestion, regulation and frequency
+electricity providers about congestion, regulation and frequency
 response. Los Alamos National Laboratory (LANL) is one of two who have had discussions and who commented that
 they are ``learning about the process'' and that it is ``outside of [their]
 
 visibility or control''.
 
-There were been many more respondents who have had discussions with their
-electricity service providers about enabling the use of renewables; 36{\%}
+There were many more respondents who have had discussions with their
+electricity providers about enabling the use of renewables; 36{\%}
 have already had discussions and more than half are interested in further
 and/or future discussions. SDSC already has a site-wide program; ``the
 campus has a large fuel cell (2.5$+$ MW) and works with the utility with
@@ -181,7 +181,7 @@ have more information on ``sensitivity of power distribution grid to rapid
 transients (random daily step changes of 10 MW up or down within a single AC
 cycle).''
 
-Given the low levels of current engagement between the electricity service
+Given the low levels of current engagement between the electricity
 providers and the supercomputer centers, it is not surprising that none of
 the supercomputer centers are currently using any power management
 strategies to respond to grid requests by their energy service
@@ -190,15 +190,30 @@ entire ``campus is leveraging parallel electrical distribution to trigger
 diesel generators and other back-up resources to respond to grid and
 non-grid requests.''
 
+It was suggested by ORNL that some of the power management strategies 
+are of questionable business value even for energy efficiency, let alone grid integration.
+For example, ORNL comments that "these assets have very clear depreciation schedules, and the modest cost 
+savings in terms of electricity consumption due to some of these methods may not (or frequently will not) 
+outweigh the capital investment cost in the computer.  I.e. If <site> spent $100M for a computer that will 
+remain in production for 60 months, then the 
+apparent benefit of power capping, etc can easily be outweighed by lost productivity of the consumable resource."
+
+Similarly, another comment by ORNL suggested that the rapid deployment of hardware features, like P-states,  
+ may outpace the need for strategies like power aware job scheduling.
+
 We tried to evaluate if power management strategies will be considered
 relevant and effective for grid integration at some point in the future. Two
 questions were asked: is there interest in using the strategies and what
 impact did they think that the strategies would have? When combining
 interest and impact, the results showed that power capping, shutdown, and
-job scheduling were both potentially interesting and of high impact. Load migration, back-up
+job scheduling were both potentially interesting and of high impact. 
+
+
+Load migration, back-up
 scheduling, fine-grained power management and thermal management were of medium
 interest and impact. Lighting control and back-up resources were of low
 interest and impact.  
+
 
 Distinguishing interest from impact sheds further insight; some strategies are 
 considered high impact, but not interesting enough to consider deployment.  Facility
@@ -219,7 +234,7 @@ respondents, but only interesting to 10\% .
 \textbf{\%} &
 \textbf{\%} \\
 
-\textbf{Energy Provider requests} &
+\textbf{Electricity Provider requests} &
 \textbf{Interested} &
 \textbf{High} &
 \textbf{Medium} \\
