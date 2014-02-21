@@ -1,41 +1,49 @@
 Supercomputer centers with petascale systems for high-performance 
 computing (HPC) are realizing the large impact they will be 
-putting on their energy service providers with peak power demands of 20MW and instantaneous power fluctuations of 8MW. 
+putting on their electricity providers with peak power demands of 20MW and instantaneous power fluctuations of 8MW. 
  
 The Energy Efficient HPC Working Group 
 (\href {http://eehpcwg.lbl.gov/}{EE HPC WG}) 
 has been investigating opportunities for large supercomputer sites to more closely 
-integrate with their energy service providers. This paper documents the 
+integrate with their electricity providers. This paper documents the 
 results of this investigative activity. 
 
-Leveraging prior work on data center and grid integration opportunities done
-by Lawrence Berkeley National Laboratory's (LBNL) Demand Response Research Center
-(\href
-{http://drrc.lbl.gov/publications/demand-response-and-open-automated-demand-response-opportunities-data-centers}{http://drrc.lbl.gov/publications}),
- this paper takes as a starting point LBNL's model for integrating data
-centers and the electrical grid. The model describes programs that are used
-by the energy service providers to integrate with their customers (such
-as demand response) and methods used to balance the grid supply and demand
-of electricity. It also describes strategies that data centers might employ
-for managing their electricity and power requirements. This paper tuned this
-model's data center strategies for supercomputer centers.  As opposed to data centers, supercomputer centers 
+The EE HPC WG Team took as their starting point a model developed by
+Lawrence Berkeley National Laboratory (LBNL's) Demand Response Research Center
+that describes challenges and opportunities in which data centers and electricity
+service providers may interact and how this integration can advance new market opportunities. \footnote{LBNL
+Data Center Grid Integration Activities: http://drrc.lbl.gov/projects/dc} This integration model
+describes programs that are used by some of the electricity service providers to encourage particular
+responses by their customers and methods used to balance the electric grid supply and demand.
+The findings also describe strategies that data centers might employ for utility programs to modify
+their electricity and power requirements to lower costs and benefit from utility incentives. The EE HPC WG Team
+adopted this model with slight tweaks to reflect the supercomputing environment focus 
+(versus the data center as described by LBNL's Demand Response Research Center).
+
+%\href{http://drrc.lbl.gov/publications/demand-response-and-open-automated-demand-response-opportunities-data-centers}
+%{http://drrc.lbl.gov/publications}
+
+This paper distinguishes the supercomputer center
+as having unique characteristics that distinguish it from the data center. As opposed to data centers, 
+supercomputer centers 
 have very high system utilization and are not likely to use virtualization as a strategy.  
 Also, supercomputer applications are generally not easily portable between 
 geographic locations for a variety of reasons; security, data-locality, system tuning. 
-Therefore, although included in the model for data centers, both virtualization and geographic load shifting were eliminated as
+Therefore, although included in the LBNL model for data centers, both virtualization and geographic load 
+shifting were eliminated as
 potential supercomputer center strategies.
 
 
-The first section of this paper describes in greater detail the model for
-integrating supercomputer centers and the electrical grid. The second
-section is a review of prior work on HPC center strategies that might be
+Section 2 of this paper describes in greater detail the model for
+integrating supercomputer centers and the electrical grid. Section 3 
+is a review of prior work on HPC center strategies that might be
 deployed for managing electricity and power. In order to further understand
 today's relationships, potential partnerships and possible integration
-between HPC centers, their energy providers and the grid, a
+between HPC centers, their electricity providers and the grid, a
 questionnaire was deployed whose respondents were Top100 List class
-supercomputer centers in the United States. The third section of this paper
-describes the results of that questionnaire. The fourth section of the paper
-describes opportunities, solutions and barriers. A fifth section describes
+supercomputer centers in the United States. Section 4 of this paper
+describes the results of that questionnaire. The fifth section of the paper
+describes opportunities, solutions and barriers. A sixth section describes
 conclusions and next steps. Finally, the last section recognizes additional
 authors.
 
