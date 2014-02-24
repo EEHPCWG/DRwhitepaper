@@ -13,17 +13,16 @@ to other supercomputer centers that are willing to pursue this degree
 of integration.
 
 % The following paragraph is what we want to claim, but is actually
-% factually incorrect.  A supercomputing center understands its
+% factually incorrect.  A supercomputer center understands its
 % cost to operate per unit time (e.g., cost to run per hour).  This
 % cost includes things like the cost of personnel, cost of renting
-% the physical space for the datacenter, cost of electricity, etc.
+% the physical space for the supercomputer center, cost of electricity, etc.
 % It turns out that the cost of electricity is a small percent of
 % the overall cost of running the center.  In the end, I think there
-% is very little chance of getting supercomputing centers to
+% is very little chance of getting supercomputer centers to
 % willingly negotiate with energy service providers because the cost of
 % the lost opportunity is too high since the remaining costs are
 % unchanged.
-
 The responses to the questionnaire also suggest that some energy service
 providers are requesting that their supercomputer center customers
 develop capabilities for informing the provider of expected periods of
@@ -55,35 +54,84 @@ Specifically, and presented in approximate order of decreasing
 interest and expected impact to the questionnaire respondents, system
 software in this context consists of coarse-grained power management
 in the form of power capping, job scheduling, load migration,
-rescheduling backups, and fine-grained power management.  Of these,
-job scheduling may be a practical starting point simply because of the
-unique role that the job scheduler and resource manager play within a
-datacenter.
+rescheduling backups, and fine-grained power management.
+
+Coarse-grained power capping may be one of the most straightforward
+methods of power management.  In the simplest form, this technique may
+entail human intervention to adjust computing resources so they
+operate at a reduced capacity or to entirely shut down some of the
+computing capacity of a supercomputer center.  By attenuating
+resources, the supercomputer center manager can ensure that power
+consumption stays below some defined level.  This defined level may be
+a pre-arranged power cap negotiated between the supercomputer center
+and the energy service provider and maintained on an ongoing basis,
+or, perhaps more likely, a power draw level that is requested by the
+energy service provider to handle unanticipated loads somewhere else
+in the energy service provider's system.  One important thing to
+notice in using this approach to power management is that the savings
+in power may not need to come entirely from attenuating computing
+resources.  Rather, reducing power consumption in computing resources
+is likely to result in a corresponding reduction in thermal load
+within the supercomputer center.  This reduction in thermal load
+may allow a significant degree of power saving to occur by requiring
+less power to be spent on air conditioning.
+
+The coarse-grained power capping technique described above assumes
+that the supercomputer center environment has some amount of
+instrumentation and metering that allows for the collection of power
+telemetry data.  This telemetry is necessary for the supercomputer
+center facility manager in order to understand how the power supplied
+by the energy service provider is distrubted to resources within the
+center.  Further, this telemetry is likely important to automated
+solutions for power management, such as the job scheduling techniques
+described below.  In light of the fact that many system integrators
+such as Cray and IBM are now delivering supercomputer systems that
+include telemetry capabilities, the assumption that this information
+is available seems acceptable.  According to the responses to the
+questionnaire presented in the previous Section, supercomputer center
+facility managers perceive this accounting data as distinct from
+per-user or per-job accounting data that is typically collected and
+indicate that this data should be retained for electricity
+provisioning planning purposes.
+
+Techniques that involve job scheduling may offer more automated
+approaches to power management.  Due to the unique role that the job
+scheduler and resource manager play within a supercomputer center,
+these techniques may involve adjusting either the workflow of jobs
+within the center or characteristics of the computational resources
+within the center.
 
 % I (koenig) would be able to self-cite out of my own publications
 % concepts such as ``priority'' and ``urgency'' described in the
 % following paragraph.  If desired, we would need to add these
 % papers into the bibliography and/or related works section.
-
 On one hand, the job scheduler has knowledge of and control over the
 upcoming workflow within the supercomputer center simply by examining
-and manipulating the job queue.  For example, jobs may be submitted
-with various metadata that enable the job scheduler to understand
-characteristics of each job such as \textit{priority}, the relative
-importance of a job compared to other jobs, and \textit{urgency}, the
-rate at which the value of a job decreases as time elapses.  These
-characteristics are not only important to a job scheduler for ensuring
-efficient utilization of a supercomputer center's resources under
-traditional circumstances, but they are also a vital piece of
-successfully implementing a demand-response capability for at least
-two reasons.  First, they provide a set of metrics by which the
-supercomputer center can estimate the cost in terms of the ``lost
-opportunity'' of responding to an energy service provider's request to
-run with attenuated resources.  Second, they allow the supercomputer
-center to prioritize jobs in the queued workflow in order to understand
-how to best utilize computational resources.  This capability is
-important under normal circumstances, but becomes even more essential
-in a demand-response scenario.
+and manipulating the job queue.  One easily-accessible technique is
+for a human operator to use capabilities such as advanced reservations
+to reserve pre-arranged blocks of time in which jobs with high power
+loads will run.  These blocks of time could be negotiated with the
+energy service provider on an ongoing basis or could be in response to
+on-demand requests made by the energy service provider.  Even more
+automatic techniques are possible if the job scheduler is given enough
+information about the workflow to make intelligent decisions about job
+scheduling.  For example, jobs may be submitted with various metadata
+that enable the job scheduler to understand characteristics of each
+job such as \textit{priority}, the relative importance of a job
+compared to other jobs, and \textit{urgency}, the rate at which the
+value of a job decreases as time elapses.  These characteristics are
+not only important to a job scheduler for ensuring efficient
+utilization of a supercomputer center's resources under traditional
+circumstances, but they are also a vital piece of successfully
+implementing a demand-response capability for at least two reasons.
+First, they provide a set of metrics by which the supercomputer center
+can estimate the cost in terms of the ``lost opportunity'' of
+responding to an energy service provider's request to run with
+attenuated resources.  Second, they allow the supercomputer center to
+prioritize jobs in the queued workflow in order to understand how to
+best utilize computational resources.  This capability is important
+under normal circumstances, but becomes even more essential in a
+demand-response scenario.
 
 On the other hand, the job scheduler has knowledge of and control over
 the computational resources within the supercomputer center, giving
@@ -96,12 +144,12 @@ nodes within a supercomputer are occupied with running jobs or are
 expected to become occupied in the near future.  To that end, the job
 scheduler can use its control over the resource management process to
 place idle nodes into a sleep state in which they draw significantly
-reduced power.  This strategy is especially effective in
-supercomputer environments containing at least some resources that
-are used at irregular intervals, allowing opportunities to utilize
-sleep states effectively during periods when the resources are idle.
-In environments where all computing resources are heavily utilized
-most of the time, more sophisticated strategies that require the job
+reduced power.  This strategy is especially effective in supercomputer
+environments containing at least some resources that are used at
+irregular intervals, allowing opportunities to utilize sleep states
+effectively during periods when the resources are idle.  In
+environments where all computing resources are heavily utilized most
+of the time, more sophisticated strategies that require the job
 scheduler to rely on knowledge about each batch job may be necessary.
 Such knowledge might come from the type of metadata described in the
 previous paragraph or from a database that is maintained based on
@@ -123,53 +171,29 @@ great deal of time blocked waiting for I/O operations to complete.
 
 Even more interesting scenarios are possible in cases where the job
 scheduler combines its knowledge of the upcoming queued workflow with
-its knowledge and control over the computational resources within
-the supercomputer center.  These scenarios are most appropriate when
-the supercomputer scenario contains a pervasively heterogeneous mix
-of computational resources.  For example, many contemporary datacenters
-contain several different types of compute nodes with various types of
-processors and accelerator cards.  In some circumstances, the job
-scheduler may be able to choose which resource to use for running a
-given job among several candidate resources.  The trade-off here is
+its knowledge and control over the computational resources within the
+supercomputer center.  These scenarios are most appropriate when the
+supercomputer scenario contains a pervasively heterogeneous mix of
+computational resources.  For example, many contemporary supercomputer
+centers contain several different types of compute nodes with various
+types of processors and accelerator cards.  In some circumstances, the
+job scheduler may be able to choose which resource to use for running
+a given job among several candidate resources.  The trade-off here is
 not only in terms of the time necessary to complete the job (i.e.,
-different resources could potentially complete the job in very different
-amounts of time) but also in terms of the energy consumed in completing
-the job (i.e., different resources could potentially consume very
-different amounts of energy in completing the job).  By maintaining a
-database of job-to-resource mappings that record the time and energy
-taken for each job, the scheduler can, over time, improve its ability
-to decide which jobs have the highest affinity to each type of resource.
-Using this knowledge to optimize a supercomputer center's workflow in
-terms of job throughput or energy consumption is admittedly complex,
-but the potential rewards are likely to be compelling both to the
-day-to-day operation of the center and to demand-response capabilities.
-
-% It may be possible to self-cite some of my upcoming publications
-% that discuss how to do power capping in a scheduler.
-
-Several of the ideas described in the preceding paragraphs assume
-that the supercomputer center environment has some amount of
-instrumentation and metering that allows for the collection of power
-telemetry data.  Not only is this telemetry necessary for the job
-scheduler to be able to make decisions about the workflow and
-resources it is to schedule, the telemetry is also important to the
-datacenter facility manager in order to understand how the power
-supplied by the energy service provider is distributed to resources
-within the center.  In light of the fact that many system integrators
-such as Cray and IBM are now delivering supercomputer systems that
-include telemetry capabilities, the assumption that this information
-is available seems acceptable.  According to the responses to the
-questionnaire presented in the previous Section, datacenter facility
-managers perceive this accounting data as distinct from the per-user
-or per-job accounting data described above and indicate that this
-data should be retained for electricity provisioning planning purposes.
-At a very high level, this detailed knowledge of where electricity is
-being used in a supercomputer center is an important piece in
-capabilities such as power capping, where the overall consumption of
-power is maintained at or below some maximum threshold level.  Power
-capping may be accomplished either manually by the facility manager
-or automatically by the job scheduler, but both approaches require
-detailed knowledge that come from monitoring and accounting.
+different resources could potentially complete the job in very
+different amounts of time) but also in terms of the energy consumed in
+completing the job (i.e., different resources could potentially
+consume very different amounts of energy in completing the job).
+Further, other resources such as memory access patterns, disk access
+patterns, and network use affect the energy signature of a job and may
+be observed by the scheduler.  By maintaining a database of
+job-to-resource mappings that record the time and energy taken for
+each job, the scheduler can, over time, improve its ability to decide
+which jobs have the highest affinity to each type of resource.  Using
+this knowledge to optimize a supercomputer center's workflow in terms
+of job throughput or energy consumption is admittedly complex, but the
+potential rewards are likely to be compelling both to the day-to-day
+operation of the center and to demand-response capabilities.
 
 Opportunities may also exist for supercomputer centers to cooperate
 with each other in scenarios in which computational loads are migrated
@@ -179,21 +203,26 @@ Technical challenges include issues such as user authentication and
 authorization (i.e., a user may be authorized to use resources at one
 site but not at another site) and data movement (i.e., it may be
 infeasible to migrate large datasets from one site to another site).
-Business challenges include the notion that a supercomputer center
-currently has little incentive to migrate jobs to another ``competing''
-center.  Indeed, the questionnaire results reflect low interest in
-load migration strategies.  It seems likely that in order to be a
-feasible scenario, the structure of payment and rewards to a
-supercomputer center to cooperate with other centers would need to
-be structured differently than they are currently.
+To some extent, some of these technical challenges may be mitigated by
+the use of advanced reservation capabilities in the scheduling systems
+at each site, allowing resources to be simultaneously reserved while
+large datasets are properly staged.  Business challenges include the
+notion that a supercomputer center currently has little incentive to
+migrate jobs to another ``competing'' center.  Indeed, the
+questionnaire results reflect low interest in load migration
+strategies.  It seems likely that in order to be a feasible scenario,
+the structure of payment and rewards to a supercomputer center to
+cooperate with other centers would need to be structured differently
+than they are currently.
 
-In a very broad sense, demand-response techniques such as job scheduling,
-power capping, and load migration can be considered to be coarse-grained
-approaches because they involve considering ``big picture'' views of the
-workload and computational resources in a supercomputer center.  According
-to the questionnaire results presented in the previous Section, facilities
-managers view these approaches as the most likely candidates for creating
-effective demand-response capabilities.
+In a very broad sense, demand-response techniques such as job
+scheduling, power capping, and load migration can be considered to
+be coarse-grained approaches because they involve considering ``big
+picture'' views of the workload and computational resources in a
+supercomputer center.  According to the questionnaire results
+presented in the previous Section, facilities managers view these
+approaches as the most likely candidates for creating effective
+demand-response capabilities.
 
 Finally, this Section has focused heavily on the opportunities available
 to supercomputer centers that come from developing demand-response
@@ -214,8 +243,3 @@ to be a complex optimization problem.  While this Section focuses on
 solving these problems to the end of developing a demand-response
 strategy in conjunction with supercomputer centers, these capabilities
 are likely applicable to a broad range of customers.
-
-%How about advance-reservation capability in schedulers? I (Mehdi) suggest to mention this capability as well, if you agree.
-%The same for grid computing.
-
-%How about multi-dimensional resource management and scheduling (multi-resource)? I have seen there are very good discussions about scheduling. We may take into account multi-resource scheduling. This means this scheduling takes into account not only CPU, but also other system resources like Memory, GPU, network input/network output, storage, etc. Even software/application can be a resource.
