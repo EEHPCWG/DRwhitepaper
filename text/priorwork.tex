@@ -3,7 +3,7 @@ that HPC centers can take to manage power. A lot of work has been done on
 energy efficiency, some of which has an element of power management; but,
 there is not a lot work that is specifically focused on data center power management (both cooling systems and IT equipment) in
 response to a request from an electrical service provider %\cite{INSERT PAPER} 
-(cite Ghatikar et al., 2012a).
+\cite {Ghatikar2012a}.
 
 Most of the prior work mentioned in this section is focused on HPC systems. 
 Since SC cooling requirement is a derivative of IT equipment, any strategy that lowers the amount of heat generated could be compensated by lowered cooling.
@@ -18,7 +18,7 @@ There also has been work in the real-time systems community to solve the DVFS sc
 
 In addition, there has been active research in the domain of virtual machines. Von Laszewski et al. \cite{von_laszewski_power-aware_2009} presented an efficient scheduling algorithm to allocate virtual machines in a DVFS-enabled cluster by
 dynamically scaling the supplied voltages. Dhiman et al. designed vGreen \cite{dhiman_vgreen:_2009}, which is a system for energy efficient computing in
-virtualized environments. They linked linking online workload characteristics to dynamic VM scheduling decisions and achieved better performance, energy
+virtualized environments. They linked online workload characteristics to dynamic VM scheduling decisions and achieved better performance, energy
 efficiency and power balance in the system. Curtis-Maury et. al \cite{Curtis1,Curtis2,Curtis3} introduced Dynamic Concurrency Throttling, which is a technique to dynamically optimize for power and performance by varying the number of active threads in parallel codes. 
 
 Chip power measurement and capping techniques were initially introduced with the Running Average Power Limit (RAPL) interface on Intel Sandybridge processors \cite{IntelSDM,David2010}. In the HPC domain, Rountree et al.~\cite{Rountree2012} proposed RAPL as an alternative to DVFS and analyzed application performance under hardware-enforced power bounds. They also established that variation in power directly translates to variation in application performance under a power bound. Patki et al. \cite{Patki1} used power capping techniques to demonstrate how hardware overprovisioning can improve HPC application performance under a global power bound significantly. Overprovisioning was also explored in the data center community \cite{femal:04}.
@@ -130,7 +130,7 @@ electrical grid operators by showing that \textbf{mutual cost benefits }can
 be accessible.
 
  %\cite{Ghatikar} 
- (Ghatikar et al., 2012b: include citation) looks at two applied cases of distributed data centers.
+Ghatikar et al. \cite{Ghatikar2012b} looks at two applied cases of distributed data centers.
  The results show that load migration is possible in both homogenous and heterogenous systems. 
  Although the migration strategies were through a manual process, the responses could benefit from automation.
 

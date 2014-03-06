@@ -1,0 +1,12 @@
+Number Site	TotalLoad	HPCLoad	Max	Variability	Frequency
+1 LLNL	17	14	35	5	weekly
+2 ORNL	14	11	35	8	monthly
+3 LANL	11	8	30	3	weekly
+4 NCSA	11	11	25	7	weekly
+5 NERSC	5	5	11	3	weekly
+6 ANL	5	3.7	10	4	weekly
+7 WPAFB	2	2	10	3	weekly
+8 Purdue 2	2	6.8	3	daily
+9 NOAA	2	2	5	3	yearly
+10 SDSC	2	2	15	3	daily
+11 Intel 2	 1	5	3	daily
