@@ -1,69 +1,31 @@
-The prior work described in this paper addresses strategies
-that HPC centers can take to manage power. A lot of work has been done on
-energy efficiency, some of which has an element of power management; but,
-there is not a lot work that is specifically focused on data center power management (both cooling systems and IT equipment) in
-response to a request from an electrical service provider %\cite{INSERT PAPER} 
-\cite {Ghatikar2012a}.
-
-Most of the prior work mentioned in this section is focused on HPC systems. 
-Since SC cooling requirement is a derivative of IT equipment, any strategy that lowers the amount of heat generated could be compensated by lowered cooling.
-
-%Patki: temporary text.
+We now describe prior work done in Power and Thermal Management, Job Scheduling, and Load Migration in the HPC and data center communities. Software and hardware techniques to save energy and power have been studied extensively. However, most of this work does not take into consideration power management (especially cooling systems and IT equipment) in response to a request from an electrical service provider \cite {Ghatikar2012a}. 
 
 \subsection{Power Management}
-
 DVFS and power capping are two popular ways to manage node power. Prior work in the HPC domain looked at analytical models to understand energy consumption \cite{SpringerPPoPP2006,GeICPP2007,LiHPCA2006} and at trading execution time for lower power/energy \cite{CameronSC2005,HsuSC2005}. Several DVFS algorithms have also been proposed, such as CPUMiser \cite{GeICPP2007} and Jitter \cite{KappiahSC2005}. Varma et al, 2003 \cite{varma_control-theoretic_2003} demonstrated system-level DVFS techniques. They monitored CPU utilization at regular intervals and performed dynamic scaling based on their estimate of utilization for the next interval. Springer et al.~\cite{springer:06} analyzed HPC applications under an energy bound. Rountree et al. used linear programming to find near-optimal energy savings without degrading performance \cite{rountree:07} and implemented a runtime system based on this scheme \cite{rountree:09}. 
 
 There also has been work in the real-time systems community to solve the DVFS scheduling problem using mixed integer linear programming on a single processor\cite{IshiharaISLPED1998,SaputraLCTES2002,SwaminathanRTSS2000,SwaminathanASPDAC2001}. Other real-time approaches looked at saving energy \cite{MoncusiRTSS2003,MochockiICCAD2002,MochockiRTAS2005,ZhuTPDS2003,ZhangDAC2002}. 
 
-In addition, there has been active research in the domain of virtual machines. Von Laszewski et al. \cite{von_laszewski_power-aware_2009} presented an efficient scheduling algorithm to allocate virtual machines in a DVFS-enabled cluster by
-dynamically scaling the supplied voltages. Dhiman et al. designed vGreen \cite{dhiman_vgreen:_2009}, which is a system for energy efficient computing in
+In addition, there has been active research in the domain of virtual machines. Von Laszewski et al. \cite{von_laszewski_power-aware_2009} presented an efficient scheduling algorithm to allocate virtual machines in a DVFS-enabled cluster by dynamically scaling the supplied voltages. Dhiman et al. designed vGreen \cite{dhiman_vgreen:_2009}, which is a system for energy efficient computing in 
 virtualized environments. They linked online workload characteristics to dynamic VM scheduling decisions and achieved better performance, energy
 efficiency and power balance in the system. Curtis-Maury et. al \cite{Curtis1,Curtis2,Curtis3} introduced Dynamic Concurrency Throttling, which is a technique to dynamically optimize for power and performance by varying the number of active threads in parallel codes. 
 
-Chip power measurement and capping techniques were initially introduced with the Running Average Power Limit (RAPL) interface on Intel Sandybridge processors \cite{IntelSDM,David2010}. In the HPC domain, Rountree et al.~\cite{Rountree2012} proposed RAPL as an alternative to DVFS and analyzed application performance under hardware-enforced power bounds. They also established that variation in power directly translates to variation in application performance under a power bound. Patki et al. \cite{Patki1} used power capping techniques to demonstrate how hardware overprovisioning can improve HPC application performance under a global power bound significantly. Overprovisioning was also explored in the data center community \cite{femal:04}.
+Chip power measurement and capping techniques were initially introduced with the Running Average Power Limit (RAPL) interface on Intel Sandy Bridge processors \cite{IntelSDM,David2010}. In the HPC domain, Rountree et al.~\cite{Rountree2012} proposed RAPL as an alternative to DVFS and analyzed application performance under hardware-enforced power bounds. They also established that variation in power directly translates to variation in application performance under a power bound. Patki et al. \cite{Patki1} used power capping techniques to demonstrate how hardware overprovisioning can improve HPC application performance under a global power bound significantly. Overprovisioning was also explored in the data center community \cite{femal:04}.
 
-%\subsection{Fine Grained Power Management}
-%In \cite{varma_control-theoretic_2003} (Varma et al., 2003) demonstrate system-level DVFS techniques. They
-%monitor CPU utilization at regular intervals and then perform dynamic
-%scaling based on their estimate of utilization for the next interval.
-%
-%Authors in\cite{von_laszewski_power-aware_2009} (von Laszewski et al., 2009) present an efficient scheduling
-%algorithm to allocate virtual machines in a DVFS-enabled cluster by
-%dynamically scaling the supplied voltages.
-%
-%vGreen \cite{dhiman_vgreen:_2009} (Dhiman et al., 2009) is a system for energy efficient computing in
-%virtualized environments by linking online workload characterization to
-%dynamic VM scheduling decisions to achieve better performance, energy
-%efficiency and power balance in the system.
-%
-%
-%
-%\subsection{Power Capping}
-%
-%\textbf{Power capping }techniques set a value below the actual peak power
-%and prevent that number from being exceeded through some type of control
-%loop [Fan07]. There are numerous ways to implement this, but they generally
-%consist of a \textbf{power monitoring system }such as a power estimation
-%method or one based on direct power sensing, and a \textbf{power throttling
-%mechanism}. Power throttling generally works best when there is \textbf{a
-%set of jobs with loose service level guarantees or low priority }that can be
-%forced to reduce consumption when the datacenter is approaching \textbf{the
-%power cap value}. Power consumption can be reduced simply by
-%\textbf{de-scheduling tasks }or by using any available component-level power
-%management \textbf{knobs}, such as DVFS [Fan07].
+\subsection{Thermal Management}
+Thermal and cooling metrics are becoming important in HPC resource management. Runtime cooling strategies are mostly
+job-placement-centric. These techniques either aim to place incoming computationally intensive jobs in a thermal-aware manner on servers with
+lower temperatures or attempt to migrate or load-balance jobs from high-temperature servers to servers with lower temperatures.
+
+Kaushik et. al \cite{kaushik_t*:_2012} proposed \emph{T*}, a system that is aware of server thermal profiles and reliability as well as data semantics (computation job rates, job sizes, etc). This system saves cooling energy costs by using thermal-aware job placements without trading off performance. This paper assumes that the given grid is a constant. However, it is expected that future grid infrastructures will evolve due to grid integration solutions \cite{he_architecture_2008}. This may make thermal management more challenging.
+
+Aikema et. al \cite{aikema_electrical_2011} explored the potential for HPC centers to adapt to dynamic electrical prices, to variation in carbon intensity within an electrical grid, and to availability of local renewables. Their simulations demonstrated that 10- 50 \% of electricty costs could potentially be saved. They also concluded that adapting to the variation in the electrical grid carbon intensity was difficult, and that adapting to local renewables could result in significantly higher cost savings. 
+
+Sarood et. al \cite{SaroodSC11} designed a runtime system that does temperature-aware load balancing in data centers using DVFS and task migration. They also discussed how hotspots could be avoided in data centers, and showed cooling costs can be reduced by up to 48\% with temperature-aware load balancing.
 
 \subsection{Job Scheduling}
-The problem of scheduling jobs has been extensively studied. In general,
-most of the schedulers implement the First Come First Served (FCFS) policy
-as a simple but fair strategy for scheduling jobs. But this policy suffers
-from low system utilization. The most commonly used optimization is backfilling
-\cite{lifka_anl/ibm_1995} 
-\cite{mualem_utilization_2001}
-\cite{feitelson_parallel_2004}
-[Lif95, Mua95, Fei04], which is proposed to improve system
-utilization. By identifying free capacities backfillin allows smaller
-jobs that fit those capacities to move forward and run on idle processors.
+The problem of scheduling jobs has been extensively studied. Most resource managers implement the First Come First Serve (FCFS) policy
+as a simple but fair strategy for scheduling jobs. However, FCFS suffers from low system utilization. A common optimization is backfilling
+\cite{lifka_anl/ibm_1995,mualem_utilization_2001,feitelson_parallel_2004}. Backfilling improves system utilization by scheduling jobs with small resource requests out of order on idle nodes.
 
 In \cite{yang_integrating_2013} \cite{zhou_reducing_2013}, \textbf{job scheduling} as a DR strategy and
 \textbf{dynamic pricing} as a grid integration program have been used to
@@ -88,7 +50,6 @@ forced to reduce consumption when the datacenter is approaching the power cap va
 can be reduced simply by de-scheduling tasks or by using any available component-level power management knobs.
 
 Etinski et al. \cite{Etinski1,Etinski2,Etinski3,Etinski4} explored scheduling under a power budget in supercomputing and analyzed bounded slowdown of jobs. In their series of papers, they introduced three policies. Their first policy is based looks at current system utilization and uses DVFS during job launch time to meet a power bound. Their second policy meets a bounded slowdown condition without exceeding a job-level power budget. Their third policy improves upon the former by analyzing job wait times and adding a reservation condition. 
-
 
 A grid computing infrastructure with large amount of computations normally
 contains parallel machines (a supercomputer cluster) as main computational
@@ -119,56 +80,4 @@ and scheduling systems such as Sun Grid Engine, PBS, OpenPBS, Torque, Maui,
 and Moab support backfilling and advance reservation capabilities.
 
 \subsection{Load Migration}
-
-In order to balance the electrical grid,
-\cite{chiu_electric_2012}
-[Chiu12] proposes a low-cost
-\textbf{geographic load migration} to match electricity supply. In addition,
-authors present a real grid balancing problem experienced in the Pacific
-Northwest. They propose a symbiotic relationship between datacenters and
-electrical grid operators by showing that \textbf{mutual cost benefits }can
-be accessible.
-
- %\cite{Ghatikar} 
-Ghatikar et al. \cite{Ghatikar2012b} looks at two applied cases of distributed data centers.
- The results show that load migration is possible in both homogenous and heterogenous systems. 
- Although the migration strategies were through a manual process, the responses could benefit from automation.
-
-\subsection{Thermal Management}
-Thermal and cooling metrics are becoming important metrics in scheduling and
-resource management of HPC centers. Runtime cooling strategies are mostly
-job-placement-centric. These techniques either aim to place incoming
-computationally intensive jobs in a thermal-aware manner on servers with
-lower temperatures or attempt to reactively migrate/load-balance jobs from
-high temperature servers to servers with lower temperatures.
-
-\cite{kaushik_t*:_2012}
-[Kau12]
- takes a data-centric thermal- and
-energy-management approach and does proactive, thermal-aware file placement
-which allows cooling energy costs savings without performance trade-offs. \textbf{\textit{T* }} 
-is cognizant of the uneven thermal-profile of the servers, differences in
-their thermal-reliability-driven load thresholds, and differences in the
-data-semantics, i.e., computation job rates, sizes, and evolution life
-spans, of the big data placed in the cluster.
-
-In this paper, we assume that the grid is a given constant as a fundamental
-property. But, grid integration solutions may take into consideration that
-it isn't a given as electrical grid infrastructures will evolve in the
-future 
-\cite{he_architecture_2008}
-[He08]
-. Thus, changes in the grid could make grid integration more or
-less difficult.
-
-
-In 
-\cite{aikema_electrical_2011}
-[Aik11] , authors explored the potential for HPC centers to adapt to
-dynamic electrical prices, variation in carbon intensity within an
-electrical grid, or availability of local renewables. Through simulations on workloads from the Parallel Workloads Archive alongside
-real-world pricing data, they demonstrate potential savings on the cost of
-electricity ranging typically between 10{\%} and 50{\%}. Nonetheless, adaptation to
-the variation in the electrical grid carbon intensity was not as successful,
-but adaptation to the availability of local renewables showed potential to
-significantly increase their use.
+Chiu et. al \cite{chiu_electric_2012} discussed a electrical grid balancing problem that was experienced in the Pacific Northwest. In order to match electricity supply and balance the electrical grid, they proposed low-cost geographic load migration. They also suggested that a symbiotic relationship between datacenters and electrical grid operators that leads to mutual cost benefits could work well.  Ganti et al. \cite{Ghatikar2012b} looked at two applied cases for distributed data centers. The results show that load migration is possible in both homogenous and heterogeneous systems. Their migration strategies were based on a manual process and can benefit from automation.
