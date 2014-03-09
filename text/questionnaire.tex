@@ -2,8 +2,7 @@ We used a questionnaire to understand the current experiences of a
 supercomputer center's interaction with their electricity providers. We restricted the analysis to sites in the United States
 because the results of the survey and practices of demand response is highly
 correlated and driven by energy policies in the country. 
-\cite{torriti_demand_2010}
-[Tor10].
+\cite{torriti_demand_2010}.
 
 Nineteen Top100 List sized sites in the United States were targeted for the
 questionnaire. Eleven sites responded (Oak Ridge National Laboratory, 
@@ -23,7 +22,7 @@ responded). Only 4 additional sites were sampled from the Top51-Top100 List
 and, of those, 2 responded (Intel and National Oceanic and Atmospheric Administration).
 
 The total power load as well as the intra-hour fluctuation of these sites
-varied significantly. Total power load includes all computing systems plus 
+varied significantly (Figure \ref{figGraph1}). Total power load includes all computing systems plus 
 ancillary systems such as power delivery and cooling components.
 There were four sites with total power load greater
 than 10MW, two sites with \textasciitilde 5MW total power load and five
@@ -37,12 +36,13 @@ rest of the sites all reported less than 3MW intra-hour fluctuation. Most of the
 was due to preventative maintenance (again, the power variation includes both computing and ancillary systems).
 
 %Patki: New Graph instead of Table 1
-
-\begin{figure*}
+\begin{figure}
 \begin{center}
-\includegraphics[scale=0.7]{NewGraphs/Table1-Graph.pdf}
+\includegraphics[scale=0.4]{NewGraphs/Table1-Graph.pdf}
+\caption{Site Load and Variability}
+\label{figGraph1}
 \end{center}
-\end{figure*}
+\end{figure}
 
 %\begin{table}[htbp]
 %
@@ -109,9 +109,7 @@ demand of electricity. About half of them have had some discussion, but it
 has mostly been limited to programs (e.g., peak shed, dynamic pricing) 
 and not methods (e.g., regulation, frequency response, congestion).
 
-
 \begin{table}[htbp]
-
 \begin{center}
 \caption{Caption Number 2}
 \begin{tabular}{|p{230pt}|l|}
@@ -162,9 +160,7 @@ organization at the site level and outside of their immediate control.
 Eighty percent of the respondents have not had discussions with their
 electricity providers about congestion, regulation and frequency
 response. Los Alamos National Laboratory (LANL) is one of two who have had discussions and who commented that
-they are ``learning about the process'' and that it is ``outside of [their]
-
-visibility or control''.
+they are ``learning about the process'' and that it is ``outside of [their] visibility or control''.
 
 There were many more respondents who have had discussions with their
 electricity providers about enabling the use of renewables; 36{\%}
@@ -215,17 +211,24 @@ impact did they think that the strategies would have? When combining
 interest and impact, the results showed that power capping, shutdown, and
 job scheduling were both potentially interesting and of high impact. 
 
-
 Load migration, back-up
 scheduling, fine-grained power management and thermal management were of medium
 interest and impact. Lighting control and back-up resources were of low
 interest and impact.  
+%Patki: Fig 2
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.4]{NewGraphs/PUE-Graph.pdf}
+\caption{Site Power Usage Effectiveness}
+\label{figPUE}
+\end{center}
+\end{figure}
 
 Temperature control and lighting management are utilized as strategies, but considered medium to low interest and impact
 for responding to requests from electricity service providers because they are used as strategies for 
 energy efficiency rather than grid response.
 The infrastructure energy efficiency of the responding supercomputer sites is high, as reflected in their reported
-Power Usage Effectiveness (PUE).  Two sites reported a PUE below 1.25, the majority were between 
+Power Usage Effectiveness (PUE) (Figure \ref{figPUE}).  Two sites reported a PUE below 1.25, the majority were between 
 1.25 and 1.5 and the highest was 1.53. Approximately half of the respondents said that they used 
 temperature control and lighting management
 as strategies, but not for grid requests.  Temperature control and lighting management are well documented and understood
@@ -235,7 +238,6 @@ when there is no motion in the data center."  There is a value in lighting contr
 energy efficiency purposes, as demonstrated by its having been fully implemented.  NOAA also comments that
 the impact of further lighting control "is so small compared to the HPC demand load that" they would "be surprised 
 if the utility is interested."  
-
 
 Distinguishing interest from impact sheds further insight; some strategies are 
 considered high impact, but not interesting enough to consider deployment.  Facility
