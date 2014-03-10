@@ -1,4 +1,4 @@
-\documentclass[runningheads]{llncs}
+\documentclass{../style/sig-alternate}
 %
 \usepackage{makeidx}  % allows for indexgeneration
 \usepackage[pdftex]{hyperref}
@@ -6,59 +6,79 @@
 %
 \begin{document}
 %
-\frontmatter          % for the preliminaries
+\conferenceinfo{SC14}{'14 New Orleans, Louisiana USA}
+\CopyrightYear{2014}
+
 %
-\pagestyle{headings}  % switches on printing of running  heads
 %
-% test line number 2
-%
-\mainmatter              % start of the contributions
 %
 \title{
-The Electrical Grid and Supercomputer Centers:  
+The Electrical Grid and Supercomputer Centers:\\
 An Investigative Analysis of Emerging Opportunities and Challenges
 }
 
 %
-\titlerunning{The Electrical Grid and Supercomputing Centers}  % abbreviated title (for running head)
-% also used for the TOC unless 
-% \toctitle is used
 %
-%
-\author{Fname Lname\inst{1} \and Fname Lname\inst{2}
-Fname Lname \and Fname Lname \and Fname Lname \and Fname~M.~Lname \and
-Fname Lname}
-%
-\authorrunning{Fname Lname et al.} % abbreviated author list (for running head)
-%
-%
-\institute{Institute Name, City State Zip, Country,\\
-\email{Name@email.adr},\\ WWW home page:
-\texttt{http://web/page.html}
+\numberofauthors{12}
+\author{
+\alignauthor Fname Lname\\
+   \affaddr{Institute Name}\\
+   \affaddr{City State Zip} \\
+   \affaddr{Country} \\
+   \email{Name@email.adr}
+\alignauthor Fname Lname\\
+   \affaddr{Institute Name}\\
+   \affaddr{City State Zip} \\
+   \affaddr{Country} \\
+   \email{Name@email.adr}
+\alignauthor Fname Lname\\
+   \affaddr{Institute Name}\\
+   \affaddr{City State Zip} \\
+   \affaddr{Country} \\
+   \email{Name@email.adr}
 \and
-Another Institute,
-Institute Department, address1,\\
-address2, Country}
+\alignauthor Fname Lname\\
+   \affaddr{Institute Name}\\
+   \affaddr{City State Zip} \\
+   \affaddr{Country} \\
+   \email{Name@email.adr}
+\alignauthor Fname Lname\\
+   \affaddr{Institute Name}\\
+   \affaddr{City State Zip} \\
+   \affaddr{Country} \\
+   \email{Name@email.adr}
+\alignauthor Fname Lname\\
+   \affaddr{Institute Name}\\
+   \affaddr{City State Zip} \\
+   \affaddr{Country} \\
+   \email{Name@email.adr}
+}
 
+\additionalauthors {
+   \label{sec:additional}
+\noindent
+Fname Lname, Affiliation\\
+Fname Lname, Affiliation\\
+Fname Lname, Affiliation\\
+Fname Lname, Affiliation\\
+Fname Lname, Affiliation\\
+Fname Lname, Affiliation
+}
 \maketitle              % typeset the title of the contribution
 
-\begin{abstract}
-Some of the largest supercomputer centers in the United States are developing new relationships with their electricity service providers. 
-These relationships, similar to other commercial and industrial facilities, are driven by mutual interest to save energy costs and improve electricity grid reliability.
-Supercomputer centers are concerned about electricity price, quality, environmental impact and availability.
-Electricity service providers are concerned about supercomputer center's impact on the electrical grid reliability; for energy consumption, peak power and fluctuations in power.
-Supercomputer center power demand can be greater than 20 megawatts (MW) or more - the theoretical peak power requirements are greater than 45MW - and re-occurring intra-hour variability can exceed 8MW.
-As a consequence, there are some supercomputer centers whose electricity service providers are asking for hourly forecasts of power demand, a day in advance.
-This paper explores today's relationships, potential partnerships and possible integration between supercomputer centers and their electricity service providers.
-It evinces the challenges for the possible HPC-Grid integration, and then lists opportunities to overcome the barriers using feedback from a questionnaire of Top 100 List sized supercomputer centers in the United States.
-\end{abstract}
+\input{abstract}
+\category{C.4}{Performance of Systems}{Measurement Techniques}[power, energy]
+
+\terms{Management, Measurement, Performance}
+
+\keywords{Electricity Service Provider, demand response}
 
 %
 \section{Introduction and Background}
 \input{intro}
 \label{sec:intro}
 
-\section{Supercomputer Centers and Electrical Grid Integration}
+\section{Supercomputer Centers and\\ Electrical Grid Integration}
 \input{supercomputercenters}
 \label{sec:supercomputer}
 
@@ -70,15 +90,13 @@ It evinces the challenges for the possible HPC-Grid integration, and then lists 
 \input{questionnaire}
 \label{sec:questionnaire}
 
-\section{Opportunities/Solutions and Barriers} 
+\section{Opportunities/Solutions and\\ Barriers} 
 \input{opportunities}
 \label{sec:opportunities}
 
 \section{Conclusions and Next Steps}
 \input{conclusion}
 \label{sec:conclusion}
-
-\newpage
 
 
 %
@@ -88,6 +106,7 @@ It evinces the challenges for the possible HPC-Grid integration, and then lists 
 \bibliography{../bib/whitepaper,../bib/patki}  % eehpcmethod.bib is the name of the Bibliography in this case
 %
 
+\input{tableorg}
 \section{Appendices}
 \input{appendices}
 \label{sec:appendices}
