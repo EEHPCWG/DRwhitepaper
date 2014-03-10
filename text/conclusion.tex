@@ -1,94 +1,53 @@
-%This section is a work in progress
-%
-\begin{enumerate}
-\item Potential HPC-specific value proposition for active DR engagement
-\item Based on Grid Integration solutions -- local and system-wide impacts
-\item Next steps -- specific directions or target areas to focus
-\end{enumerate}
+This paper seeks whether or not a new relationship is emerging between electricity service providers 
+and supercomputer centers with the impetus for more communication and engagement coming from both parties.  
+Supercomputer centers have increasingly large electricity demand and fluctuations that can be a challenge 
+for their providers and the reliable supply of electricity.  On the other hand, electricity service providers 
+are interested in partnering with customers, like supercomputer centers, to obtain predictable demand 
+forecasts and engage in programs like demand response in order to create a more dynamic and resilient grid.
 
-In past, electricity providers have viewed the hourly, daily, and seasonal
-fluctuations of demand as facts of life. These fluctuations required
-additional generating capacity, particularly peaking plants that were needed
-only a few hours per year. 
+We focused our attention on the largest supercomputing centers in the United States. The two supercomputing 
+centers with the largest electricity demand, ORNL and LLNL, have very different experiences.  ORNL’s 
+experience is that their electricity demand and fluctuations are not significant factors for their 
+electricity service provider.  LLNL’s experience is opposite of ORNL.  Because of the large swings in 
+power usage, the LLNL supercomputing center was approached by their electricity service provider with a 
+request for daily predictable demand forecasts.   That initiated the development of an on-going relationship.  
+LANL’s supercomputing center’s experience is similar to that of LLNL. SDSC has an even tighter relationship 
+with their electricity service provider, but this relationship involves the entire campus and not just the 
+supercomputer center.  
 
-However, with increasing adoption of Smart Grid, information technology, communications, and a more dynamic and resilient grid, 
-the value proposition of replacing the expensive and fossil-based peaking plants with more predictable demand with forecasting and demand response has the potential for new value proposition to the HPC data centers. 
-The increase in renewable generation and its intermittency offers opportunities for large and flexible loads that can adapt to changing electricity generation and sources.
+As the previous research with data centers has shown, supercomputer centers can also be considered 
+resourceful to the grid. To enable this, automation technologies and data communication standards, 
+which can link the supercomputer centers with the electric grid, and on-site power management strategies 
+for grid services will play a key role to ease adoption and lower the participation costs.  Power capping, 
+shutdown and job scheduling are identified as the most interesting management strategies with highest 
+leverage for responding to requests from electricity service providers.  
 
-DR adoption: 
-Automation: 
-%
-As the previous research as shown with data centers, HPC can also be considered as a resource to the grid and provide different services.
-To enable this, automation technologies, which can link the HPC data centers with the electric grid, 
-and on-site power management strategies for different time-scales for grid services will play a key role in ease of adoption and lowering the participation costs.
+The business case for grid integration of supercomputer centers though, has yet to be demonstrated.  
+There are concerns about the impact that deploying these strategies might have on the primary mission 
+of the supercomputer centers.  One of the key enablers for supercomputing centers to participate in 
+electricity markets (e.g., demand response, electricity prices) is having markets that value their 
+participation. In other areas like commercial buildings and select industrial facilities, benefits to 
+both electricity service providers and customers are well documented. However, as the electric grid 
+and new dynamic loads such as supercomputer centers evolve, the markets need mechanisms to identify 
+and provide value of participation (e.g., cost, energy, carbon).
 
-Electricity markets: 
-One of the key enabler for HPC data centers to participate in electricity markets (e.g., demand response, electricity prices)
-is the markets that value their participation. 
-In other areas of commercial buildings and select industrial facilities, benefits to both electricity service providers and customers are well documented.
-However, as the electric grid and new dynamic loads such as HPCs evolve, the markets need mechanisms to identify and provide value of participation (e.g., cost, energy, carbon). 
-(LIST SOME KEY FINDINGS FROM QUESTIONNAIRE)
+There are several areas suggested for future work that we are planning to pursue.
 
-value proposition, (INCLUDED IN THE ELECTRICITY MARKETS ABOVE)
+The business value of such grid integration is likely enhanced further where the price of 
+electricity is expensive, varies dynamically or where there is strong reliance on expensive back-up 
+generation (e.g., India).  We plan on conducting a similar survey in Europe, where electricity is more 
+expensive, to explore if there is a more compelling business case in other geographies.    
 
-the measurement and verification models, (LISTED BELOW)
+This work’s focus was from the perspective of the supercomputer center.  It might yield different 
+results if we were to hear from the ESPs about what makes a customer more or less interesting or 
+challenging with respect to grid integration.  How do they view supercomputer centers relative to their 
+spectrum of customers?  We plan on follow-up with the ESPs that support these US-based supercomputer 
+centers to explore this question further.
 
-lighting, and heating, ventilation, and air conditioning (HVAC)
-It is clear from the HPC operation that the largest opportunity for load management exists in the IT equipment.
-However, the previous work suggests that the opportunity in HVAC loads may also be an immediate opportunity. 
-The opportunity depends on the ratio of cooling loads to the IT equipment load (e.g., PUE).
-Considering that the lighting loads are a small percentage of overall HPC load, their participation alongside other strategies (IT equipment and HVAC) may prove beneficial. 
-The advancement in technologies and vendor recognition to provide more dynamic power management capabilities in the IT equipment offers larger opportunity in consolidated IT and cooling load reductions.
-
-electricity-price markets (INCLUDED IN THE ELECTRICITY MARKETS ABOVE)
-
-interoperability
-
-The grid integration need to be standardized and provide interoperable
-interfaces to be interoperable. Interfaces, communication infrastructure,
-data, information exchange, agreement should be based on standards.
-Communication with grid providers need to be standardized. grid
-request/response messages. Requests include DR event, price, renewable
-generation
+With increasing variable renewable generation and price-based DR programs, the intra-hour fluctuations 
+and demand forecasting is becoming increasingly important. Understanding the timescales of supercomputer 
+center’s load response will have different value to the electric grid programs. What are the trends 
+in inter-hour fluctuation patterns?  Is this a new behavior, an interim one, or one that is likely to get worse?  
 
 
-How is architected an accounting system (energy and utilization) of an HPC
-center? based on sensor systems like in [Hay09] . Sensor systems for an HPC
-center to report real time power consumption of various components such as
-cooling, compute systems, storage, networks, racks, etc.
-
-[Hay09] S. Hay and A. Rice, ``The case for apportionment,'' in Proceedings
-of the First ACM Workshop on Embedded Sensing Systems for Energy-Efficiency
-in Buildings, New York, NY, USA, 2009, pp. 13--18.
-
-Apportioning the total energy consumption of a building or organization to
-individual users may provide incentives to make reductions. We explore how
-sensor systems installed in many buildings today can be used to apportion
-energy consumption between users. We investigate the differences between a
-number of possible policies to evaluate the case for apportionment based on
-energy and usage data collected over the course of a year. We also study the
-additional possibilities offered by more fine-grained data with reference to
-case studies for specific shared resources, and discuss the potential and
-challenges for future sensor systems in this area.
-
-\begin{itemize}
-\item If accounting data can be used to forecast and model future energy usage of an HPC center? so this can be communicated and be in
-integrated with electricity grid.
-\item If/how electricity grid providers can use energy and usage accounting data to plan electricity provisioning of an HPC center?
-\item user-specific accounting data versus workload-specific accounting data.
-\item accounting data in terms of HPC center components, cooling, systems, lighting, etc.
-\end{itemize}
-These are excellent questions. What you've outlined below is a set of value
-of real-time data (the term "accounting" confused me earlier) of energy and
-utilization for HPC systems. Some of these values are for EE and the rest is
-how the electric grid service providers can benefit from it. For example,
-telemetry data for wholesale DR markets and M{\&}V.
-
-M{\&}V or Measurement and Verification refers to quantification of load shed
-that a particular load is participating in. Typically, there are many
-baseline methodologies that the utilities and ISOs use to calculate the
-amount of DR a particular load/facility is providing through real-time and
-day-ahead metered data. The metering and telemetry to provide the M{\&}V is
-key in determining if a particular resource can participate in a DR market 
-and validate its performance for settlement (economics).
 
