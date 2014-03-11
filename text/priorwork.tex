@@ -13,10 +13,22 @@ Chip power measurement and capping techniques were initially introduced with the
 
 \subsection{Thermal Management}
 Thermal and cooling metrics are becoming important in HPC resource management. Runtime cooling strategies are mostly
-job-placement-centric. These techniques either aim to place incoming computationally intensive jobs in a thermal-aware manner on servers with
-lower temperatures or attempt to migrate or load-balance jobs from high-temperature servers to servers with lower temperatures.
+job-placement-centric. These techniques either aim to place incoming computationally intensive jobs in a thermal-aware 
+manner on servers with
+lower temperatures or attempt to migrate or load-balance jobs from high-temperature servers to servers with lower 
+temperatures.
 
-Kaushik et. al \cite{kaushik_t*:_2012} proposed \emph{T*}, a system that is aware of server thermal profiles and reliability as well as data semantics (computation job rates, job sizes, etc). This system saves cooling energy costs by using thermal-aware job placements without trading off performance. This paper assumes that the given grid is a constant. However, it is expected that future grid infrastructures will evolve due to grid integration solutions \cite{he_architecture_2008}. This may make thermal management more challenging. Aikema et. al \cite{aikema_electrical_2011} explored the potential for HPC centers to adapt to dynamic electrical prices, to variation in carbon intensity within an electrical grid, and to availability of local renewables. Their simulations demonstrated that 10- 50 \% of electricty costs could potentially be saved. They also concluded that adapting to the variation in the electrical grid carbon intensity was difficult, and that adapting to local renewables could result in significantly higher cost savings. Sarood et. al \cite{SaroodSC11} designed a runtime system that does temperature-aware load balancing in data centers using DVFS and task migration. They also discussed how hotspots could be avoided in data centers, and showed cooling costs can be reduced by up to 48\% with temperature-aware load balancing.
+Kaushik et. al \cite{kaushik_t*:_2012} proposed \emph{T*}, a system that is aware of server thermal profiles and 
+reliability as well as data semantics (computation job rates, job sizes, etc). This system saves cooling energy 
+costs by using thermal-aware job placements without trading off performance. 
+Aikema et. al \cite{aikema_electrical_2011} explored the potential for HPC centers to adapt to dynamic 
+electrical prices, to variation in carbon intensity within an electrical grid, and to availability of local 
+renewables. Their simulations demonstrated that 10- 50 \% of electricty costs could potentially be saved. 
+They also concluded that adapting to the variation in the electrical grid carbon intensity was difficult, 
+and that adapting to local renewables could result in significantly higher cost savings. Sarood et. 
+al \cite{SaroodSC11} designed a runtime system that does temperature-aware load balancing in data centers 
+using DVFS and task migration. They also discussed how hotspots could be avoided in data centers, and 
+showed cooling costs can be reduced by up to 48\% with temperature-aware load balancing.
 
 \subsection{Job Scheduling}
 The problem of scheduling jobs has been extensively studied. Most resource managers implement the First Come First Serve (FCFS) policy
