@@ -18,7 +18,7 @@ whitepaper.pdf: $(tex_files) $(bib_files) $(pdf_files)
 	bibtex whitepaper; \
 	pdflatex -shell-escape whitepaper | tee latex.out; \
 	pdflatex -shell-escape whitepaper | tee latex.out; \
-	cp whitepaper.pdf ../downloadPDF/whitepaperTB.pdf
+	cp whitepaper.pdf ../downloadPDF/whitepaper.pdf
 
 clean:
 	find .  -name '*.blg' -print  | xargs rm -f; \
