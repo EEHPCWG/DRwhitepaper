@@ -1,0 +1,194 @@
+\noindent
+\textbf{What is your ``total facility energy''?}
+This should be the same as the total facility energy number that is used for calculating PUE, 
+as defined by the Green Grid Whitepaper \#49.  Total facility energy includes all 
+HPC equipment energy plus everything that supports the HPC equipment using energy, such as:
+\begin{itemize}
+\item[{-}]
+Power delivery components, including UPS systems, switchgear, generators, power 
+distribution units (PDUs), batteries, and distribution losses external to the IT equipment  
+\item[{-}]
+Cooling system components, such as chillers, cooling towers, pumps, computer 
+room air handling units (CRAHs), computer room air conditioning units (CRACs), and direct 
+expansion air handler (DX) units  
+\item[{-}]
+Other miscellaneous component loads, such as data center lighting.
+Ideally, total facility energy is monitored over a period of one year, taking 
+ongoing measurements to compensate for peak and nominal loading changes that occur within the data 
+center. If it is not possible to monitor energy consumption over a full year, select a period 
+of time not less than one month and verify that the loading within the data center 
+during that time is typical.	
+\end{itemize}
+
+\wl
+\noindent
+\textbf{What is your total HPC load?}
+Note:  This should be the same number that you use when calculating PUE, as defined by 
+The Green Grid WP\#49.  Again, this is for the facility that houses your Top100-sized system.  	
+Please provide exact number in comment box, if possible.	
+
+\wl
+\noindent
+\textbf{What is your facility PUE?}
+Please provide exact number in comment box, if possible.
+
+\wl
+\noindent
+\textbf{What is your facility's theoretical peak energy, as the infrastructure is currently fit up.}
+Please provide exact number in comment box, if possible.	
+
+\wl
+\noindent
+\textbf{What is the maximum variation in total facility energy that is likely to re-occur?}
+Please provide exact number in comment box, if possible.
+
+\wl
+\noindent
+\textbf{How often does this variation occur?}
+If there is any regular pattern to this variation, please describe the circumstances.  
+Include the reason for the variation, the magnitude and duration if possible.  
+E.g., "There is a 5MW drop every two weeks for a 6 hour period during Preventative Maintenance 
+periods." 
+
+\wl
+\noindent
+\textbf{COARSE GRAINED POWER MANAGEMENT:}  manage power for the HPC system or sub-system 
+(could include storage, networking as well as compute sub-systems). 
+Example: power capping. 
+
+\wl
+\noindent
+\textbf{FINE GRAINED POWER MANAGEMENT:}  intelligent built-in power management.  
+Examples: voltage and frequency governors, hibernation. - Comments	
+
+\wl
+\noindent
+\textbf{LOAD MIGRATION:}  shift computing loads to a different electrical grid.   
+
+\wl
+\noindent
+\textbf{JOB SCHEDULING:}  Job shifting or queuing (scheduling) has historically been used as a 
+strategy for managing CPU utilization, but could also be used to manage the energy 
+outilization of IT equipment. 
+
+\wl
+\noindent
+\textbf{BACK-UP SCHEDULING:}  Defer data storage processes to off-peak periods  
+Other (please specify).	
+
+\wl
+\noindent
+\textbf{SHUTDOWN:} Graceful shutdown of idle HPC equipment loads. Usually applies when there is redundancy 
+
+\wl
+\noindent
+\textbf{LIGHTING CONTROL:} With advance warning, data center lights could be shutdown completely. 
+
+\wl
+\noindent
+\textbf{TEMPERATURE ADJUSTMENT:} widen acceptable (ASHRAE Thermal Conditions) temperature setpoint 
+ranges and humidity levels for short periods.  
+
+\wl
+\noindent
+\textbf{BACK-UP RESOURCES:}  Using generators and other electrical storage devices. 
+Other (please specify)	.
+
+\wl
+\noindent
+\textbf{Are there any other strategies that you use to manage and control your total facility 
+energy in response to a request from your energy utility/provider?}
+Please describe. 
+
+\wl
+\noindent
+\textbf{Please evaluate as high, medium or low the MW impact of each of these strategies as a 
+response to a grid request. }
+\begin{itemize}
+\item[{-}] Power capping	
+\item[{-}] Load migrations	
+\item[{-}] Temperature adjustments	
+\item[{-}] Clock speeds	
+\item[{-}] Lighting control	
+\item[{-}] Job scheduling	
+\item[{-}] Back-up scheduling	
+\item[{-}] Idle management	
+\item[{-}] Shutdown	
+\item[{-}] Back-up resources	
+\end{itemize}
+
+\wl
+\textbf{PEAK SHEDDING:}  Utility provider arrangements used to reduce peak load, where the 
+reduced load is not shifted to another time. 
+Describe the nature of the communication	
+
+\wl
+\noindent
+\textbf{PEAK SHIFTING:}  Utility provider arrangements where the load during peak times is moved, typically 
+to non-peak hours. 
+Describe the nature of the communication	
+
+\wl
+\noindent
+\textbf{DYNAMIC PRICING:}  Time varying pricing arrangements used to increase, shed or shift electricity 
+consumption. There are two types of pricing, peak and real-time.  Peak pricing is pre-scheduled; 
+however, the consumer does not know if a certain day will be a peak or a non-peak day until day-ahead 
+or day-of.  Real-time pricing is not pre-scheduled; prices can be set day-ahead or day-of.	
+Describe the nature of the communication	
+
+\wl
+\noindent
+\textbf{GRID SCALE STORAGE:}  Methods used to store electricity on a large scale. Pumped-storage 
+hydroelectricity is the largest-capacity form of grid energy storage. 
+Describe the nature of the communication	
+
+\wl
+\noindent
+\textbf{RENEWABLES:}  Variability in the electric power generation from renewable resources 
+and the methods used to respond to that variability. 
+Describe the nature of the communication	
+
+\wl
+\noindent
+\textbf{FREQUENCY RESPONSE:}  Methods used to keep grid frequency constant and in-balance. 
+Generators are typically used for frequency response, but any appliance that operates 
+to a duty cycle (such as air conditioners and heat pumps) could be used to provide 
+a constant and reliable grid balancing service by timing their duty cycles in response 
+to system load.   	
+Describe the nature of the communication	
+
+\wl
+\noindent
+\textbf{REGULATION (Up or Down):} Methods used to maintain that portion of electricity generation 
+reserves that are needed to balance generation and demand at all times.  Raising supply 
+is up regulation and lowering supply is down regulation. There are many types of reserves 
+(e.g., operating, congestion), distinguished by who controls them and what they are used for. 
+Describe the nature of the communication	
+
+\wl
+\noindent
+\textbf{CONGESTION:} Methods used to resolve congestion that occurs when there is not enough 
+transmission capability to support all requests for transmission services. Transmission 
+system operators must re-dispatch generation or, in the limit, deny some of these 
+requests to prevent transmission lines from becoming overloaded.  Or, methods used to 
+resolve congestion that occurs when the distribution control system is overloaded.  It 
+generally results in deliveries that are held up or delayed.     
+Describe the nature of the communication
+
+\wl
+\noindent
+\textbf{Is there information you would like from your provider that you are not getting?}
+If yes, please describe what you would like to know.	
+Describe what you would like to know	
+
+\wl
+\noindent
+\textbf{Is your provider asking for information from you that you are not able to provide?}
+If yes, please describe what they are asking for.	
+
+\wl
+\noindent
+\textbf{Do you experience any power quality issues at your HPC facility?}
+If yes, please describe. 
+
+

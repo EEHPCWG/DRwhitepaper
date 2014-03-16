@@ -3,7 +3,9 @@
 \usepackage{makeidx}  % allows for indexgeneration
 \usepackage[pdftex]{hyperref}
 \usepackage{graphicx}
+\usepackage{enumitem}
 %
+\def\wl{\par \vspace{\baselineskip}}
 \begin{document}
 %
 \conferenceinfo{SC14}{'14 New Orleans, Louisiana USA}
@@ -94,6 +96,10 @@ Fname Lname, Affiliation
 \section{Opportunities/Solutions and\\ Barriers} 
 \input{opportunities}
 \label{sec:opportunities}
+
+\section{Survey Questions}
+\input{questions}
+\label{sec:questions}
 
 \section{Conclusions and Next Steps}
 \input{conclusion}
