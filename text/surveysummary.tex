@@ -1,0 +1,204 @@
+\subsection{Facility Energy}
+\begin{enumerate} 
+\item
+What is your "total facility energy"?
+This should be the same as the total facility energy number that is used for 
+calculating PUE, as defined by the Green Grid Whitepaper \#49.
+Total facility energy includes all HPC equipment energy plus everything that supports 
+the HPC equipment using energy, such as:
+\begin{itemize} [nosep]
+\item[{-}]
+Power delivery components, including UPS systems, switchgear, generators, 
+power distribution units (PDUs), batteries, and distribution losses external to the IT equipment
+\item[{-}]
+Cooling system components, such as chillers, cooling towers, pumps, computer 
+room air handling units (CRAHs), computer room air conditioning units (CRACs), 
+and direct expansion air handler (DX) units
+\item[{-}]
+Other miscellaneous component loads, such as data center lighting
+\end{itemize}
+Ideally, total facility energy is monitored over a period of one year, taking ongoing 
+measurements to compensate for peak and nominal loading changes that occur within the 
+datacenter. If it is not possible to monitor energy consumption over a full year, 
+select a period of time not less than one month and verify that the loading within 
+the datacenter during that time is typical.
+
+\item
+What is your total HPC load?
+Note: This should be the same number that you use when calculating PUE, as defined 
+by The Green Grid WP\#49. Again, this is for the facility that houses your Top100-sized system.
+
+\item
+What is your facility PUE?
+
+\item
+What is your facility's theoretical peak energy, as the infrastructure is currently fit up.
+
+\item
+What is the maximum variation in total facility energy that is likely to re-occur? 
+
+\item
+ How often does this variation occur?
+
+\item
+If there is any regular pattern to this variation, please describe the circumstances. 
+Include the reason for the variation, the magnitude and duration if possible. 
+E.g., ``There is a 5MW drop every two weeks for a 6 hour period during Preventative 
+Maintenance periods.''
+\end{enumerate}
+
+\subsection{Management and Control}
+Please answer whether or not you employ any of the strategies described below for managing 
+and controlling total facility energy in response to a request from your Electrical Utility/Provider.
+
+You may use some of these same strategies for improving energy efficiency. 
+Answer "Yes" only when the strategy is used at least in part for grid response. Answer "No" if the strategy is only used for improving energy efficiency.
+
+Two examples may help clarify.
+
+Example 1: Load migration, or shifting of jobs to another HPC center in a different grid, is 
+generally a strategy used in response to a request from the electrical Utility/Provider. It 
+is not generally a strategy for improving energy efficiency.
+
+Example 2: Adjusting voltage and frequency settings of processors is generally a strategy 
+used for improving energy efficiency, but it could theoretically also be used for responding to 
+the electrical Utility/Provider.
+
+\begin {enumerate}
+\setcounter{enumi}{7}
+\item
+COARSE-GRAINED POWER MANAGEMENT: manage power for the HPC system or subsystem 
+(could include storage, networking as well as compute sub-systems). Example: power capping.
+
+\item
+FINE-GRAINED POWER MANAGEMENT: intelligent built-in power management. 
+Examples: voltage and frequency governors, hibernation.
+
+\item
+LOAD MIGRATION: shift computing loads to a different electrical grid. 
+
+\item
+JOB SCHEDULING: Job shifting or queuing (scheduling) has historically been used 
+as a strategy for managing CPU utilization, but could also be used to manage the 
+energy utilization of IT equipment.
+
+\item
+BACK-UP SCHEDULING: Defer data storage processes to off-peak periods 
+
+\item
+SHUTDOWN: Graceful shutdown of idle HPC equipment loads. Usually applies when there is redundancy
+
+\item
+LIGHTING CONTROL: With advance warning, data center lights could be shutdown completely.
+
+\item
+TEMPERATURE ADJUSTMENT: widen acceptable (ASHRAE Thermal Conditions) temperature setpoint 
+ranges and humidity levels for short periods. 
+
+\item
+BACK-UP RESOURCES: Using generators and other electrical storage devices.
+
+\item
+Are there any other strategies that you use to manage and control your total 
+facility energy in response to a request from your
+
+\item
+Please evaluate as high, medium or low the MW impact of each of these strategies 
+as a response to a grid request. energy utility/provider? Please describe.
+
+\begin{itemize} [nosep]
+\item[{-}]
+Power capping 
+\item[{-}]
+Load migrations	
+\item[{-}]
+Temperature adjustments	
+\item[{-}]
+Clock speeds	
+\item[{-}]
+Lighting control	
+\item[{-}]
+Job scheduling	
+\item[{-}]
+Back-up scheduling	
+\item[{-}]
+Idle management	
+\item[{-}]
+Shutdown	
+\item[{-}]
+Back-up resources	
+\end{itemize}
+\end{enumerate}
+
+\subsection{Electrical Utility/Provider\\ Information}
+The following questions will help us to understand the nature of the relationship you have, 
+if any, between your HPC facility and your site's electric utility/provider.
+
+Please answer yes if you have had any communication about the following programs and 
+methods with your site's electric utility/provider.
+
+For each program and/or method for which there has been communication, please describe 
+the nature of that communication in the comments.
+
+Here are some questions you might answer in that description. What information was transferred? 
+Do you have any record of the communication that you could share? Was the information 
+transfer regular/routine or ad hoc? If regular/routine, what is the frequency of interaction? 
+Can you provide examples of such communication? 
+
+\begin{enumerate}
+\setcounter{enumi}{18}
+\item
+PEAK SHEDDING: Utility provider arrangements used to reduce peak load, where the reduced 
+load is not shifted to another time.
+
+\item
+PEAK SHIFTING: Utility provider arrangements where the load during peak times is moved, 
+typically to non-peak hours.
+
+\item
+DYNAMIC PRICING: Time varying pricing arrangements used to increase, shed or shift 
+electricity consumption. There are two types of pricing, peak and real-time. 
+Peak pricing is pre-scheduled; however, the consumer does not know if a certain day will be 
+a peak or a non-peak day until day-ahead or day-of. Real-time pricing is not pre-scheduled; 
+prices can be set day-ahead or day-of.
+
+\item
+GRID SCALE STORAGE: Methods used to store electricity on a large scale. Pumped-storage 
+hydroelectricity is the largest-capacity form of grid energy storage.
+
+\item
+RENEWABLES: Variability in the electric power generation from renewable resources and 
+the methods used to respond to that variability.
+
+\item
+FREQUENCY RESPONSE: Methods used to keep grid frequency constant and in-balance. 
+Generators are typically used for frequency response, but any appliance that operates to 
+a duty cycle (such as air conditioners and heat pumps) could be used to provide a constant 
+and reliable grid balancing service by timing their duty cycles in response to system load. 
+
+\item
+REGULATION (Up or Down): Methods used to maintain that portion of electricity generation 
+reserves that are needed to balance generation and demand at all times. Raising supply is 
+up regulation and lowering supply is down regulation. There are many types of 
+reserves (e.g., operating, congestion), distinguished by who controls them and what they are used for.
+
+\item
+CONGESTION: Methods used to resolve congestion that occurs when there is not enough 
+transmission capability to support all requests for transmission services. Transmission 
+system operators must re-dispatch generation or, in the limit, deny some of these 
+requests to prevent transmission lines from becoming overloaded. Or, methods used to resolve 
+congestion that occurs when the distribution control system is overloaded. It generally 
+results in deliveries that are held up or delayed. 
+
+\item
+Is there information you would like from your provider that you are not getting? If yes, 
+please describe what you would like to know.
+
+\item
+Is your provider asking for information from you that you are not able to provide? If yes, 
+please describe what they are asking for.
+
+\item
+Do you experience any power quality issues at your HPC facility? If yes, please describe.
+
+\end{enumerate}
