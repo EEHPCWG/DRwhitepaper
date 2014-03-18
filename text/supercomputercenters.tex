@@ -1,11 +1,11 @@
 The EE HPC WG Team took as their starting point a
 model developed by LBNL's Demand Response Research
-Center that describes strategies that data centers might em-
+Center that describes strategies that datacenters might em-
 ploy for utility programs to manage their electricity and
 power requirements to lower costs and benefit from utility
 incentives. The EE HPCWG Team adopted this model with
 slight tweaks to reflect the supercomputing environment
-focus (versus the data center as described by LBNL`s Demand
+focus (versus the datacenter as described by LBNL`s Demand
 Response Research Center).
 
 This paper distinguishes a supercomputer center as
@@ -14,33 +14,38 @@ a datacenter. As opposed to datacenters, supercomputer
 centers have very high system utilization and are not likely
 to use virtualization as a strategy. Also, supercomputer
 applications are generally not easily portable between
-geographic locations for a variety of reasons: security, data-
+geographic locations for a variety of reasons: security, data 
 locality, system tuning.  Finally, supercomputing centers are 
-more energy efficient than the average data center.
+more energy efficient than the average datacenter.
 According to prior studies,
-the average data center has a power usage effectiveness (PUE)
-of between 1.91 and 2.9, whereas the highest PUE reported by the
-supercomputer center respondents in this study is 1.53, with PUE of 1.0 being ideal.
+the average datacenter has a power usage effectiveness (PUE)
+\textbf{(cite a paper that defines PUE here)} of between 1.91 and 2.9.
+The lower the PUE, the more effective is the power usage. A PUE of 1.0 is ideal.
+The highest PUE reported by the
+supercomputer center respondents in this study is 1.53.
 
 \subsection{Electricity Provider Programs\\
 and Methods}
 \label{sub:EPP}
-One key goal of the electricity provider is to provide efficient and reliable generation, transmission and 
+An electricity provider seeks to provide efficient and reliable generation, transmission, and 
 distribution of electricity. Methods and programs employed by the electricity providers and their consumers 
-are key to managing and balancing the supply and demand of electricity. While the methods describe how 
-electricity providers manage supply, the programs describe the activities that the electricity providers 
+are key to managing and balancing the supply and demand of electricity. While the \textit{methods} 
+describe how 
+electricity providers manage supply, the \textit{programs} describe the activities that 
+the electricity providers 
 can offer to their consumers to balance demand with supply.
 
-Although critical to the eletricity service providers, \textit{methods} 
+Although critical to the eletricity service providers, methods 
 are generally not visible to the consumer of the electricity because they
 operate within the generation  or transmission stations.
 These methods are the major means by which supply and demand of electricity are managed.
 
-Electricity provider \textit{programs} encourage customer responses to target both energy efficiency and real-time
+Electricity provider programs encourage customer responses to target both energy efficiency and real-time
 (day-ahead or day-of) management of demand for electricity. An example of an electricity provider program 
 that encourages energy efficiency would be to provide home consumers a financial incentive for replacing 
 single pane with double pane windows.  On the other hand, an example that illustrates programs that help 
-with real-time demand management would be to provide a financial incentive for reducing load during high demand periods 
+with real-time demand management would be to provide a financial incentive for reducing load 
+during high demand periods 
 (such as hot summer afternoons when air conditioners are heavily utilized). 
 
 The following is a list and brief definitions of key methods and programs.  
@@ -50,46 +55,58 @@ The following is a list and brief definitions of key methods and programs.
 \item Regulation (Up or Down): Methods used to maintain that portion of electricity generation reserves 
 that are needed to balance generation and demand at all times.  Raising supply is up regulation and lowering 
 supply is down regulation. There are many types of reserves 
-(e.g., operating, ancillary services), distinguished by who manage them and what they are used for.
+(e.g., operating, ancillary services), distinguished by who manages them and what they are used for.
+
 \item Transmission Congestion: Methods used to resolve congestion that occurs when there is not enough 
 transmission capability to support all requests for transmission services. Transmission system operators 
 must re-dispatch generation or, 
 in the limit, deny some of these requests to prevent transmission lines from becoming overloaded.
-\item Distribution Congestion:  Methods used to resolve congestion that occurs when the distribution control system 
+
+\item Distribution Congestion:  Methods used to resolve congestion that occurs when the 
+distribution control system 
 is overloaded.  It generally results in deliveries that are held up or delayed.  
+
 \item Frequency response:  Methods used to keep grid frequency constant and in-balance. 
 Generators are typically used for frequency response, but any appliance that operates to a duty cycle 
 (such as air conditioners and heat pumps) could be used to provide a 
 constant and reliable grid balancing service by timing their duty cycles in response to system load.   
+
 \item Grid Scale Storage:  Methods used to store electricity on a large scale. 
 Pumped-storage hydroelectricity is the largest-capacity form of grid energy storage. 
-\item Renewables:  Methods used to manage the variable uncertain generation nature of many renewable resources. 
+
+\item Renewables:  Methods used to manage the variable uncertain generation nature of 
+many renewable resources. 
 \end{itemize}
 
 \subsubsection{Programs}
 \begin{itemize}
 \item Energy Efficiency:  Programs used to reduce overall electricity consumption.
+
 \item Peak Shedding:  Programs used to reduce load during peak times, 
 where the reduced load is not used at a later time. 
+
 \item Peak Shifting:  Programs where the load during peak times is moved to, typically, non-peak hours. 
-\item Dynamic Pricing:  Time varying pricing programs used to increase, shed or shift electricity consumption. 
-There are two types of pricing, peak and real-time.  Peak pricing is pre-scheduled; however, the consumer 
+
+\item Dynamic Pricing:  Time varying pricing programs used to increase, shed,
+ or shift electricity consumption. 
+The two types of pricing are peak and real-time.  Peak pricing is pre-scheduled; however, the consumer 
 does not know if a certain day will be a peak or a non-peak day until day-ahead or day-of.  
 Real-time pricing is not pre-scheduled; prices can be set day-ahead or day-of.
 \end{itemize}
 
-These methods and programs have historically not been relevant to supercomputing centers; however, 
+Although these methods and programs have historically not been relevant to supercomputer centers,
 the following example illustrates their potential relevance.
 The generation capacity requirements and response timescales vary across the country for electricity 
 providers and operators. For example, the New England independent system operator (ISO-NE) uses a method 
 of regulation and reserves that relies heavily on a day-ahead market program. This provides an opportunity 
-for demand side resources- like supercomputer centers with renewable energy sources- to participate in the 
-market supplying the ISO-NE with electricity.  It also makes the NE-ISO particularly sensitive to major 
+for demand side resources---like supercomputer centers with renewable energy sources---to participate in the 
+market supplying the ISO-NE with electricity.  It also makes the ISO-NE particularly sensitive to major 
 fluctuations in electricity demand, which, as discussed further in the questionnaire section, is an emerging 
 characteristic of the largest supercomputer centers.  
 \footnote {http://drrc.lbl.gov/sites/drrc.lbl.gov/files/LBNL-5958E.pdf}
 
-This paper assumes that the given grid is a constant. However, it is expected that future grid infrastructures will 
+This paper assumes that the given grid is a constant. However, it is expected 
+that future grid infrastructures will 
 evolve with smart-grid capabilities. 
 
 \section{Supercomputing Centers and \\ HPC-Grid Integration}
@@ -97,31 +114,32 @@ evolve with smart-grid capabilities.
 In recent times, the fundamental drive in supercomputing to increase peak performance by adding 
 increasing number of power hungry components has waned, with the shift in focus to energy 
 efficiency to mitigate large operating costs.
-In addition, supercomputing centers are concerned about quality, availability, and 
+In addition, supercomputer centers are concerned about quality, availability, and 
 environmental and social impact.
 As described in Section~\ref{sub:EPP}, ESPs may request 
-a change in timing and/or magnitude of demand by supercomputing centers.  
-In response, supercomputing centers may employ one or more of a number of strategies to control their 
+a change in timing and/or magnitude of demand by supercomputer centers.  
+In response, supercomputer centers may employ one or more of a number of strategies to control their 
 electricity demand.
 
-Although these strategies can be used to temporarily modify loads in response to a request from an 
-electric service provider, some of strategies could eventually be used at all times to improve energy 
+Although these strategies can be used temporarily to modify loads in response to a request from an 
+electricity service provider, some of the strategies could eventually be used at all times to improve energy 
 efficiency if the HPC sees no operational issues. It is the former that is of primary interest to this 
-investigation - what HPC systems can do in response to a grid request that they cannot do all the time? 
+investigation---what can HPC systems do in response to a grid request that they cannot do all the time? 
+
 Two examples may help to clarify this distinction. Temporary load migration is an example of a strategy 
-that is well suited to responding to an electric service provider request, but is not likely to improve 
-energy efficiency (lowering aggregate energy use). Fine grained power management at all times, on 
+that is well suited to responding to an electricity service provider request, but is not likely to improve 
+energy efficiency (lowering aggregate energy use). Fine-grained power management at all times, on 
 the other hand, is more likely to be used for improving energy efficiency, unless the strategy is 
-specifically used in response to a service provider's request. 
+specifically used in response to an electricity service provider's request. 
 Below is a list of strategies:
 
 \begin{itemize}
-\item Fine grained power management refers to the ability to control HPC system power 
-and energy with tools that are high resolution control and can target specific 
-low level sub-systems. A typical example is voltage and frequency scaling of the Central Processing Unit (CPU).
+\item Fine-grained power management refers to the ability to control HPC system power 
+and energy with tools that offer high resolution control and can target specific 
+low level sub-systems. A typical example is CPU voltage and frequency scaling.
 
-\item Coarse grained power management also refers to the ability to control HPC 
-system power and energy, but contrasts with fine grained power management in 
+\item Coarse-grained power management also refers to the ability to control HPC 
+system power and energy, but contrasts with fine-grained power management in 
 that the resolution is low and it is generally done at a more aggregated level. 
 A typical example is power capping.
 
@@ -138,7 +156,7 @@ applications based on those profiles.
 \item Shutdown refers to a graceful shutdown of idle HPC equipment. It usually 
 applies when there is redundancy.
 
-\item Lighting control allows for data center lights to be shutdown completely.
+\item Lighting control allows for datacenter lights to be shutdown completely.
 
 \item Thermal management is widening temperature set-point ranges and 
 humidity levels for short periods.
