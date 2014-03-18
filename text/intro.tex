@@ -4,15 +4,15 @@ least \(10^{15}\) floating point instructions per second(FLOPS).}
 systems for high-performance computing (HPC) realize the large 
 impact they are putting on their electricity service providers (ESPs) with peak 
 power demands of 20MW and instantaneous power fluctuations of 8MW. 
-Today, with the impetus towards Exascale
-\footnote{Exascale computing refers to computing systems capable of at
+Today, with the impetus 
+towards Exascale\footnote{Exascale computing refers to computing systems capable of at
 least \(10^{18}\)FLOPS.}, 
 the need arises to
 aid electrical grid reliability  with even larger peak power demands and 
 instantaneous power fluctuations.
 
 Electrical grid reliability is extremely important when optimally managing and 
-linking electric supply with demand. Changes in electrical usage by end-users from normal 
+linking electricity supply with demand. Changes in electrical usage by end-users from normal 
 consumption patterns can affect the electric supply infrastructure. 
 To moderate such effects, it is important to understand how end users like SCs with 
 high power demand and instantaneous fluctuations
@@ -21,10 +21,9 @@ Consequently, ESPs are now seeking hourly forecasts of power demand from SCs, a 
 
 The large power demand of SCs also make them pivotal in  
 aiding ESPs to maintain reliable supply to other end-users. 
-For example, when the triple digit temperature hits the valley,
-the domestic household power consumption surges. 
-Lawrence Livermore National Laboratory (LLNL) becomes a friendly neighbor and 
-lowers its power usage, thus decreasing its load on the grid and helping out its ESP.
+For example, Lawrence Livermore National Laboratory (LLNL)
+helps with this challenge by reducing its power usage when temperatures exceed 
+100 degrees and residential power usage in the area surges.
 This is just one among many other instances where SCs have shown to be  
 resourceful in aiding their ESPs.
 
@@ -39,28 +38,30 @@ A mutual understanding of concerns between the SC and ESP can
 produce a symbiotic relation that goes beyond the current producer-consumer 
 paradigm, paving the way for possible integration of HPC with the electrical grid.
 
-In this paper, we assume fundamentally that the grid is a given constant. However, grid integration solutions may take into consideration that it is not a constant as electrical grid infrastructures will evolve in the future \cite{he_architecture_2008}. Thus, changes in the grid could make grid integration more or less difficult.
+In this paper, we assume fundamentally that the grid is a given constant. However, 
+electrical grid infrastructures will certainly evolve in the 
+future \cite{he_architecture_2008}, making grid integration more or less difficult.
 
 The Energy Efficient HPC Working Group (\href {http://eehpcwg.lbl.gov/}{EE HPC WG})  
 has been investigating opportunities for large supercomputing sites to  
 integrate more closely with their electricity service providers.
 The objectives of this investigation are to understand the willingness of SCs to
-cooperate with their ESP, their expectations from their ESP, and the feasible measures
-that the SC could employ to help their ESP.
+cooperate with their ESPs, their expectations from their ESPs, and the feasible measures
+that SCs could employ to help their ESPs.
 To achieve our objectives we deployed a questionnaire to
 Top100 List class supercomputer centers in the United States, the results of
 which are documented in subsequent sections.
 
-This work leverages prior work on data center and grid integration opportunities
+This work leverages prior work on datacenter and grid integration opportunities
 done by Lawrence Berkeley National Laboratory's (LBNL) Demand Response 
 Research Center \textbf{(cite LBNL DR datacenter integration paper)}
-that describes challenges and opportunities in which data centers and electricity
-service providers may interact and how this integration can advance 
+that describes the challenges and opportunities for datacenters and electricity
+service providers to interact and how this integration can advance 
 new market 
 opportunities\footnote{LBNL Data Center Grid Integration Activities: http://drrc.lbl.gov/projects/dc}.
 This integration model describes programs that are used by some of the electricity 
 service providers to encourage particular responses by their customers and methods 
-used to balance the electric grid supply and demand.
+used to balance the electrical grid supply and demand.
 Perhaps one of the most straightforward ways that SCs can begin
 the process of participating in demand response is by using this existing software 
 infrastructure to manage their electricity requirements in a tightly coupled manner 
