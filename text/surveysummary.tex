@@ -1,32 +1,42 @@
+For the purposes of this paper, this section contains a summary of the questionnaire.
+The complete text of our questionnaire, which includes some background 
+and explanatory material, is available at
+\href{https://www.surveymonkey.com/s.aspx?sm=Y%2feFYAHaRP1tw5bhUMdtfg%3d%3d}{EEHPCWG questionnaire}.
+Note that the questionnaire at that site is no longer active; any responses are not saved.
+
+The questionnaire is divided into the following three sections: 
+\begin{itemize}
+
+\item
+Facility Energy. The total facility energy and the total HPC load should be the 
+same number that you use when 
+calculating PUE, as defined by the Green Grid Whitepaper \#49.
+
+\item
+Management and Control. 
+Please answer whether or not you employ any of the strategies described below for managing 
+and controlling total facility energy in response to a request from your Electrical Utility/Provider.
+You may use some of these same strategies for improving energy efficiency. 
+Answer ``Yes'' only when the strategy is used at least in part for grid response. 
+Answer ``No'' if the strategy is only used for improving energy efficiency.
+
+\item
+Electrical/Utility Provider Information.
+Answers to these questions help us understand the nature of any relationship you might have 
+between your HPC facility and your site's electric utility/provider.
+Please answer ``Yes'' if you have had any communication about the following programs and 
+methods with your site's electric utility/provider.
+For each program and/or method for which there has been communication, please describe 
+the nature of that communication in the comments.
+\end{itemize}
+
 \subsection{Facility Energy}
-\begin{enumerate} 
+\begin{enumerate}  [nosep]
 \item
 What is your "total facility energy"?
-This should be the same as the total facility energy number that is used for 
-calculating PUE, as defined by the Green Grid Whitepaper \#49.
-Total facility energy includes all HPC equipment energy plus everything that supports 
-the HPC equipment using energy, such as:
-\begin{itemize} [nosep]
-\item[{-}]
-Power delivery components, including UPS systems, switchgear, generators, 
-power distribution units (PDUs), batteries, and distribution losses external to the IT equipment
-\item[{-}]
-Cooling system components, such as chillers, cooling towers, pumps, computer 
-room air handling units (CRAHs), computer room air conditioning units (CRACs), 
-and direct expansion air handler (DX) units
-\item[{-}]
-Other miscellaneous component loads, such as data center lighting
-\end{itemize}
-Ideally, total facility energy is monitored over a period of one year, taking ongoing 
-measurements to compensate for peak and nominal loading changes that occur within the 
-datacenter. If it is not possible to monitor energy consumption over a full year, 
-select a period of time not less than one month and verify that the loading within 
-the datacenter during that time is typical.
 
 \item
 What is your total HPC load?
-Note: This should be the same number that you use when calculating PUE, as defined 
-by The Green Grid WP\#49. Again, this is for the facility that houses your Top100-sized system.
 
 \item
 What is your facility PUE?
@@ -43,28 +53,13 @@ What is the maximum variation in total facility energy that is likely to re-occu
 \item
 If there is any regular pattern to this variation, please describe the circumstances. 
 Include the reason for the variation, the magnitude and duration if possible. 
-E.g., ``There is a 5MW drop every two weeks for a 6 hour period during Preventative 
+For example, ``There is a 5MW drop every two weeks for a 6 hour period during Preventative 
 Maintenance periods.''
 \end{enumerate}
 
 \subsection{Management and Control}
-Please answer whether or not you employ any of the strategies described below for managing 
-and controlling total facility energy in response to a request from your Electrical Utility/Provider.
 
-You may use some of these same strategies for improving energy efficiency. 
-Answer "Yes" only when the strategy is used at least in part for grid response. Answer "No" if the strategy is only used for improving energy efficiency.
-
-Two examples may help clarify.
-
-Example 1: Load migration, or shifting of jobs to another HPC center in a different grid, is 
-generally a strategy used in response to a request from the electrical Utility/Provider. It 
-is not generally a strategy for improving energy efficiency.
-
-Example 2: Adjusting voltage and frequency settings of processors is generally a strategy 
-used for improving energy efficiency, but it could theoretically also be used for responding to 
-the electrical Utility/Provider.
-
-\begin {enumerate}
+\begin {enumerate} [nosep]
 \setcounter{enumi}{7}
 \item
 COARSE-GRAINED POWER MANAGEMENT: manage power for the HPC system or subsystem 
@@ -89,10 +84,10 @@ BACK-UP SCHEDULING: Defer data storage processes to off-peak periods
 SHUTDOWN: Graceful shutdown of idle HPC equipment loads. Usually applies when there is redundancy
 
 \item
-LIGHTING CONTROL: With advance warning, data center lights could be shutdown completely.
+LIGHTING CONTROL: With advance warning, datacenter lights could be shutdown completely.
 
 \item
-TEMPERATURE ADJUSTMENT: widen acceptable (ASHRAE Thermal Conditions) temperature setpoint 
+TEMPERATURE ADJUSTMENT: Widen acceptable (ASHRAE Thermal Conditions) temperature setpoint 
 ranges and humidity levels for short periods. 
 
 \item
@@ -100,11 +95,12 @@ BACK-UP RESOURCES: Using generators and other electrical storage devices.
 
 \item
 Are there any other strategies that you use to manage and control your total 
-facility energy in response to a request from your
+facility energy in response to a request from your energy/utility provider.
+Please describe.
 
 \item
 Please evaluate as high, medium or low the MW impact of each of these strategies 
-as a response to a grid request. energy utility/provider? Please describe.
+as a response to a grid request. 
 
 \begin{itemize} [nosep]
 \item[{-}]
@@ -130,22 +126,9 @@ Back-up resources
 \end{itemize}
 \end{enumerate}
 
-\subsection{Electrical Utility/Provider\\ Information}
-The following questions will help us to understand the nature of the relationship you have, 
-if any, between your HPC facility and your site's electric utility/provider.
+\subsection{Electrical Utility/Provider Information}
 
-Please answer yes if you have had any communication about the following programs and 
-methods with your site's electric utility/provider.
-
-For each program and/or method for which there has been communication, please describe 
-the nature of that communication in the comments.
-
-Here are some questions you might answer in that description. What information was transferred? 
-Do you have any record of the communication that you could share? Was the information 
-transfer regular/routine or ad hoc? If regular/routine, what is the frequency of interaction? 
-Can you provide examples of such communication? 
-
-\begin{enumerate}
+\begin{enumerate} [nosep]
 \setcounter{enumi}{18}
 \item
 PEAK SHEDDING: Utility provider arrangements used to reduce peak load, where the reduced 

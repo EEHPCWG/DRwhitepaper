@@ -1,7 +1,15 @@
-We now describe prior work done in Power and Thermal Management, Job Scheduling Load Migration and Dynamic Pricing in the HPC and data center communities. Software and hardware techniques to save energy and power have been studied extensively. However, most of this work does not take into consideration power management strategies (especially for cooling systems and IT equipment) in response to a request from an electrical service provider \cite{Ghatikar2012a}.
+We now describe prior work done in Power and Thermal Management, Job Scheduling Load 
+Migration and Dynamic Pricing in the HPC and datacenter communities. Software and hardware 
+techniques to save energy and power have been studied extensively. However, most of 
+this work does not take into consideration power management strategies 
+(especially for cooling systems and IT equipment) in response to a request from an 
+electrical service provider (Ghatikar et al\cite{Ghatikar2012a}).
 
 \subsubsection{Power Management}
-DVFS and power capping are two popular ways to manage node power. Prior work in the HPC domain looked at analytical models to understand energy consumption \cite{SpringerPPoPP2006,GeICPP2007,LiHPCA2006} and at trading execution time for lower power/energy \cite{CameronSC2005,HsuSC2005}. Several DVFS algorithms have also been proposed, such as CPUMiser \cite{GeICPP2007} and Jitter \cite{KappiahSC2005}. Varma et al, 2003 \cite{varma_control-theoretic_2003} demonstrated system-level DVFS techniques. They monitored CPU utilization at regular intervals and performed dynamic scaling based on their estimate of utilization for the next interval. Springer et al.~\cite{springer:06} analyzed HPC applications under an energy bound. Rountree et al. used linear programming to find near-optimal energy savings without degrading performance \cite{rountree:07} and implemented a runtime system based on this scheme \cite{rountree:09}. 
+Dynamic Voltage Frequency Scaling (DVFS) and power capping are two popular ways to manage 
+node power. Prior work in the HPC domain looked at analytical models to understand 
+energy consumption (Springer et al \cite{SpringerPPoPP2006}, Ge et al \cite{GeICPP2007},
+Li and Martinez \cite{LiHPCA2006}) and at trading execution time for lower power/energy \cite{CameronSC2005,HsuSC2005}. Several DVFS algorithms have also been proposed, such as CPUMiser \cite{GeICPP2007} and Jitter \cite{KappiahSC2005}. Varma et al, 2003 \cite{varma_control-theoretic_2003} demonstrated system-level DVFS techniques. They monitored CPU utilization at regular intervals and performed dynamic scaling based on their estimate of utilization for the next interval. Springer et al.~\cite{springer:06} analyzed HPC applications under an energy bound. Rountree et al. used linear programming to find near-optimal energy savings without degrading performance \cite{rountree:07} and implemented a runtime system based on this scheme \cite{rountree:09}. 
 
 There also has been work in the real-time systems community to solve the DVFS scheduling problem using mixed integer linear programming on a single processor\cite{IshiharaISLPED1998,SaputraLCTES2002,SwaminathanRTSS2000,SwaminathanASPDAC2001}. Other real-time approaches looked at saving energy \cite{MoncusiRTSS2003,MochockiICCAD2002,MochockiRTAS2005,ZhuTPDS2003,ZhangDAC2002}. 
 
