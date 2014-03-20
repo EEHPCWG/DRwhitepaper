@@ -1,9 +1,6 @@
 We now describe prior work done in Power and Thermal Management, Job Scheduling Load 
 Migration and Dynamic Pricing in the HPC and datacenter communities. Software and hardware 
-techniques to save energy and power have been studied extensively. However, most of 
-this work does not take into consideration power management strategies 
-(especially for cooling systems and IT equipment) in response to a request from an 
-electrical service provider (Ghatikar et al\cite{Ghatikar2012a}).
+techniques to save energy and power have been studied extensively. 
 
 \subsubsection{Power Management}
 Dynamic Voltage Frequency Scaling (DVFS) and power capping are two popular ways to manage 
@@ -22,7 +19,39 @@ Techniques for fine-grained power management have also been proposed. Curtis-Mau
 Power Usage Effectiveness (PUE) is a metric that reveals how much energy is expended on cooling costs and other non-compute operations in a facility \cite{Niccolai}. It is the ratio of the energy supplied to the energy used in useful computations in a datacenter or a HPC facility. A PUE of 1.0 is ideal, but studies have shown that on average, a large datacenter has a PUE of 2.9, which indicates that datacenters are fairly energy inefficient. 
 
 \subsubsection{Thermal Management}
-Thermal and cooling metrics are becoming important in HPC resource management. Runtime cooling strategies are mostly job-placement-centric. These techniques either aim to place incoming computationally intensive jobs in a thermal-aware manner on servers with lower temperatures or attempt to migrate or load-balance jobs from high-temperature servers to servers with lower temperatures.
+
+Thermal management is a key driver for improving energy efficiency of data centers as well as supercomputer centers.  
+There are many strategies for thermal management that can improve energy efficiency, such as free cooling and proper 
+airflow.  This paper discusses two thermal management strategies that have an opportunity for grid integration.  
+The first strategy is controlling the inlet temperature to the computing equipment, raising it as high as possible 
+without causing reliability induced hardware failures.  The second strategy is using thermally aware job scheduling.
+
+In 2011, the American Society of Heating, Refrigeration and Air Conditioning (ASHRAE) data center Technical 
+Committee TC9.9 published guidelines that  “expanded the environmental range for data centers” and supercomputer 
+centers. The environmental range includes factors such as temperature, humidity and dew point and allowable rate 
+of change.  This expansion allows for maintaining high reliability while achieving gains in energy efficiency.  
+These guidelines continue to be updated and the range continues to expand as the industry collects more historical 
+data showing trade-offs between reliability and environmental factors.
+
+It is implicit in the ASHRAE guidelines that a supercomputer center might be able to increase temperature as a 
+response to a request from an energy service provider.  The guideline defines both “recommended” and “allowable” 
+environmental ranges.  It also specifies a maximum rate of change, which is most stringent for tape drives. 
+For supercomputer centers, the difference between the maximum recommended and allowable dry bulb temperature 
+is a minimum of 9 degrees F.  The rate of change for tape drives is 9 degrees F per hour (36 degrees F for solid 
+state computing systems).   Therefore, assuming that supercomputer centers normally operate within the recommended 
+range and that they are willing to operate on occasion in the allowable range (or beyond), it is theoretically 
+possible to stay within ASHRAE thermal guidelines and use temperature excursion as a grid-integration strategy.  
+
+ASHRAE has also published a guideline on liquid cooling environmental ranges (reference).  At this point, however, 
+the guidelines do not document rate of change for liquid temperature.  Although it isn’t explored in this paper, 
+it may be possible to use increases in liquid cooling temperature as a grid-integration strategy as well. 
+
+(Ghatikar et al\cite{Ghatikar2012a}) has done field studies on using thermal management as a grid-integration 
+strategy.  They demonstrate increasing “facility HVAC temperature set points in order to decrease HVAC power demand” 
+in two different field locations.  There was only a small electricity demand decrease demonstrated.
+
+
+Runtime cooling strategies are mostly job-placement-centric. These techniques either aim to place incoming computationally intensive jobs in a thermal-aware manner on servers with lower temperatures or attempt to migrate or load-balance jobs from high-temperature servers to servers with lower temperatures.
 
 Kaushik et. al \cite{kaushik_t*:_2012} proposed \emph{T*}, a system that is aware of server thermal profiles and reliability as well as data semantics (computation job rates, job sizes, etc). This system saves cooling energy costs by using thermal-aware job placements without trading off performance.
 
