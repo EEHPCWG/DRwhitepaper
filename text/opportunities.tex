@@ -1,13 +1,13 @@
 The responses to the questionnaire presented in
 Section~\ref{sec:questionnaire} represent a variety of desires and
 experience regarding interactions between supercomputer centers and
-energy service providers.  For example, the responses from the two centers
+electricity service providers.  For example, the responses from the two centers
 with the largest power draws, Lawrence Livermore National Laboratory
 (LLNL) and Oak Ridge National Laboratory (ORNL), diverge in several
 areas.  This divergence is perhaps primarily due to characteristics of
-their respective energy service providers.  In contrast, San Diego
+their respective electricity service providers.  In contrast, San Diego
 Supercomputer Center (SDSC) stands out as a leader in integrating
-with their energy service provider on a site-wide level.  To that end, the
+with their electricity service provider on a site-wide level.  To that end, the
 responses from SDSC may exemplify some of the opportunities available
 to other supercomputer centers that are willing to pursue this degree
 of integration.
@@ -20,10 +20,10 @@ of integration.
 % It turns out that the cost of electricity is a small percent of
 % the overall cost of running the center.  In the end, I think there
 % is very little chance of getting supercomputer centers to
-% willingly negotiate with energy service providers because the cost of
+% willingly negotiate with electricity service providers because the cost of
 % the lost opportunity is too high since the remaining costs are
 % unchanged.
-The responses to the questionnaire also suggest that some energy service
+The responses to the questionnaire also suggest that some electricity service
 providers are requesting that their supercomputer center customers
 develop capabilities for informing the provider of expected periods of
 exceptional power consumption and for responding to requests from the
@@ -33,10 +33,10 @@ primary mission objective of most supercomputer centers of delivering
 as many uninterrupted computational cycles as possible to their users.
 In some extreme cases, supercomputer centers may not have a choice
 in the matter as the size and energy requirements of supercomputers
-increase; indeed, some energy service providers may \textit{require} large
+increase; indeed, some electricity service providers may \textit{require} large
 centers to develop a demand-response capability.  However, a direct
 business case may exist to encourage supercomputer centers to develop
-this negotiation capability on their own.  For example, if energy service
+this negotiation capability on their own.  For example, if electricity service
 providers were to offer electricity at a significantly reduced rate
 on the condition that the supercomputer center customer develop
 demand-response capabilities, the long-term cost savings to the
@@ -64,10 +64,10 @@ computing capacity of a supercomputer center.  By attenuating
 resources, the supercomputer center manager can ensure that power
 consumption stays below some defined level.  This defined level may be
 a pre-arranged power cap negotiated between the supercomputer center
-and the energy service provider and maintained on an ongoing basis,
+and the electricity service provider and maintained on an ongoing basis,
 or, perhaps more likely, a power draw level that is requested by the
-energy service provider to handle unanticipated loads somewhere else
-in the energy service provider's system.  One important thing to
+electricity service provider to handle unanticipated loads somewhere else
+in the electricity service provider's system.  One important thing to
 notice in using this approach to power management is that the savings
 in power may not need to come entirely from attenuating computing
 resources.  Rather, reducing power consumption in computing resources
@@ -81,7 +81,7 @@ that the supercomputer center environment has some amount of
 instrumentation and metering that allows for the collection of power
 telemetry data.  This telemetry is necessary for the supercomputer
 center facility manager in order to understand how the power supplied
-by the energy service provider is distributed to resources within the
+by the electricity service provider is distributed to resources within the
 center.  Further, this telemetry is likely important to automated
 solutions for power management, such as the job scheduling techniques
 described below.  In light of the fact that many system integrators
@@ -111,8 +111,8 @@ and manipulating the job queue.  One easily-accessible technique is
 for a human operator to use capabilities such as advanced reservations
 to reserve pre-arranged blocks of time in which jobs with high power
 loads will run.  These blocks of time could be negotiated with the
-energy service provider on an ongoing basis or could be in response to
-on-demand requests made by the energy service provider.  Even more
+electricity service provider on an ongoing basis or could be in response to
+on-demand requests made by the electricity service provider.  Even more
 automatic techniques are possible if the job scheduler is given enough
 information about the workflow to make intelligent decisions about job
 scheduling.  For example, jobs may be submitted with various metadata
@@ -126,7 +126,7 @@ circumstances, but they are also a vital piece of successfully
 implementing a demand-response capability for at least two reasons.
 First, they provide a set of metrics by which the supercomputer center
 can estimate the cost in terms of the ``lost opportunity'' of
-responding to an energy service provider's request to run with
+responding to an electricity service provider's request to run with
 attenuated resources.  Second, they allow the supercomputer center to
 prioritize jobs in the queued workflow in order to understand how to
 best utilize computational resources.  This capability is important
@@ -224,22 +224,23 @@ presented in the previous Section, facilities managers view these
 approaches as the most likely candidates for creating effective
 demand-response capabilities.
 
-Finally, this Section has focused heavily on the opportunities available
-to supercomputer centers that come from developing demand-response
-capabilities.  This notion is primarily due to the fact that the
-questionnaire presented in Section~\ref{sec:questionnaire} was
-distributed to high-performance computing centers in the United
-States, not to energy service providers.  That said, opportunities do
-exist for energy service providers that develop demand-response
+Finally, this Section has focused heavily on the opportunities
+available to supercomputer centers that come from developing
+demand-response capabilities.  This notion is primarily due to the
+fact that the questionnaire presented in Section~\ref{sec:questionnaire}
+was distributed to supercomputer centers in the United States, not to
+electricity service providers.  That said, opportunities do exist for
+electricity service providers that develop demand-response
 capabilities.  At one level, the negotiation process itself requires
 integration in terms of the communication and messaging protocols that
-are necessary.  To that end, opportunities exist for adapting and extending
-existing standards currently used within the industry, thus creating new
-use cases and capabilities for energy service providers.  At a higher
-level, energy service providers will most likely need to improve their
-ability to determine in near real time the important places within the
-electrical grid where demands exceed supply.  Determining this is likely
-to be a complex optimization problem.  While this Section focuses on
-solving these problems to the end of developing a demand-response
-strategy in conjunction with supercomputer centers, these capabilities
-are likely applicable to a broad range of customers.
+are necessary.  To that end, opportunities exist for adapting and
+extending existing standards currently used within the industry, thus
+creating new use cases and capabilities for electricity service
+providers.  At a higher level, electricity service providers will most
+likely need to improve their ability to determine in near real time
+the important places within the electrical grid where demands exceed
+supply.  Determining this is likely to be a complex optimization
+problem.  While this Section focuses on solving these problems to the
+end of developing a demand-response strategy in conjunction with
+supercomputer centers, these capabilities are likely applicable to a
+broad range of customers.
