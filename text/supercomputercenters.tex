@@ -107,27 +107,22 @@ evolve with smart-grid capabilities.
 
 \section{Supercomputing Centers and \\ HPC-Grid Integration}
 
-The fundamental drive in supercomputing to increase peak performance by adding 
-increasing number of power hungry components has waned, with the shift in focus to energy 
-efficiency to mitigate large operating costs.
-In addition, supercomputer centers are concerned about quality, availability, and 
-environmental and social impact.
-As described in Section~\ref{sub:EPP}, ESPs may request 
-a change in timing and/or magnitude of demand by supercomputer centers.  
-In response, supercomputer centers may employ one or more of a number of strategies to control their 
+In November 2004, the Blue Gene/L system at Lawrence Livermore National Laboratory
+became the fastest computer in the Top 500,~\cite{FIXME}, displacing the NEC Earth Simulator,
+the previous champion.  This change marked the transition from supercomputing gains based
+on ever-higher-performance components to systems comprised of far larger numbers of 
+slow but energy-efficient components.  However, total system power consumption continued to rise,
+and we are now poised to begin a second transition to ''power-limited computing''.  The new
+model has been exemplified by the US Department of Energy issuing guidance that the first
+DOE exascale machine should not exceed 20MW; effectively a $1000x$ performance improvement
+with only a $3x$ increase in power.  
+
+However, the problem is not as simple as provisioning 20MW.  Ultimately, SCs optimize for
+performance per dollar, not performance per Watt, and flexibility in power consumption
+can be expected to result in lower overall prices.  Use of green technologies such as
+wind and solar may also lead to cheaper but less predictable sources of power.
+To adapt to this new landscape, SCs may employ one or more strategies to control their 
 electricity demand.
-
-Although these strategies can be used temporarily to modify loads in response to a request from an 
-electricity service provider, some of the strategies could eventually be used at all times to improve energy 
-efficiency if the HPC sees no operational issues. It is the former that is of primary interest to this 
-investigation---what can HPC systems do in response to a grid request that they cannot do all the time? 
-
-Two examples may help to clarify this distinction. Temporary load migration is an example of a strategy 
-that is well suited to responding to an electricity service provider request, but is not likely to improve 
-energy efficiency (lowering aggregate energy use). Fine-grained power management at all times, on 
-the other hand, is more likely to be used for improving energy efficiency, unless the strategy is 
-specifically used in response to an electricity service provider's request. 
-Below is a list of strategies:
 
 \begin{itemize}
 \item Fine-grained power management refers to the ability to control HPC system power 
