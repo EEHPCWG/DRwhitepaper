@@ -125,31 +125,54 @@ To adapt to this new landscape, SCs may employ one or more strategies to control
 electricity demand.
 
 \begin{itemize}
-\item Fine-grained power management refers to the ability to control HPC system power 
-and energy with tools that offer high resolution control and can target specific 
-low level sub-systems. A typical example is CPU voltage and frequency scaling.
+\item \textbf{Node level.} Controlling power ultimately requires control of individual
+components.  Historically, this control has been accomplished through Dynamic Voltage/Frequency
+Scaling (DVFS), which allows the processor to use a lower voltage at the cost of a slower
+clock frequency.  Newer technologies such as Intel's Running Average Power Limit leverage
+DVFS to guarantee that at user-specified processor power bound will, on average, not be exceeded 
+over the duration of a short time window.  DVFS can also be found on accelerator cards such
+as nVidia's Kepler GPGPU.  Other efforts reduce DRAM power by batching reads and writes, thus
+allowing the memory to spend more time in a lower-power state.  Several processor configuration
+options have indirect but significant effects on power consumption.  For example, the choice
+of the number of cores to use, whether or not to enable hyperthreading, and the use of 
+"turbo" modes will change the power/performance curve.
 
-\item Coarse-grained power management also refers to the ability to control HPC 
-system power and energy, but contrasts with fine-grained power management in 
-that the resolution is low and it is generally done at a more aggregated level. 
-A typical example is power capping.
+\item \textbf{Job level.}  Each of the node-level controls requires a tradeoff between
+power and  performance.  SCs resources are typically oversubscribed, so degrading performance
+to save power and energy ultimately results in less science getting done.  However, at the 
+job level, load imbalance provides opportunities to slow nodes that are off of the critical
+path of execution without slowing the overall job execution time.  Traditionally, load 
+rebalancing strategies have focused on moving bytes around the job allocation.  With 
+power control, we can now rebalance power as well as work.
 
-\item Load migration refers to temporarily shifting computing loads from 
-an HPC system in one site to a system in another location that has stable power supply. 
-This strategy can also be used in response to change in electricity prices.
+\item \textbf{System level.}  While most SCs use time and space partitioning (where a node
+only runs a single job at a time), there are still shared resources that must be managed
+across jobs.  Periodic checkpointing saves sufficient job state to a filesystem shared 
+across jobs so that a job may be restarted from a recent point in case a fault occurs.
+Because these checkpoints involve much more data motion than normal execution, power 
+spikes can be observed at the node level (particularly DRAM), network, and filesystem.
+These checkpoints may need to be coordinated across large jobs to prevent unnecessary
+performance degredation.
 
-\item Job scheduling refers to the ability to control HPC system power 
-by understanding the power profile of applications and queuing the 
-applications based on those profiles.
+\item \textbf{Scheduler level.}  Up through the system level, power control is evaluated
+using the execution time of individual jobs.  The scheduler optimizes for overall throughput
+rather than individual job performance.  At this point, scheduling is a two-dimensional 
+problem:  jobs request a certain number of nodes for a certain duration.  As power-limited
+computing becomes more common, schedulers will add power bounds to this mix:  a job will
+be allowed nodes, time, and a certain number of watts (the responsibility for not exceeding
+the job power bound rests with the system software, not the user or application).  The 
+scheduler not only determines when jobs in the queue begin execution, but also what happens
+when a job exits the system.  Depending on the priorities of already-running jobs and the
+priorities of jobs in the queue, the best solution in terms of throughput may be to idle
+the recently-freed nodes and redistribute the freed power to running jobs.
 
-\item Back-up scheduling refers to deferring data storage processes to off-peak periods.
+\item \textbf{Site level.}  At the level of the machine room (or multiple machine rooms),
+decisions must be made as to how much power should be allocated for cooling versus computation,
+which requires understanding how temperature interacts with performance.  A higher intake
+air temperature uses less cooling power but results in higher static processor power and 
+may limit opportunities for "turbo" mode in processors where it is available.  As cooling
+power varies with outside air temperature, a single machine room temperature setpoint may 
+not be the optimal solution in terms of overall performance.  
 
-\item Shutdown refers to a graceful shutdown of idle HPC equipment. It usually 
-applies when there is redundancy.
-
-\item Lighting control allows for datacenter lights to be shutdown completely.
-
-\item Thermal management is widening temperature set-point ranges and 
-humidity levels for short periods.
 \end{itemize}
 
