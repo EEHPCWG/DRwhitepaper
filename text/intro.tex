@@ -1,56 +1,40 @@
-Supercomputing centers(SCs) with petascale
+Supercomputing centers (SCs) with petascale
 \footnote{Petascale computing refers to computing systems capable of at
 least \(10^{15}\) floating point instructions per second(FLOPS).} 
-systems for high-performance computing (HPC) realize the large 
-impact they are putting on their electricity service providers (ESPs) with peak 
-power demands of 20MW and instantaneous power fluctuations of 8MW. 
-Today, with the impetus 
-towards Exascale\footnote{Exascale computing refers to computing systems capable of at
-least \(10^{18}\)FLOPS.}, 
-the need arises to
-aid electrical grid reliability  with even larger peak power demands and 
-instantaneous power fluctuations.
+systems for high-performance computing (HPC) have an outsized 
+impact on their electricity service providers (ESPs), with peak 
+power demands in excess of 20MW and instantaneous power fluctuations of up to 8MW. 
+As the HPC community moves towards exascale computing,\footnote{Exascale computing refers to computing systems capable of at
+least \(10^{18}\)FLOPS.} we anticipate a growing number of facilities will
+be reaching or exceeding these service levels, with significant potential 
+effect on electrical grid reliability.
+To moderate this risk, in this paper we seek to understand how these anticipated
+usage patterns can be integrated safely into the power grid with minimal cost 
+and disruption.
 
-Electrical grid reliability is extremely important when optimally managing and 
-linking electricity supply with demand. Changes in electrical usage by end-users from normal 
-consumption patterns can affect the electric supply infrastructure. 
-To moderate such effects, it is important to understand how end users like SCs with 
-high power demand and instantaneous fluctuations
-affect power-supply reliability. 
-Consequently, ESPs are now seeking hourly forecasts of power demand from SCs, a day in advance.
-
-The large power demand of SCs also make them pivotal in  
-aiding ESPs to maintain reliable supply to other end-users. 
+Being a "good citizen" on the grid has several historical precedents.
+For example, electrically-intensive industries such as aluminium smelters 
+have received preferential pricing in return for predictable loads and
+flexibility in reducing power during periods of high consumption.
+SCs are already adopting these strategies.  
 For example, Lawrence Livermore National Laboratory (LLNL)
-helps with this challenge by reducing its power usage when temperatures exceed 
-100 degrees and residential power usage in the area surges.
-This is just one among many other instances where SCs have shown to be  
-resourceful in aiding their ESPs.
-
-In the past, large smelters and manufacturing industries extended 
-great influence on the electrical grid; but today, because of their increasing power demands,
-supercomputing centers are the key players.
-While supercomputing centers often focus on energy efficiency to lower costs, 
-it is important to understand if this focus is also a key interest for ESPs.
-Likewise, it is important for the SC to understand the significance of electrical grid 
-reliability---a priority for ESP. 
+reduces its power usage when temperatures exceed 
+100 degrees and residential power usage in the area surges,
+Other centers are exploring the benefits of predicting hour-ahead and 
+day-ahead use in concert with their providers.
 A mutual understanding of concerns between the SC and ESP can 
 produce a symbiotic relation that goes beyond the current producer-consumer 
 paradigm, paving the way for possible integration of HPC with the electrical grid.
 
-In this paper, we assume fundamentally that the grid is a given constant. However, 
-electrical grid infrastructures will certainly evolve in the 
-future \cite{he_architecture_2008}, making grid integration more or less difficult.
-
 The Energy Efficient HPC Working Group (\href {http://eehpcwg.lbl.gov/}{EE HPC WG})  
-has been investigating opportunities for large supercomputing sites to  
+investigates opportunities for large supercomputing sites to  
 integrate more closely with their electricity service providers.
-The objectives of this investigation are to understand the willingness of SCs to
+We seek to understand the willingness of SCs to
 cooperate with their ESPs, their expectations from their ESPs, and the feasible measures
 that SCs could employ to help their ESPs.
-To achieve our objectives we deployed a questionnaire to
-Top100 List class supercomputer centers in the United States, the results of
-which are documented in subsequent sections.
+To achieve our objectives we developed a questionnaire and distributed it to 
+the Top100 supercomputer centers in the United States. 
+%NEED TEASER RESULTS HERE!
 
 This work leverages prior work on datacenter and grid integration opportunities
 done by Lawrence Berkeley National Laboratory's (LBNL) Demand Response 
@@ -67,13 +51,14 @@ the process of participating in demand response is by using this existing softwa
 infrastructure to manage their electricity requirements in a tightly coupled manner 
 with their ESPs, facilitating both energy efficiency and grid reliability.
 
-Section~\ref{sec:supercomputer}  of this paper describes in greater detail the model for
+The paper is organized as follows.
+Section~\ref{sec:supercomputer}  describes the model for
 integrating supercomputer centers and the electrical grid. Section~\ref{sec:priorwork}
-is a review of prior work on HPC center strategies that might be
-deployed for managing electricity and power. Section~\ref{sec:questionnaire} of this paper
-describes the results of the questionnaire. 
+reviews prior work on HPC center strategies. Section~\ref{sec:questionnaire} 
+provides the results of the questionnaire. 
 Section~\ref{sec:opportunities} 
-describes opportunities, solutions and barriers. Section~\ref{sec:conclusion} describes
-conclusions and next steps, and Section~\ref{sec:additional} recognizes additional
-authors. The \nameref{Appendix} contains a summary of the survey questions.
+discusses the several opportunities, solutions and barriers that have been highlighted 
+by the survey results. We offer our conclusions in Section~\ref{sec:conclusion} along 
+with our plan for future work.  Additional authors are listed in Section~\ref{sec:additional} and
+section \nameref{Appendix} summarizes the survey questions.
 
