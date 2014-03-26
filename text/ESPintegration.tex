@@ -1,0 +1,107 @@
+The EE HPC WG Team took as their starting point a
+model developed by LBNL's Demand Response Research
+Center that describes strategies that datacenters might em-
+ploy for utility programs to manage their electricity and
+power requirements to lower costs and benefit from utility
+incentives. The EE HPCWG Team adopted this model with
+slight tweaks to reflect the supercomputing environment
+focus (versus the datacenter as described by LBNL`s Demand
+Response Research Center).
+
+For purposes of this paper, we define supercomputer centers
+as distinct from a datacenters as having 
+significantly higher system utilization and thus little or no 
+virtualization.  Additionally, supercomputer
+applications are distinguished by their lack of geographical
+portability due to security concerns, data size and machine-specific
+optimization.  We also note  that supercomputing centers tend to be more
+energy-efficient than datacenters.  
+In our survey, no SC exceeded a power usage effectiveness (PUE) of $1.53$,
+while the average data center falls between $1.91$ and $2.9$ (with $1.0$ being
+the ideal).~\cite{FIXME}
+
+\subsection{Electricity Provider Programs\\
+and Methods}
+\label{sub:EPP}
+An electricity provider seeks to provide efficient and reliable generation, transmission, and 
+distribution of electricity. Methods and programs employed by the electricity providers and their consumers 
+are key to managing and balancing the supply and demand of electricity. While the \textit{methods} 
+describe how 
+electricity providers manage supply, the \textit{programs} describe the activities that 
+the electricity providers 
+can offer to their consumers to balance demand with supply.
+
+Although critical to the eletricity service providers, methods 
+are generally not visible to the consumer of the electricity because they
+operate within the generation  or transmission stations.
+These methods are the major means by which supply and demand of electricity are managed.
+
+Electricity provider programs encourage customer responses to target both energy efficiency and real-time
+(day-ahead or day-of) management of demand for electricity. An example of an electricity provider program 
+that encourages energy efficiency would be to provide home consumers a financial incentive for replacing 
+single pane with double pane windows.  On the other hand, an example that illustrates programs that help 
+with real-time demand management would be to provide a financial incentive for reducing load 
+during high demand periods 
+(such as hot summer afternoons when air conditioners are heavily utilized). 
+
+The following is a list and brief definitions of key methods and programs.  
+
+\subsubsection{Methods}
+\begin{itemize}
+\item Regulation (Up or Down): Methods used to maintain that portion of electricity generation reserves 
+that are needed to balance generation and demand at all times.  Raising supply is up regulation and lowering 
+supply is down regulation. There are many types of reserves 
+(e.g., operating, ancillary services), distinguished by who manages them and what they are used for.
+
+\item Transmission Congestion: Methods used to resolve congestion that occurs when there is not enough 
+transmission capability to support all requests for transmission services. Transmission system operators 
+must re-dispatch generation or, 
+in the limit, deny some of these requests to prevent transmission lines from becoming overloaded.
+
+\item Distribution Congestion:  Methods used to resolve congestion that occurs when the 
+distribution control system 
+is overloaded.  It generally results in deliveries that are held up or delayed.  
+
+\item Frequency response:  Methods used to keep grid frequency constant and in-balance. 
+Generators are typically used for frequency response, but any appliance that operates to a duty cycle 
+(such as air conditioners and heat pumps) could be used to provide a 
+constant and reliable grid balancing service by timing their duty cycles in response to system load.   
+
+\item Grid Scale Storage:  Methods used to store electricity on a large scale. 
+Pumped-storage hydroelectricity is the largest-capacity form of grid energy storage. 
+
+\item Renewables:  Methods used to manage the variable uncertain generation nature of 
+many renewable resources. 
+\end{itemize}
+
+\subsubsection{Programs}
+\begin{itemize}
+\item Energy Efficiency:  Programs used to reduce overall electricity consumption.
+
+\item Peak Shedding:  Programs used to reduce load during peak times, 
+where the reduced load is not used at a later time. 
+
+\item Peak Shifting:  Programs where the load during peak times is moved to, typically, non-peak hours. 
+
+\item Dynamic Pricing:  Time varying pricing programs used to increase, shed,
+ or shift electricity consumption. 
+The two types of pricing are peak and real-time.  Peak pricing is pre-scheduled; however, the consumer 
+does not know if a certain day will be a peak or a non-peak day until day-ahead or day-of.  
+Real-time pricing is not pre-scheduled; prices can be set day-ahead or day-of.
+\end{itemize}
+
+Although these methods and programs have historically not been relevant to supercomputer centers,
+the following example illustrates their potential relevance.
+The generation capacity requirements and response timescales vary across the country for electricity 
+providers and operators. For example, the New England independent system operator (ISO-NE) uses a method 
+of regulation and reserves that relies heavily on a day-ahead market program. This provides an opportunity 
+for demand side resources---like supercomputer centers with renewable energy sources---to participate in the 
+market supplying the ISO-NE with electricity.  It also makes the ISO-NE particularly sensitive to major 
+fluctuations in electricity demand, which, as discussed further in the questionnaire section, is an emerging 
+characteristic of the largest supercomputer centers.  
+\footnote {http://drrc.lbl.gov/sites/drrc.lbl.gov/files/LBNL-5958E.pdf}
+
+This paper assumes that the given grid is a constant. However, it is expected 
+that future grid infrastructures will 
+evolve with smart-grid capabilities. 
+
