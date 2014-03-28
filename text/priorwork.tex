@@ -1,52 +1,43 @@
-We now describe prior work done in Power and Thermal Management, Job Scheduling Load 
-Migration and Dynamic Pricing in the HPC and datacenter communities. Software and hardware 
-techniques to save energy and power have been studied extensively. 
+This paper pulls together several diverse research domains.  In this section,
+we provide an overview of prior work in these areas.
 
 \subsubsection{Power Management}
-Dynamic Voltage Frequency Scaling (DVFS) and power capping are two popular ways
-to manage node power. Prior work in the HPC domain looked at analytical models
-to understand energy consumption (Springer et al \cite{SpringerPPoPP2006}, Ge et
-al \cite{GeICPP2007}, Li and Martinez \cite{LiHPCA2006}) and at trading
-execution time for lower power/energy \cite{CameronSC2005,HsuSC2005}. Several
-DVFS algorithms have also been proposed, such as CPUMiser \cite{GeICPP2007} and
-Jitter \cite{KappiahSC2005}. Varma et al, 2003
-\cite{varma_control-theoretic_2003} demonstrated system-level DVFS techniques.
-They monitored CPU utilization at regular intervals and performed dynamic
-scaling based on their estimate of utilization for the next interval. Springer
-et al.~\cite{springer:06} analyzed HPC applications under an energy bound.
-Rountree et al. used linear programming to find near-optimal energy savings
-without degrading performance \cite{rountree:07} and implemented a runtime
-system based on this scheme \cite{rountree:09}.  There also has been work in the
-real-time systems community to solve the DVFS scheduling problem using mixed
-integer linear programming on a single
-processor\cite{IshiharaISLPED1998,SaputraLCTES2002,SwaminathanRTSS2000,SwaminathanASPDAC2001}.
-Other real-time approaches looked at saving energy
-\cite{MoncusiRTSS2003,MochockiICCAD2002,MochockiRTAS2005,ZhuTPDS2003,ZhangDAC2002}. 
+Processor power management can be divided up into two distinct eras.  First, with 
+the introduction of Dynamic Voltage Frequency Scaling, users were able to 
+change the CPU clock speed of their processors, lowering both voltage and,
+in most cases, energy:  the program used less power and ran longer, but the
+quadratic relation of power to frequency biased the results towards overall
+energy savings.  Early work included several modeling efforts focused on
+the effects of CPU- and memory-boundedness on delay and energy in MPI programs.~\cite{SpringerPPoPP2006,GeICPP2007,LiHPCA2006,CameronSC2005,HsuSC2005}. 
+This work led to the CPUMiser~\cite{GeICPP2007} and Jitter runtime systems, which were designed 
+to maximize energy saving consisted with a user-specific delay.~\cite{KappiahSC2005}
+Treating energy savings as an optimization problem led to a linear programming
+solution.~\cite{rountree:07} The follow-on Adagio runtime system slowed only
+computation that could be proven to be off the critical path, leading to signficant
+energy savings with only negligible slowdown.~\cite{rountree:09} These 
+techniques were also applied to non-MPI data center workloads.~\cite{femal:04}. 
 
+Other power saving approaches were attempted that did not use DVFS, but most
+were not deemed relevant to the supercomputing environment.  A notable expection
+is Dynamic Concurreny Throttling, where energy savings are realized by varying
+the number of threads at runtime.~\cite{Curtis1,Curtis2,Curtis3} 
 
-Chip power measurement and capping techniques were initially introduced with the
-Running Average Power Limit (RAPL) interface on Intel Sandy Bridge processors
-\cite{IntelSDM,David2010}. In the HPC domain, Rountree et
-al.~\cite{Rountree2012} proposed RAPL as an alternative to DVFS and analyzed
-application performance under hardware-enforced power bounds. They also
-established that variation in power directly translates to variation in
-application performance under a power bound. Patki et al. \cite{Patki1} used
-power capping techniques to demonstrate how hardware overprovisioning can
-improve HPC application performance under a global power bound significantly.
-Overprovisioning was also explored in the data center community \cite{femal:04}. 
+The research landscape changed considerable with the introduction of Intel's
+Sandy Bridge processor.  Turbo mode allowed higher clock frequencies to be
+reached so long as fewer cores were in use, making for a nontrivial power/performance tradeoff
+calculation.  The Running Average Power Limit (RAPL) technology provided an onboard power model allowed the processor to both
+estimate power and, using rapid dithering of CPU clock frequencies, enforce a
+user-specified power bound across a short time window.~\cite{IntelSDM,David2010}. 
+For the first time, users were able to ask questions about performance under 
+power bounds.  This new capability arrived concurrent with Department of Energy
+guidance that exascale machines would be subject to power (as opposed to energy) bounds.
 
-Techniques for fine-grained power management have also been proposed.
-Curtis-Maury et. al \cite{Curtis1,Curtis2,Curtis3} introduced Dynamic
-Concurrency Throttling, which is a technique to dynamically optimize for power
-and performance by varying the number of active threads in parallel codes. (Add
-Sridutt's references on fine grained power management here.)
+Initial work showed that while processor performance at a fixed frequency 
+was reproducible across processors, execution in turbo mode or under a power
+bound revealed significant performance variation.~\cite{Rountree2012} Further
+work demonstrated a $2x$ performance improvement between conservative and
+optimial processor configurations while executing under a power bound.~\cite{Patki1}
 
-Power Usage Effectiveness (PUE) is a metric that reveals how much energy is
-expended on cooling costs and other non-compute operations in a facility
-\cite{Niccolai}. It is the ratio of the energy supplied to the energy used in
-useful computations in a datacenter or a HPC facility. A PUE of 1.0 is ideal,
-but studies have shown that on average, a large datacenter has a PUE of 2.9,
-which indicates that datacenters are fairly energy inefficient. 
 
 \subsubsection{Thermal Management}
 
