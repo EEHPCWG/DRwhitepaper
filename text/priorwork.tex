@@ -3,77 +3,177 @@ Migration and Dynamic Pricing in the HPC and datacenter communities. Software an
 techniques to save energy and power have been studied extensively. 
 
 \subsubsection{Power Management}
-Dynamic Voltage Frequency Scaling (DVFS) and power capping are two popular ways to manage 
-node power. Prior work in the HPC domain looked at analytical models to understand 
-energy consumption (Springer et al \cite{SpringerPPoPP2006}, Ge et al \cite{GeICPP2007},
-Li and Martinez \cite{LiHPCA2006}) and at trading execution time for lower power/energy \cite{CameronSC2005,HsuSC2005}. Several DVFS algorithms have also been proposed, such as CPUMiser \cite{GeICPP2007} and Jitter \cite{KappiahSC2005}. Varma et al, 2003 \cite{varma_control-theoretic_2003} demonstrated system-level DVFS techniques. They monitored CPU utilization at regular intervals and performed dynamic scaling based on their estimate of utilization for the next interval. Springer et al.~\cite{springer:06} analyzed HPC applications under an energy bound. Rountree et al. used linear programming to find near-optimal energy savings without degrading performance \cite{rountree:07} and implemented a runtime system based on this scheme \cite{rountree:09}. 
+Dynamic Voltage Frequency Scaling (DVFS) and power capping are two popular ways
+to manage node power. Prior work in the HPC domain looked at analytical models
+to understand energy consumption (Springer et al \cite{SpringerPPoPP2006}, Ge et
+al \cite{GeICPP2007}, Li and Martinez \cite{LiHPCA2006}) and at trading
+execution time for lower power/energy \cite{CameronSC2005,HsuSC2005}. Several
+DVFS algorithms have also been proposed, such as CPUMiser \cite{GeICPP2007} and
+Jitter \cite{KappiahSC2005}. Varma et al, 2003
+\cite{varma_control-theoretic_2003} demonstrated system-level DVFS techniques.
+They monitored CPU utilization at regular intervals and performed dynamic
+scaling based on their estimate of utilization for the next interval. Springer
+et al.~\cite{springer:06} analyzed HPC applications under an energy bound.
+Rountree et al. used linear programming to find near-optimal energy savings
+without degrading performance \cite{rountree:07} and implemented a runtime
+system based on this scheme \cite{rountree:09}.  There also has been work in the
+real-time systems community to solve the DVFS scheduling problem using mixed
+integer linear programming on a single
+processor\cite{IshiharaISLPED1998,SaputraLCTES2002,SwaminathanRTSS2000,SwaminathanASPDAC2001}.
+Other real-time approaches looked at saving energy
+\cite{MoncusiRTSS2003,MochockiICCAD2002,MochockiRTAS2005,ZhuTPDS2003,ZhangDAC2002}. 
 
-There also has been work in the real-time systems community to solve the DVFS scheduling problem using mixed integer linear programming on a single processor\cite{IshiharaISLPED1998,SaputraLCTES2002,SwaminathanRTSS2000,SwaminathanASPDAC2001}. Other real-time approaches looked at saving energy \cite{MoncusiRTSS2003,MochockiICCAD2002,MochockiRTAS2005,ZhuTPDS2003,ZhangDAC2002}. 
 
-%In addition, there has been active research in the domain of virtual machines. Von Laszewski et al. \cite{von_laszewski_power-aware_2009} presented an efficient scheduling algorithm to allocate virtual machines in a DVFS-enabled cluster by dynamically scaling the supplied voltages. Dhiman et al. designed vGreen \cite{dhiman_vgreen:_2009}, which is a system for energy efficient computing in virtualized environments. They linked online workload characteristics to dynamic VM scheduling decisions and achieved better performance, energy efficiency and power balance in the system. 
+Chip power measurement and capping techniques were initially introduced with the
+Running Average Power Limit (RAPL) interface on Intel Sandy Bridge processors
+\cite{IntelSDM,David2010}. In the HPC domain, Rountree et
+al.~\cite{Rountree2012} proposed RAPL as an alternative to DVFS and analyzed
+application performance under hardware-enforced power bounds. They also
+established that variation in power directly translates to variation in
+application performance under a power bound. Patki et al. \cite{Patki1} used
+power capping techniques to demonstrate how hardware overprovisioning can
+improve HPC application performance under a global power bound significantly.
+Overprovisioning was also explored in the data center community \cite{femal:04}. 
 
-Chip power measurement and capping techniques were initially introduced with the Running Average Power Limit (RAPL) interface on Intel Sandy Bridge processors \cite{IntelSDM,David2010}. In the HPC domain, Rountree et al.~\cite{Rountree2012} proposed RAPL as an alternative to DVFS and analyzed application performance under hardware-enforced power bounds. They also established that variation in power directly translates to variation in application performance under a power bound. Patki et al. \cite{Patki1} used power capping techniques to demonstrate how hardware overprovisioning can improve HPC application performance under a global power bound significantly. Overprovisioning was also explored in the data center community \cite{femal:04}. 
+Techniques for fine-grained power management have also been proposed.
+Curtis-Maury et. al \cite{Curtis1,Curtis2,Curtis3} introduced Dynamic
+Concurrency Throttling, which is a technique to dynamically optimize for power
+and performance by varying the number of active threads in parallel codes. (Add
+Sridutt's references on fine grained power management here.)
 
-Techniques for fine-grained power management have also been proposed. Curtis-Maury et. al \cite{Curtis1,Curtis2,Curtis3} introduced Dynamic Concurrency Throttling, which is a technique to dynamically optimize for power and performance by varying the number of active threads in parallel codes. (Add Sridutt's references on fine grained power management here.)
-
-Power Usage Effectiveness (PUE) is a metric that reveals how much energy is expended on cooling costs and other non-compute operations in a facility \cite{Niccolai}. It is the ratio of the energy supplied to the energy used in useful computations in a datacenter or a HPC facility. A PUE of 1.0 is ideal, but studies have shown that on average, a large datacenter has a PUE of 2.9, which indicates that datacenters are fairly energy inefficient. 
+Power Usage Effectiveness (PUE) is a metric that reveals how much energy is
+expended on cooling costs and other non-compute operations in a facility
+\cite{Niccolai}. It is the ratio of the energy supplied to the energy used in
+useful computations in a datacenter or a HPC facility. A PUE of 1.0 is ideal,
+but studies have shown that on average, a large datacenter has a PUE of 2.9,
+which indicates that datacenters are fairly energy inefficient. 
 
 \subsubsection{Thermal Management}
 
-Thermal management is a key driver for improving energy efficiency of data centers as well as supercomputer centers.  
-There are many strategies for thermal management that can improve energy efficiency, such as free cooling and proper 
-airflow.  This paper discusses two thermal management strategies that have an opportunity for grid integration.  
-The first strategy is controlling the inlet temperature to the computing equipment, raising it as high as possible 
-without causing reliability induced hardware failures.  The second strategy is using thermally aware job scheduling.
+Thermal management is a key driver for improving energy efficiency of data
+centers as well as supercomputer centers.  There are many strategies for thermal
+management that can improve energy efficiency, such as free cooling and proper
+airflow.  This paper discusses two thermal management strategies that have an
+opportunity for grid integration.  The first strategy is controlling the inlet
+temperature to the computing equipment, raising it as high as possible without
+causing reliability induced hardware failures.  The second strategy is using
+thermally aware job scheduling.
 
-In 2011, the American Society of Heating, Refrigeration and Air Conditioning (ASHRAE) data center Technical 
-Committee TC9.9 published guidelines that  “expanded the environmental range for data centers” and supercomputer 
-centers. The environmental range includes factors such as temperature, humidity and dew point and allowable rate 
-of change.  This expansion allows for maintaining high reliability while achieving gains in energy efficiency.  
-These guidelines continue to be updated and the range continues to expand as the industry collects more historical 
-data showing trade-offs between reliability and environmental factors.
+In 2011, the American Society of Heating, Refrigeration and Air Conditioning
+(ASHRAE) data center Technical Committee TC9.9 published guidelines that
+“expanded the environmental range for data centers” and supercomputer
+centers. The environmental range includes factors such as temperature, humidity
+and dew point and allowable rate of change.  This expansion allows for
+maintaining high reliability while achieving gains in energy efficiency.  These
+guidelines continue to be updated and the range continues to expand as the
+industry collects more historical data showing trade-offs between reliability
+and environmental factors.
 
-It is implicit in the ASHRAE guidelines that a supercomputer center might be able to increase temperature as a 
-response to a request from an energy service provider.  The guideline defines both “recommended” and “allowable” 
-environmental ranges.  It also specifies a maximum rate of change, which is most stringent for tape drives. 
-For supercomputer centers, the difference between the maximum recommended and allowable dry bulb temperature 
-is a minimum of 9 degrees F.  The rate of change for tape drives is 9 degrees F per hour (36 degrees F for solid 
-state computing systems).   Therefore, assuming that supercomputer centers normally operate within the recommended 
-range and that they are willing to operate on occasion in the allowable range (or beyond), it is theoretically 
-possible to stay within ASHRAE thermal guidelines and use temperature excursion as a grid-integration strategy.  
+It is implicit in the ASHRAE guidelines that a supercomputer center might be
+able to increase temperature as a response to a request from an energy service
+provider.  The guideline defines both “recommended” and
+“allowable” environmental ranges.  It also specifies a maximum rate of
+change, which is most stringent for tape drives.  For supercomputer centers, the
+difference between the maximum recommended and allowable dry bulb temperature is
+a minimum of 9 degrees F.  The rate of change for tape drives is 9 degrees F per
+hour (36 degrees F for solid state computing systems).   Therefore, assuming
+that supercomputer centers normally operate within the recommended range and
+that they are willing to operate on occasion in the allowable range (or beyond),
+it is theoretically possible to stay within ASHRAE thermal guidelines and use
+temperature excursion as a grid-integration strategy.  
 
-ASHRAE has also published a guideline on liquid cooling environmental ranges (reference).  At this point, however, 
-the guidelines do not document rate of change for liquid temperature.  Although it isn’t explored in this paper, 
-it may be possible to use increases in liquid cooling temperature as a grid-integration strategy as well. 
+ASHRAE has also published a guideline on liquid cooling environmental ranges
+(reference).  At this point, however, the guidelines do not document rate of
+change for liquid temperature.  Although it isn’t explored in this paper, it
+may be possible to use increases in liquid cooling temperature as a
+grid-integration strategy as well. 
 
-(Ghatikar et al\cite{Ghatikar2012a}) has done field studies on using thermal management as a grid-integration 
-strategy.  They demonstrate increasing “facility HVAC temperature set points in order to decrease HVAC power demand” 
-in two different field locations.  There was only a small electricity demand decrease demonstrated.
+(Ghatikar et al\cite{Ghatikar2012a}) has done field studies on using thermal
+management as a grid-integration strategy.  They demonstrate increasing
+“facility HVAC temperature set points in order to decrease HVAC power
+demand” in two different field locations.  There was only a small
+electricity demand decrease demonstrated.
 
 
-Runtime cooling strategies are mostly job-placement-centric. These techniques either aim to place incoming computationally intensive jobs in a thermal-aware manner on servers with lower temperatures or attempt to migrate or load-balance jobs from high-temperature servers to servers with lower temperatures.
+Runtime cooling strategies are mostly job-placement-centric. These techniques
+either aim to place incoming computationally intensive jobs in a thermal-aware
+manner on servers with lower temperatures or attempt to migrate or load-balance
+jobs from high-temperature servers to servers with lower temperatures.
 
-Kaushik et. al \cite{kaushik_t*:_2012} proposed \emph{T*}, a system that is aware of server thermal profiles and reliability as well as data semantics (computation job rates, job sizes, etc). This system saves cooling energy costs by using thermal-aware job placements without trading off performance.
+Kaushik et. al \cite{kaushik_t*:_2012} proposed \emph{T*}, a system that is
+aware of server thermal profiles and reliability as well as data semantics
+(computation job rates, job sizes, etc). This system saves cooling energy costs
+by using thermal-aware job placements without trading off performance.
 
-Sarood et. al \cite{SaroodSC11} designed a runtime system that does temperature-aware load balancing in data centers using DVFS and task migration. They also discussed how hotspots could be avoided in data centers, and showed cooling costs can be reduced by up to 48\% with temperature-aware load balancing.
+Sarood et. al \cite{SaroodSC11} designed a runtime system that does
+temperature-aware load balancing in data centers using DVFS and task migration.
+They also discussed how hotspots could be avoided in data centers, and showed
+cooling costs can be reduced by up to 48\% with temperature-aware load
+balancing.
 
 \subsubsection{Job Scheduling}
-The problem of scheduling jobs has been extensively studied. Most resource managers implement the First Come First Serve (FCFS) policy
-as a simple but fair strategy for scheduling jobs. However, FCFS suffers from low system utilization. A common optimization is backfilling
-\cite{lifka_anl/ibm_1995,mualem_utilization_2001,feitelson_parallel_2004}. Backfilling improves system utilization by executing jobs with small resource requests out of order on idle nodes.
+The problem of scheduling jobs has been extensively studied. Most resource
+managers implement the First Come First Serve (FCFS) policy as a simple but fair
+strategy for scheduling jobs. However, FCFS suffers from low system utilization.
+A common optimization is backfilling
+\cite{lifka_anl/ibm_1995,mualem_utilization_2001,feitelson_parallel_2004}.
+Backfilling improves system utilization by executing jobs with small resource
+requests out of order on idle nodes.
 
-Fan et al. \cite{PowerAwareServer1} discussed power-aware job scheduling in the data center domain. 
-They discussed a power monitoring system that could use power capping (based on a power estimation method such as RAPL or direct power sensing) and a power throttling mechanism. Such as system works well when is a set of jobs with loose service level guarantees or low priority that can be
-forced to reduce consumption when the datacenter is approaching the power cap value. Etinski et al. \cite{Etinski1,Etinski2,Etinski3,Etinski4} explored scheduling under a power budget in supercomputing and analyzed bounded slowdown of jobs. In their series of papers, they introduced three policies. Their first policy is based looks at current system utilization and uses DVFS during job launch time to meet a power bound. Their second policy meets a bounded slowdown condition without exceeding a job-level power budget. Their third policy improves upon the former by analyzing job wait times and adding a reservation condition. 
+Fan et al. \cite{PowerAwareServer1} discussed power-aware job scheduling in the
+data center domain.  They discussed a power monitoring system that could use
+power capping (based on a power estimation method such as RAPL or direct power
+sensing) and a power throttling mechanism. Such as system works well when is a
+set of jobs with loose service level guarantees or low priority that can be
+forced to reduce consumption when the datacenter is approaching the power cap
+value. Etinski et al. \cite{Etinski1,Etinski2,Etinski3,Etinski4} explored
+scheduling under a power budget in supercomputing and analyzed bounded slowdown
+of jobs. In their series of papers, they introduced three policies. Their first
+policy is based looks at current system utilization and uses DVFS during job
+launch time to meet a power bound. Their second policy meets a bounded slowdown
+condition without exceeding a job-level power budget. Their third policy
+improves upon the former by analyzing job wait times and adding a reservation
+condition.  
 
 There are many use cases in a grid computing environment that require QoS
-guarantees in terms of guaranteed response time, including time-critical
-tasks that must meet a deadline. Foster et. al \cite{foster_distributed_1999,foster_anatomy_2001} proposed \emph{advance reservations} to achieve time guarantees. Advance reservation is a guarantee for the availability of a certain amount of resources to users and applications at specific times in the future. The advance reservation feature requires scheduling systems to support reservation capabilities in addition to backfilling-based batch scheduling. Modern resource management systems such as Sun Grid Engine, PBS, OpenPBS, Torque, SLURM, Maui, and Moab support advance reservation capabilities.
+guarantees in terms of guaranteed response time, including time-critical tasks
+that must meet a deadline. Foster et. al
+\cite{foster_distributed_1999,foster_anatomy_2001} proposed \emph{advance
+reservations} to achieve time guarantees. Advance reservation is a guarantee for
+the availability of a certain amount of resources to users and applications at
+specific times in the future. The advance reservation feature requires
+scheduling systems to support reservation capabilities in addition to
+backfilling-based batch scheduling. Modern resource management systems such as
+Sun Grid Engine, PBS, OpenPBS, Torque, SLURM, Maui, and Moab support advance
+reservation capabilities.
 
 \subsubsection{Load Migration}
-Chiu et. al \cite{chiu_electric_2012} discussed a electrical grid balancing problem that was experienced in the Pacific Northwest. In order to match electricity supply and balance the electrical grid, they proposed low-cost geographic load migration. They also suggested that a symbiotic relationship between datacenters and electrical grid operators that leads to mutual cost benefits could work well.  Ganti et al. \cite{Ghatikar2012b} looked at two applied cases for distributed data centers. The results show that load migration is possible in both homogenous and heterogeneous systems. Their migration strategies were based on a manual process and can benefit from automation.
+Chiu et. al \cite{chiu_electric_2012} discussed a electrical grid balancing
+problem that was experienced in the Pacific Northwest. In order to match
+electricity supply and balance the electrical grid, they proposed low-cost
+geographic load migration. They also suggested that a symbiotic relationship
+between datacenters and electrical grid operators that leads to mutual cost
+benefits could work well.  Ganti et al. \cite{Ghatikar2012b} looked at two
+applied cases for distributed data centers. The results show that load migration
+is possible in both homogenous and heterogeneous systems. Their migration
+strategies were based on a manual process and can benefit from automation.
 
 \subsubsection{Dynamic Pricing}
-Aikema et. al \cite{aikema_electrical_2011} explored the potential for HPC centers to adapt to dynamic electrical prices, to variation in carbon intensity within an electrical grid, and to availability of local renewables. Their simulations demonstrated that 10- 50 \% of electricity costs could potentially be saved. They also concluded that adapting to the variation in the electrical grid carbon intensity was difficult, and that adapting to local renewables could result in significantly higher cost savings.
+Aikema et. al \cite{aikema_electrical_2011} explored the potential for HPC
+centers to adapt to dynamic electrical prices, to variation in carbon intensity
+within an electrical grid, and to availability of local renewables. Their
+simulations demonstrated that 10- 50 \% of electricity costs could potentially
+be saved. They also concluded that adapting to the variation in the electrical
+grid carbon intensity was difficult, and that adapting to local renewables could
+result in significantly higher cost savings.
 
-Power-aware resource management without degrading utilization has been proposed as a DR strategy to reduce electricity costs \cite{yang_integrating_2013,zhou_reducing_2013}. The novelty of the proposed job scheduling mechanism is its ability to take the variation in electricity price (dynamic pricing) into consideration as a means to make better decisions about job start times. Experiments on an IBM Blue Gene/P and a cluster system as well as a case study on Argonne's 48-rack IBM Blue Gene/Q system have demonstrated the effectiveness of this scheduling approach. Preliminary results show a 23\% reduction in the cost of electricity for HPC systems.
+Power-aware resource management without degrading utilization has been proposed
+as a DR strategy to reduce electricity costs
+\cite{yang_integrating_2013,zhou_reducing_2013}. The novelty of the proposed job
+scheduling mechanism is its ability to take the variation in electricity price
+(dynamic pricing) into consideration as a means to make better decisions about
+job start times. Experiments on an IBM Blue Gene/P and a cluster system as well
+as a case study on Argonne's 48-rack IBM Blue Gene/Q system have demonstrated
+the effectiveness of this scheduling approach. Preliminary results show a 23\%
+reduction in the cost of electricity for HPC systems.
+
