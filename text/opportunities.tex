@@ -51,8 +51,9 @@ develop integration capabilities are related to system software.
 Specifically, and presented in approximate order of decreasing
 interest and expected impact to the questionnaire respondents, system
 software in this context consists of coarse-grained power management
-in the form of power capping, job scheduling, load migration,
-rescheduling backups, and fine-grained power management.
+(such as uniform processor power capping across the cluster), 
+job scheduling, load migration, rescheduling backups, and fine-grained 
+power management (such as dynamic, per-processor power capping).
 
 Coarse-grained power capping may be one of the most straightforward
 methods of power management.  In the simplest form, this technique may
@@ -65,14 +66,13 @@ a pre-arranged power cap negotiated between the supercomputer center
 and the electricity service provider and maintained on an ongoing basis,
 or, perhaps more likely, a power draw level that is requested by the
 electricity service provider to handle unanticipated loads somewhere else
-in the electricity service provider's system.  One important thing to
-notice in using this approach to power management is that the savings
+in the electricity service provider's system.  
+Note that the savings
 in power may not need to come entirely from attenuating computing
 resources.  Rather, reducing power consumption in computing resources
 is likely to result in a corresponding reduction in thermal load
-within the supercomputer center.  This reduction in thermal load
-may allow a significant degree of power saving to occur by requiring
-less power to be spent on air conditioning.
+within the supercomputer center, which
+may allow significant power savings in the cooling system as well.
 
 The coarse-grained power capping technique described above assumes
 that the supercomputer center environment has some amount of
@@ -99,10 +99,6 @@ these techniques may involve adjusting either the workflow of jobs
 within the center or characteristics of the computational resources
 within the center.
 
-% I (koenig) would be able to self-cite out of my own publications
-% concepts such as ``priority'' and ``urgency'' described in the
-% following paragraph.  If desired, we would need to add these
-% papers into the bibliography and/or related works section.
 On one hand, the job scheduler has knowledge of and control over the
 upcoming workflow within the supercomputer center simply by examining
 and manipulating the job queue.  One easily-accessible technique is
@@ -131,13 +127,9 @@ best utilize computational resources.  This capability is important
 under normal circumstances, but becomes even more essential in a
 demand-response scenario.
 
-On the other hand, the job scheduler has knowledge of and control over
-the computational resources within the supercomputer center, giving
-the job scheduler several mechanisms for implementing a
-demand-response capability.  Most of these mechanisms could be
-considered fine-grained power control mechanisms because they mostly
-tune low-level settings on the nodes and processors within the
-supercomputer center.  For example, the job scheduler knows which
+At a lower level, schedulers and runtime systems can exercise 
+fine-grained, dynamic demand-response capability.  
+For example, the job scheduler knows which
 nodes within a supercomputer are occupied with running jobs or are
 expected to become occupied in the near future.  To that end, the job
 scheduler can use its control over the resource management process to
@@ -145,27 +137,19 @@ place idle nodes into a sleep state in which they draw significantly
 reduced power.  This strategy is especially effective in supercomputer
 environments containing at least some resources that are used at
 irregular intervals, allowing opportunities to utilize sleep states
-effectively during periods when the resources are idle.  In
-environments where all computing resources are heavily utilized most
-of the time, more sophisticated strategies that require the job
-scheduler to rely on knowledge about each batch job may be necessary.
-Such knowledge might come from the type of metadata described in the
-previous paragraph or from a database that is maintained based on
-previous runs of jobs submitted by each user.  For example, if the job
-scheduler knows that a given job contains mostly I/O operations, or
-consists of discrete phases where I/O occurs, the job scheduler might
-choose to adjust the Performance State (P-state) for each processor
-running the job in a way that reduces the job's overall power
-consumption.  The P-state mechanism is a way of scalably adjusting a
-CPU's frequency and voltage operating points which in turn causes the
-processor to consume less power directly and to produce less thermal
-load indirectly.  In cases where a processor is executing a
-processing-intense task, gating the processor's P-state often has a
-noticeable impact on the overall task performance; however, in cases
-where a processor is executing a mostly I/O-bound task, gating the
-processor's P-state typically does not make a noticeable impact on the
-overall task performance due to the fact that the processor spends a
-great deal of time blocked waiting for I/O operations to complete.
+effectively during periods when the resources are idle.  
+
+In environments where all computing resources are heavily utilized,
+fine-grained power scheduling will be directed by the runtime system.
+For example, in the presence of load imbalance within a job, traditional
+applications may rely on periodically moving data around the allocated
+nodes to ensure all processors are performing a roughly equal amount
+of work.  This load-balancing process is both time- and energy-intensive.
+By relocating power instead of data, processors with lighter loads can
+surrender power and run slower, allowing more heavily-loaded processors
+to use additional power to run faster.  Combining both techniques 
+should lead to improved execution time as well as more efficicient
+power utilization.
 
 Even more interesting scenarios are possible in cases where the job
 scheduler combines its knowledge of the upcoming queued workflow with
