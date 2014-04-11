@@ -1,90 +1,88 @@
-This paper pulls together several diverse research domains.  In this section,
+This paper pulls together several diverse research domains. In this section,
 we provide an overview of prior work in these areas.
 
 \subsubsection{Power Management}
-Processor power management can be divided up into two distinct eras.  First, with 
+Processor power management can be divided into two distinct eras. First, with 
 the introduction of Dynamic Voltage Frequency Scaling, users were able to 
 change the CPU clock speed of their processors, lowering both voltage and,
-in most cases, energy:  the program used less power and ran longer, but the
+in most cases, energy: the program used less power and ran longer, but the
 quadratic relation of power to frequency biased the results towards overall
-energy savings.  Early work included several modeling efforts focused on
-the effects of CPU- and memory-boundedness on delay and energy in MPI programs.~\cite{SpringerPPoPP2006,GeICPP2007,LiHPCA2006,CameronSC2005,HsuSC2005}. 
+energy savings. Early work included several modeling efforts focused on
+the effects of CPU- and memory-boundedness on delay and energy in MPI programs~\cite{SpringerPPoPP2006,GeICPP2007,LiHPCA2006,CameronSC2005,HsuSC2005}. 
 This work led to the CPUMiser~\cite{GeICPP2007} and Jitter runtime systems, which were designed 
-to maximize energy saving consisted with a user-specific delay.~\cite{KappiahSC2005}
+to maximize energy saving consisted with a user-specific delay~\cite{KappiahSC2005}.
 Treating energy savings as an optimization problem led to a linear programming
-solution.~\cite{rountree:07} The follow-on Adagio runtime system slowed only
-computation that could be proven to be off the critical path, leading to signficant
-energy savings with only negligible slowdown.~\cite{rountree:09} These 
-techniques were also applied to non-MPI data center workloads.~\cite{femal:04}. 
+solution~\cite{rountree:07}. The follow-on Adagio runtime system slowed only
+computation that could be proven to be off the critical path, leading to significant
+energy savings with only negligible slowdown~\cite{rountree:09}. These 
+techniques were also applied to non-MPI data center workloads~\cite{femal:04}. 
 
 Other power saving approaches were attempted that did not use DVFS, but most
-were not deemed relevant to the supercomputing environment.  A notable exception
+were not deemed relevant to the supercomputing environment. A notable exception
 is Dynamic Concurreny Throttling, where energy savings are realized by varying
-the number of threads at runtime.~\cite{Curtis1,Curtis2,Curtis3} 
+the number of threads at runtime~\cite{Curtis1,Curtis2,Curtis3}.
 
-The research landscape changed considerable with the introduction of Intel's
-Sandy Bridge processor.  Turbo mode allowed higher clock frequencies to be
-reached so long as fewer cores were in use, making for a nontrivial power/performance tradeoff
-calculation.  The Running Average Power Limit (RAPL) technology provided an onboard power model allowed the processor to both
+The research landscape changed considerably with the introduction of Intel's
+Sandy Bridge processor. Turbo mode allowed higher clock frequencies to be
+reached so long as fewer cores were in use, making for a nontrivial power- performance tradeoff
+calculation. The Running Average Power Limit (RAPL) technology provided an onboard power model that allowed the processor to both
 estimate power and, using rapid dithering of CPU clock frequencies, enforce a
-user-specified power bound across a short time window.~\cite{IntelSDM,David2010}. 
+user-specified power bound across a short time window~\cite{IntelSDM,David2010}. 
 For the first time, users were able to ask questions about performance under 
-power bounds.  This new capability arrived concurrent with Department of Energy
+power bounds. This new capability arrived concurrent with Department of Energy
 guidance that exascale machines would be subject to power (as opposed to energy) bounds.
 
 Initial work showed that while processor performance at a fixed frequency 
 was reproducible across processors, execution in turbo mode or under a power
-bound revealed significant performance variation.~\cite{Rountree2012} Further
+bound revealed significant performance variation~\cite{Rountree2012}. Further
 work demonstrated a $2x$ performance improvement between conservative and
-optimial processor configurations while executing under a power bound.~\cite{Patki1}
-
+optimal processor configurations while executing under a power bound~\cite{Patki1}.
 
 \subsubsection{Thermal Management}
 
 Thermal management is a key driver for improving energy efficiency of data
-centers as well as supercomputer centers.  There are many strategies for thermal
+centers as well as supercomputing centers. There are many strategies for thermal
 management that can improve energy efficiency, such as free cooling and proper
-airflow.  This paper discusses two thermal management strategies that have an
-opportunity for grid integration.  The first strategy is controlling the inlet
+airflow. This paper discusses two thermal management strategies that have an
+opportunity for grid integration. The first strategy is controlling the inlet
 temperature to the computing equipment, raising it as high as possible without
-causing reliability induced hardware failures.  The second strategy is using
+causing reliability induced hardware failures. The second strategy is using
 thermally aware job scheduling.
 
 In 2011, the American Society of Heating, Refrigeration and Air Conditioning
 (ASHRAE) data center Technical Committee TC9.9 published guidelines that
 expanded the environmental range for data centers and supercomputer
-centersr~\cite{ASHRAE:tgfdpe}.  The environmental range includes factors such as temperature, humidity
-and dew point and allowable rate of change.  This expansion allows for
-maintaining high reliability while achieving gains in energy efficiency.  These
+centersr~\cite{ASHRAE:tgfdpe}. The environmental range includes factors such as temperature, humidity
+and dew point and allowable rate of change. This expansion allows for
+maintaining high reliability while achieving gains in energy efficiency. These
 guidelines continue to be updated and the range continues to expand as the
 industry collects more historical data showing trade-offs between reliability
 and environmental factors.
 
-It is implicit in the ASHRAE guidelines that a supercomputer center might be
+It is implicit in the ASHRAE guidelines that a SC might be
 able to increase temperature as a response to a request from an energy service
-provider.  The guideline defines both recommended and
-allowable environmental ranges.  It also specifies a maximum rate of
-change, which is most stringent for tape drives.  For supercomputer centers, the
+provider. The guideline defines both recommended and
+allowable environmental ranges. It also specifies a maximum rate of
+change, which is most stringent for tape drives. For SCs, the
 difference between the maximum recommended and allowable dry bulb temperature is
-a minimum of 9 degrees F.  The rate of change for tape drives is 9 degrees F per
-hour (36 degrees F for solid state computing systems).   Therefore, assuming
-that supercomputer centers normally operate within the recommended range and
+a minimum of 9 degrees F. The rate of change for tape drives is 9 degrees F per
+hour (36 degrees F for solid state computing systems). Therefore, assuming
+that SCs normally operate within the recommended range and
 that they are willing to operate on occasion in the allowable range (or beyond),
 it is theoretically possible to stay within ASHRAE thermal guidelines and use
-temperature excursion as a grid-integration strategy.  
+temperature excursion as a grid-integration strategy. 
 
 ASHRAE has also published a guideline on liquid cooling environmental ranges
-(reference).  At this point, however, the guidelines do not document rate of
-change for liquid temperature.  Although it isn’t explored in this paper, it
+(reference). At this point, however, the guidelines do not document rate of
+change for liquid temperature. Although it is not explored in this paper, it
 may be possible to use increases in liquid cooling temperature as a
 grid-integration strategy as well. 
 
-(Ghatikar et al\cite{Ghatikar2012a}) has done field studies on using thermal
-management as a grid-integration strategy.  They demonstrate increasing
+Ghatikar et. al \cite{Ghatikar2012a} describe field studies on using thermal
+management as a grid-integration strategy. They demonstrate increasing
 “facility HVAC temperature set points in order to decrease HVAC power
-demand” in two different field locations.  There was only a small
+demand” in two different field locations. There was only a small
 electricity demand decrease demonstrated.
-
 
 Runtime cooling strategies are mostly job-placement-centric. These techniques
 either aim to place incoming computationally intensive jobs in a thermal-aware
@@ -106,13 +104,12 @@ balancing.
 The problem of scheduling jobs has been extensively studied. Most resource
 managers implement the First Come First Serve (FCFS) policy as a simple but fair
 strategy for scheduling jobs. However, FCFS suffers from low system utilization.
-A common optimization is backfilling
-\cite{lifka_anl/ibm_1995,mualem_utilization_2001,feitelson_parallel_2004}.
+A common optimization is \emph{backfilling}~\cite{lifka_anl/ibm_1995,mualem_utilization_2001,feitelson_parallel_2004}.
 Backfilling improves system utilization by executing jobs with small resource
 requests out of order on idle nodes.
 
 Fan et al. \cite{PowerAwareServer1} discussed power-aware job scheduling in the
-data center domain.  They discussed a power monitoring system that could use
+datacenter domain. They discussed a power monitoring system that could use
 power capping (based on a power estimation method such as RAPL or direct power
 sensing) and a power throttling mechanism. Such as system works well when is a
 set of jobs with loose service level guarantees or low priority that can be
@@ -124,12 +121,11 @@ policy is based looks at current system utilization and uses DVFS during job
 launch time to meet a power bound. Their second policy meets a bounded slowdown
 condition without exceeding a job-level power budget. Their third policy
 improves upon the former by analyzing job wait times and adding a reservation
-condition.  
+condition. 
 
 There are many use cases in a grid computing environment that require QoS
 guarantees in terms of guaranteed response time, including time-critical tasks
-that must meet a deadline. Foster et. al
-\cite{foster_distributed_1999,foster_anatomy_2001} proposed \emph{advance
+that must meet a deadline. Foster et. al~\cite{foster_distributed_1999,foster_anatomy_2001} proposed \emph{advance
 reservations} to achieve time guarantees. Advance reservation is a guarantee for
 the availability of a certain amount of resources to users and applications at
 specific times in the future. The advance reservation feature requires
@@ -144,7 +140,7 @@ problem that was experienced in the Pacific Northwest. In order to match
 electricity supply and balance the electrical grid, they proposed low-cost
 geographic load migration. They also suggested that a symbiotic relationship
 between datacenters and electrical grid operators that leads to mutual cost
-benefits could work well.  Ganti et al. \cite{Ghatikar2012b} looked at two
+benefits could work well. Ganti et al. \cite{Ghatikar2012b} looked at two
 applied cases for distributed data centers. The results show that load migration
 is possible in both homogenous and heterogeneous systems. Their migration
 strategies were based on a manual process and can benefit from automation.
@@ -153,7 +149,7 @@ strategies were based on a manual process and can benefit from automation.
 Aikema et. al \cite{aikema_electrical_2011} explored the potential for HPC
 centers to adapt to dynamic electrical prices, to variation in carbon intensity
 within an electrical grid, and to availability of local renewables. Their
-simulations demonstrated that 10- 50 \% of electricity costs could potentially
+simulations demonstrated that 10- 50\% of electricity costs could potentially
 be saved. They also concluded that adapting to the variation in the electrical
 grid carbon intensity was difficult, and that adapting to local renewables could
 result in significantly higher cost savings.
@@ -167,4 +163,3 @@ job start times. Experiments on an IBM Blue Gene/P and a cluster system as well
 as a case study on Argonne's 48-rack IBM Blue Gene/Q system have demonstrated
 the effectiveness of this scheduling approach. Preliminary results show a 23\%
 reduction in the cost of electricity for HPC systems.
-
