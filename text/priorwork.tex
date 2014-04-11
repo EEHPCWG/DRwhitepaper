@@ -10,7 +10,7 @@ quadratic relation of power to frequency biased the results towards overall
 energy savings. Early work included several modeling efforts focused on
 the effects of CPU- and memory-boundedness on delay and energy in MPI programs~\cite{SpringerPPoPP2006,GeICPP2007,LiHPCA2006,CameronSC2005,HsuSC2005}. 
 This work led to the CPUMiser~\cite{GeICPP2007} and Jitter runtime systems, which were designed 
-to maximize energy saving consisted with a user-specific delay~\cite{KappiahSC2005}.
+to maximize energy saving consistent with a user-specific delay~\cite{KappiahSC2005}.
 Treating energy savings as an optimization problem led to a linear programming
 solution~\cite{rountree:07}. The follow-on Adagio runtime system slowed only
 computation that could be proven to be off the critical path, leading to significant
@@ -19,7 +19,7 @@ techniques were also applied to non-MPI datacenter workloads~\cite{femal:04}.
 
 Other power saving approaches were attempted that did not use DVFS, but most
 were not deemed relevant to the supercomputing environment. A notable exception
-is Dynamic Concurreny Throttling, where energy savings are realized by varying
+is Dynamic Concurrency Throttling, where energy savings are realized by varying
 the number of threads at runtime~\cite{Curtis1,Curtis2,Curtis3}.
 
 The research landscape changed considerably with the introduction of Intel's
@@ -30,7 +30,7 @@ estimate power and, using rapid dithering of CPU clock frequencies, enforce a
 user-specified power bound across a short time window~\cite{IntelSDM,David2010}. 
 For the first time, users were able to ask questions about performance under 
 power bounds. This new capability arrived concurrent with Department of Energy
-guidance that exascale machines would be subject to power (as opposed to energy) bounds.
+guideline that exascale machines would be subject to power (as opposed to energy) bounds.
 
 Initial work showed that while processor performance at a fixed frequency 
 was reproducible across processors, execution in turbo mode or under a power
