@@ -1,24 +1,26 @@
 The EE HPC WG took as their starting point a
 model developed by LBNL's Demand Response Research
-Center that describes strategies that datacenters might em-
-ploy for utility programs to manage their electricity and
+Center. This model describes strategies that datacenters might employ for utility programs to manage their electricity and
 power requirements to lower costs and benefit from utility
-incentives. The EE HPC WG adopted this model with
-slight tweaks to reflect the supercomputing environment
-focus (versus the datacenter as described by LBNL`s Demand
+incentives. The EE HPC WG adopted this model %with slight tweaks  TP:This makes the model seem trivial, which it is not.
+to reflect the supercomputing environment
+focus (as opposed to %TP: Replace 'versus' with 'as opposed to'
+the datacenter focus described by LBNL`s Demand
 Response Research Center).
+%TP: Rephrasing the following sentence
+%For purposes of this paper, we define SCs 
+%as distinct from datacenters as having 
+%significantly higher system utilization and thus little or no 
+%virtualization.  
 
-For purposes of this paper, we define supercomputer centers
-as distinct from a datacenters as having 
-significantly higher system utilization and thus little or no 
-virtualization.  Additionally, supercomputer
+It is important to highlight the differences between SCs and datacenters. Unlike datacenters, SCs are more performance oriented, have significantly higher system utilization, and use little or no virtualization. 
+Additionally, supercomputing
 applications are distinguished by their lack of geographical
 portability due to security concerns, data size and machine-specific
-optimization.  We also note  that supercomputing centers tend to be more
-energy-efficient than datacenters.  
-In our survey, no SC exceeded a power usage effectiveness (PUE) of $1.53$,
-while the average data center falls between $1.91$ and $2.9$ (with $1.0$ being
-the ideal).~\cite{FIXME}
+optimizations.  
+
+We also note that SCs tend to be more
+energy efficient than datacenters. Power Usage Effectiveness (PUE) is a good measure for energy efficiency. PUE is the ratio of the total energy supplied for the facility to the amount of energy that actually reaches the IT infrastructure. A PUE of $1.0$ is ideal. In our survey, none of the SCs exceeded a Power Usage Effectiveness (PUE) of $1.53$, while the average PUE for a datacenter falls in the range of $1.91$ and $2.9$ ~\cite{Niccolai}.
 
 \subsection{Electricity Provider Programs\\
 and Methods}
