@@ -22,38 +22,31 @@ optimizations.
 We also note that SCs tend to be more
 energy efficient than datacenters. Power Usage Effectiveness (PUE) is a good measure for energy efficiency. PUE is the ratio of the total energy supplied for the facility to the amount of energy that actually reaches the IT infrastructure. A PUE of $1.0$ is ideal. In our survey, none of the SCs exceeded a Power Usage Effectiveness (PUE) of $1.53$, while the average PUE for a datacenter falls in the range of $1.91$ and $2.9$ ~\cite{Niccolai}.
 
-\subsection{Electricity Provider Programs\\
-and Methods}
+\subsection{Electricity Service Provider Methods and \\Programs}
+%TP: Change title slightly
 \label{sub:EPP}
-An electricity provider seeks to provide efficient and reliable generation, transmission, and 
-distribution of electricity. Methods and programs employed by the electricity providers and their consumers 
+An ESP seeks to provide efficient and reliable generation, transmission, and 
+distribution of electricity. \emph{Methods} and \emph{programs} employed by ESPs and their consumers 
 are key to managing and balancing the supply and demand of electricity. While the \textit{methods} 
-describe how 
-electricity providers manage supply, the \textit{programs} describe the activities that 
-the electricity providers 
-can offer to their consumers to balance demand with supply.
+describe how ESPs manage supply, the \textit{programs} describe the activities that 
+the ESPs can offer to their consumers in order to balance demand with supply.
 
-Although critical to the eletricity service providers, methods 
-are generally not visible to the consumer of the electricity because they
-operate within the generation  or transmission stations.
-These methods are the major means by which supply and demand of electricity are managed.
+Although critical to ESPs, methods are generally not visible to the consumer of the electricity because they
+operate within the generation or transmission stations. These methods are the major means by which supply and demand of electricity are managed.
 
-Electricity provider programs encourage customer responses to target both energy efficiency and real-time
-(day-ahead or day-of) management of demand for electricity. An example of an electricity provider program 
+ESP programs encourage customer responses to target both energy efficiency and real-time management of demand for electricity. An example of an ESP program 
 that encourages energy efficiency would be to provide home consumers a financial incentive for replacing 
-single pane with double pane windows.  On the other hand, an example that illustrates programs that help 
+single pane windows with double pane windows. On the other hand, an example that illustrates programs that help 
 with real-time demand management would be to provide a financial incentive for reducing load 
-during high demand periods 
-(such as hot summer afternoons when air conditioners are heavily utilized). 
+during high demand periods (such as hot summer afternoons when air conditioners are heavily utilized). 
 
 The following is a list and brief definitions of key methods and programs.  
 
 \subsubsection{Methods}
 \begin{itemize}
-\item Regulation (Up or Down): Methods used to maintain that portion of electricity generation reserves 
-that are needed to balance generation and demand at all times.  Raising supply is up regulation and lowering 
-supply is down regulation. There are many types of reserves 
-(e.g., operating, ancillary services), distinguished by who manages them and what they are used for.
+\item Regulation (Up or Down): Methods used to maintain the portion of electricity generation reserves 
+that are needed to balance generation and demand at all times. Raising supply is \emph{up} regulation and lowering 
+supply is \emph{down} regulation. There are many types of reserves (for example, operating reserves, ancillary services), distinguished by who manages them and what they are used for.
 
 \item Transmission Congestion: Methods used to resolve congestion that occurs when there is not enough 
 transmission capability to support all requests for transmission services. Transmission system operators 
@@ -92,18 +85,16 @@ does not know if a certain day will be a peak or a non-peak day until day-ahead 
 Real-time pricing is not pre-scheduled; prices can be set day-ahead or day-of.
 \end{itemize}
 
-Although these methods and programs have historically not been relevant to supercomputer centers,
+Although these methods and programs have historically not been relevant to SCs,
 the following example illustrates their potential relevance.
 The generation capacity requirements and response timescales vary across the country for electricity 
 providers and operators. For example, the New England independent system operator (ISO-NE) uses a method 
 of regulation and reserves that relies heavily on a day-ahead market program. This provides an opportunity 
-for demand side resources---like supercomputer centers with renewable energy sources---to participate in the 
-market supplying the ISO-NE with electricity.  It also makes the ISO-NE particularly sensitive to major 
+for demand side resources---such as SCs with renewable energy sources---to participate in the 
+market supplying the ISO-NE with electricity. It also makes the ISO-NE particularly sensitive to major 
 fluctuations in electricity demand, which, as discussed further in the questionnaire section, is an emerging 
-characteristic of the largest supercomputer centers.  
-\footnote {http://drrc.lbl.gov/sites/drrc.lbl.gov/files/LBNL-5958E.pdf}
+characteristic of some of the largest SCs.%\footnote {http://drrc.lbl.gov/sites/drrc.lbl.gov/files/LBNL-5958E.pdf}
 
 This paper assumes that the given grid is a constant. However, it is expected 
 that future grid infrastructures will 
 evolve with smart-grid capabilities. 
-
