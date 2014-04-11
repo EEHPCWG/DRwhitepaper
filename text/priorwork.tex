@@ -15,7 +15,7 @@ Treating energy savings as an optimization problem led to a linear programming
 solution~\cite{rountree:07}. The follow-on Adagio runtime system slowed only
 computation that could be proven to be off the critical path, leading to significant
 energy savings with only negligible slowdown~\cite{rountree:09}. These 
-techniques were also applied to non-MPI data center workloads~\cite{femal:04}. 
+techniques were also applied to non-MPI datacenter workloads~\cite{femal:04}. 
 
 Other power saving approaches were attempted that did not use DVFS, but most
 were not deemed relevant to the supercomputing environment. A notable exception
@@ -40,8 +40,7 @@ optimal processor configurations while executing under a power bound~\cite{Patki
 
 \subsubsection{Thermal Management}
 
-Thermal management is a key driver for improving energy efficiency of data
-centers as well as supercomputing centers. There are many strategies for thermal
+Thermal management is a key driver for improving energy efficiency of datacenters as well as SCs. There are many strategies for thermal
 management that can improve energy efficiency, such as free cooling and proper
 airflow. This paper discusses two thermal management strategies that have an
 opportunity for grid integration. The first strategy is controlling the inlet
@@ -50,9 +49,8 @@ causing reliability induced hardware failures. The second strategy is using
 thermally aware job scheduling.
 
 In 2011, the American Society of Heating, Refrigeration and Air Conditioning
-(ASHRAE) data center Technical Committee TC9.9 published guidelines that
-expanded the environmental range for data centers and supercomputer
-centersr~\cite{ASHRAE:tgfdpe}. The environmental range includes factors such as temperature, humidity
+(ASHRAE) datacenter Technical Committee TC9.9 published guidelines that
+expanded the environmental range for datacenters and SCs~\cite{ASHRAE:tgfdpe}. The environmental range includes factors such as temperature, humidity
 and dew point and allowable rate of change. This expansion allows for
 maintaining high reliability while achieving gains in energy efficiency. These
 guidelines continue to be updated and the range continues to expand as the
@@ -60,8 +58,7 @@ industry collects more historical data showing trade-offs between reliability
 and environmental factors.
 
 It is implicit in the ASHRAE guidelines that a SC might be
-able to increase temperature as a response to a request from an energy service
-provider. The guideline defines both recommended and
+able to increase temperature as a response to a request from an ESP. The guideline defines both recommended and
 allowable environmental ranges. It also specifies a maximum rate of
 change, which is most stringent for tape drives. For SCs, the
 difference between the maximum recommended and allowable dry bulb temperature is
@@ -72,8 +69,7 @@ that they are willing to operate on occasion in the allowable range (or beyond),
 it is theoretically possible to stay within ASHRAE thermal guidelines and use
 temperature excursion as a grid-integration strategy. 
 
-ASHRAE has also published a guideline on liquid cooling environmental ranges
-(reference). At this point, however, the guidelines do not document rate of
+ASHRAE has also published a guideline on liquid cooling environmental ranges. At this point, however, the guidelines do not document rate of
 change for liquid temperature. Although it is not explored in this paper, it
 may be possible to use increases in liquid cooling temperature as a
 grid-integration strategy as well. 
@@ -94,8 +90,8 @@ aware of server thermal profiles and reliability as well as data semantics
 by using thermal-aware job placements without trading off performance.
 
 Sarood et. al \cite{SaroodSC11} designed a runtime system that does
-temperature-aware load balancing in data centers using DVFS and task migration.
-They also discussed how hotspots could be avoided in data centers, and showed
+temperature-aware load balancing in datacenters using DVFS and task migration.
+They also discussed how hotspots could be avoided in datacenters, and showed
 cooling costs can be reduced by up to 48\% with temperature-aware load
 balancing.
 
@@ -140,7 +136,7 @@ electricity supply and balance the electrical grid, they proposed low-cost
 geographic load migration. They also suggested that a symbiotic relationship
 between datacenters and electrical grid operators that leads to mutual cost
 benefits could work well. Ganti et al. \cite{Ghatikar2012b} looked at two
-applied cases for distributed data centers. The results show that load migration
+applied cases for distributed datacenters. The results show that load migration
 is possible in both homogenous and heterogeneous systems. Their migration
 strategies were based on a manual process and can benefit from automation.
 
