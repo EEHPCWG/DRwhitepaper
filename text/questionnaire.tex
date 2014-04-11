@@ -1,66 +1,58 @@
-We used a questionnaire to understand the current experiences of a
-supercomputer center's interaction with their electricity providers. We restricted the analysis to sites in the United States
-because the results of the survey and practices of demand response is highly
+We used a questionnaire to understand the current experiences of interaction between
+SCs and their ESPs. We restricted the analysis to sites in the United States
+because the results of the survey and practices of demand response are highly
 correlated and driven by energy policies in the country. 
 \cite{torriti_demand_2010}.
 
 Nineteen Top100 List sized sites in the United States were targeted for the
-questionnaire. Eleven sites responded (Oak Ridge National Laboratory (ORNL), 
-LLNL, 
-ANL, 
-Los Alamos National Laboratory (LANL), LBNL, 
+questionnaire. Eleven sites responded---Oak Ridge National Laboratory (ORNL), 
+Lawrence Livermore National Laboratory (LLNL), 
+Argonne National Laboratory (ANL), 
+Los Alamos National Laboratory (LANL), 
+Lawrence Berkeley National Laboratory (LBNL), 
 Wright Patterson Air Force Base,
 National Oceanic Atmospheric Administration (NOAA), 
-National Center for Supercomputing Applications, 
+National Center for Supercomputing Applications (NSCA), 
 San Diego Supercomputing Center (SDSC), 
-Purdue University and Intel Corporation). The questionnaire was
+Purdue University and Intel Corporation. The questionnaire was
 sent to a sample that was not randomly selected. It was sent to those sites
 where it was relatively easy to identify an individual based on membership
 within the EE HPC WG. The sample is more representative of Top50 sized sites
-(1 Top50 sized site was not in the sample and 60{\%} (9/15) of the sample
+(One Top50 sized site was not in the sample and 60{\%} (9/15) of the sample
 responded). Only 4 additional sites were sampled from the Top51-Top100 List
-and, of those, 2 responded (Intel and National Oceanic and Atmospheric Administration).
-
+and, of those, 2 responded (Intel and NOAA).
 %Patki: New Graph instead of Table 1
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{NewGraphs/Table1-graph.pdf}
+\includegraphics[scale=0.45]{NewGraphs/Table1-graph.pdf}
 \caption{Site Load and Variability}
 \label{figGraph1}
 \end{center}
 \end{figure}
 
 The total power load as well as the intra-hour fluctuation of these sites
-varied significantly (Figure \ref{figGraph1}). Total power load includes all computing systems plus 
-ancillary systems such as power delivery and cooling components.
+varied significantly (Figure \ref{figGraph1}). Total power load includes all computing systems plus ancillary systems such as power delivery and cooling components.
 There were four sites with total power load greater
-than 10MW, two sites with \textasciitilde 5MW total power load and five
-sites with less than 2MW total power load. For those with total power load greater than 10MW, the
-intra-hour fluctuation (maximum variability) varied from less than 3MW to 8MW. One of
-\textasciitilde 5MW sites said that they experienced 4MW variability. We chose less than 3MW intra-hour
-variability as the bottom of the scale because we assumed that the
-electricity providers would not be affected by 3MW (or less) 
-fluctuations. The
-rest of the sites all reported less than 3MW intra-hour fluctuation. Most of the intra-hour variability
-was due to preventative maintenance (again, the power variation includes both computing and ancillary systems).
+than 10 MW, two sites with \textasciitilde5 MW total power load and five
+sites with less than 2 MW  of total power load. For those with total power load greater than 10 MW, the
+intra-hour fluctuation (maximum variability) varied from less than 3 MW to 8 MW. One of
+\textasciitilde 5 MW sites said that they experienced 4 MW variability. We chose less than 3 MW intra-hour variability as the bottom of the scale because we assumed that the
+ESPs would not be affected by 3 MW (or less) 
+fluctuations. The rest of the sites all reported less than 3 MW intra-hour fluctuation. Most of the intra-hour variability was due to preventative maintenance. 
+%TP: THis is repeated. (again, the power variation includes both computing and ancillary systems).
 
-For every respondent, the theoretical peak energy or maximum load is approximately twice the total energy, 
-which is indicative of expected future growth in power and energy requirements for supercomputer centers.  
-Some of the design parameters that may affect theoretical peak limits are the customer switchgear, transformer 
-and chiller water capacities.  
-In some cases, there are also limits based on regional electricity service provider capacity constraints.
+For every respondent, the theoretical peak energy or maximum load is approximately twice the total energy, which is indicative of expected future growth in power and energy requirements for SCs. Some of the design parameters that may affect theoretical peak limits are the customer switchgear, transformer 
+and chiller water capacities. In some cases, there are also limits based on regional ESP capacity constraints.
 
-We asked if the supercomputer centers had talked to their electricity
-providers about programs and methods used to balance the grid supply and
-demand of electricity. About half of them have had some discussion, but it
+We asked if the SCs had talked to their ESPs about programs and methods used to balance the grid supply and demand of electricity (see Table 1). About half of them have had some discussion, but it
 has mostly been limited to programs (e.g., peak shed, dynamic pricing) 
 and not methods (e.g., regulation, frequency response, congestion).
 
 \begin{table}[htbp]
-\caption{Caption Number 1}
+\caption{Discussions with ESPs}
 \begin{tabular}{|p{190pt}|l|}
 \hline
-\textbf{Discussions with Energy Providers}&
+\textbf{Discussions with ESPs}&
 {\%} Yes \\
 \hline
 \textbf{Demand-side programs}&
@@ -92,10 +84,9 @@ Contributing to electrical grid storage&
 \end{table}
 
 Approximately half of the respondents are not currently interested in shedding
-load during peak demand. LANL reports that the "technical feasibility" and "business case has yet to be developed."
+load during peak demand. LANL reports that the ``technical feasibility" and ``business case has yet to be developed."
 There is slightly more interest in shifting than shedding load. SDSC reports that
- ``Automatic load shedding is being
-explored/deployed today'' for the entire campus, not just the supercomputing center.
+ ``Automatic load shedding is being explored/deployed today'' for the entire campus, not just the supercomputing center.
 
 \begin{table*}[htbp]
 \centering
@@ -175,73 +166,69 @@ Use back-up resources (e.g., generators) &
 \end{tabular}
 \label{tab3}
 \end{table*}
-Responding to pricing incentive programs is also not considered currently interesting to approximately half of the repondents,
-although the reasons for this low interest may be organizational. Several
+Responding to pricing incentive programs is also not considered currently interesting to approximately half of the respondents, although the reasons for this low interest may be organizational. Several
 open-ended comments revealed that pricing is fixed and/or done by another
 organization at the site level and outside of their immediate control.
 
-Eighty percent of the respondents have not had discussions with their
-electricity providers about congestion, regulation and frequency
+Only twenty percent of the respondents have had discussions with their
+ESPs about congestion, regulation and frequency
 response. LANL is one of two who have had discussions and who commented that
 they are ``learning about the process'' and that it is ``outside of [their] visibility or control''.
 
 There were many more respondents who have had discussions with their
-electricity providers about enabling the use of renewables; 36{\%}
+ESPs about enabling the use of renewables; 36{\%}
 have already had discussions and more than half are interested in further
 and/or future discussions. SDSC already has a site-wide program; ``the
 campus has a large fuel cell (2.5$+$ MW) and works with the utility with
 renewables.'' Other responses suggest that the interest is at the site level
-and not unique to the supercomputer center.
+and not unique to the SC.
 
 An open-ended question was posed as to whether or not there was information
-either requested of the supercomputer sites by their providers or,
-conversely, requested of the providers by the sites. In both cases, well
+either requested of the SCs by their ESPs or,
+conversely, requested of the ESPs by the SCs. In both cases, well
 over 75{\%} of the respondents answered no. LLNL and LANL were the
 exceptions. LLNL is ``responding to requests for additional data on an hourly, 
-weekly and monthly basis."  They are also working to develop an automated capability to share 
-data with their electricity providers, which would provide automated additional 
+weekly and monthly basis." They are also working to develop an automated capability to share 
+data with their ESPs, which would provide automated additional 
 detailed forecasting and ultimately real time data."
 LANL has also been requested to provide average ``power projections, hour by hour,
-for at least a day in advance.'' Additionally, LANL has asked their electricity provider for
+for at least a day in advance.'' Additionally, LANL has asked their ESP for
 more information on ``sensitivity of power distribution grid to rapid
 transients (random daily step changes of 10 MW up or down within a single AC
 cycle).''
 
-Given the low levels of current engagement between the electricity
-providers and the supercomputer centers, it is not surprising that none of
-the supercomputer centers are currently using any power management
-strategies to respond to grid requests by their energy service
-providers. SDSC's \textit{supercomputer center} is not an exception, but they did respond that their
+Given the low levels of current engagement between the ESPs and the SCs, it is not surprising that none of
+the SCs are currently using any power management
+strategies to respond to grid requests by their ESPs. SDSC's \textit{supercomputer center} is not an exception, but they did respond that their
 entire ``campus is leveraging parallel electrical distribution to trigger
 diesel generators and other back-up resources to respond to grid and
 non-grid requests.''
 
 It was suggested by ORNL that some of the power management strategies 
 are of questionable business value even for energy efficiency, let alone grid integration.
-For example, ORNL comments that "these assets have very clear depreciation schedules, and the modest cost 
+For example, ORNL comments that ``these assets have very clear depreciation schedules, and the modest cost 
 savings in terms of electricity consumption due to some of these methods may not (or frequently will not) 
-outweigh the capital investment cost in the computer.  I.e. If a site spent \$100M for a computer that will 
+outweigh the capital investment cost in the computer. That is, if a site spent \$100M for a computer that will 
 remain in production for 60 months, then the 
 apparent benefit of power capping, etc can easily be outweighed by lost productivity of the consumable resource.
 
-Similarly, another comment by ORNL suggested that the rapid deployment of hardware features, like P-states,  
- may outpace the need for strategies like power aware job scheduling.
+Similarly, another comment by ORNL suggested that the rapid deployment of hardware features, like P-states,  may outpace the need for strategies like power aware job scheduling.
 
 We tried to evaluate if power management strategies will be considered
 relevant and effective for grid integration at some point in the future. Two
 questions were asked: is there interest in using the strategies and what
 impact did they think that the strategies would have? When combining
 interest and impact, the results showed that power capping, shutdown, and
-job scheduling were both potentially interesting and of high impact. 
+job scheduling were both potentially interesting and of high impact (see Table 2). 
 
 Load migration, back-up
 scheduling, fine-grained power management and thermal management were of medium
 interest and impact. Lighting control and back-up resources were of low
-interest and impact.  
+interest and impact. 
 %Patki: Fig 2
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.4]{NewGraphs/PUE-Graph.pdf}
+\includegraphics[scale=0.45]{NewGraphs/PUE-Graph.pdf}
 \caption{Site Power Usage Effectiveness}
 \label{figPUE}
 \end{center}
@@ -250,33 +237,28 @@ interest and impact.
 Temperature control and lighting management are utilized as strategies, but considered medium to low interest and impact
 for responding to requests from electricity service providers. 
 The infrastructure energy efficiency of the responding supercomputer sites is high, as reflected in their reported
-Power Usage Effectiveness (PUE) (Figure \ref{figPUE}).  Two sites reported a PUE below 1.25, the majority were between 
+Power Usage Effectiveness (PUE) (Figure \ref{figPUE}). Two sites reported a PUE below 1.25, the majority were between 
 1.25 and 1.5 and the highest was 1.53. Approximately half of the respondents said that they used 
 temperature control and lighting management
-as strategies, but not for grid requests.  Temperature control and lighting management are well documented and understood
+as strategies, but not for grid requests. Temperature control and lighting management are well documented and understood
 strategies for improving energy efficiency, so it is not surprising that sites with PUEs below 1.5 are using them.
 
-NOAA comments that their "lights automatically shut off 24x7 
-when there is no motion in the data center."  There is a value in lighting control for 
-energy efficiency purposes, as demonstrated by its having been fully implemented.  NOAA also comments that
-the impact of further lighting control "is so small compared to the HPC demand load that" they would "be surprised 
-if the utility is interested."  
+NOAA comments that their ``lights automatically shut off 24x7 
+when there is no motion in the data center." There is a value in lighting control for 
+energy efficiency purposes, as demonstrated by its having been fully implemented. NOAA also comments that
+the impact of further lighting control "is so small compared to the HPC demand load that" they would ``be surprised 
+if the utility is interested." 
 
-LLNL reports that they “took 3 years to raise the temperature in their center by 18 degrees F.  
+LLNL reports that they ``took 3 years to raise the temperature in their center by 18 degrees F. 
 It was done in conjunction with a failure rate analysis of the systems as well as a measurement of the 
-electrical savings prior to moving to the next set point”.  LLNL is currently operating in the ASHRAE 
-recommended range, but expresses concerns with increasing temperature as a grid-integration response.  The 
+electrical savings prior to moving to the next set point”. LLNL is currently operating in the ASHRAE 
+recommended range, but expresses concerns with increasing temperature as a grid-integration response. The 
 concerns include hardware failures, 
 tape storage read/write errors and compromising dew point requirements where liquid and air-cooling are co-located.
 
 Distinguishing interest from impact sheds further insight; some strategies are 
-considered high impact, but not interesting enough to consider deployment.  Facility
+considered high impact, but not interesting enough to consider deployment. Facility
 shutdown is rated as having a high impact, but only
-considered interesting by 36\% of the respondents.  NOAA commented that, 
-"We've had too many instability and equipment failures to utilize this as a strategy."  This divide is even more
-apparent with load migration.  It is rated as having a high impact by 36\% of the
-respondents, but only interesting to 10\% .  
-
-
-
-
+considered interesting by 36\% of the respondents. NOAA commented that, ``We've had too many instability and equipment failures to utilize this as a strategy." This divide is even more
+apparent with load migration. It is rated as having a high impact by 36\% of the
+respondents, but only interesting to 10\%. 
