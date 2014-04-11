@@ -1,69 +1,70 @@
 In November 2004, the Blue Gene/L system at Lawrence Livermore National Laboratory
-became the fastest computer in the Top 500,~\cite{FIXME}, displacing the NEC Earth Simulator,
-the previous champion.  This change marked the transition from supercomputing gains based
-on ever-higher-performance components to systems comprised of far larger numbers of 
-slow but energy-efficient components.  However, total system power consumption continued to rise,
-and we are now poised to begin a second transition to ''power-limited computing''.  The new
+became the fastest computer in the Top 500~\cite{Top500}, displacing the NEC Earth Simulator,
+the previous champion. This change marked the transition from supercomputing gains based
+on ever-higher-performance components to systems that comprised of far larger numbers of 
+slow but energy-efficient components. However, total system power consumption continued to rise,
+and we are now poised to begin a second transition to ''power-limited computing'' and ''power-aware computing''. The new
 model has been exemplified by the US Department of Energy issuing guidance that the first
-DOE exascale machine should not exceed 20MW; effectively a $1000x$ performance improvement
-with only a $3x$ increase in power.  
+DOE exascale machine should not exceed 20 MW; effectively a $1000x$ performance improvement
+with only a $3x$ increase in power. 
 
-However, the problem is not as simple as provisioning 20MW.  Ultimately, SCs optimize for
+However, the problem is not as simple as provisioning 20 MW. Ultimately, SCs optimize for
 performance per dollar, not performance per Watt, and flexibility in power consumption
-can be expected to result in lower overall prices.  Use of green technologies such as
-wind and solar may also lead to cheaper but less predictable sources of power.
+can be expected to result in lower overall prices. Use of green technologies such as
+wind and solar energy may also lead to cheaper but less predictable sources of power.
 To adapt to this new landscape, SCs may employ one or more strategies to control their 
-electricity demand.
+electricity demand. These approaches are described below.
 
 \begin{itemize}
-\item \textbf{Node level.} Controlling power ultimately requires control of individual
-components.  Historically, this control has been accomplished through Dynamic Voltage/Frequency
+\item \textbf{Node level:} Controlling power ultimately requires control of individual
+components. Historically, this control has been accomplished through Dynamic Voltage/Frequency
 Scaling (DVFS), which allows the processor to use a lower voltage at the cost of a slower
-clock frequency.  Newer technologies such as Intel's Running Average Power Limit leverage
-DVFS to guarantee that at user-specified processor power bound will, on average, not be exceeded 
-over the duration of a short time window.  DVFS can also be found on accelerator cards such
-as nVidia's Kepler GPGPU.  Other efforts reduce DRAM power by batching reads and writes, thus
-allowing the memory to spend more time in a lower-power state.  Several processor configuration
-options have indirect but significant effects on power consumption.  For example, the choice
+clock frequency. Newer technologies such as Intel's Running Average Power Limit leverage
+DVFS to guarantee that a user-specified processor power bound will, on average, not be exceeded 
+over the duration of a short time window. DVFS can also be found on accelerator components such
+as NVIDIA's Kepler GPGPU. Other efforts reduce DRAM power by optimizing reads and writes, thus
+allowing the memory to spend more time in a lower-power state. Several processor configuration
+options have indirect but significant effects on power consumption. For example, the choice
 of the number of cores to use, whether or not to enable hyperthreading, and the use of 
 "turbo" modes will change the power/performance curve.
 
-\item \textbf{Job level.}  Each of the node-level controls requires a tradeoff between
-power and  performance.  SCs resources are typically oversubscribed, so degrading performance
-to save power and energy ultimately results in less science getting done.  However, at the 
+\item \textbf{Job level:} Each of the node-level controls requires a tradeoff between
+power and performance. SC resources are typically oversubscribed, so degrading performance
+to save power and energy ultimately results in less science getting done. However, at the 
 job level, load imbalance provides opportunities to slow nodes that are off of the critical
-path of execution without slowing the overall job execution time.  Traditionally, load 
-rebalancing strategies have focused on moving bytes around the job allocation.  With 
+path of execution without slowing the overall job execution time. Traditionally, load 
+rebalancing strategies have focused on moving bytes around the job allocation. With 
 power control, we can now rebalance power as well as work.
 
-\item \textbf{System level.}  While most SCs use time and space partitioning (where a node
+\item \textbf{System level:} While most SCs use time and space partitioning (where a node
 only runs a single job at a time), there are still shared resources that must be managed
-across jobs.  Periodic checkpointing saves sufficient job state to a filesystem shared 
+across jobs. Periodic checkpointing saves sufficient job state to a filesystem shared 
 across jobs so that a job may be restarted from a recent point in case a fault occurs.
 Because these checkpoints involve much more data motion than normal execution, power 
 spikes can be observed at the node level (particularly DRAM), network, and filesystem.
 These checkpoints may need to be coordinated across large jobs to prevent unnecessary
-performance degredation.
+performance degradation.
+%TP: Checkpointing results in power spikes because more data motion takes place -- you need to save the state of the application (memory) to the filesystem. CPR in SCs is hierarchical, there's local storage first, and then this is written to a central (or a few central) file system serves via the network. This may lead to congestion (leading to more network power) as well as more power being used on the node.
 
-\item \textbf{Scheduler level.}  Up through the system level, power control is evaluated
-using the execution time of individual jobs.  The scheduler optimizes for overall throughput
-rather than individual job performance.  At this point, scheduling is a two-dimensional 
-problem:  jobs request a certain number of nodes for a certain duration.  As power-limited
-computing becomes more common, schedulers will add power bounds to this mix:  a job will
+\item \textbf{Scheduler level:} Up through the system level, power control is evaluated
+using the execution time of individual jobs. The scheduler optimizes for overall throughput
+rather than individual job performance. At this point, scheduling is a two-dimensional 
+problem: jobs request a certain number of nodes for a certain duration. As power-limited
+computing becomes more common, schedulers will add power bounds to this mix: a job will
 be allowed nodes, time, and a certain number of watts (the responsibility for not exceeding
-the job power bound rests with the system software, not the user or application).  The 
+the job power bound rests with the system software, not the user or application). The 
 scheduler not only determines when jobs in the queue begin execution, but also what happens
-when a job exits the system.  Depending on the priorities of already-running jobs and the
+when a job exits the system. Depending on the priorities of already-running jobs and the
 priorities of jobs in the queue, the best solution in terms of throughput may be to idle
 the recently-freed nodes and redistribute the freed power to running jobs.
 
-\item \textbf{Site level.}  At the level of the machine room (or multiple machine rooms),
+\item \textbf{Site level:} At the level of the machine room (or multiple machine rooms),
 decisions must be made as to how much power should be allocated for cooling versus computation,
-which requires understanding how temperature interacts with performance.  A higher intake
+which requires understanding how temperature interacts with performance. A higher intake
 air temperature uses less cooling power but results in higher static processor power and 
-may limit opportunities for "turbo" mode in processors where it is available.  As cooling
+may limit opportunities for "turbo" mode in processors where it is available. As cooling
 power varies with outside air temperature, a single machine room temperature setpoint may 
-not be the optimal solution in terms of overall performance.  
+not be the optimal solution in terms of overall performance. 
 
 \end{itemize}
 
