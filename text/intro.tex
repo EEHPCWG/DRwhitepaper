@@ -1,30 +1,38 @@
-Supercomputing centers (SCs) with petascale
-\footnote{Petascale computing refers to computing systems capable of at
-least \(10^{15}\) floating point instructions per second(FLOPS).} 
-systems for high-performance computing (HPC) have an outsized 
-impact on their electricity service providers (ESPs), with peak 
-power demands in excess of 20MW and instantaneous power fluctuations of up to 8MW. 
-As the HPC community moves towards exascale computing,\footnote{Exascale computing refers to computing systems capable of at
-least \(10^{18}\)FLOPS.} we anticipate a growing number of facilities will
+Supercomputing centers (SCs) with petascale\footnote{Petascale computing refers to computing systems capable of at
+least \(10^{15}\) floating point instructions per second (FLOPS).} 
+systems for high-performance computing (HPC) can have an outsized 
+impact on their Electricity Service Providers (ESPs), with peak 
+power demands %replace 'in excess of' with exceeding
+exceeding 20 MW and instantaneous power fluctuations of up to 8 MW. 
+As the HPC community moves towards exascale computing\footnote{Exascale computing refers to computing systems capable of at
+least \(10^{18}\)FLOPS.}, we anticipate that a growing number of facilities will
 be reaching or exceeding these service levels, with significant potential 
 effect on electrical grid reliability.
-To moderate this risk, in this paper we seek to understand how these anticipated
+In this paper we seek to understand how these anticipated
 usage patterns can be integrated safely into the power grid with minimal cost 
-and disruption.
+and disruption in order to manage
+%TP: moderate, mitigate or manage? rephrased this sentence from
+%Tp mitigate this risk, in this paper... to In this paper, .... to manage this risk. 
+this risk.
 
-Being a "good citizen" on the grid has several historical precedents.
-For example, electrically-intensive industries such as aluminium smelters 
+%TP: Specify 'electrical' grid as this is unclear
+Being a ``good citizen'' on the electrical grid has several historical precedents.
+%TP: Change "`For Example"' to "`In the past" because 'For example' is used soon after.
+In the past, electrically-intensive industries such as aluminum smelters 
 have received preferential pricing in return for predictable loads and
 flexibility in reducing power during periods of high consumption.
 SCs are already adopting these strategies.  
 For example, Lawrence Livermore National Laboratory (LLNL)
 reduces its power usage when temperatures exceed 
-100 degrees and residential power usage in the area surges,
-Other centers are exploring the benefits of predicting hour-ahead and 
-day-ahead use in concert with their providers.
-A mutual understanding of concerns between the SC and ESP can 
-produce a symbiotic relation that goes beyond the current producer-consumer 
-paradigm, paving the way for possible integration of HPC with the electrical grid.
+100 degrees and the residential power usage in the area surges.
+Other %centers TP: replace centers with SCs
+SCs are exploring the benefits of predicting hour-ahead and 
+day-ahead use in concert with their %providers TP: replace providers with ESPs
+ESPs.
+A mutual understanding of concerns between SCs and ESPs can 
+produce a symbiotic relationship that goes beyond the current producer-consumer 
+paradigm, paving the way for possible integration of %HPC TP: replace HPC with SCs
+supercomputing centers with the electrical grid.
 
 The Energy Efficient HPC Working Group (\href {http://eehpcwg.lbl.gov/}{EE HPC WG})  
 investigates opportunities for large supercomputing sites to  
@@ -35,38 +43,42 @@ that SCs could employ to help their ESPs.
 To achieve our objectives we developed a questionnaire and distributed it to 
 the Top100 supercomputer centers in the United States. 
 %NEED TEASER RESULTS HERE!
+%Indicate results of questionnaire here.
 
-This work leverages prior work on datacenter and grid integration opportunities
+This paper %TP replace 'work' with 'paper' 
+leverages prior work on datacenter and grid integration opportunities
 done by Lawrence Berkeley National Laboratory's (LBNL) Demand Response 
-Research Center \textbf{(cite LBNL DR datacenter integration paper)}
-that describes the challenges and opportunities for datacenters and electricity
-service providers to interact and how this integration can advance 
-new market 
-opportunities\footnote{LBNL Data Center Grid Integration Activities: http://drrc.lbl.gov/projects/dc}.
-This integration model describes programs that are used by some of the electricity 
-service providers to encourage particular responses by their customers and methods 
-used to balance the electrical grid supply and demand.
-Perhaps one of the most straightforward ways that SCs can begin
-the process of participating in demand response is by participating in efforts to
-develop software
+Research Center \cite{LBNL}. This prior work describes the challenges and opportunities for datacenters and %electricity service providers 
+ESPs to interact with each other and how this integration can advance 
+new market opportunities \cite{Ghatikar2012a, Ghatikar2012b}. 
+%\textbf{(cite LBNL DR datacenter integration paper)}
+% Now a reference. TP. \footnote{LBNL Data Center Grid Integration Activities: http://drrc.lbl.gov/projects/dc}.
+This integration model describes programs that are used by some of the ESPs %electricity service providers 
+to encourage particular responses by their customers and methods 
+used to balance the electrical grid supply and demand. This is referred to as \emph{demand response}. %TP: This defines demand response, I'm clarifying this here.
+%Perhaps TP: No "perhaps".
+One of the most straightforward ways that SCs can begin
+the process of engaging %replace participating with engaging, as participating is used twice in the sentence
+in demand response is by participating in efforts to
+develop software 
 infrastructure to manage their electricity requirements in a tightly coupled manner 
-with their ESPs, facilitating both energy efficiency and grid reliability.
+with their ESPs, facilitating both energy efficiency and grid reliability. In addition, this will provide for extensive funding and cost analysis and help the community base future requirements for SCs and ESPs on facts and a proven set of measurements.
 
-Our analysis focused on supercomputer centers in the United States, however, 
-the findings may relate to supercomputer centers in other countries with similar practices. 
-The electric grid infrastructure and market design are highly dependent upon governmental regulations 
-that vary across geographies.  We restricted the initial analysis to the understanding of 
-electricity markets in the United States.  
-Future work can extend the analysis to the electricity markets in Europe and other geographies.
+Our analysis in this paper focuses %TP:not focused, but focuses.  
+on SCs in the United States. However, 
+the findings can be extended to and may relate to SCs in other countries with similar practices. 
+Electric grid infrastructure and market design are highly dependent on %on, not upon. TP.
+governmental regulations that vary across geographies.  We restricted the initial analysis to the understanding of 
+electricity markets in the United States. Future work can extend the analysis to the electricity markets in Europe and other geographies.
 
 The paper is organized as follows.
 Sections~\ref{sec:ESPintegration} and~\ref{sec:supercomputercenters} of this paper
 describe in greater detail the model for 
 integrating supercomputer centers and the electrical grid.
 Section~\ref{sub:priorwork}
-reviews prior work on HPC center strategies. Section~\ref{sec:questionnaire}
-provides the results of the questionnaire. 
+reviews prior work in supercomputing center strategies. %TP: HPC replaced with supercomputing
+Section~\ref{sec:questionnaire} provides the results of the questionnaire. 
 Section~\ref{sec:opportunities} 
 discusses the several opportunities, solutions and barriers that have been highlighted
-by the survey results. We offer our conclusions in Section~\ref{sec:conclusion} along with our plan for future work.  Additional authors are listed in Section~\ref{sec:additional} and
-the \nameref{Appendix} summarizes the survey questions.
+by the survey results. We offer our conclusions in Section~\ref{sec:conclusion} along with our plan for future work.  
+The \nameref{Appendix} summarizes the survey questions.
