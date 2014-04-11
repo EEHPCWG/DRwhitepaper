@@ -1,52 +1,49 @@
 The responses to the questionnaire presented in
 Section~\ref{sec:questionnaire} represent a variety of desires and
-experience regarding interactions between supercomputer centers and
-electricity service providers.  For example, the responses from the two centers
+experience regarding interactions between SCs and
+ESPs. For example, the responses from the two SCs
 with the largest power draws, LLNL and ORNL, diverge in several
-areas.  This divergence is perhaps primarily due to characteristics of
-their respective electricity service providers.  In contrast, SDSC stands out as a leader in integrating
-with their electricity service provider on a site-wide level.  To that end, the
+areas. This divergence is perhaps primarily due to characteristics of
+their respective ESPs. In contrast, SDSC stands out as a leader in integrating
+with their ESP on a site-wide level. To that end, the
 responses from SDSC may exemplify some of the opportunities available
-to other supercomputer centers that are willing to pursue this degree
+to other SCs that are willing to pursue this degree
 of integration.
 
 % The following paragraph is what we want to claim, but is actually
-% factually incorrect.  A supercomputer center understands its
-% cost to operate per unit time (e.g., cost to run per hour).  This
+% factually incorrect. A supercomputer center understands its
+% cost to operate per unit time (e.g., cost to run per hour). This
 % cost includes things like the cost of personnel, cost of renting
 % the physical space for the supercomputer center, cost of electricity, etc.
 % It turns out that the cost of electricity is a small percent of
-% the overall cost of running the center.  In the end, I think there
+% the overall cost of running the center. In the end, I think there
 % is very little chance of getting supercomputer centers to
 % willingly negotiate with electricity service providers because the cost of
 % the lost opportunity is too high since the remaining costs are
 % unchanged.
-The responses to the questionnaire also suggest that some electricity service
-providers are requesting that their supercomputer center customers
+The responses to the questionnaire also suggest that some ESPs are requesting that their SC customers
 develop capabilities for informing the provider of expected periods of
 exceptional power consumption and for responding to requests from the
-provider to consume less power for specified periods of time.  Upon
+provider to consume less power for specified periods of time. Upon
 initial consideration, this idea might seem to run counter to the
-primary mission objective of most supercomputer centers of delivering
+primary mission objective of most SCs of delivering
 as many uninterrupted computational cycles as possible to their users.
-In some extreme cases, supercomputer centers may not have a choice
+In some extreme cases, SCs may not have a choice
 in the matter as the size and energy requirements of supercomputers
-increase; indeed, some electricity service providers may \textit{require} large
-centers to develop a demand-response capability.  However, a direct
-business case may exist to encourage supercomputer centers to develop
-this negotiation capability on their own.  For example, if electricity service
-providers were to offer electricity at a significantly reduced rate
-on the condition that the supercomputer center customer develop
+increase; indeed, some ESPs may \textit{require} large
+centers to develop a demand-response capability. However, a direct
+business case may exist to encourage SCs to develop
+this negotiation capability on their own. For example, if ESPs were to offer electricity at a significantly reduced rate
+on the condition that the SC customer develop
 demand-response capabilities, the long-term cost savings to the
 center could make undertaking such a project worthwhile.
 
-Perhaps one of the most straightforward ways that supercomputer
-centers can begin the process of developing a demand-response
+Perhaps one of the most straightforward ways that SCs can begin the process of developing a demand-response
 capability is by enhancing existing system software used for managing
-computing resources within the center.  Indeed, the questionnaire
+computing resources within the center. Indeed, the questionnaire
 responses from Section~\ref{sec:questionnaire} as well as the literature
-review presented in Section~\ref{sec:priorwork} both strongly support the
-idea that the greatest opportunities for supercomputer centers to
+review presented in Section~\ref{sub:priorwork} both strongly support the
+idea that the greatest opportunities for SCs to
 develop integration capabilities are related to system software.
 Specifically, and presented in approximate order of decreasing
 interest and expected impact to the questionnaire respondents, system
@@ -56,130 +53,128 @@ job scheduling, load migration, rescheduling backups, and fine-grained
 power management (such as dynamic, per-processor power capping).
 
 Coarse-grained power capping may be one of the most straightforward
-methods of power management.  In the simplest form, this technique may
+methods of power management. In the simplest form, this technique may
 entail human intervention to adjust computing resources so they
 operate at a reduced capacity or to entirely shut down some of the
-computing capacity of a supercomputer center.  By attenuating
-resources, the supercomputer center manager can ensure that power
-consumption stays below some defined level.  This defined level may be
-a pre-arranged power cap negotiated between the supercomputer center
-and the electricity service provider and maintained on an ongoing basis,
+computing capacity of a SC. By attenuating
+resources, the SC manager can ensure that power
+consumption stays below some defined level. This defined level may be
+a pre-arranged power cap negotiated between the SC
+and the ESP and maintained on an ongoing basis,
 or, perhaps more likely, a power draw level that is requested by the
-electricity service provider to handle unanticipated loads somewhere else
-in the electricity service provider's system.  
+ESP to handle unanticipated loads somewhere else
+in the ESP's system. 
 Note that the savings
 in power may not need to come entirely from attenuating computing
-resources.  Rather, reducing power consumption in computing resources
+resources. Rather, reducing power consumption in computing resources
 is likely to result in a corresponding reduction in thermal load
-within the supercomputer center, which
+within the SC, which
 may allow significant power savings in the cooling system as well.
 
 The coarse-grained power capping technique described above assumes
-that the supercomputer center environment has some amount of
+that the SC environment has some amount of
 instrumentation and metering that allows for the collection of power
-telemetry data.  This telemetry is necessary for the supercomputer
-center facility manager in order to understand how the power supplied
-by the electricity service provider is distributed to resources within the
-center.  Further, this telemetry is likely important to automated
+telemetry data. This telemetry is necessary for the SC facility manager in order to understand how the power supplied
+by the ESP is distributed to resources within the
+center. Further, this telemetry is likely important to automated
 solutions for power management, such as the job scheduling techniques
-described below.  In light of the fact that many system integrators
-such as Cray and IBM are now delivering supercomputer systems that
+described below. In light of the fact that many system integrators
+such as Cray and IBM are now delivering supercomputing systems that
 include telemetry capabilities, the assumption that this information
-is available seems acceptable.  According to the responses to the
-questionnaire presented in the previous Section, supercomputer center
+is available seems acceptable. According to the responses to the
+questionnaire presented in the previous Section, SC
 facility managers perceive this accounting data as distinct from
 per-user or per-job accounting data that is typically collected and
 indicate that this data should be retained for electricity
 provisioning planning purposes.
 
 Techniques that involve job scheduling may offer more automated
-approaches to power management.  Due to the unique role that the job
-scheduler and resource manager play within a supercomputer center,
+approaches to power management. Due to the unique role that the job
+scheduler and resource manager play within a SC,
 these techniques may involve adjusting either the workflow of jobs
 within the center or characteristics of the computational resources
 within the center.
 
 On one hand, the job scheduler has knowledge of and control over the
-upcoming workflow within the supercomputer center simply by examining
-and manipulating the job queue.  One easily-accessible technique is
+upcoming workflow within the SC simply by examining
+and manipulating the job queue. One easily-accessible technique is
 for a human operator to use capabilities such as advanced reservations
 to reserve pre-arranged blocks of time in which jobs with high power
-loads will run.  These blocks of time could be negotiated with the
-electricity service provider on an ongoing basis or could be in response to
-on-demand requests made by the electricity service provider.  Even more
+loads will run. These blocks of time could be negotiated with the
+ESP on an ongoing basis or could be in response to
+on-demand requests made by the ESP. Even more
 automatic techniques are possible if the job scheduler is given enough
 information about the workflow to make intelligent decisions about job
-scheduling.  For example, jobs may be submitted with various metadata
+scheduling. For example, jobs may be submitted with various metadata
 that enable the job scheduler to understand characteristics of each
 job such as \textit{priority}, the relative importance of a job
 compared to other jobs, and \textit{urgency}, the rate at which the
-value of a job decreases as time elapses.  These characteristics are
+value of a job decreases as time elapses. These characteristics are
 not only important to a job scheduler for ensuring efficient
-utilization of a supercomputer center's resources under traditional
+utilization of a SC's resources under traditional
 circumstances, but they are also a vital piece of successfully
 implementing a demand-response capability for at least two reasons.
-First, they provide a set of metrics by which the supercomputer center
+First, they provide a set of metrics by which the SC
 can estimate the cost in terms of the ``lost opportunity'' of
-responding to an electricity service provider's request to run with
-attenuated resources.  Second, they allow the supercomputer center to
+responding to an ESP's request to run with
+attenuated resources. Second, they allow the SC to
 prioritize jobs in the queued workflow in order to understand how to
-best utilize computational resources.  This capability is important
+best utilize computational resources. This capability is important
 under normal circumstances, but becomes even more essential in a
 demand-response scenario.
 
 At a lower level, schedulers and runtime systems can exercise 
-fine-grained, dynamic demand-response capability.  
+fine-grained, dynamic demand-response capability. 
 For example, the job scheduler knows which
 nodes within a supercomputer are occupied with running jobs or are
-expected to become occupied in the near future.  To that end, the job
+expected to become occupied in the near future. To that end, the job
 scheduler can use its control over the resource management process to
 place idle nodes into a sleep state in which they draw significantly
-reduced power.  This strategy is especially effective in supercomputer
+reduced power. This strategy is especially effective in supercomputing
 environments containing at least some resources that are used at
 irregular intervals, allowing opportunities to utilize sleep states
-effectively during periods when the resources are idle.  
+effectively during periods when the resources are idle. 
 
 In environments where all computing resources are heavily utilized,
 fine-grained power scheduling will be directed by the runtime system.
 For example, in the presence of load imbalance within a job, traditional
 applications may rely on periodically moving data around the allocated
 nodes to ensure all processors are performing a roughly equal amount
-of work.  This load-balancing process is both time- and energy-intensive.
+of work. This load-balancing process is both time- and energy-intensive.
 By relocating power instead of data, processors with lighter loads can
 surrender power and run slower, allowing more heavily-loaded processors
-to use additional power to run faster.  Combining both techniques 
-should lead to improved execution time as well as more efficicient
+to use additional power to run faster. Combining both techniques 
+should lead to improved execution time as well as more efficient
 power utilization.
 
 Even more interesting scenarios are possible in cases where the job
 scheduler combines its knowledge of the upcoming queued workflow with
 its knowledge and control over the computational resources within the
-supercomputer center.  These scenarios are most appropriate when the
-supercomputer scenario contains a pervasively heterogeneous mix of
-computational resources.  For example, many contemporary supercomputer
-centers contain several different types of compute nodes with various
-types of processors and accelerator cards.  In some circumstances, the
+SC. These scenarios are most appropriate when the
+supercomputing scenario contains a pervasively heterogeneous mix of
+computational resources. For example, many contemporary SCs contain several different types of compute nodes with various
+types of processors and accelerator cards. In some circumstances, the
 job scheduler may be able to choose which resource to use for running
-a given job among several candidate resources.  The trade-off here is
-not only in terms of the time necessary to complete the job (i.e.,
+a given job among several candidate resources. The trade-off here is
+not only in terms of the time necessary to complete the job (that is,
 different resources could potentially complete the job in very
 different amounts of time) but also in terms of the energy consumed in
-completing the job (i.e., different resources could potentially
+completing the job (that is, different resources could potentially
 consume very different amounts of energy in completing the job).
 Further, other resources such as memory access patterns, disk access
 patterns, and network use affect the energy signature of a job and may
-be observed by the scheduler.  By maintaining a database of
+be observed by the scheduler. By maintaining a database of
 job-to-resource mappings that record the time and energy taken for
 each job, the scheduler can, over time, improve its ability to decide
-which jobs have the highest affinity to each type of resource.  Using
-this knowledge to optimize a supercomputer center's workflow in terms
+which jobs have the highest affinity to each type of resource. Using
+this knowledge to optimize a SC's workflow in terms
 of job throughput or energy consumption is admittedly complex, but the
 potential rewards are likely to be compelling both to the day-to-day
 operation of the center and to demand-response capabilities.
 
-Opportunities may also exist for supercomputer centers to cooperate
+Opportunities may also exist for SCs to cooperate
 with each other in scenarios in which computational loads are migrated
-from one site to another where energy costs are less expensive.  This
+from one site to another where energy costs are less expensive. This
 scenario is challenging for both technical and business reasons.
 Technical challenges include issues such as user authentication and
 authorization (i.e., a user may be authorized to use resources at one
@@ -188,12 +183,12 @@ infeasible to migrate large datasets from one site to another site).
 To some extent, some of these technical challenges may be mitigated by
 the use of advanced reservation capabilities in the scheduling systems
 at each site, allowing resources to be simultaneously reserved while
-large datasets are properly staged.  Business challenges include the
-notion that a supercomputer center currently has little incentive to
-migrate jobs to another ``competing'' center.  Indeed, the
+large datasets are properly staged. Business challenges include the
+notion that a SC currently has little incentive to
+migrate jobs to another ``competing'' center. Indeed, the
 questionnaire results reflect low interest in load migration
-strategies.  It seems likely that in order to be a feasible scenario,
-the structure of payment and rewards to a supercomputer center to
+strategies. It seems likely that in order to be a feasible scenario,
+the structure of payment and rewards to a SC to
 cooperate with other centers would need to be structured differently
 than they are currently.
 
@@ -201,28 +196,28 @@ In a very broad sense, demand-response techniques such as job
 scheduling, power capping, and load migration can be considered to
 be coarse-grained approaches because they involve considering ``big
 picture'' views of the workload and computational resources in a
-supercomputer center.  According to the questionnaire results
+supercomputer center. According to the questionnaire results
 presented in the previous Section, facilities managers view these
 approaches as the most likely candidates for creating effective
 demand-response capabilities.
 
 Finally, this Section has focused heavily on the opportunities
 available to supercomputer centers that come from developing
-demand-response capabilities.  This notion is primarily due to the
+demand-response capabilities. This notion is primarily due to the
 fact that the questionnaire presented in Section~\ref{sec:questionnaire}
 was distributed to supercomputer centers in the United States, not to
-electricity service providers.  That said, opportunities do exist for
+electricity service providers. That said, opportunities do exist for
 electricity service providers that develop demand-response
-capabilities.  At one level, the negotiation process itself requires
+capabilities. At one level, the negotiation process itself requires
 integration in terms of the communication and messaging protocols that
-are necessary.  To that end, opportunities exist for adapting and
+are necessary. To that end, opportunities exist for adapting and
 extending existing standards currently used within the industry, thus
 creating new use cases and capabilities for electricity service
-providers.  At a higher level, electricity service providers will most
+providers. At a higher level, electricity service providers will most
 likely need to improve their ability to determine in near real time
 the important places within the electrical grid where demands exceed
-supply.  Determining this is likely to be a complex optimization
-problem.  While this Section focuses on solving these problems to the
+supply. Determining this is likely to be a complex optimization
+problem. While this Section focuses on solving these problems to the
 end of developing a demand-response strategy in conjunction with
 supercomputer centers, these capabilities are likely applicable to a
 broad range of customers.
