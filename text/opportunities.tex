@@ -31,14 +31,14 @@ as many uninterrupted computational cycles as possible to their users.
 In some extreme cases, SCs may not have a choice
 in the matter as the size and energy requirements of supercomputers
 increase; indeed, some ESPs may \textit{require} large
-centers to develop a demand-response capability. However, a direct
+centers to develop a DR capability. However, a direct
 business case may exist to encourage SCs to develop
 this negotiation capability on their own. For example, if ESPs were to offer electricity at a significantly reduced rate
 on the condition that the SC customer develop
-demand-response capabilities, the long-term cost savings to the
+DR capabilities, the long-term cost savings to the
 center could make undertaking such a project worthwhile.
 
-Perhaps one of the most straightforward ways that SCs can begin the process of developing a demand-response
+Perhaps one of the most straightforward ways that SCs can begin the process of developing a DR
 capability is by enhancing existing system software used for managing
 computing resources within the center. Indeed, the questionnaire
 responses from Section~\ref{sec:questionnaire} as well as the literature
@@ -112,7 +112,7 @@ value of a job decreases as time elapses. These characteristics are
 not only important to a job scheduler for ensuring efficient
 utilization of a SC's resources under traditional
 circumstances, but they are also a vital piece of successfully
-implementing a demand-response capability for at least two reasons.
+implementing a DR capability for at least two reasons.
 First, they provide a set of metrics by which the SC
 can estimate the cost in terms of the ``lost opportunity'' of
 responding to an ESP's request to run with
@@ -120,10 +120,10 @@ attenuated resources. Second, they allow the SC to
 prioritize jobs in the queued workflow in order to understand how to
 best utilize computational resources. This capability is important
 under normal circumstances, but becomes even more essential in a
-demand-response scenario.
+DR scenario.
 
 At a lower level, schedulers and runtime systems can exercise 
-fine-grained, dynamic demand-response capability. 
+fine-grained, dynamic DR capability. 
 For example, the job scheduler knows which
 nodes within a supercomputer are occupied with running jobs or are
 expected to become occupied in the near future. To that end, the job
@@ -169,7 +169,7 @@ which jobs have the highest affinity to each type of resource. Using
 this knowledge to optimize a SC's workflow in terms
 of job throughput or energy consumption is admittedly complex, but the
 potential rewards are likely to be compelling both to the day-to-day
-operation of the center and to demand-response capabilities.
+operation of the center and to DR capabilities.
 
 Opportunities may also exist for SCs to cooperate
 with each other in scenarios in which computational loads are migrated
@@ -191,22 +191,22 @@ the structure of payment and rewards to a SC to
 cooperate with other centers would need to be structured differently
 than they are currently.
 
-In a very broad sense, demand-response techniques such as job
+In a very broad sense, DR techniques such as job
 scheduling, power capping, and load migration can be considered to
 be coarse-grained approaches because they involve considering ``big
 picture'' views of the workload and computational resources in a
 SC. According to the questionnaire results
 presented in the previous Section, facilities managers view these
 approaches as the most likely candidates for creating effective
-demand-response capabilities.
+DR capabilities.
 
 Finally, this Section has focused heavily on the opportunities
 available to SCs that come from developing
-demand-response capabilities. This notion is primarily due to the
+DR capabilities. This notion is primarily due to the
 fact that the questionnaire presented in Section~\ref{sec:questionnaire}
 was distributed to SCs in the United States, not to
 ESPs. That said, opportunities do exist for
-ESPs that develop demand-response
+ESPs that develop DR
 capabilities. At one level, the negotiation process itself requires
 integration in terms of the communication and messaging protocols that
 are necessary. To that end, opportunities exist for adapting and
@@ -216,6 +216,6 @@ likely need to improve their ability to determine in near real time
 the important places within the electrical grid where demands exceed
 supply. Determining this is likely to be a complex optimization
 problem. While this Section focuses on solving these problems to the
-end of developing a demand-response strategy in conjunction with
+end of developing a DR strategy in conjunction with
 SCs, these capabilities are likely applicable to a
 broad range of customers.
