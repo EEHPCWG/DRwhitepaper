@@ -12,21 +12,44 @@ However, the problem is not as simple as provisioning 20 MW. Ultimately, SCs opt
 performance per dollar, not performance per Watt, and flexibility in power consumption
 can be expected to result in lower overall prices. Use of green technologies such as
 wind and solar energy may also lead to cheaper but less predictable sources of power.
-To adapt to this new landscape, SCs may employ one or more strategies to control their 
-electricity demand. These approaches are described below.
+In addition, as described in Section~\ref{sec:ESPintegration}, ESPs may request a change in timing and/or magnitude of demand by SCs. To adapt to this new landscape, SCs may employ one or more strategies to control their electricity demand. We describe some of these strategies below. 
+
+\begin{itemize}
+\item {\bf Fine-grained Power Management} refers to the ability to control SC system power 
+and energy with tools that offer high resolution control and can target specific 
+low level sub-systems. A typical example is CPU voltage and frequency scaling.
+
+\item {\bf Coarse-grained Power Management} also refers to the ability to control SC 
+system power and energy, but contrasts with fine-grained power management in 
+that the resolution is low and it is generally done at a more aggregated level. 
+A typical example is power capping.
+
+\item {\bf Load Migration} refers to temporarily shifting computing loads from 
+an SC system in one site to a system in another location that has stable power supply. 
+This strategy can also be used in response to change in electricity prices.
+
+\item {\bf Job Scheduling} refers to the ability to control SC system power 
+by understanding the power profile of applications and queuing the 
+applications based on those profiles.
+
+\item {\bf Back-up Scheduling} refers to deferring data storage processes to off-peak periods.
+
+\item {\bf Shutdown} refers to a graceful shutdown of idle SC equipment. It usually 
+applies when there is redundancy.
+
+\item {\bf Lighting Control} allows for datacenter lights to be shutdown completely.
+
+\item {\bf Thermal Management} is widening temperature set-point ranges and 
+humidity levels for short periods.
+\end{itemize}
+
+These strategies can be used temporarily to modify loads in response to a request from an ESP. Additionally, some of these strategies could eventually be used at all times to improve overall energy efficiency if the SC sees no operational issues. Two examples may help to clarify this distinction. Temporary load migration is an example of a strategy that is well suited to responding to an ESP request, but is not likely to improve energy efficiency (lowering aggregate energy use). Fine-grained power management, on the other hand, can be used at all times and is more likely to be used for improving overall energy efficiency, unless the strategy is specifically used in response to an ESP's request. 
+
+SC system power management has a very broad range of implementations and warrants greater exploration. For example, the coarse-grained and fine-grained strategies described above can be implemented at many levels of the system hierarchy---from node-level to site-level. We discuss these implementation approaches below.  
 
 \begin{itemize}
 \item \textbf{Node level:} Controlling power ultimately requires control of individual
-components. Historically, this control has been accomplished through Dynamic Voltage/Frequency
-Scaling (DVFS), which allows the processor to use a lower voltage at the cost of a slower
-clock frequency. Newer technologies such as Intel's Running Average Power Limit leverage
-DVFS to guarantee that a user-specified processor power bound will, on average, not be exceeded 
-over the duration of a short time window. DVFS can also be found on accelerator components such
-as NVIDIA's Kepler GPGPU. Other efforts reduce DRAM power by optimizing reads and writes, thus
-allowing the memory to spend more time in a lower-power state. Several processor configuration
-options have indirect but significant effects on power consumption. For example, the choice
-of the number of cores to use, whether or not to enable hyperthreading, and the use of 
-"turbo" modes will change the power/performance curve.
+components. Historically, this control has been accomplished through Dynamic Voltage/Frequency Scaling (DVFS), which allows the processor to use a lower voltage at the cost of a slower clock frequency. Newer technologies such as Intel's Running Average Power Limit leverage DVFS to guarantee that a user-specified processor power bound will, on average, not be exceeded over the duration of a short time window. DVFS can also be found on accelerator components such as NVIDIA's Kepler GPGPU. Other efforts reduce DRAM power by optimizing reads and writes, thus allowing the memory to spend more time in a lower-power state. Several processor configuration options have indirect but significant effects on power consumption. For example, the choice of the number of cores to use, whether or not to enable hyperthreading, and the use of "turbo" modes will change the power/performance curve.
 
 \item \textbf{Job level:} Each of the node-level controls requires a tradeoff between
 power and performance. SC resources are typically oversubscribed, so degrading performance
@@ -59,14 +82,10 @@ priorities of jobs in the queue, the best solution in terms of throughput may be
 the recently-freed nodes and redistribute the freed power to running jobs.
 
 \item \textbf{Site level:} At the level of the machine room (or multiple machine rooms),
-decisions must be made as to how much power should be allocated for cooling versus computation,
-which requires understanding how temperature interacts with performance. A higher intake
-air temperature uses less cooling power but results in higher static processor power and 
-may limit opportunities for "turbo" mode in processors where it is available. As cooling
-power varies with outside air temperature, a single machine room temperature setpoint may 
-not be the optimal solution in terms of overall performance. 
-
+decisions must be made as to how much power should be allocated for cooling versus computation, which requires understanding how temperature interacts with performance. A higher intake air temperature uses less cooling power but results in higher static processor power and may limit opportunities for "turbo" mode in processors where it is available. As cooling power varies with outside air temperature, a single machine room temperature setpoint may not be the optimal solution in terms of overall performance. 
 \end{itemize}
+
+
 
 \subsection{Prior Work}
 \label{sub:priorwork}
