@@ -21,10 +21,10 @@ Being a ``good citizen'' on the electrical grid has several historical precedent
 In the past, electrically-intensive industries such as aluminum smelters 
 have received preferential pricing in return for predictable loads and
 flexibility in reducing power during periods of high consumption.
-SCs are already adopting these strategies.  
+SCs are already adopting these strategies. 
 For example, Lawrence Livermore National Laboratory (LLNL)
 reduces its power usage when temperatures exceed 
-100 degrees and the residential power usage in the area surges.
+100 degrees F and the residential power usage in the area surges.
 Other %centers TP: replace centers with SCs
 SCs are exploring the benefits of predicting hour-ahead and 
 day-ahead use in concert with their %providers TP: replace providers with ESPs
@@ -32,30 +32,16 @@ ESPs.
 A mutual understanding of concerns between SCs and ESPs can 
 produce a symbiotic relationship that goes beyond the current producer-consumer 
 paradigm, paving the way for possible integration of %HPC TP: replace HPC with SCs
-SCs with the electrical grid. Grid Integration in the context of this study refers to the dynamic interaction and value between the demand-side resources (SCs) and the supply-side resources (ESPs) and the electricity grid and its markets.
+SCs with the electrical grid. Grid Integration in the context of this study refers to the dynamic interaction and value between the demand-side resources (SCs) and the supply-side resources (ESPs) as well as the relationship between the electricity grid and its markets.
 
-The Energy Efficient HPC Working Group (\href {http://eehpcwg.lbl.gov/}{EE HPC WG})  
-investigates opportunities for large supercomputing sites to  
+The Energy Efficient HPC Working Group (\href {http://eehpcwg.lbl.gov/}{EE HPC WG}) 
+investigates opportunities for large supercomputing sites to 
 integrate more closely with their ESPs.
 We seek to understand the willingness of SCs to
 cooperate with their ESPs, their expectations from their ESPs, and the feasible measures
 that SCs could employ to help their ESPs.
 To achieve our objectives we developed a questionnaire and distributed it to 
 the Top100 SCs in the United States. 
-Eleven sites responded to this questionnaire.  Based on these responses, we noted a few
-primary observations:
-\begin{itemize}
-\item Only 20\% SCs currently communicate with their ESPs about Demand Response issues.
-\item SC managers believe that the candidate solutions most likely to be effective for
-responding to ESP requests involve coarse-grained power management techniques, job
-scheduling techniques, and shutting down computing resources.
-\item A stronger relationship, including Demand Response capabilities, between SCs and
-ESPs could likely lead to both energy savings and cost savings over time, and in some
-cases such capabilities might become a requirement for large SCs located in energy-challenged
-locations.
-\end{itemize}
-Section~\ref{sec:questionnaire} provides an in-depth analysis of the responses to the
-questionnaire from which these conclusions were drawn.
 
 This paper %TP replace 'work' with 'paper' 
 leverages prior work on datacenter and grid integration opportunities
@@ -67,21 +53,40 @@ new market opportunities \cite{Ghatikar2012a, Ghatikar2012b}.
 % Now a reference. TP. \footnote{LBNL Data Center Grid Integration Activities: http://drrc.lbl.gov/projects/dc}.
 This integration model describes programs that are used by some of the ESPs %electricity service providers 
 to encourage particular responses by their customers and methods 
-used to balance the electrical grid supply and demand. This is referred to as \emph{demand response (DR)}.
+used to balance the electrical grid supply and demand. This is referred to as \emph{Demand Response (DR)}.
  %TP: This defines demand response, I'm clarifying this here.
 %Perhaps TP: No "perhaps".
+
+%Moved this after, as DR was not defined and was being used in the bullet #1,3.
+Eleven sites responded to the aforementioned questionnaire. Based on these responses, we noted a few
+primary observations:
+\begin{itemize}
+\item Only 20\% of SCs currently communicate with their ESPs about DR issues.
+\item SC managers believe that the candidate solutions most likely to be effective for
+responding to ESP requests involve coarse-grained power management techniques, job
+scheduling techniques, and shutting down computing resources.
+\item A stronger relationship, including DR capabilities, between SCs and
+ESPs can lead to both energy savings and cost savings over time, and in some
+cases such capabilities might become a requirement for large SCs located in energy-challenged
+locations.
+\end{itemize}
+
+%TP: Don't need this here as this section ends with what each section presents.
+%Section~\ref{sec:questionnaire} provides an in-depth analysis of the responses to the
+%questionnaire from which these conclusions were drawn.
+
 One of the most straightforward ways that SCs can begin
 the process of engaging %replace participating with engaging, as participating is used twice in the sentence
-in demand response is by participating in efforts to
+in DR is by participating in efforts to
 develop software 
 infrastructure to manage their electricity requirements in a tightly coupled manner 
 with their ESPs, facilitating both energy efficiency and grid reliability. In addition, this will provide for extensive funding and cost analysis and help the community base future requirements for SCs and ESPs on facts and a proven set of measurements.
 
-Our analysis in this paper focuses %TP:not focused, but focuses.  
+Our analysis in this paper focuses %TP:not focused, but focuses. 
 on SCs in the United States. However, 
 the findings can be extended to and may relate to SCs in other countries with similar practices. 
 Electric grid infrastructure and market design are highly dependent on %on, not upon. TP.
-governmental regulations that vary across geographies.  We restricted the initial analysis to the understanding of 
+governmental regulations that vary across geographies. We restricted the initial analysis to the understanding of 
 electricity markets in the United States. Future work can extend the analysis to the electricity markets in Europe and other geographies.
 
 The paper is organized as follows.
@@ -93,5 +98,4 @@ reviews prior work in SC strategies. %TP: HPC replaced with supercomputing
 Section~\ref{sec:questionnaire} provides the results of the questionnaire. 
 Section~\ref{sec:opportunities} 
 discusses the several opportunities, solutions and barriers that have been highlighted
-by the survey results. We offer our conclusions in Section~\ref{sec:conclusion} along with our plan for future work.  
-The \nameref{Appendix} summarizes the survey questions.
+by the survey results. We offer our conclusions in Section~\ref{sec:conclusion} along with our plan for future work. Additional authors are listed in Section~\ref{sec:additional} and the \nameref{Appendix} summarizes the survey questions.
