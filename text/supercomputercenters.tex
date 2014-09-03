@@ -12,7 +12,35 @@ However, the problem is not as simple as provisioning 20 MW. Ultimately, SCs opt
 performance per dollar, not performance per Watt, and flexibility in power consumption
 can be expected to result in lower overall prices. Use of green technologies such as
 wind and solar energy may also lead to cheaper but less predictable sources of power.
-In addition, as described in Section~\ref{sec:ESPintegration}, ESPs may request a change in timing and/or magnitude of demand by SCs. To adapt to this new landscape, SCs may employ one or more strategies to control their electricity demand. We describe some of these strategies below. 
+In addition, as described in Section~\ref{sec:ESPintegration}, ESPs may request a change in timing and/or magnitude of demand by SCs. To adapt to this new landscape, SCs may employ one or more strategies to control their electricity demand. 
+
+The EE HPC WG took as their starting point a
+model developed by LBNL's Demand Response Research
+Center. This model describes strategies that datacenters might employ for utility programs to manage their electricity and
+power requirements to lower costs and benefit from utility
+incentives. The EE HPC WG adopted this model %with slight tweaks  TP:This makes the model seem trivial, which it is not.
+to reflect the supercomputing environment
+focus (as opposed to %TP: Replace 'versus' with 'as opposed to'
+the datacenter focus described by LBNL`s Demand
+Response Research Center).
+%TP: Rephrasing the following sentence
+%For purposes of this paper, we define SCs 
+%as distinct from datacenters as having 
+%significantly higher system utilization and thus little or no 
+%virtualization.  
+
+It is important to highlight the differences between SCs and datacenters. Unlike datacenters, SCs are more performance oriented, have significantly higher system utilization, and use little or no virtualization. 
+Additionally, supercomputing
+applications are distinguished by their lack of geographical
+portability due to security concerns, data size and machine-specific
+optimizations.  
+%
+We also note that SCs tend to be more
+energy efficient than datacenters. Power Usage Effectiveness (PUE) is a good measure for energy efficiency. PUE is the ratio of the total energy supplied for the facility to the amount of energy that actually reaches the IT infrastructure. A PUE of $1.0$ is ideal. In our survey, none of the SCs exceeded a Power Usage Effectiveness (PUE) of $1.53$, while the average PUE for a datacenter falls in the range of $1.91$ and $2.9$ ~\cite{Niccolai}.
+
+\subsection{Strategies}
+%We describe some of these strategies below. 
+We describe below some of the strategies that SCs may use to adapt to the changing landscape.
 
 \begin{itemize}
 \item {\bf Fine-grained Power Management} refers to the ability to control SC system power 
@@ -45,6 +73,7 @@ humidity levels for short periods.
 
 These strategies can be used temporarily to modify loads in response to a request from an ESP. Additionally, some of these strategies could eventually be used at all times to improve overall energy efficiency if the SC sees no operational issues. Two examples may help to clarify this distinction. Temporary load migration is an example of a strategy that is well suited to responding to an ESP request, but is not likely to improve energy efficiency (lowering aggregate energy use). Fine-grained power management, on the other hand, can be used at all times and is more likely to be used for improving overall energy efficiency, unless the strategy is specifically used in response to an ESP's request. 
 
+\subsection{Implementations}
 SC system power management has a very broad range of implementations and warrants greater exploration. For example, the coarse-grained and fine-grained strategies described above can be implemented at many levels of the system hierarchy---from node-level to site-level. We discuss these implementation approaches below.  
 
 \begin{itemize}
@@ -87,7 +116,7 @@ decisions must be made as to how much power should be allocated for cooling vers
 
 
 
-\subsection{Prior Work}
+\section{Prior Work}
 \label{sub:priorwork}
 \input{priorwork}
 

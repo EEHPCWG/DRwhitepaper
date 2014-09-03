@@ -1,7 +1,7 @@
 This paper pulls together several diverse research domains. In this section,
 we provide an overview of prior work in these areas.
 
-\subsubsection{Power Management}
+\subsection{Power Management}
 Processor power management can be divided into two distinct eras. First, with 
 the introduction of Dynamic Voltage Frequency Scaling, users were able to 
 change the CPU clock speed of their processors, lowering both voltage and,
@@ -38,7 +38,7 @@ bound revealed significant performance variation~\cite{Rountree2012}. Further
 work demonstrated a $2x$ performance improvement between conservative and
 optimal processor configurations while executing under a power bound~\cite{Patki1}.
 
-\subsubsection{Thermal Management}
+\subsection{Thermal Management}
 
 Thermal management is a key driver for improving energy efficiency of datacenters as well as SCs. There are many strategies for thermal
 management that can improve energy efficiency, such as free cooling and proper
@@ -95,7 +95,7 @@ They also discussed how hotspots could be avoided in datacenters, and showed
 cooling costs can be reduced by up to 48\% with temperature-aware load
 balancing.
 
-\subsubsection{Job Scheduling}
+\subsection{Job Scheduling}
 The problem of scheduling jobs has been extensively studied. Most resource
 managers implement the First Come First Serve (FCFS) policy as a simple but fair
 strategy for scheduling jobs. However, FCFS suffers from low system utilization.
@@ -130,7 +130,7 @@ backfilling-based batch scheduling. Modern resource management systems such as
 Sun Grid Engine, PBS, OpenPBS, Torque, SLURM, Maui, and Moab support advance
 reservation capabilities. \\
 
-\subsubsection{Load Migration}
+\subsection{Load Migration}
 Chiu et. al \cite{chiu_electric_2012} discussed an electrical grid balancing
 problem that was experienced in the Pacific Northwest. In order to match
 electricity supply and balance the electrical grid, they proposed low-cost
@@ -141,7 +141,7 @@ applied cases for distributed datacenters. The results show that load migration
 is possible in both homogenous and heterogeneous systems. Their migration
 strategies were based on a manual process and can benefit from automation.
 
-\subsubsection{Datacenter Participation in Smart Grid \\Programs}
+\subsection{Datacenter Participation in Smart Grid \\Programs}
 Aikema et. al \cite{aikema_electrical_2011} explored the potential for HPC
 centers to adapt to dynamic electrical prices, to variation in carbon intensity
 within an electrical grid, and to availability of local renewables. Their
@@ -164,4 +164,4 @@ Chen et al.~\cite{chen2014aspdac} studied the potential of datacenter participat
 
 Liu et al.~\cite{liu2012renewable} introduced a way to reduce cost and environmental impacts using a holistic approach that integrates energy and cooling supply control with IT workload planning to improve the overall attainability of datacenter operations. The results demonstrated a reduction of the recurring power costs and the use of non-renewable energy by as much as 60\% compared to existing techniques, while still meeting Service Level Agreements.
 
-Aikema et al.~\cite{aikema2012data} also analyzed a number of different potential advanced power markets for datacenters to participate in, and showed energy cost reduction by up to 12\% with only a small impact on the quality of service provided to users. Ghamkhari et al.~\cite{ghamkhari2012data} built an analytical profit model to show that datacenters can noticeably increase their profit by participating in voluntary load reduction to offer ancillary services, and help the grid achieve better service quality and reliability. \\ \\
+Aikema et al.~\cite{aikema2012data} also analyzed a number of different potential advanced power markets for datacenters to participate in, and showed energy cost reduction by up to 12\% with only a small impact on the quality of service provided to users. Ghamkhari et al.~\cite{ghamkhari2012data} built an analytical profit model to show that datacenters can noticeably increase their profit by participating in voluntary load reduction to offer ancillary services, and help the grid achieve better service quality and reliability. 
